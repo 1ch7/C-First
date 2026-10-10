@@ -8,7 +8,7 @@
 **Final delivery:** existing prototype published on 10 October 2026, without further development or testing campaigns.
 
 - Public source: https://github.com/1ch7/C-First/tree/eventpilot-dormathon (`main` unchanged).
-- Live app: https://c86afee1a0774dd7bb03f964cabaf5d1.sg2.agentos-app.run
+- Live app: https://8ebb299bac2f4c1ca5b7548eb4008ce1.sg2.agentos-app.run
 - Slides: `outputs/EventPilot-Pitch.pdf` (existing ten-page PDF).
 - Exactly one public `/api/health` request returned HTTP 200, `status: ok`, SQLite available. Deployed end-to-end behavior is not verified; prior local evidence follows.
 - Remaining limitations: deterministic specialists rather than LLM; visitor Google OAuth unconfigured; approvals, bookings, people and funding require human confirmation. No emails sent.

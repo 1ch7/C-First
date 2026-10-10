@@ -6,7 +6,7 @@ EventPilot turns a short campus-event brief into a conditional Event Pack: propo
 
 **Published prototype — feature-frozen.** Source and public evidence: https://github.com/1ch7/C-First/tree/eventpilot-dormathon (`main` untouched).
 
-**Live application:** https://c86afee1a0774dd7bb03f964cabaf5d1.sg2.agentos-app.run
+**Live application:** https://8ebb299bac2f4c1ca5b7548eb4008ce1.sg2.agentos-app.run
 
 Released 10 October 2026. One public `/api/health` check returned HTTP 200 and `status: ok`, with SQLite available. Per the user's credit-saving instruction, no deployed event runs, browser testing or new screenshots were performed. The detailed verification below is existing local evidence. Run local commands from this branch's checkout.
 
