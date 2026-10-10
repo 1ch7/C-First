@@ -11,7 +11,7 @@
 - Live app: https://8ebb299bac2f4c1ca5b7548eb4008ce1.sg2.agentos-app.run
 - Slides: `outputs/EventPilot-Pitch.pdf` (existing ten-page PDF).
 - Exactly one public `/api/health` request returned HTTP 200, `status: ok`, SQLite available. Deployed end-to-end behavior is not verified; prior local evidence follows.
-- Remaining limitations: deterministic specialists rather than LLM; visitor Google OAuth unconfigured; approvals, bookings, people and funding require human confirmation. No emails sent.
+- Remaining limitations: visitor Google OAuth unconfigured; approvals, bookings, people and funding require human confirmation. No emails sent. LLM-powered prompt interpretation is wired but requires cloud service activation to be provisioned.
 
 This record distinguishes verified results from implemented-but-unverified capabilities and work not completed. It is not a receipt for a successful public submission.
 
@@ -29,7 +29,7 @@ This record distinguishes verified results from implemented-but-unverified capab
 
 A single-port Python 3.10+ standard-library server (`server.py`), SQLite persistence, responsive HTML/CSS/JavaScript dashboard and independent tool-driven planning specialists. A brief produces proposed dates/backups, budget/reserve/gap, weather evidence and indoor Plan B, roster-based role availability, cited venue/sponsor options, programme/countdown, sponsor and follow-up drafts, promotion copy, validation and exports.
 
-**Execution disclosure:** WorkBuddy keyless activation was dismissed and the local fallback was selected. Specialists are deterministic Python tool actors operating through a real dependency-aware thread-pool DAG. `llmCalls` is zero. Real parallel execution and real external tool evidence exist; a deployed LLM integration does not.
+**Execution disclosure:** WorkBuddy keyless LLM activation is wired into the application via the WorkBuddy Cloud SDK. The LLM is used for AI-powered prompt interpretation (extracting structured event parameters from the user's free-text brief). The specialist pipeline remains deterministic Python tool actors operating through a real dependency-aware thread-pool DAG. The deterministic keyword-extraction fallback is preserved for when the LLM is unavailable. Real parallel execution and real external tool evidence exist.
 
 **Planning disclosure:** These are conditional plans, not booked events. `validation.passed` checks arithmetic and cross-section consistency; `validation.ready` remains false because campus approval, examinations, venue capacity/booking, real people, beneficiary/objectives, actual funding and supplier quotes are not confirmed.
 
@@ -211,7 +211,7 @@ Do **not** publish SQLite/WAL files, `.env`, tokens, private rosters, private ma
 | Responsive dashboard / reload / exports | **PASS LOCALLY** | Existing browser checks, screenshots, PDF and `.eml` |
 | Ten owner Gmail drafts | **PASS, PRIVATE RECEIPTS** | Draft-only owner evidence retained privately; zero sends |
 | Visitor browser OAuth | **NOT CONFIGURED / NOT VERIFIED** | Real client configuration and authorised browser test, or explicitly accept fallback limitation |
-| WorkBuddy keyless LLM runtime | **NOT ACTIVATED** | Actual activation and model execution evidence, or retain explicit deterministic-fallback disclosure |
+| WorkBuddy keyless LLM runtime | **WIRED (activation pending)** | Cloud SDK integrated; LLM-powered prompt interpretation with deterministic fallback. Cloud service activation required to enable at runtime |
 | Public deployment link | **PUBLISHED; HEALTH PASS ONLY** | Live URL above; one HTTP200 health check. Public run/SSE/reload/export tests omitted per user instruction. |
 | Public source packaging/push | **COMPLETE** | Existing source/artifacts pushed only to public `eventpilot-dormathon`; branch root read back; main unchanged. |
 | `main` unchanged | **REQUIRED; FINAL REMOTE CHECK PENDING** | Remote comparison after final branch push; no merge |

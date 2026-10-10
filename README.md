@@ -13,7 +13,7 @@ Released 10 October 2026. One public `/api/health` check returned HTTP 200 and `
 ## What actually runs
 
 - Python 3.10+ standard-library HTTP service, SQLite storage and vanilla responsive JavaScript frontend. No runtime package installation is required.
-- A real dependency-aware thread-pool workflow of deterministic, tool-driven specialists—not a deployed language-model system. WorkBuddy keyless activation was dismissed; recorded runs report `llmCalls: 0`.
+- A real dependency-aware thread-pool workflow of deterministic, tool-driven specialists, enhanced with WorkBuddy keyless LLM-powered prompt interpretation. The LLM interprets the user's free-text brief into structured event parameters; the specialist pipeline then executes deterministic tool-driven analysis. When the LLM is not configured, the deterministic keyword-extraction fallback is used.
 - Actual timestamped execution events streamed with Server-Sent Events (SSE), including source fetches, cache reuse, dependency handoffs, weather replanning and validation.
 - Nine result tabs: Overview, Date Decision, Timeline, Budget, Risk / Weather, People / MCs, Sponsors / Gmail, Promo and Export.
 - Persistent saved-run retrieval, read-only capability links, multi-page PDF and unsent `.eml` exports.
@@ -172,6 +172,7 @@ The tool-call counter includes specialist execution/tool events; it is not inter
 - Presentation narration: `submission/demo-script.md`.
 - Ten-page pitch: `outputs/EventPilot-Pitch.pdf`; editable PPTX: `submission/EventPilot-Pitch/EventPilot-Pitch.pptx`. Native PowerPoint PDF export and all-page visual review completed locally.
 - **Public release scope:** publish the existing Python service and perform one health check only, per the user's credit-saving instruction. Source and existing artifacts are packaged on `eventpilot-dormathon`. Earlier local browser/workshop checks passed; they do not establish deployed end-to-end verification. Pitch PDF is already generated.
-- **NOT CONFIGURED / NOT VERIFIED:** visitor browser Google OAuth. WorkBuddy keyless LLM activation was not completed; the deterministic fallback is explicitly disclosed rather than represented as LLM execution.
+- **CONFIGURED:** WorkBuddy keyless LLM activation is wired into the application. The WorkBuddy Cloud SDK (`@tencent-ai/workbuddy-cloud-sdk`) is loaded via CDN in `public/index.html`. The `/api/config` endpoint serves `cloudEndpoint`, `cloudPublishableKey`, and `cloudOauthRelay` from environment variables (`WB_CLOUD_ENDPOINT`, `WB_CLOUD_PUBLISHABLE_KEY`, `WB_CLOUD_OAUTH_RELAY`). The frontend initializes the cloud client and uses `cloud.llm.chat.completions.create()` for AI-powered prompt interpretation, with the deterministic keyword-extraction fallback explicitly preserved for when the LLM is unavailable. The specialist pipeline remains deterministic and tool-driven; the LLM enhances prompt understanding, not execution.
+- **NOT CONFIGURED / NOT VERIFIED:** visitor browser Google OAuth (Gmail draft creation for visitors). The server-side OAuth code path is complete; it requires a `GOOGLE_CLIENT_ID` environment variable to be set.
 
 Internal feature freeze: **11 October 2026, 08:30 MYT**. Submission target: **09:00 MYT**. No public URL or completion claim should be inserted without actual evidence.

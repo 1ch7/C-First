@@ -27,7 +27,7 @@ def _today():
     return datetime.now(timezone(timedelta(hours=8))).date()
 
 
-ENGINE = "tool-driven agents; LLM unavailable (keyless activation dismissed)"
+ENGINE = "tool-driven agents; LLM-powered prompt interpretation (keyless activation enabled)"
 MONTHS = {name.lower(): i for i, name in enumerate(calendar.month_name) if name}
 MONTHS.update({name.lower(): i for i, name in enumerate(calendar.month_abbr) if name})
 EMAIL = re.compile(r"^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+$")

@@ -151,7 +151,7 @@ def execute_run(run_id, prompt, overrides, roster):
         pack = normalize_public_pack(pack)
         pack["runId"] = run_id
         pack["generatedAt"] = now()
-        pack["engine"] = "Tool-driven specialist agents. LLM unavailable: WorkBuddy keyless activation dismissed."
+        pack["engine"] = "Tool-driven specialist agents. LLM-powered prompt interpretation." if os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY") else "Tool-driven specialist agents. LLM unavailable: WorkBuddy keyless activation not completed."
         pack["mode"] = "live"
         pack["privacy"] = "Anyone with this random share URL can view this pack. Roster names/contact details are redacted; do not enter sensitive information in prompts."
         elapsed = round(time.monotonic() - start, 2)
@@ -439,11 +439,13 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 with db() as c:
                     c.execute("SELECT 1").fetchone()
-                return self.response(200, {"status": "ok", "product": "EventPilot", "version": VERSION, "database": "SQLite", "llm": "unavailable - keyless activation dismissed", "gmail": "drafts only; OAuth optional", "time": now()})
+                llm_status = "available - WorkBuddy keyless LLM activated" if os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY") else "unavailable - not activated"
+                return self.response(200, {"status": "ok", "product": "EventPilot", "version": VERSION, "database": "SQLite", "llm": llm_status, "gmail": "drafts only; OAuth optional", "time": now()})
             except Exception:
                 return self.response(503, {"status": "error", "database": "unavailable"})
         if path == "/api/config":
-            return self.response(200, {"googleClientId": os.environ.get("GOOGLE_CLIENT_ID", ""), "gmailScope": "https://www.googleapis.com/auth/gmail.compose", "engine": "Tool-driven agents; LLM unavailable", "replayAvailable": (DATA / "recording.json").exists()})
+            llm_engine = "Tool-driven agents; LLM-powered prompt interpretation" if os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY") else "Tool-driven agents; LLM unavailable"
+            return self.response(200, {"googleClientId": os.environ.get("GOOGLE_CLIENT_ID", ""), "gmailScope": "https://www.googleapis.com/auth/gmail.compose", "engine": llm_engine, "replayAvailable": (DATA / "recording.json").exists(), "cloudEndpoint": os.environ.get("WB_CLOUD_ENDPOINT", ""), "cloudPublishableKey": os.environ.get("WB_CLOUD_PUBLISHABLE_KEY", ""), "cloudOauthRelay": os.environ.get("WB_CLOUD_OAUTH_RELAY", "")})
         if path.startswith("/api/runs/"):
             bits = path.strip("/").split("/")
             run = row_run(bits[2])
