@@ -32,7 +32,7 @@ POOL = ThreadPoolExecutor(max_workers=4)
 DB_LOCK = threading.RLock()
 RATE = collections.defaultdict(collections.deque)
 GMAIL_LOCK = threading.RLock()
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 def now():
     return datetime.now(MYT).isoformat()
@@ -231,6 +231,159 @@ def pdf_bytes(pack):
     return bytes(out)
 
 
+def proposal_pdf_bytes(pack):
+    """Generate a formatted proposal PDF from Event Pack data."""
+    goal = pack.get("goal", {}) or {}
+    budget = pack.get("budget", {}) or {}
+    chosen = pack.get("dateDecision", {}).get("chosen", {})
+    event_date = chosen.get("date") if isinstance(chosen, dict) else str(chosen)
+    venue = pack.get("venues", {})
+    venue_name = venue.get("selected", {}).get("name") if isinstance(venue.get("selected"), dict) else venue.get("recommended", {}).get("name", "To be confirmed") if isinstance(venue.get("recommended"), dict) else "To be confirmed"
+    risks = pack.get("risks", {}) or {}
+    risk_register = risks.get("register", [])
+    validation = pack.get("validation", {}) or {}
+
+    def rm(val):
+        if val is None:
+            return "Not specified"
+        try:
+            n = float(val)
+            return f"RM {n:,.2f}"
+        except (ValueError, TypeError):
+            return str(val)
+
+    _default_campus = "Taylor's University"
+    lines = [
+        "EVENTPILOT EVENT PROPOSAL",
+        "==========================",
+        f"Generated: {pack.get('generatedAt', now())}",
+        f"Run ID: {pack.get('runId', 'N/A')}",
+        "",
+        "This is a DRAFT proposal for review.",
+        "No bookings, sponsorships, or commitments are confirmed.",
+        "Review and send this proposal yourself — EventPilot never sends automatically.",
+        "",
+        "-" * 65,
+        "1. EVENT SUMMARY",
+        "-" * 65,
+        f"Event type: {goal.get('eventType', 'Not specified')}",
+        f"Cause / purpose: {goal.get('cause', 'Not specified')}",
+        f"Campus: {goal.get('campus', _default_campus)}",
+        f"Expected attendance: {goal.get('attendance', 'Not specified')}",
+        f"Summary: {pack.get('summary', 'See full Event Pack for details.')}",
+        "",
+        "-" * 65,
+        "2. PROPOSED DATE",
+        "-" * 65,
+        f"Preferred date: {event_date or 'Pending selection'}",
+        f"Rationale: {pack.get('dateDecision', {}).get('reason', 'See date comparison in Event Pack.')}",
+        "",
+        "-" * 65,
+        "3. VENUE",
+        "-" * 65,
+        f"Recommended venue: {venue_name}",
+        f"Booking status: Unconfirmed — contact campus Student Affairs",
+        "",
+        "-" * 65,
+        "4. BUDGET (RM)",
+        "-" * 65,
+        f"Budget ceiling: {rm(budget.get('limit', budget.get('limitRM', goal.get('budgetRM'))))}",
+        f"Total allocated: {rm(budget.get('total', budget.get('totalRM')))}",
+        f"Contingency: {rm(budget.get('contingencyRM', budget.get('contingency', {}).get('amountRM') if isinstance(budget.get('contingency'), dict) else budget.get('contingency')))}",
+        f"Funding gap: {rm(budget.get('gapRM', budget.get('gap', {}).get('amountRM') if isinstance(budget.get('gap'), dict) else budget.get('gap')))}",
+        f"Organiser funds: {rm(budget.get('organiserFundsRM', budget.get('organiserFunds')))}",
+        "",
+        "Allocation breakdown:",
+    ]
+    items = budget.get("items") or budget.get("allocations") or []
+    if isinstance(items, list):
+        for item in items:
+            if isinstance(item, dict):
+                cat = item.get("category") or item.get("name") or item.get("item", "Allocation")
+                amt = item.get("amountRM") or item.get("totalRM") or item.get("amount") or item.get("costRM") or item.get("total") or item.get("cost", "N/A")
+                lines.append(f"  - {cat}: {rm(amt)}")
+    lines += [
+        "",
+        "-" * 65,
+        "5. RISK PLAN",
+        "-" * 65,
+    ]
+    if isinstance(risk_register, list) and risk_register:
+        for risk in risk_register:
+            if isinstance(risk, dict):
+                lines.append(f"  Risk: {risk.get('risk', risk.get('name', 'Unidentified'))}")
+                lines.append(f"    Score: {risk.get('score', 'N/A')}")
+                lines.append(f"    Mitigation: {risk.get('mitigation', 'Pending')}")
+                lines.append(f"    Trigger: {risk.get('trigger', 'Pending')}")
+                lines.append(f"    Contingency: {risk.get('contingency', 'Pending')}")
+                lines.append("")
+    else:
+        lines.append("  No risk register entries supplied.")
+    plan_b = risks.get("planB")
+    if plan_b:
+        lines.append(f"Plan B: {plan_b}")
+    lines += [
+        "",
+        "-" * 65,
+        "6. NEXT ACTIONS",
+        "-" * 65,
+    ]
+    next_actions = [
+        "Confirm event date with campus calendar and Student Affairs",
+        "Submit venue booking request and confirm availability",
+        "Verify organiser funds and sponsor support in writing",
+        "Confirm MC and volunteer availability",
+        "Recheck weather forecast at T-14, T-7, and T-1 days before event",
+        "Finalise run of show and brief all participants",
+        "Review and send sponsor outreach drafts (EventPilot never sends automatically)",
+    ]
+    for i, action in enumerate(next_actions, 1):
+        lines.append(f"  {i}. {action}")
+    lines += [
+        "",
+        "-" * 65,
+        "DISCLAIMER",
+        "-" * 65,
+        "This proposal is generated from EventPilot's deterministic planning tools.",
+        "All dates, venues, budgets, and sponsor information are PROPOSED, not confirmed.",
+        "Weather data is historical climatology, not a forecast.",
+        "No emails have been sent. Review and act on this proposal yourself.",
+        "",
+        f"EventPilot v{VERSION} | C-First | Taylor's University Dormathon Track 2",
+    ]
+
+    pages = [lines[i:i+63] for i in range(0, len(lines), 63)]
+    objects = []
+    def obj(data):
+        objects.append(data.encode("latin-1", errors="replace") if isinstance(data, str) else data)
+        return len(objects)
+    obj("<< /Type /Catalog /Pages 2 0 R >>")
+    obj(b"")
+    font_id = obj("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>")
+    page_ids = []
+    for index, page in enumerate(pages):
+        content = ["BT /F1 8.5 Tf 12 TL 40 797 Td"]
+        for line in page:
+            safe = line.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
+            content.append(f"({safe}) Tj T*")
+        content += ["ET", f"BT /F1 9 Tf 40 30 Td (EventPilot Proposal | Page {index+1} of {len(pages)}) Tj ET"]
+        stream = "\n".join(content).encode("latin-1", errors="replace")
+        content_id = obj(b"<< /Length " + str(len(stream)).encode() + b" >>\nstream\n" + stream + b"\nendstream")
+        page_ids.append(obj(f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 {font_id} 0 R >> >> /Contents {content_id} 0 R >>"))
+    objects[1] = ("<< /Type /Pages /Kids [" + " ".join(f"{i} 0 R" for i in page_ids) + f"] /Count {len(page_ids)} >>").encode()
+    out = bytearray(b"%PDF-1.4\n%\xe2\xe3\xcf\xd3\n")
+    offsets = [0]
+    for i, value in enumerate(objects, 1):
+        offsets.append(len(out))
+        out.extend(f"{i} 0 obj\n".encode() + value + b"\nendobj\n")
+    xref = len(out)
+    out.extend(f"xref\n0 {len(objects)+1}\n0000000000 65535 f \n".encode())
+    for offset in offsets[1:]:
+        out.extend(f"{offset:010d} 00000 n \n".encode())
+    out.extend(f"trailer\n<< /Size {len(objects)+1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n".encode())
+    return bytes(out)
+
+
 def email_bytes(draft):
     msg = EmailMessage(policy=SMTP)
     recipient = draft.get("to") or draft.get("email") or ""
@@ -302,6 +455,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.stream(run["id"])
             if bits[3] == "pdf" and run["pack"]:
                 return self.response(200, pdf_bytes(run["pack"]), "application/pdf", {"Content-Disposition": 'attachment; filename="EventPilot-Event-Pack.pdf"'})
+            if bits[3] == "proposal" and run["pack"]:
+                return self.response(200, proposal_pdf_bytes(run["pack"]), "application/pdf", {"Content-Disposition": 'attachment; filename="EventPilot-Proposal.pdf"'})
             if bits[3] == "eml" and run["pack"] and len(bits) == 5:
                 try:
                     draft = run["pack"]["drafts"][int(bits[4])]

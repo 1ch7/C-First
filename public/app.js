@@ -4,9 +4,10 @@
   const $ = (id) => document.getElementById(id);
   const examples = {
     canonical: 'I want to organize a charity event at my university in March with a budget of RM2k.',
-    bazaar: 'Plan a charity bazaar at Taylor’s Lakeside Campus for 120 attendees between 1 and 30 November 2026 with a RM 5,000 budget. Support student wellbeing, compare dates using local weather climatology, propose a covered venue, student MCs, suitable Malaysian sponsors, outreach drafts and a promotion plan. Treat all bookings and sponsor commitments as unconfirmed.',
-    workshop: 'Plan a career skills workshop at Taylor’s Lakeside Campus for 80 students between 1 and 30 November 2026 with a RM 3,000 budget. Compare dates, propose an indoor venue, organisers and MC roles, a practical programme, potential Malaysian sponsors, outreach drafts and a promotion plan.',
-    dormathon: 'Plan a Dormathon Track 2 student project showcase at Taylor’s Lakeside Campus for 120 attendees between 1 and 30 November 2026 with a RM 5,000 budget. Compare dates using local weather climatology, propose a covered venue, student MCs, suitable Malaysian sponsors, outreach drafts and a promotion plan. Treat all bookings and sponsor commitments as unconfirmed.'
+    bazaar: 'Plan a charity bazaar at Taylor\u2019s Lakeside Campus for 120 attendees between 1 and 30 November 2026 with a RM 5,000 budget. Support student wellbeing, compare dates using local weather climatology, propose a covered venue, student MCs, suitable Malaysian sponsors, outreach drafts and a promotion plan. Treat all bookings and sponsor commitments as unconfirmed.',
+    workshop: 'Plan a career skills workshop at Taylor\u2019s Lakeside Campus for 80 students between 1 and 30 November 2026 with a RM 3,000 budget. Compare dates, propose an indoor venue, organisers and MC roles, a practical programme, potential Malaysian sponsors, outreach drafts and a promotion plan.',
+    dormathon: 'Plan a Dormathon Track 2 student project showcase at Taylor\u2019s Lakeside Campus for 120 attendees between 1 and 30 November 2026 with a RM 5,000 budget. Compare dates using local weather climatology, propose a covered venue, student MCs, suitable Malaysian sponsors, outreach drafts and a promotion plan. Treat all bookings and sponsor commitments as unconfirmed.',
+    esports: 'Plan an e-sports tournament at Taylor\u2019s Lakeside Campus on 15 March 2027 with a RM 2,000 budget for 50 participants. Compare dates, propose an indoor venue with gaming setups, suitable Malaysian sponsors, outreach drafts and a promotion plan.'
   };
   const agents = [
     { id: 'goal', label: 'Goal Interpreter', icon: '01', lane: 0, deps: [] },
@@ -50,12 +51,12 @@
       }
     }
     collect(value);
-    return links.length ? `<div class="source-list">${links.map((item) => `<a class="source-link" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.title)} ↗</a>`).join('')}</div>` : '';
+    return links.length ? `<div class="source-list">${links.map((item) => `<a class="source-link" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.title)} \u2197</a>`).join('')}</div>` : '';
   }
   function valueHTML(value, depth = 0) {
     if (value == null || value === '') return missing();
     if (typeof value === 'boolean') return esc(value ? 'Yes' : 'No');
-    if (typeof value !== 'object') { const url = safeURL(String(value)); return url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(new URL(url).hostname)} ↗</a>` : esc(value); }
+    if (typeof value !== 'object') { const url = safeURL(String(value)); return url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(new URL(url).hostname)} \u2197</a>` : esc(value); }
     if (depth > 4) return esc(Array.isArray(value) ? value.map((v) => typeof v === 'object' ? first(v.name, v.title, v.description, 'See details') : v).join('; ') : first(value.name, value.title, value.description, value.message, 'See sourced details'));
     if (Array.isArray(value)) return value.length ? `<ul class="rich-list">${value.map((v) => `<li>${valueHTML(v, depth + 1)}</li>`).join('')}</ul>` : missing('No entries supplied');
     const rows = Object.entries(value).filter(([k, v]) => v != null && !['email', 'accessToken', 'token', 'privateRoster', 'body', 'html', 'raw', 'trace', 'budgetCents', 'scenarioDate', 'attendanceAssumed', 'prompt', 'amountCents', 'totalCents', 'limitCents', 'contingencyCents', 'gapCents', 'organiserFundsCents', 'askCents'].includes(k));
@@ -67,6 +68,336 @@
   function facts(rows) { return `<dl class="fact-list">${rows.map(([key, value]) => `<div class="fact-row"><dt>${esc(key)}</dt><dd>${valueHTML(value)}</dd></div>`).join('')}</dl>`; }
   function table(headers, rows) { return rows.length ? `<div class="table-wrap"><table><thead><tr>${headers.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : missing('No entries supplied'); }
   function notice(text, error = false) { $('notice').textContent = text; $('notice').className = `notice${error ? ' error' : ''}`; $('notice').hidden = false; }
+
+  // === PROMPT INTERPRETER (deterministic keyword extraction, no LLM, max ~300 tokens) ===
+  function interpretPrompt(text) {
+    if (!text || typeof text !== 'string') return null;
+    const t = text.toLowerCase();
+    const now = new Date();
+    const currentMonth = now.getMonth();
+    const currentYear = now.getFullYear();
+    const result = { eventType: '', cause: '', budgetRM: null, attendance: null, dateStart: '', dateEnd: '', month: null, year: null, campus: '', location: '', eventName: '' };
+    const monthMap = { january: 0, jan: 0, february: 1, feb: 1, march: 2, mar: 2, april: 3, apr: 3, may: 4, june: 5, jun: 5, july: 6, jul: 6, august: 7, aug: 7, september: 8, sep: 8, sept: 8, october: 9, oct: 9, november: 10, nov: 10, december: 11, dec: 11 };
+
+    // ── Event type detection (expanded) ──────────────────────────
+    const typeMap = [
+      ['e-sport', 'e-sports tournament'], ['esport', 'e-sports tournament'], ['e sport', 'e-sports tournament'], ['gaming', 'e-sports tournament'],
+      ['hackathon', 'hackathon'], ['code jam', 'hackathon'],
+      ['bazaar', 'bazaar'], ['market', 'bazaar'], ['sale', 'bazaar'], ['jumble', 'bazaar'],
+      ['workshop', 'workshop'], ['seminar', 'seminar'], ['talk', 'talk'], ['forum', 'forum'],
+      ['charity concert', 'charity concert'], ['charity gala', 'charity gala'],
+      ['charity', 'charity event'], ['fundrais', 'charity event'], ['donat', 'charity event'],
+      ['showcase', 'showcase'], ['exhibition', 'exhibition'], ['expo', 'exhibition'],
+      ['concert', 'concert'], ['performance', 'performance'], ['gig', 'performance'],
+      ['festival', 'festival'], ['jamboree', 'festival'],
+      ['competition', 'competition'], ['contest', 'competition'], ['tournament', 'tournament'],
+      ['debate', 'debate competition'], ['public speaking', 'public speaking competition'],
+      ['career', 'career workshop'], ['networking', 'networking session'],
+      ['dormathon', 'Dormathon showcase'],
+      ['sports day', 'sports day'], ['sports', 'sports event'], ['athletic', 'sports event'],
+      ['cultural night', 'cultural night'], ['cultural', 'cultural event'],
+      ['food', 'food fair'], ['food fair', 'food fair'], ['food fest', 'food fair'],
+      ['game', 'game event'],
+    ];
+    for (const [kw, type] of typeMap) { if (t.includes(kw)) { result.eventType = type; break; } }
+    if (!result.eventType) result.eventType = 'campus event';
+
+    // ── Cause / purpose detection ────────────────────────────────
+    const causeMap = [
+      ['student wellbeing', 'student wellbeing'], ['wellbeing', 'student wellbeing'],
+      ['mental health', 'mental health awareness'], ['charity', 'charity / fundraising'],
+      ['fundrais', 'charity / fundraising'], ['donat', 'charity / fundraising'],
+      ['community', 'community engagement'], ['sustainability', 'sustainability'],
+      ['environment', 'environmental awareness'], ['social impact', 'social impact'],
+      ['education', 'educational outreach'], ['refugee', 'refugee support'],
+    ];
+    for (const [kw, cause] of causeMap) { if (t.includes(kw)) { result.cause = cause; break; } }
+
+    // ── Budget detection ────────────────────────────────────────
+    const budgetMatch = t.match(/rm\s*([0-9]+(?:[,.][0-9]{3})*(?:\.[0-9]+)?)/) || t.match(/budget[^0-9]*([0-9]+(?:[,.][0-9]{3})*(?:\.[0-9]+)?)/);
+    if (budgetMatch) result.budgetRM = Number(budgetMatch[1].replace(/[,]/g, ''));
+    const kMatch = t.match(/rm\s*([0-9]+)\s*k/) || t.match(/([0-9]+)\s*k\s*budget/);
+    if (kMatch) result.budgetRM = Number(kMatch[1]) * 1000;
+
+    // ── Attendance detection ─────────────────────────────────────
+    const attMatch = t.match(/(\d+)\s*(?:students?|attendees?|guests?|participants?|people|visitors?|pax)/) || t.match(/(?:for|around|about|~)\s*(\d+)\s*(?:students?|attendees?|guests?|participants?|people|visitors?|pax)/);
+    if (attMatch) result.attendance = Number(attMatch[1]);
+
+    // ── Date detection (only use dates the user explicitly stated) ──
+    let foundMonth = null, foundYear = null;
+    for (const [monthName, monthNum] of Object.entries(monthMap)) {
+      if (t.includes(monthName)) { foundMonth = monthNum; break; }
+    }
+    const yearMatch = t.match(/\b(20[2-9][0-9])\b/);
+    if (yearMatch) foundYear = Number(yearMatch[1]);
+
+    // Specific date: "15 March 2027", "March 15 2027", "15 Mar 2027"
+    const specificDate1 = t.match(/\b(\d{1,2})\s+(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)\s*(20\d{2})?/i);
+    const specificDate2 = t.match(/\b(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)\s+(\d{1,2})(?:st|nd|rd|th)?\s*,?\s*(20\d{2})?/i);
+    // Date range: "between 1 and 30 November 2026"
+    const rangeMatch = t.match(/between\s+(\d{1,2})\s+and\s+(\d{1,2})\s+(\w+)\s*(\d{4})?/i);
+    // Slash dates: "15/3/2027" or "15/03/2027"
+    const slashDate = t.match(/\b(\d{1,2})\/(\d{1,2})\/(20\d{2})\b/);
+
+    function makeDate(y, m, d) { return `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`; }
+
+    // Only set dates that the user explicitly wrote — no proposed defaults
+    if (rangeMatch) {
+      const day1 = Number(rangeMatch[1]), day2 = Number(rangeMatch[2]);
+      const mn = monthMap[rangeMatch[3].toLowerCase()];
+      if (mn !== undefined) {
+        // Use the year the user wrote, or leave empty if not specified
+        if (rangeMatch[4]) {
+          const y = Number(rangeMatch[4]);
+          result.dateStart = makeDate(y, mn, day1);
+          result.dateEnd = makeDate(y, mn, day2);
+          result.month = mn + 1;
+          result.year = y;
+        } else {
+          // Year not given — only set month, let server pick the year
+          result.month = mn + 1;
+        }
+      }
+    } else if (slashDate) {
+      const d = Number(slashDate[1]), mn = Number(slashDate[2]) - 1, y = Number(slashDate[3]);
+      result.dateStart = makeDate(y, mn, d);
+      result.dateEnd = makeDate(y, mn, d);
+      result.month = mn + 1;
+      result.year = y;
+    } else if (specificDate1) {
+      const d = Number(specificDate1[1]), mn = monthMap[specificDate1[2].toLowerCase()];
+      if (specificDate1[3]) {
+        // User gave a full date with year — use it exactly
+        const y = Number(specificDate1[3]);
+        result.dateStart = makeDate(y, mn, d);
+        result.dateEnd = makeDate(y, mn, d);
+        result.month = mn + 1;
+        result.year = y;
+      } else {
+        // User gave a date without year — only set month, let server pick the year
+        result.month = mn + 1;
+      }
+    } else if (specificDate2) {
+      const mn = monthMap[specificDate2[1].toLowerCase()], d = Number(specificDate2[2]);
+      if (specificDate2[3]) {
+        const y = Number(specificDate2[3]);
+        result.dateStart = makeDate(y, mn, d);
+        result.dateEnd = makeDate(y, mn, d);
+        result.month = mn + 1;
+        result.year = y;
+      } else {
+        result.month = mn + 1;
+      }
+    } else if (foundMonth !== null) {
+      // User mentioned a month but no specific day — just pass the month, let server handle the rest
+      result.month = foundMonth + 1;
+      if (foundYear) result.year = foundYear;
+    }
+    // If no date info at all, leave everything empty — no proposed defaults
+
+    // ── Campus detection ────────────────────────────────────────
+    if (t.includes('taylor') || t.includes('lakeside')) result.campus = "Taylor's Lakeside Campus";
+    else if (t.includes('campus')) result.campus = 'Campus (specify)';
+
+    // ── Location / venue preference ─────────────────────────────
+    if (t.includes('indoor')) result.location = 'Indoor venue preferred';
+    else if (t.includes('covered')) result.location = 'Covered venue preferred';
+    else if (t.includes('outdoor')) result.location = 'Outdoor venue considered';
+
+    // ── Event name generation from user's words ─────────────────
+    // Try to extract a descriptive phrase from the prompt
+    let nameParts = [];
+    // Check for compound phrases the user actually typed
+    const phrasePatterns = [
+      /\b(e-?sports?\s+tournament)\b/i,
+      /\b(e-?sports?\s+competition)\b/i,
+      /\b(charity\s+concert)\b/i,
+      /\b(charity\s+bazaar)\b/i,
+      /\b(charity\s+gala)\b/i,
+      /\b(charity\s+event)\b/i,
+      /\b(career\s+workshop)\b/i,
+      /\b(cultural\s+night)\b/i,
+      /\b(sports\s+day)\b/i,
+      /\b(food\s+fair)\b/i,
+      /\b(networking\s+session)\b/i,
+    ];
+    let phrase = null;
+    for (const p of phrasePatterns) { const m = text.match(p); if (m) { phrase = m[1]; break; } }
+    if (phrase) {
+      nameParts.push(phrase);
+    } else if (result.cause) {
+      // "E-Sports Tournament for Student Wellbeing"
+      nameParts.push(result.eventType);
+    } else {
+      nameParts.push(result.eventType);
+    }
+    // Add cause if present and not already in the phrase
+    if (result.cause && phrase && !phrase.toLowerCase().includes(result.cause.toLowerCase().split(' ')[0])) {
+      nameParts.push('for', result.cause);
+    } else if (result.cause && !phrase) {
+      nameParts.push('for', result.cause);
+    }
+    // Capitalize each part
+    const eventName = nameParts.join(' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    result.eventName = eventName + (result.campus ? ' at ' + result.campus.replace(/'s Lakeside Campus/i, "'s University") : '');
+
+    return result;
+  }
+
+  function showPromptPreview() {
+    const text = $('prompt').value.trim();
+    const preview = $('prompt-preview');
+    if (!preview || text.length < 10) { if (preview) preview.classList.remove('visible'); return; }
+    const interp = interpretPrompt(text);
+    if (!interp) { preview.classList.remove('visible'); return; }
+
+    // Clear previously auto-filled fields (preserve manually edited ones)
+    document.querySelectorAll('.field-grid input[data-autofilled="true"]').forEach((el) => { el.value = ''; el.removeAttribute('data-autofilled'); });
+
+    // Auto-fill form fields (only if currently empty — don't override manual edits)
+    const fieldMap = {
+      'event-type': interp.eventType,
+      'cause': interp.cause,
+      'date-start': interp.dateStart,
+      'date-end': interp.dateEnd,
+      'budget': interp.budgetRM,
+      'attendance': interp.attendance,
+      'campus': interp.campus,
+      'location': interp.location,
+    };
+    for (const [id, val] of Object.entries(fieldMap)) {
+      const el = $(id);
+      if (el && !el.value && val) { el.value = val; el.setAttribute('data-autofilled', 'true'); }
+    }
+
+    const rows = [
+      ['Event name', interp.eventName || 'From your brief'],
+      ['Event type', interp.eventType || 'From your brief'],
+      ['Budget', interp.budgetRM ? `RM ${interp.budgetRM.toLocaleString('en-MY')}` : 'From your brief'],
+      ['Attendance', interp.attendance ? `${interp.attendance}` : 'From your brief'],
+      ['Date window', interp.dateStart && interp.dateEnd ? `${interp.dateStart} to ${interp.dateEnd}` : (interp.month ? `Month ${interp.month}${interp.year ? ' ' + interp.year : ''} (server picks dates)` : 'Not specified — server will propose')],
+      ['Campus', interp.campus || 'From your brief']
+    ];
+    preview.innerHTML = `<strong>Interpreted from your brief (editable below):</strong>${rows.map(([k, v]) => `<div class="preview-row"><span class="preview-label">${esc(k)}:</span><span class="preview-value">${esc(v)}</span></div>`).join('')}`;
+    preview.classList.add('visible');
+  }
+
+  // === EXCEL EXPORT ===
+  function exportBudgetExcel() {
+    if (!state.pack) { notice('Run a plan first to export the budget.'); return; }
+    if (typeof XLSX === 'undefined') { notice('Spreadsheet library is still loading. Please try again in a moment.'); return; }
+    const b = state.pack.budget || {}, items = array(first(b.items, b.allocations));
+    const g = state.pack.goal || {};
+    const amount = (item) => number(first(item.amountRM, item.totalRM, item.amount, item.costRM, item.total, item.cost));
+    const total = first(b.total, b.totalRM, items.reduce((sum, item) => sum + (amount(item) || 0), 0));
+    const limit = first(b.limit, b.limitRM, b.budgetRM, g.budgetRM);
+    const contingency = first(b.contingencyRM, b.contingency?.amountRM, b.contingency?.amount, b.contingency);
+    const gap = first(b.gapRM, b.gap?.amountRM, b.gap);
+    const organiserFunds = first(b.organiserFundsRM, b.organiserFunds);
+    const chosen = state.pack.dateDecision?.chosen;
+    const eventDate = typeof chosen === 'string' ? chosen : first(chosen?.date, chosen?.label, chosen?.dateISO, state.pack.dateDecision?.chosenDate);
+    const venue = state.pack.venues || {};
+    const venueName = venue.selected?.name || venue.recommended?.name || 'To be confirmed';
+
+    // ── Sheet 1: Event Summary ──────────────────────────────────
+    const summaryData = [
+      ['EventPilot — Budget Export', ''],
+      ['', ''],
+      ['Event Type', g.eventType || 'Not specified'],
+      ['Event Name', (g.eventType || 'Campus Event') + ' at ' + (g.campus || 'Campus')],
+      ['Cause / Purpose', g.cause || 'Not specified'],
+      ['Campus', g.campus || 'Not specified'],
+      ['Preferred Date', eventDate || 'Pending'],
+      ['Venue', venueName],
+      ['Expected Attendance', g.attendance || 'Not specified'],
+      ['Budget Ceiling (RM)', limit || 0],
+      ['Total Allocated (RM)', total || 0],
+      ['Contingency (RM)', contingency || 240],
+      ['Funding Gap (RM)', gap || 0],
+      ['Organiser Funds (RM)', organiserFunds || 0],
+      ['Generated', new Date().toLocaleString('en-MY')],
+      ['Run ID', state.pack.runId || state.id || 'N/A'],
+      ['', ''],
+      ['NOTE', 'All figures are planning estimates, not vendor quotes.'],
+      ['', ''],
+      ['Sponsor Support', first(b.sponsorship, b.sponsorFunds, 'Unconfirmed; no commitment implied')],
+      ['Funding Status', b.fundingStatus || 'To be confirmed'],
+      ['Gap Resolution', first(b.gapResolution, b.fundingPlan, b.notes, 'Verify organiser funds; reduce spend if gap remains.')],
+    ];
+    const ws0 = XLSX.utils.aoa_to_sheet(summaryData);
+    ws0['!cols'] = [{ wch: 22 }, { wch: 50 }];
+
+    // ── Sheet 2: Budget Breakdown (with % of total) ─────────────
+    const breakdownData = [
+      ['Category', 'Amount (RM)', '% of Total', 'Quantity', 'Basis / Notes', 'Running Total (RM)'],
+    ];
+    let runningTotal = 0;
+    for (const item of items) {
+      const amt = amount(item) || 0;
+      runningTotal += amt;
+      const pct = total > 0 ? Math.round((amt / total) * 100 * 100) / 100 : 0;
+      breakdownData.push([
+        first(item.category, item.name, item.item, 'Allocation'),
+        amt,
+        pct,
+        first(item.quantity, item.qty, '') || '',
+        first(item.basis, item.notes, item.description, item.rationale, item.assumption, item.status, '') || '',
+        Math.round(runningTotal * 100) / 100,
+      ]);
+    }
+    breakdownData.push([]);
+    breakdownData.push(['SUMMARY', '', '', '', '', '']);
+    breakdownData.push(['Budget ceiling (limit)', limit || 0, '', '', 'RM planning ceiling', '']);
+    breakdownData.push(['Allocated total', total || 0, '100%', '', 'Sum of all allocations', '']);
+    breakdownData.push(['Contingency reserve', contingency || 240, '', '', 'Protected planning reserve', '']);
+    breakdownData.push(['Funding gap', gap || 0, '', '', 'Amount to resolve', '']);
+    breakdownData.push(['Organiser funds', organiserFunds || 0, '', '', 'Available from organiser', '']);
+    breakdownData.push(['Net position', ((organiserFunds || 0) - (total || 0)), '', '', 'Organiser funds minus allocated total', '']);
+    const ws1 = XLSX.utils.aoa_to_sheet(breakdownData);
+    ws1['!cols'] = [{ wch: 28 }, { wch: 15 }, { wch: 12 }, { wch: 10 }, { wch: 40 }, { wch: 18 }];
+
+    // ── Sheet 3: Funding & Guardrails ────────────────────────────
+    const fundingData = [
+      ['Funding Source', 'Amount (RM)', 'Status', 'Notes'],
+      ['Organiser funds', organiserFunds || 0, first(b.fundingStatus, 'To confirm'), 'Proposed default: 70% of budget'],
+      ['Sponsor support (in-kind)', '', 'Unconfirmed', first(b.sponsorship, b.sponsorFunds, 'No commitment implied')],
+      ['Contingency reserve', contingency || 240, 'Protected', 'Do not spend without approval'],
+      ['Funding gap', gap || 0, 'To resolve', first(b.gapResolution, b.fundingPlan, 'Reduce spend or secure sponsor support')],
+      [],
+      ['Guardrails', '', '', ''],
+      ['Budget ceiling', limit || 0, 'Hard limit', 'Exceeding requires approval'],
+      ['Total allocated', total || 0, 'Committed', 'Sum of all category allocations'],
+      ['Remaining (ceiling - allocated)', ((limit || 0) - (total || 0)), 'Available', 'Unallocated headroom'],
+      ['Contingency policy', '', '', first(b.contingencyPolicy, b.contingency?.notes, b.contingencyPercent != null ? `${b.contingencyPercent}% reserve` : 'Standard 12% reserve')],
+      ['Sponsor accounting', '', '', first(b.sponsorAccounting, 'In-kind support recorded at fair value; no cash assumed without written confirmation')],
+    ];
+    const ws2 = XLSX.utils.aoa_to_sheet(fundingData);
+    ws2['!cols'] = [{ wch: 28 }, { wch: 15 }, { wch: 15 }, { wch: 50 }];
+
+    // ── Sheet 4: Chart Data ─────────────────────────────────────
+    const chartData = [
+      ['Category', 'Spend (RM)', 'Ceiling (RM)', '% Used'],
+      ...items.map((item) => {
+        const amt = amount(item) || 0;
+        const ceil = Number(limit) || 2000;
+        return [first(item.category, item.name, item.item, 'Allocation'), amt, ceil, ceil > 0 ? Math.round((amt / ceil) * 100 * 100) / 100 : 0];
+      }),
+    ];
+    const ws3 = XLSX.utils.aoa_to_sheet(chartData);
+    ws3['!cols'] = [{ wch: 28 }, { wch: 15 }, { wch: 15 }, { wch: 10 }];
+    if (items.length > 0) ws3['!autofilter'] = { ref: `A1:D${chartData.length}` };
+
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws0, 'Event Summary');
+    XLSX.utils.book_append_sheet(wb, ws1, 'Budget Breakdown');
+    XLSX.utils.book_append_sheet(wb, ws2, 'Funding & Guardrails');
+    XLSX.utils.book_append_sheet(wb, ws3, 'Chart Data');
+
+    const fileName = `EventPilot-Budget-${(g.eventType || 'event').replace(/\s+/g, '-')}.xlsx`;
+    XLSX.writeFile(wb, fileName);
+    notice('Budget spreadsheet downloaded with 4 sheets: Summary, Breakdown, Funding, and Chart Data.');
+  }
+
   async function request(url, options = {}) {
     const response = await fetch(url, { ...options, headers: { ...(options.body ? { 'Content-Type': 'application/json' } : {}), ...options.headers } });
     const content = await response.json().catch(() => ({}));
@@ -111,7 +442,7 @@
   function updateRosterStatus() {
     try { const roster = parseCSV($('roster').value); $('roster-status').textContent = roster.length ? `${roster.length} ${state.demo ? 'DEMO ' : ''}participant(s). ${state.demo ? 'Illustrative availability only; not real confirmed people. ' : ''}Email addresses are excluded from public pack sharing.` : 'No roster supplied. People and MC availability will remain unconfirmed.'; } catch (error) { $('roster-status').textContent = error.message; }
   }
-  function setBusy(busy) { $('run-button').disabled = busy; $('run-example').disabled = busy; $('replay-button').disabled = busy; $('run-button').textContent = busy ? 'Specialists are working…' : 'Build my event pack ↗'; }
+  function setBusy(busy) { $('run-button').disabled = busy; $('run-example').disabled = busy; $('replay-button').disabled = busy; $('run-button').textContent = busy ? 'Specialists are working\u2026' : 'Build my event pack \u2191'; }
   function normalizedStatus(status) {
     const raw = String(status || 'waiting').toLowerCase();
     if (/^(done|completed|complete|success|succeeded|passed|finished)$/.test(raw)) return 'completed';
@@ -126,12 +457,12 @@
     return matches.find(([, pattern]) => pattern.test(input))?.[0] || input;
   }
   function renderDAG() {
-    const laneNames = ['01 · FRAME & SOURCE', '02 · PARALLEL DATE / COST / VENUE', '03 · PARALLEL SPECIALIST OUTPUTS', '04 · DRAFT / PROMO → VALIDATE'];
+    const laneNames = ['01 \u00b7 FRAME & SOURCE', '02 \u00b7 PARALLEL DATE / COST / VENUE', '03 \u00b7 PARALLEL SPECIALIST OUTPUTS', '04 \u00b7 DRAFT / PROMO \u2192 VALIDATE'];
     $('agent-dag').innerHTML = laneNames.map((name, lane) => `<div class="dag-lane"><div class="lane-title">${esc(name)}</div>${agents.filter((a) => a.lane === lane).map((a) => {
       const events = state.trace.filter((e) => resolveAgent(e) === a.id);
       const event = events.slice().reverse().find((e) => normalizedStatus(e.status) !== 'waiting') || events[events.length - 1]; const status = event ? normalizedStatus(event.status) : 'waiting';
       const statusText = event ? String(event.status || 'event received') : 'Not started';
-      return `<div class="agent-card ${esc(status)}"><div class="agent-top"><span class="agent-icon">${esc(a.icon)}</span><div><div class="agent-name">${esc(a.label)}</div><div class="agent-number">${esc(a.id)}</div></div></div><div class="agent-state"><span>${esc(statusText)}</span><span>${event ? status === 'completed' ? '✓' : status === 'failed' ? '!' : '↗' : '—'}</span></div><div class="agent-deps">${a.deps.length ? `← ${esc(a.deps.join(' + '))}` : '← event brief'}</div></div>`;
+      return `<div class="agent-card ${esc(status)}"><div class="agent-top"><span class="agent-icon">${esc(a.icon)}</span><div><div class="agent-name">${esc(a.label)}</div><div class="agent-number">${esc(a.id)}</div></div></div><div class="agent-state"><span>${esc(statusText)}</span><span>${event ? status === 'completed' ? '\u2713' : status === 'failed' ? '!' : '\u2191' : '\u2014'}</span></div><div class="agent-deps">${a.deps.length ? `\u2190 ${esc(a.deps.join(' + '))}` : '\u2190 event brief'}</div></div>`;
     }).join('')}</div>`).join('');
   }
   function renderTrace() {
@@ -145,7 +476,7 @@
     }).join('') : '<p class="empty-trace">No execution yet. Start a plan to see actual specialist and tool events here.</p>';
     const checkpoints = state.trace.filter((event) => /re.?plan|repair|cross_specialist_checks|revalidate/.test(`${event.status || ''} ${event.tool || ''}`));
     $('workflow-checks').hidden = !checkpoints.length;
-    $('workflow-checks').innerHTML = checkpoints.slice(-8).map((event) => `<div class="workflow-check"><span>${badge(/re.?plan|repair/.test(`${event.status} ${event.tool}`) ? 'Real re-plan / repair' : 'Real validation', /re.?plan|repair/.test(`${event.status} ${event.tool}`) ? 'warning' : 'info')}</span><div><strong>${esc(event.tool || 'Runtime check')} · ${esc(event.status || 'event')}</strong><p>${esc(event.message || 'Actual runtime event')}</p></div></div>`).join('');
+    $('workflow-checks').innerHTML = checkpoints.slice(-8).map((event) => `<div class="workflow-check"><span>${badge(/re.?plan|repair/.test(`${event.status} ${event.tool}`) ? 'Real re-plan / repair' : 'Real validation', /re.?plan|repair/.test(`${event.status} ${event.tool}`) ? 'warning' : 'info')}</span><div><strong>${esc(event.tool || 'Runtime check')} \u00b7 ${esc(event.status || 'event')}</strong><p>${esc(event.message || 'Actual runtime event')}</p></div></div>`).join('');
     renderDAG();
   }
   function appendTrace(event) {
@@ -157,9 +488,9 @@
   function runStatus(status) {
     state.status = status;
     $('run-status').className = `run-status ${normalizedStatus(status) === 'completed' ? 'complete' : normalizedStatus(status) === 'failed' ? 'failed' : normalizedStatus(status) === 'running' ? 'running' : ''}`;
-    $('run-status').textContent = state.replay ? `Recorded replay · ${status}` : label(status);
+    $('run-status').textContent = state.replay ? `Recorded replay \u00b7 ${status}` : label(status);
     $('run-meta').hidden = !state.id;
-    $('run-meta').innerHTML = state.id ? `<span>Run <code>${esc(state.id)}</code> · ${state.replay ? '<strong>Replay of a real recorded run</strong>' : 'Actual tool-driven execution'}</span><span>Read-only sharing · no roster emails in pack</span>` : '';
+    $('run-meta').innerHTML = state.id ? `<span>Run <code>${esc(state.id)}</code> \u00b7 ${state.replay ? '<strong>Replay of a real recorded run</strong>' : 'Actual tool-driven execution'}</span><span>Read-only sharing \u00b7 no roster emails in pack</span>` : '';
   }
   function closeStream() { if (state.source) { state.source.close(); state.source = null; } }
   function complete(pack) {
@@ -167,8 +498,8 @@
     if (!state.pack) { notice('The run completed but no Event Pack was returned. Reload the saved run to retry.', true); return; }
     $('results').hidden = false; $('empty-results').hidden = true;
     const goal = state.pack.goal || {};
-    $('results-title').textContent = first(state.pack.title, goal.eventType ? `${goal.eventType} · Event Pack` : null, 'The Event Pack');
-    $('results-subtitle').textContent = `Proposed plan · ${first(goal.campus, 'Taylor’s University')} · commitments and availability require confirmation.`;
+    $('results-title').textContent = first(state.pack.title, goal.eventType ? `${goal.eventType} \u00b7 Event Pack` : null, 'The Event Pack');
+    $('results-subtitle').textContent = `Proposed plan \u00b7 ${first(goal.campus, 'Taylor\u2019s University')} \u00b7 commitments and availability require confirmation.`;
     $('pdf-link').href = `/api/runs/${encodeURIComponent(state.id)}/pdf`;
     renderTabs(); renderContent();
     if (state.pack.engine) $('engine-description').textContent = typeof state.pack.engine === 'string' ? state.pack.engine : first(state.pack.engine.description, state.pack.engine.disclosure, state.pack.engine.note, 'WorkBuddy keyless LLM is not activated. Deterministic tool-driven specialist runtime; no fabricated LLM output.');
@@ -193,7 +524,20 @@
       if (mode !== 'replay' && !prompt) { $('prompt').focus(); notice('Add an event brief first.'); return; }
       if (mode !== 'replay' && prompt.length > 3000) throw new Error('Please keep your event brief within 3,000 characters.');
       const roster = mode === 'replay' ? [] : parseCSV($('roster').value);
-      const overrides = mode === 'replay' ? {} : formOverrides();
+      // Merge: interpreted values as defaults, then form overrides take precedence
+      let overrides = {};
+      if (mode !== 'replay') {
+        const interp = interpretPrompt(prompt) || {};
+        const formOv = formOverrides();
+        // Start with interpreted values (clean out nulls/empties)
+        for (const [k, v] of Object.entries(interp)) {
+          if (v !== null && v !== '' && v !== undefined && k !== 'eventName') {
+            overrides[k] = v;
+          }
+        }
+        // Form overrides take precedence over interpreted values
+        overrides = { ...overrides, ...formOv };
+      }
       if (overrides.dateStart && overrides.dateEnd && overrides.dateStart > overrides.dateEnd) throw new Error('The earliest date must be on or before the latest date.');
       if (overrides.organiserFundsRM != null && overrides.budgetRM != null && overrides.organiserFundsRM > overrides.budgetRM) throw new Error('Organiser funds cannot exceed the planning budget cap.');
       closeStream(); state.trace = []; state.pack = null; state.metrics = null; state.gmailResult = null; state.replay = mode === 'replay'; state.id = null; $('results').hidden = true; $('empty-results').hidden = false; $('notice').hidden = true; setBusy(true); runStatus('running'); renderTrace(); $('trace-details').open = true;
@@ -220,8 +564,8 @@
     const date = typeof chosen === 'string' ? chosen : first(chosen?.date, chosen?.label, chosen?.dateISO, p.dateDecision?.chosenDate);
     const budget = p.budget || {};
     const intro = typeof p.summary === 'string' ? callout('A practical starting point', p.summary, 'info') : p.summary ? card('Plan summary', valueHTML(p.summary), true) : '';
-    const kpis = [["Preferred date", date || 'Pending', 'Proposed · see date comparison'], ['Planning budget', rm(first(budget.total, budget.totalRM, g.budgetRM)), 'Allocations, not vendor quotations'], ['Expected guests', first(g.attendance, 'Unconfirmed'), 'Planning assumption'], ['Venue', first(p.venues?.selected?.name, p.venues?.recommended?.name, 'To be confirmed'), 'No booking has been made']];
-    return `${intro}<div class="kpi-grid">${kpis.map(([title, value, note]) => `<div class="kpi"><div class="kpi-label">${esc(title)}</div><div class="kpi-value"${String(value).length > 23 ? ' style="font-size:17px"' : ''}>${esc(value)}</div><div class="kpi-note">${esc(note)}</div></div>`).join('')}</div><div class="content-grid">${card('Your brief, translated', facts([['Event type', g.eventType], ['Cause / purpose', g.cause], ['Campus', g.campus], ['Date window', g.dateStart && g.dateEnd ? `${g.dateStart} to ${g.dateEnd}` : first(g.dateStart, g.dateEnd)], ['Budget cap', rm(g.budgetRM)], ['Attendance', g.attendance]]))}${card('Assumptions to confirm', valueHTML(p.assumptions), false, 'Proposed defaults are editable. No campus calendar clearance, sponsor agreement or vendor price is implied.')}${card('Validation & re-planning', valueHTML(p.validation), false, 'Reported results of actual validation — inspect the execution trace for tools and re-plan steps.')}${card('Next real-world checks', valueHTML(first(p.rechecks, p.pendingChecks)), false, 'Weather, venue, attendance and sponsor confirmations are still your responsibility.')}${p.metrics || state.metrics ? card('Recorded run metrics', valueHTML(p.metrics || state.metrics), true, 'These values are reported by the runtime, not simulated counters.') : ''}</div>`;
+    const kpis = [["Preferred date", date || 'Pending', 'Proposed \u00b7 see date comparison'], ['Planning budget', rm(first(budget.total, budget.totalRM, g.budgetRM)), 'Allocations, not vendor quotations'], ['Expected guests', first(g.attendance, 'Unconfirmed'), 'Planning assumption'], ['Venue', first(p.venues?.selected?.name, p.venues?.recommended?.name, 'To be confirmed'), 'No booking has been made']];
+    return `${intro}<div class="kpi-grid">${kpis.map(([title, value, note]) => `<div class="kpi"><div class="kpi-label">${esc(title)}</div><div class="kpi-value"${String(value).length > 23 ? ' style="font-size:17px"' : ''}>${esc(value)}</div><div class="kpi-note">${esc(note)}</div></div>`).join('')}</div><div class="content-grid">${card('Your brief, translated', facts([['Event type', g.eventType], ['Cause / purpose', g.cause], ['Campus', g.campus], ['Date window', g.dateStart && g.dateEnd ? `${g.dateStart} to ${g.dateEnd}` : first(g.dateStart, g.dateEnd)], ['Budget cap', rm(g.budgetRM)], ['Attendance', g.attendance]]))}${card('Assumptions to confirm', valueHTML(p.assumptions), false, 'Proposed defaults are editable. No campus calendar clearance, sponsor agreement or vendor price is implied.')}${card('Validation & re-planning', valueHTML(p.validation), false, 'Reported results of actual validation \u2014 inspect the execution trace for tools and re-plan steps.')}${card('Next real-world checks', valueHTML(first(p.rechecks, p.pendingChecks)), false, 'Weather, venue, attendance and sponsor confirmations are still your responsibility.')}${p.metrics || state.metrics ? card('Recorded run metrics', valueHTML(p.metrics || state.metrics), true, 'These values are reported by the runtime, not simulated counters.') : ''}</div>`;
   }
   function dateDecision() {
     const d = state.pack.dateDecision || {}, chosen = d.chosen;
@@ -230,13 +574,149 @@
     const rows = candidates.map((c) => typeof c !== 'object' ? [esc(c), missing(), missing(), missing()] : [esc(first(c.date, c.label, c.dateISO, 'Unspecified date')), valueHTML(first(c.score, c.totalScore, c.weightedScore)), valueHTML(first(c.reasons, c.reason, c.rationale, c.factors, c.scores, c.breakdown)), `${badge(c.blocked ? 'Excluded: cited clash' : first(c.status, 'Proposed'), c.blocked ? 'error' : 'warning')}<p>${esc(c.examStatus ? `Exam status: ${c.examStatus}` : first(c.availability, c.risk, c.notes, 'Availability unconfirmed'))}</p>`]);
     return `${callout('A proposed date, not a booking', 'Historical weather patterns and supplied availability can support a choice, but do not prove campus clearance or future weather. Confirm the calendar and recheck a short-range forecast before committing.')}<div class="content-grid">${card('Preferred date', `${preferred ? `<div class="weather-number">${esc(preferred)}</div>` : missing('No date selected')}${valueHTML(chosen && typeof chosen === 'object' ? Object.fromEntries(Object.entries(chosen).filter(([k]) => !['date', 'dateISO', 'label'].includes(k))) : first(d.reason, d.rationale))}`)}${card('Backup dates', valueHTML(first(d.backups, d.alternatives)), false, 'Use if availability, weather or operational conditions change.')}${card('Candidate comparison', table(['Candidate date', 'Score', 'Decision factors', 'Status / caveats'], rows), true, 'Scores are relative planning comparisons. They are not forecast probabilities or confirmed free dates.')}${card('Scoring weights & rules', valueHTML(first(d.weights, d.criteria)), true)}${sources(d) ? card('Decision evidence', sources(d), true) : ''}</div>`;
   }
+  // === EVENT-TYPE-SPECIFIC TIMELINE TEMPLATES ===
+  function suggestedRunOfShow(eventType) {
+    const t = (eventType || '').toLowerCase();
+    const templates = {
+      'e-sports tournament': [
+        { time: '08:00', activity: 'Venue setup & equipment check', owner: 'Technical team', notes: 'Gaming rigs, monitors, network, streaming setup' },
+        { time: '09:00', activity: 'Player registration & check-in', owner: 'Registration desk', notes: 'Verify IDs, assign player tags, distribute wristbands' },
+        { time: '09:30', activity: 'Briefing & rules explanation', owner: 'Tournament admin', notes: 'Format, map pools, rules, disqualification criteria' },
+        { time: '10:00', activity: 'Group stage — Round 1', owner: 'Tournament admin', notes: 'Round-robin or Swiss format; 2-3 hours' },
+        { time: '13:00', activity: 'Lunch break', owner: 'F&B coordinator', notes: '30-45 minutes' },
+        { time: '13:45', activity: 'Group stage — Round 2', owner: 'Tournament admin', notes: 'Complete group standings' },
+        { time: '15:30', activity: 'Quarterfinals', owner: 'Tournament admin', notes: 'Best-of-3 single elimination' },
+        { time: '16:30', activity: 'Semifinals', owner: 'Tournament admin', notes: 'Best-of-3' },
+        { time: '17:30', activity: 'Grand Finals', owner: 'Tournament admin', notes: 'Best-of-5; livestream if available' },
+        { time: '18:30', activity: 'Awards ceremony & closing', owner: 'MC / Host', notes: 'Trophy/prize presentation, thank sponsors, photo session' },
+        { time: '19:00', activity: 'Teardown', owner: 'Technical team', notes: 'Pack equipment, clean venue' },
+      ],
+      'tournament': [
+        { time: '07:30', activity: 'Venue setup & registration opens', owner: 'Organising team', notes: 'Check equipment, signage, refreshments' },
+        { time: '08:30', activity: 'Participant briefing', owner: 'Tournament director', notes: 'Rules, safety, schedule' },
+        { time: '09:00', activity: 'Preliminary rounds', owner: 'Officials/Judges', notes: 'Groups or heats' },
+        { time: '12:00', activity: 'Lunch break', owner: 'F&B coordinator', notes: '45 minutes' },
+        { time: '13:00', activity: 'Knockout rounds', owner: 'Officials/Judges', notes: 'Quarterfinals and semifinals' },
+        { time: '15:30', activity: 'Final', owner: 'Officials/Judges', notes: 'Main event' },
+        { time: '16:30', activity: 'Awards & closing', owner: 'MC', notes: 'Prize presentation, photos' },
+        { time: '17:00', activity: 'Teardown', owner: 'Organising team', notes: 'Clean and pack' },
+      ],
+      'bazaar': [
+        { time: '07:00', activity: 'Booth setup', owner: 'Stall holders', notes: 'Tables, displays, pricing' },
+        { time: '08:30', activity: 'Final inspection & briefing', owner: 'Organising team', notes: 'Safety, layout, emergency exits' },
+        { time: '09:00', activity: 'Doors open — official welcome', owner: 'MC / Host', notes: 'Opening announcement' },
+        { time: '09:15', activity: 'Bazaar trading begins', owner: 'Stall holders', notes: 'Sales, promotions, activities' },
+        { time: '11:00', activity: 'Interactive session / games', owner: 'Activities team', notes: 'Audience engagement' },
+        { time: '13:00', activity: 'Lunch & entertainment', owner: 'MC / F&B', notes: 'Performance or activity during lunch' },
+        { time: '14:00', activity: 'Afternoon trading & activities', owner: 'Stall holders', notes: 'Final push for sales' },
+        { time: '15:30', activity: 'Auction / lucky draw', owner: 'MC', notes: 'Fundraising highlight' },
+        { time: '16:00', activity: 'Closing & thank-you', owner: 'MC / Host', notes: 'Announce totals, thank sponsors' },
+        { time: '16:30', activity: 'Booth teardown', owner: 'Stall holders', notes: 'Clean and vacate' },
+      ],
+      'workshop': [
+        { time: '08:30', activity: 'Registration & coffee', owner: 'Registration desk', notes: 'Name tags, materials' },
+        { time: '09:00', activity: 'Opening & introduction', owner: 'Facilitator', notes: 'Welcome, objectives, agenda' },
+        { time: '09:15', activity: 'Speaker session 1', owner: 'Speaker', notes: '45 min presentation' },
+        { time: '10:15', activity: 'Interactive exercise', owner: 'Facilitator', notes: 'Group activity or hands-on' },
+        { time: '11:00', activity: 'Tea break', owner: 'F&B coordinator', notes: '15 min' },
+        { time: '11:15', activity: 'Speaker session 2', owner: 'Speaker', notes: '45 min presentation' },
+        { time: '12:15', activity: 'Panel discussion / Q&A', owner: 'Facilitator', notes: 'Open floor' },
+        { time: '13:00', activity: 'Networking lunch', owner: 'F&B coordinator', notes: '45-60 min' },
+        { time: '14:00', activity: 'Practical workshop activity', owner: 'Facilitator', notes: 'Hands-on group work' },
+        { time: '15:30', activity: 'Group presentations & feedback', owner: 'Participants', notes: 'Share outputs' },
+        { time: '16:00', activity: 'Closing & certificates', owner: 'Facilitator', notes: 'Summary, next steps, certificates' },
+      ],
+      'concert': [
+        { time: '14:00', activity: 'Sound check & technical rehearsal', owner: 'Technical team', notes: 'Audio, lighting, stage' },
+        { time: '16:00', activity: 'Doors open', owner: 'Front of house', notes: 'Ticket check, ushering' },
+        { time: '16:30', activity: 'Opening act', owner: 'MC / Opening performer', notes: '15-20 min warmup' },
+        { time: '17:00', activity: 'Main performance — Set 1', owner: 'Main performer(s)', notes: '45-60 min' },
+        { time: '18:00', activity: 'Intermission', owner: 'F&B / MC', notes: '15 min break, refreshments' },
+        { time: '18:15', activity: 'Main performance — Set 2', owner: 'Main performer(s)', notes: '45-60 min' },
+        { time: '19:15', activity: 'Encore', owner: 'Main performer(s)', notes: '1-2 songs' },
+        { time: '19:30', activity: 'Closing & thank-you', owner: 'MC', notes: 'Thank sponsors, announce totals' },
+        { time: '20:00', activity: 'Teardown', owner: 'Technical team', notes: 'Pack equipment, clean' },
+      ],
+      'showcase': [
+        { time: '09:00', activity: 'Setup & exhibit assembly', owner: 'Participants', notes: 'Booths, posters, demos' },
+        { time: '10:00', activity: 'Doors open & welcome', owner: 'MC / Host', notes: 'Opening remarks' },
+        { time: '10:15', activity: 'Showcase session 1', owner: 'Participants', notes: 'Rotating viewing of exhibits' },
+        { time: '11:30', activity: 'Lightning talks', owner: 'Selected presenters', notes: '5-min presentations' },
+        { time: '12:15', activity: 'Networking lunch', owner: 'F&B coordinator', notes: '45 min' },
+        { time: '13:00', activity: 'Showcase session 2', owner: 'Participants', notes: 'Continue exhibit viewing' },
+        { time: '14:30', activity: 'Judging / peer review', owner: 'Judges / Facilitator', notes: 'Evaluate exhibits' },
+        { time: '15:30', activity: 'Awards & closing', owner: 'MC', notes: 'Present awards, thank participants' },
+        { time: '16:00', activity: 'Teardown', owner: 'Participants', notes: 'Clean and pack' },
+      ],
+      'hackathon': [
+        { time: '08:00', activity: 'Check-in & breakfast', owner: 'Registration desk', notes: 'Team confirmation, wristbands' },
+        { time: '09:00', activity: 'Opening ceremony', owner: 'MC / Host', notes: 'Rules, theme reveal, API demos' },
+        { time: '10:00', activity: 'Hacking begins', owner: 'Teams', notes: 'Build phase starts' },
+        { time: '13:00', activity: 'Lunch', owner: 'F&B coordinator', notes: 'Working lunch' },
+        { time: '14:00', activity: 'Mentoring round', owner: 'Mentors', notes: 'Office hours for teams' },
+        { time: '18:00', activity: 'Dinner & mini-event', owner: 'MC', notes: 'Lightning talks or games' },
+        { time: '22:00', activity: 'Late-night coding', owner: 'Teams', notes: 'Optional overnight' },
+        { time: '08:00', activity: 'Breakfast (Day 2)', owner: 'F&B coordinator', notes: 'Final sprint' },
+        { time: '10:00', activity: 'Hacking ends — submission', owner: 'Teams', notes: 'Code freeze' },
+        { time: '10:30', activity: 'Judging round 1', owner: 'Judges', notes: 'Initial screening' },
+        { time: '12:00', activity: 'Finalist presentations', owner: 'Finalist teams', notes: '5-min demos to panel' },
+        { time: '13:00', activity: 'Awards & closing', owner: 'MC', notes: 'Winners announced, prizes' },
+      ],
+      'food fair': [
+        { time: '07:00', activity: 'Vendor setup & food prep', owner: 'Food vendors', notes: 'Stalls, cooking, hygiene check' },
+        { time: '08:30', activity: 'Final inspection', owner: 'Organising team', notes: 'Safety, fire, health compliance' },
+        { time: '09:00', activity: 'Doors open & opening ceremony', owner: 'MC', notes: 'Welcome, food safety briefing' },
+        { time: '09:15', activity: 'Food trading begins', owner: 'Food vendors', notes: 'Sales open to public' },
+        { time: '11:00', activity: 'Cooking demonstration', owner: 'Guest chef', notes: '30-min demo' },
+        { time: '12:00', activity: 'Peak lunch service', owner: 'Food vendors', notes: 'Busiest period' },
+        { time: '14:00', activity: 'Eating contest / food game', owner: 'MC', notes: 'Audience activity' },
+        { time: '15:00', activity: 'Final sales & cleanup prep', owner: 'Food vendors', notes: 'Last orders' },
+        { time: '15:30', activity: 'Closing & thank-you', owner: 'MC', notes: 'Announce totals, thank vendors' },
+        { time: '16:00', activity: 'Teardown', owner: 'Food vendors', notes: 'Clean, dispose waste properly' },
+      ],
+      'cultural night': [
+        { time: '17:00', activity: 'Backstage prep & sound check', owner: 'Technical team', notes: 'Audio, costumes, props' },
+        { time: '18:30', activity: 'Doors open', owner: 'Front of house', notes: 'Ticket check, ushering' },
+        { time: '19:00', activity: 'Opening performance', owner: 'MC / Performers', notes: 'Welcome dance or song' },
+        { time: '19:15', activity: 'Cultural performance — Act 1', owner: 'Performers', notes: 'Traditional performances' },
+        { time: '20:00', activity: 'Intermission', owner: 'F&B / MC', notes: '15 min, refreshments' },
+        { time: '20:15', activity: 'Cultural performance — Act 2', owner: 'Performers', notes: 'Contemporary fusion' },
+        { time: '21:00', activity: 'Audience participation segment', owner: 'MC', notes: 'Interactive cultural activity' },
+        { time: '21:30', activity: 'Finale & thank-you', owner: 'All performers', notes: 'Group performance, sponsors' },
+        { time: '22:00', activity: 'Teardown', owner: 'Technical team', notes: 'Pack equipment, clean' },
+      ],
+    };
+    // Find matching template
+    for (const [key, sched] of Object.entries(templates)) {
+      if (t.includes(key) || t === key) return { type: key, schedule: sched };
+    }
+    // Default generic template
+    return { type: 'generic', schedule: [
+      { time: '08:00', activity: 'Venue setup', owner: 'Organising team', notes: 'Equipment, signage, refreshments' },
+      { time: '09:00', activity: 'Registration & welcome', owner: 'MC / Host', notes: 'Check-in, opening remarks' },
+      { time: '09:30', activity: 'Main activity — Session 1', owner: 'Facilitator', notes: 'Core programme' },
+      { time: '12:00', activity: 'Lunch break', owner: 'F&B coordinator', notes: '45-60 min' },
+      { time: '13:00', activity: 'Main activity — Session 2', owner: 'Facilitator', notes: 'Continue programme' },
+      { time: '15:00', activity: 'Interactive segment', owner: 'MC', notes: 'Audience engagement' },
+      { time: '16:00', activity: 'Closing & awards', owner: 'MC', notes: 'Thank sponsors, wrap-up' },
+      { time: '16:30', activity: 'Teardown', owner: 'Organising team', notes: 'Clean and pack' },
+    ]};
+  }
+
   function timeline() {
     const programme = state.pack.programme || state.pack.program || {};
     const runOfShow = array(first(programme.runOfShow, programme.timeline));
     const countdown = array(first(programme.countdown, programme.preEvent));
-    const show = runOfShow.map((item) => typeof item === 'object' ? [esc(first(item.time, item.start, item.startTime, 'TBC')), esc(first(item.activity, item.title, item.task, item.name, 'Activity')), valueHTML(first(item.owner, item.role, item.responsible)), valueHTML(first(item.notes, item.description, item.durationMinutes != null ? `${item.durationMinutes} minutes · ${item.status || 'Proposed'}` : undefined, item.duration, item.end))] : [missing(), esc(item), missing(), missing()]);
-    const tasks = countdown.map((item) => typeof item === 'object' ? `<li class="timeline-item"><div class="timeline-time">${esc(first(item.label, item.when, item.daysBefore, item.date, item.time, item.deadline, 'TBC'))}</div><div class="timeline-copy"><strong>${esc(first(item.action, item.task, item.activity, item.title, item.name, 'Planning task'))}</strong><p>${esc([item.owner || item.responsible || 'Owner to confirm', item.date, item.status].filter(Boolean).join(' · '))}</p></div></li>` : `<li class="timeline-item"><div class="timeline-time">Before event</div><div class="timeline-copy">${esc(item)}</div></li>`).join('');
-    return `${callout('An editable operational plan', 'Times and owners are proposed until the organisers, venue and participants confirm them.', 'info')}<div class="content-grid">${card('Event-day run of show', table(['Time', 'Activity', 'Owner', 'Notes / duration'], show), true)}${card('Countdown to event day', tasks ? `<ol class="countdown-list">${tasks}</ol>` : missing('No countdown supplied'))}${card('Programme details', valueHTML(Object.fromEntries(Object.entries(programme).filter(([key]) => !['runOfShow', 'timeline', 'countdown', 'preEvent'].includes(key)))))}${state.pack.venues ? card('Venue options & operations', valueHTML(state.pack.venues), true, 'Venue suitability is a proposal; contact the campus team for availability and approval.') : ''}</div>`;
+    const eventType = state.pack.goal?.eventType || '';
+    const show = runOfShow.map((item) => typeof item === 'object' ? [esc(first(item.time, item.start, item.startTime, 'TBC')), esc(first(item.activity, item.title, item.task, item.name, 'Activity')), valueHTML(first(item.owner, item.role, item.responsible)), valueHTML(first(item.notes, item.description, item.durationMinutes != null ? `${item.durationMinutes} minutes \u00b7 ${item.status || 'Proposed'}` : undefined, item.duration, item.end))] : [missing(), esc(item), missing(), missing()]);
+    const tasks = countdown.map((item) => typeof item === 'object' ? `<li class="timeline-item"><div class="timeline-time">${esc(first(item.label, item.when, item.daysBefore, item.date, item.time, item.deadline, 'TBC'))}</div><div class="timeline-copy"><strong>${esc(first(item.action, item.task, item.activity, item.title, item.name, 'Planning task'))}</strong><p>${esc([item.owner || item.responsible || 'Owner to confirm', item.date, item.status].filter(Boolean).join(' \u00b7 '))}</p></div></li>` : `<li class="timeline-item"><div class="timeline-time">Before event</div><div class="timeline-copy">${esc(item)}</div></li>`).join('');
+
+    // Generate event-type-specific suggested run of show
+    const suggested = suggestedRunOfShow(eventType);
+    const suggestedRows = suggested.schedule.map((s) => [esc(s.time), esc(s.activity), esc(s.owner), esc(s.notes)]);
+    const suggestedCard = card(`Suggested run of show for ${suggested.type === 'generic' ? 'this event' : suggested.type}`, table(['Time', 'Activity', 'Owner', 'Notes'], suggestedRows), true, 'This is a suggested timeline based on the event type. Edit it to fit your specific needs — times and owners are proposed until confirmed.');
+
+    return `${callout('An editable operational plan', 'Times and owners are proposed until the organisers, venue and participants confirm them.', 'info')}<div class="content-grid">${card('Event-day run of show', table(['Time', 'Activity', 'Owner', 'Notes / duration'], show), true)}${suggestedCard}${card('Countdown to event day', tasks ? `<ol class="countdown-list">${tasks}</ol>` : missing('No countdown supplied'))}${card('Programme details', valueHTML(Object.fromEntries(Object.entries(programme).filter(([key]) => !['runOfShow', 'timeline', 'countdown', 'preEvent'].includes(key)))))}${state.pack.venues ? card('Venue options & operations', valueHTML(state.pack.venues), true, 'Venue suitability is a proposal; contact the campus team for availability and approval.') : ''}</div>`;
   }
   function budgetTab() {
     const b = state.pack.budget || {}, items = array(first(b.items, b.allocations));
@@ -246,42 +726,67 @@
     const denominator = Math.max(1, Number(total) || 0, ...items.map((i) => amount(i) || 0));
     const bars = items.map((item) => `<div class="budget-bar"><div class="budget-bar-header"><span>${esc(first(item.category, item.name, item.item, 'Allocation'))}</span><strong>${esc(rm(amount(item)))}</strong></div><div class="budget-track"><div class="budget-fill" style="width:${Math.max(0, Math.min(100, (amount(item) || 0) / denominator * 100))}%"></div></div></div>`).join('');
     const rows = items.map((item) => [esc(first(item.category, item.name, item.item, 'Allocation')), esc(rm(amount(item))), valueHTML(first(item.quantity, item.qty)), valueHTML(first(item.basis, item.notes, item.description, item.rationale, item.assumption, item.status))]);
-    return `${callout('Planning allocations — not vendor quotes', 'Every figure is in Malaysian ringgit (RM). Obtain real quotes before spending. Prospective sponsor support is unconfirmed and must not be treated as secured income.')}<div class="export-excel-block"><button class="button primary" id="export-budget-excel" type="button">Export budget to Excel <span aria-hidden="true">↓</span></button><p class="export-excel-note">Downloads a spreadsheet you can open in Excel or Google Sheets.</p></div><div class="kpi-grid">${[['Budget limit', rm(limit)], ['Allocated total', rm(total)], ['Contingency', rm(first(b.contingencyRM, b.contingency?.amountRM, b.contingency?.amount, b.contingency))], ['Funding gap', rm(first(b.gapRM, b.gap?.amountRM, b.gap))]].map(([title, value]) => `<div class="kpi"><div class="kpi-label">${esc(title)}</div><div class="kpi-value">${esc(value)}</div></div>`).join('')}</div><div class="content-grid">${card('Where the budget goes', bars ? `<div class="budget-bars">${bars}</div><p class="budget-legend">Bar widths show the share of the recorded allocation total.</p>` : missing('No allocations supplied'))}${card('Funding & guardrails', facts([['Organiser funds', typeof b.organiserFunds === 'object' ? b.organiserFunds : rm(first(b.organiserFundsRM, b.organiserFunds))], ['Sponsor support', first(b.sponsorship, b.sponsorFunds, 'Unconfirmed; no commitment implied')], ['Funding status', b.fundingStatus], ['Gap resolution', first(b.gapResolution, b.fundingPlan, b.notes, 'Verify organiser funds and secure written support; reduce spend if the gap remains.')], ['Contingency policy', first(b.contingencyPolicy, b.contingency?.notes, b.contingencyPercent != null ? `${b.contingencyPercent}% protected planning reserve` : undefined)], ['Scenario', b.scenario], ['Sponsor accounting', b.sponsorAccounting]]))}${card('Allocation breakdown', table(['Item / category', 'Allocation (RM)', 'Quantity', 'Basis / caveats'], rows), true)}</div>`;
+    return `${callout('Planning allocations \u2014 not vendor quotes', 'Every figure is in Malaysian ringgit (RM). Obtain real quotes before spending. Prospective sponsor support is unconfirmed and must not be treated as secured income.')}<div class="kpi-grid">${[['Budget limit', rm(limit)], ['Allocated total', rm(total)], ['Contingency', rm(first(b.contingencyRM, b.contingency?.amountRM, b.contingency?.amount, b.contingency))], ['Funding gap', rm(first(b.gapRM, b.gap?.amountRM, b.gap))]].map(([title, value]) => `<div class="kpi"><div class="kpi-label">${esc(title)}</div><div class="kpi-value">${esc(value)}</div></div>`).join('')}</div><div class="content-grid">${card('Where the budget goes', bars ? `<div class="budget-bars">${bars}</div><p class="budget-legend">Bar widths show the share of the recorded allocation total.</p>` : missing('No allocations supplied'))}${card('Funding & guardrails', facts([['Organiser funds', typeof b.organiserFunds === 'object' ? b.organiserFunds : rm(first(b.organiserFundsRM, b.organiserFunds))], ['Sponsor support', first(b.sponsorship, b.sponsorFunds, 'Unconfirmed; no commitment implied')], ['Funding status', b.fundingStatus], ['Gap resolution', first(b.gapResolution, b.fundingPlan, b.notes, 'Verify organiser funds and secure written support; reduce spend if the gap remains.')], ['Contingency policy', first(b.contingencyPolicy, b.contingency?.notes, b.contingencyPercent != null ? `${b.contingencyPercent}% protected planning reserve` : undefined)], ['Scenario', b.scenario], ['Sponsor accounting', b.sponsorAccounting]]))}${card('Allocation breakdown', table(['Item / category', 'Allocation (RM)', 'Quantity', 'Basis / caveats'], rows), true)}</div><div class="excel-export"><h4>Export budget to Excel</h4><button class="button secondary" id="excel-export-btn" type="button">Download .xlsx \u2193</button><p class="excel-note">Downloads a spreadsheet you can open in Excel or Google Sheets.</p></div>`;
   }
+
+  // === SIMPLIFIED WEATHER TAB ===
   function weatherTab() {
     const w = state.pack.weather || {}, risks = state.pack.risks || {};
     const forecast = w.mode === 'forecast';
     const rain = first(w.rainProbability, number(w.probability) == null ? undefined : `${Math.round(Number(w.probability) * 100)}%`);
     const sampleYears = array(first(w.sampleYears, w.years));
     const validYears = sampleYears.map(Number).filter(Number.isFinite);
-    const sampled = validYears.length ? `${Math.min(...validYears)}–${Math.max(...validYears)}` : 'Not available';
-    const rows = array(risks.register).map((r) => [esc(first(r.risk, r.name, 'Risk')), esc(first(r.score, '—')), esc(first(r.mitigation, 'Pending')), esc(first(r.trigger, 'Pending')), esc(first(r.contingency, 'Pending')), esc(first(r.owner, 'Unassigned'))]);
-    const samples = array(w.samples).map((s) => [esc(first(s.date, 'Unknown date')), esc(first(s.precipitationMm, 'Unavailable')), esc(first(s.tempMaxC, 'Unavailable')), esc(first(s.tempMeanC, 'Unavailable'))]);
+    const sampled = validYears.length ? `${Math.min(...validYears)}\u2013${Math.max(...validYears)}` : 'Not available';
 
-    // Determine a single rain-risk indicator (Low / Medium / High)
-    let rainRisk = 'Medium', riskNote = 'Plan an indoor backup';
-    const rainNum = number(w.rainProbability != null ? w.rainProbability : w.probability);
-    if (rainNum !== null) {
-      if (rainNum < 0.25) { rainRisk = 'Low'; riskNote = 'Low rain risk; outdoor plan is reasonable with a light backup'; }
-      else if (rainNum < 0.50) { rainRisk = 'Medium'; riskNote = 'Moderate rain risk; plan an indoor backup'; }
-      else { rainRisk = 'High'; riskNote = 'High rain risk; plan an indoor backup or rain contingency'; }
-    }
-    const riskBadge = `<span class="rain-risk-badge rain-risk-${rainRisk.toLowerCase()}">${esc(rainRisk)}</span>`;
+    // Calculate rain-risk level
+    let rainPct = 0;
+    if (typeof rain === 'number') rainPct = rain;
+    else if (typeof rain === 'string' && rain.endsWith('%')) rainPct = Number(rain.slice(0, -1));
+    else if (number(w.probability) != null) rainPct = Math.round(number(w.probability) * 100);
 
-    // Candidates from dateDecision for the full evidence toggle
-    const d = state.pack.dateDecision || {};
-    const candidates = array(d.candidates);
-    const candidateRows = candidates.map((c) => typeof c !== 'object' ? [esc(c), missing(), missing(), missing()] : [esc(first(c.date, c.label, c.dateISO, 'Unspecified date')), valueHTML(first(c.score, c.totalScore, c.weightedScore)), valueHTML(first(c.reasons, c.reason, c.rationale, c.factors, c.scores, c.breakdown)), `${badge(c.blocked ? 'Excluded: cited clash' : first(c.status, 'Proposed'), c.blocked ? 'error' : 'warning')}<p>${esc(c.examStatus ? `Exam status: ${c.examStatus}` : first(c.availability, c.risk, c.notes, 'Availability unconfirmed'))}</p>`]);
+    let riskLevel = 'Low', riskClass = 'low', riskRec = 'Outdoor plan is reasonable; monitor forecast closer to the date.';
+    if (rainPct >= 40) { riskLevel = 'High'; riskClass = 'high'; riskRec = 'Plan an indoor backup venue.'; }
+    else if (rainPct >= 20) { riskLevel = 'Medium'; riskClass = 'medium'; riskRec = 'Consider a covered venue or have an indoor backup.'; }
+    if (w.indoorRequired) { riskLevel = 'High'; riskClass = 'high'; riskRec = 'Plan an indoor backup venue.'; }
 
-    // Simplified summary: chosen date, rain-risk indicator, one-line recommendation
-    const chosenDate = first(w.date, d.chosen?.date, d.chosen?.dateISO, d.chosen?.label, d.chosenDate);
+    // Date for weather
+    const chosen = state.pack.dateDecision?.chosen;
+    const eventDate = typeof chosen === 'string' ? chosen : first(chosen?.date, chosen?.label, chosen?.dateISO, w.date);
 
-    return `${callout(forecast ? 'Near-term forecast evidence — not a guarantee.' : 'Historical climatology — not a forecast.', forecast ? 'Source returned a forecast within its horizon; recheck before the event.' : 'Based on historical patterns, not the actual weather on your event date.', 'warning')}<div class="weather-summary"><div class="weather-summary-item"><div class="weather-summary-label">Chosen date</div><div class="weather-summary-value">${chosenDate ? esc(chosenDate) : missing('No date selected')}</div></div><div class="weather-summary-item"><div class="weather-summary-label">Rain risk</div><div class="weather-summary-value">${riskBadge}</div></div><div class="weather-summary-item"><div class="weather-summary-label">Recommendation</div><div class="weather-summary-value weather-rec">${esc(riskNote)}</div></div></div><details class="weather-evidence-toggle"><summary>See full weather evidence</summary><div class="kpi-grid" style="margin-top:18px">${[['Rain measure', rain == null ? 'Unavailable' : `${rain}${typeof rain === 'number' ? '%' : ''}`, forecast ? 'Source forecast probability; not a guarantee' : 'Observed historical frequency; not a forecast'], ['Historical samples', first(w.sampleCount, 'Unavailable'), 'Missing observations are not filled'], ['Sample years', sampled, 'Actual reported year coverage'], ['Plan B', w.indoorRequired ? 'Indoor required' : 'Check evidence', 'Venue approval remains unconfirmed']].map(([title, value, note]) => `<div class="kpi"><div class="kpi-label">${esc(title)}</div><div class="kpi-value">${esc(value)}</div><div class="kpi-note">${esc(note)}</div></div>`).join('')}</div><div class="content-grid" style="margin-top:18px">${card('Weather interpretation & uncertainty', facts([['Evidence mode', w.mode], ['Event date', w.date], ['Source location', first(w.locationEvidence, w.location)], ['Average rainfall', w.precipitationMm != null ? `${w.precipitationMm} mm` : null], ['Average maximum temperature', w.avgTempMax != null ? `${w.avgTempMax} °C` : null], ['Decision', w.decision], ['Uncertainty', w.uncertainty], ['Warnings', w.warnings]]))}${card('Weather citations & rechecks', `${sources(w)}${facts([['Proposed thresholds', w.threshold], ['Reasoning', w.rationale], ['Next checks', first(w.recheck, w.recheckStatus, 'T-14 / T-7 / T-1 checks are pending; no automated notification is claimed')]])}`)}${samples.length ? card('Actual observed sample rows', table(['Sample date', 'Rain (mm)', 'Max temp (°C)', 'Mean temp (°C)'], samples), true) : ''}${candidateRows.length ? card('Candidate date comparison', table(['Candidate date', 'Score', 'Decision factors', 'Status / caveats'], candidateRows), true, 'Scores are relative planning comparisons, not forecast probabilities.') : ''}${card('Scoring weights & rules', valueHTML(first(d.weights, d.criteria)), true)}${sources(d) ? card('Decision evidence', sources(d), true) : ''}${card('Risk register & mitigations', rows.length ? table(['Risk', 'L × I', 'Mitigation', 'Trigger', 'Contingency', 'Owner'], rows) : valueHTML(risks), true, first(risks.scale, 'Risk scores are planner assessments, not empirical event probabilities.'))}${risks.planB ? card('Plan B playbooks', valueHTML(risks.planB), true) : ''}${card('Pending weather & operational rechecks', valueHTML(state.pack.rechecks), true)}</div></details>`;
+    // Simplified key info
+    const summaryHTML = `
+      <div class="content-grid">
+        ${card('Rain risk for proposed date', `
+          <div class="weather-summary">
+            <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+              ${eventDate ? `<div class="weather-number">${esc(eventDate)}</div>` : missing('No date selected')}
+              <span class="rain-risk ${riskClass}"><span class="dot"></span>${riskLevel}</span>
+            </div>
+            <p class="weather-rec">${esc(riskRec)}</p>
+            <p class="weather-disclaimer-short">${esc(forecast ? 'Near-term forecast evidence \u2014 not a guarantee; recheck before the event.' : 'Historical climatology, not a forecast \u2014 review sample size and years.')}</p>
+          </div>
+        `)}
+      </div>`;
+
+    // Full evidence behind toggle (all existing content preserved)
+    const fullEvidence = `
+      <div class="kpi-grid">${[['Rain measure', rain == null ? 'Unavailable' : `${rain}${typeof rain === 'number' ? '%' : ''}`, forecast ? 'Source forecast probability; not a guarantee' : 'Observed historical frequency; not a forecast'], ['Historical samples', first(w.sampleCount, 'Unavailable'), 'Missing observations are not filled'], ['Sample years', sampled, 'Actual reported year coverage'], ['Plan B', w.indoorRequired ? 'Indoor required' : 'Check evidence', 'Venue approval remains unconfirmed']].map(([title, value, note]) => `<div class="kpi"><div class="kpi-label">${esc(title)}</div><div class="kpi-value">${esc(value)}</div><div class="kpi-note">${esc(note)}</div></div>`).join('')}</div>
+      <div class="content-grid">
+        ${card('Weather interpretation & uncertainty', facts([['Evidence mode', w.mode], ['Event date', w.date], ['Source location', first(w.locationEvidence, w.location)], ['Average rainfall', w.precipitationMm != null ? `${w.precipitationMm} mm` : null], ['Average maximum temperature', w.avgTempMax != null ? `${w.avgTempMax} \u00b0C` : null], ['Decision', w.decision], ['Uncertainty', w.uncertainty], ['Warnings', w.warnings]]))}
+        ${card('Weather citations & rechecks', `${sources(w)}${facts([['Proposed thresholds', w.threshold], ['Reasoning', w.rationale], ['Next checks', first(w.recheck, w.recheckStatus, 'T-14 / T-7 / T-1 checks are pending; no automated notification is claimed')]])}`)}
+        ${(array(w.samples)).length ? card('Actual observed sample rows', table(['Sample date', 'Rain (mm)', 'Max temp (\u00b0C)', 'Mean temp (\u00b0C)'], (array(w.samples)).map((s) => [esc(first(s.date, 'Unknown date')), esc(first(s.precipitationMm, 'Unavailable')), esc(first(s.tempMaxC, 'Unavailable')), esc(first(s.tempMeanC, 'Unavailable'))])), true) : ''}
+        ${card('Risk register & mitigations', (() => { const rows = array(risks.register).map((r) => [esc(first(r.risk, r.name, 'Risk')), esc(first(r.score, '\u2014')), esc(first(r.mitigation, 'Pending')), esc(first(r.trigger, 'Pending')), esc(first(r.contingency, 'Pending')), esc(first(r.owner, 'Unassigned'))]); return rows.length ? table(['Risk', 'L \u00d7 I', 'Mitigation', 'Trigger', 'Contingency', 'Owner'], rows) : valueHTML(risks); })(), true, first(risks.scale, 'Risk scores are planner assessments, not empirical event probabilities.'))}
+        ${risks.planB ? card('Plan B playbooks', valueHTML(risks.planB), true) : ''}
+        ${card('Pending weather & operational rechecks', valueHTML(state.pack.rechecks), true)}
+      </div>`;
+
+    return `${summaryHTML}<details class="weather-toggle"><summary>See full weather evidence</summary><div style="padding:8px 14px 14px">${fullEvidence}</div></details>`;
   }
+
   function peopleTab() {
     const p = state.pack.people || {};
     const rows = array(first(p.roster, p.members)).map((m) => [esc(first(m.name, 'Name not supplied')), esc(first(m.role, 'Unassigned')), valueHTML(m.freeDates), `${badge(m.demo ? 'Demo only' : first(m.availabilityStatus, 'Unconfirmed'), 'warning')}<br>${esc(m.availableOnProposedDate === true ? 'Listed free on proposed date' : m.availableOnProposedDate === false ? 'Not listed free on proposed date' : 'Availability unknown')}`, esc(first(m.experienceScore, 'Not supplied'))]);
-    return `${callout('Availability is not assumed', 'Only an authorised supplied roster can establish stated availability. Suggested roles, student MCs and named demo entries are proposals, not confirmed participants. Private roster names and emails are redacted in the public pack; role aliases preserve the availability comparison.')}<div class="content-grid">${card('Preferred MC · not booked', p.topMC ? valueHTML(p.topMC) : missing('Supply an authorised MC roster to shortlist a real host.'))}${card('Backup MC · not booked', p.backupMC ? valueHTML(p.backupMC) : missing('No backup MC supplied or eligible.'))}${card('Organiser-supplied availability', rows.length ? table(['Public role alias', 'Role', 'Listed free dates', 'Availability caveat', 'Experience score'], rows) : missing('No roster supplied. No demo or real person is automatically assumed.'), true)}${card('Selection & confirmation rules', facts([['Availability status', p.availabilityStatus], ['Selection rule', p.selectionRule], ['Booking confirmed', p.bookingConfirmed], ['Demo data present', p.demo], ['Next actions', first(p.rechecks, p.pendingChecks, p.availabilityNotes, 'Ask organisers and MCs to confirm their availability and responsibilities.')]]), true)}</div>`;
+    return `${callout('Availability is not assumed', 'Only an authorised supplied roster can establish stated availability. Suggested roles, student MCs and named demo entries are proposals, not confirmed participants. Private roster names and emails are redacted in the public pack; role aliases preserve the availability comparison.')}<div class="content-grid">${card('Preferred MC \u00b7 not booked', p.topMC ? valueHTML(p.topMC) : missing('Supply an authorised MC roster to shortlist a real host.'))}${card('Backup MC \u00b7 not booked', p.backupMC ? valueHTML(p.backupMC) : missing('No backup MC supplied or eligible.'))}${card('Organiser-supplied availability', rows.length ? table(['Public role alias', 'Role', 'Listed free dates', 'Availability caveat', 'Experience score'], rows) : missing('No roster supplied. No demo or real person is automatically assumed.'), true)}${card('Selection & confirmation rules', facts([['Availability status', p.availabilityStatus], ['Selection rule', p.selectionRule], ['Booking confirmed', p.bookingConfirmed], ['Demo data present', p.demo], ['Next actions', first(p.rechecks, p.pendingChecks, p.availabilityNotes, 'Ask organisers and MCs to confirm their availability and responsibilities.')]]), true)}</div>`;
   }
   function draftItems() {
     const d = state.pack?.drafts;
@@ -299,10 +804,10 @@
   function sponsorTab() {
     const sponsorValue = state.pack.sponsors;
     const sponsorsList = Array.isArray(sponsorValue) ? array(sponsorValue) : array(first(sponsorValue?.shortlist, sponsorValue?.items, sponsorValue?.candidates, sponsorValue?.sponsors));
-    const sponsorsHTML = sponsorsList.length ? sponsorsList.map((s) => card(first(s.name, s.company, s.brand, 'Potential partner'), `<div class="badge-group">${badge('Potential sponsor · unconfirmed', 'warning')}${s.confidence ? badge(s.confidence, 'info') : ''}</div>${facts([['Fit / rationale', first(s.fit, s.rationale, s.reason, s.why)], ['Proposed ask', first(s.ask, s.proposedAsk, s.askRM != null ? rm(s.askRM) : undefined, s.supportType, s.offer)], ['Alternative tiers', s.tiers], ['Contact status', first(s.contactStatus, s.contact?.status, s.contactVerified ? 'Source-verified contact — review before outreach' : 'Email needed — use the official contact page')], ['Contact route', s.contactType], ['Evidence', first(s.evidence, s.sourceNotes, s.verifiedFacts, s.fitStatus)], ['Accounting', s.accounting]])}${sources(s)}`, false)).join('') : card('Sponsor research', valueHTML(sponsorValue), true);
+    const sponsorsHTML = sponsorsList.length ? sponsorsList.map((s) => card(first(s.name, s.company, s.brand, 'Potential partner'), `<div class="badge-group">${badge('Potential sponsor \u00b7 unconfirmed', 'warning')}${s.confidence ? badge(s.confidence, 'info') : ''}</div>${facts([['Fit / rationale', first(s.fit, s.rationale, s.reason, s.why)], ['Proposed ask', first(s.ask, s.proposedAsk, s.askRM != null ? rm(s.askRM) : undefined, s.supportType, s.offer)], ['Alternative tiers', s.tiers], ['Contact status', first(s.contactStatus, s.contact?.status, s.contactVerified ? 'Source-verified contact \u2014 review before outreach' : 'Email needed \u2014 use the official contact page')], ['Contact route', s.contactType], ['Evidence', first(s.evidence, s.sourceNotes, s.verifiedFacts, s.fitStatus)], ['Accounting', s.accounting]])}${sources(s)}`, false)).join('') : card('Sponsor research', valueHTML(sponsorValue), true);
     const drafts = draftItems();
-    const draftsHTML = drafts.map((d, index) => `<article class="draft-card"><h4>${esc(first(d.recipient, d.sponsor, d.company, d.name, d.title, `Outreach draft ${index + 1}`))}</h4><div class="badge-group">${badge('Draft only — never sent', 'info')}${d.type ? badge(label(d.type), 'info') : ''}${d.demo ? badge('Fictional demo recipient', 'warning') : ''}${!first(d.to, d.recipientEmail) ? badge('Recipient email needed', 'warning') : ''}</div>${facts([['Recipient', first(d.to, d.recipientEmail, 'Blank — verify an official email first')], ['Subject', first(d.subject, 'Event partnership enquiry')], ...(d.condition ? [['Use only when', d.condition]] : []), ...(d.sendAfterDays != null ? [['Suggested follow-up', `${d.sendAfterDays} days after a manually reviewed initial message`]] : [])])}${sources(d)}<div class="draft-body">${esc(first(d.body, d.text, d.message, 'No message body supplied.'))}</div><div class="draft-actions"><a class="button secondary" href="${esc(gmailURL(d))}" target="_blank" rel="noopener noreferrer">Open Gmail compose ↗</a><button class="text-button" data-copy-draft="${index}">Copy draft</button><a class="text-button" href="/api/runs/${encodeURIComponent(state.id)}/eml/${index}">Download .eml ↓</a></div></article>`).join('');
-    return `${callout('Prospective partnerships, not secured sponsorship', 'Source citations establish public information only. Contact channels need verification; no email address is guessed. Compose links may leave the recipient blank. Nothing is sent automatically.')}<div class="content-grid">${sponsorsHTML}</div><div class="mini-separator"></div>${gmailReceiptHTML()}<div class="gmail-banner"><div><strong>Create Gmail drafts — you keep the final say.</strong><p class="sources-note">Saved run metrics: ${esc(first(state.pack.metrics?.gmailDraftsCreated, state.metrics?.gmailDraftsCreated, 0))} confirmed Gmail drafts · ${esc(first(state.pack.metrics?.emailsSent, state.metrics?.emailsSent, 0))} emails sent. Only eligible non-demo recipients are attempted, at most 24 draft indexes per request.</p><p id="gmail-help">${state.clientId ? 'Connect Google in a popup to authorise gmail.compose only. The app creates drafts, never sends mail.' : 'Google OAuth is not configured. The button explains the fallback: Gmail compose, copy text, or .eml download. No account connection is pretended.'}</p></div><button class="button primary" id="gmail-drafts" ${state.gmailBusy ? 'disabled' : ''}>${state.gmailBusy ? 'Creating drafts…' : 'Create Gmail drafts ↗'}</button></div>${draftsHTML ? `<div class="draft-grid">${draftsHTML}</div>` : empty('No outreach drafts supplied', 'Sponsor facts may be available, but no email text was included in this saved pack.')}`;
+    const draftsHTML = drafts.map((d, index) => `<article class="draft-card"><h4>${esc(first(d.recipient, d.sponsor, d.company, d.name, d.title, `Outreach draft ${index + 1}`))}</h4><div class="badge-group">${badge('Draft only \u2014 never sent', 'info')}${d.type ? badge(label(d.type), 'info') : ''}${d.demo ? badge('Fictional demo recipient', 'warning') : ''}${!first(d.to, d.recipientEmail) ? badge('Recipient email needed', 'warning') : ''}</div>${facts([['Recipient', first(d.to, d.recipientEmail, 'Blank \u2014 verify an official email first')], ['Subject', first(d.subject, 'Event partnership enquiry')], ...(d.condition ? [['Use only when', d.condition]] : []), ...(d.sendAfterDays != null ? [['Suggested follow-up', `${d.sendAfterDays} days after a manually reviewed initial message`]] : [])])}${sources(d)}<div class="draft-body">${esc(first(d.body, d.text, d.message, 'No message body supplied.'))}</div><div class="draft-actions"><a class="button secondary" href="${esc(gmailURL(d))}" target="_blank" rel="noopener noreferrer">Open Gmail compose \u2197</a><button class="text-button" data-copy-draft="${index}">Copy draft</button><a class="text-button" href="/api/runs/${encodeURIComponent(state.id)}/eml/${index}">Download .eml \u2193</a></div></article>`).join('');
+    return `${callout('Prospective partnerships, not secured sponsorship', 'Source citations establish public information only. Contact channels need verification; no email address is guessed. Compose links may leave the recipient blank. Nothing is sent automatically.')}<div class="content-grid">${sponsorsHTML}</div><div class="mini-separator"></div>${gmailReceiptHTML()}<div class="gmail-banner"><div><strong>Create Gmail drafts \u2014 you keep the final say.</strong><p class="sources-note">Saved run metrics: ${esc(first(state.pack.metrics?.gmailDraftsCreated, state.metrics?.gmailDraftsCreated, 0))} confirmed Gmail drafts \u00b7 ${esc(first(state.pack.metrics?.emailsSent, state.metrics?.emailsSent, 0))} emails sent. Only eligible non-demo recipients are attempted, at most 24 draft indexes per request.</p><p id="gmail-help">${state.clientId ? 'Connect Google in a popup to authorise gmail.compose only. The app creates drafts, never sends mail.' : 'Google OAuth is not configured. The button explains the fallback: Gmail compose, copy text, or .eml download. No account connection is pretended.'}</p></div><button class="button primary" id="gmail-drafts" ${state.gmailBusy ? 'disabled' : ''}>${state.gmailBusy ? 'Creating drafts\u2026' : 'Create Gmail drafts \u2197'}</button></div>${draftsHTML ? `<div class="draft-grid">${draftsHTML}</div>` : empty('No outreach drafts supplied', 'Sponsor facts may be available, but no email text was included in this saved pack.')}`;
   }
   function promoTab() {
     const promo = state.pack.promo;
@@ -311,7 +816,7 @@
     return `${callout('Ready to edit. Not automatically published.', 'Confirm the final date, venue, registration link and any sponsor branding permissions before posting.', 'info')}<div class="content-grid">${promo?.poster ? card('Poster copy & details', valueHTML(promo.poster), true) : ''}${entries.map((entry, index) => card(typeof entry === 'string' ? `Ready-to-edit caption ${index + 1}` : first(entry.channel, entry.platform, entry.title, entry.name, 'Promotion asset'), typeof entry === 'string' ? `<div class="draft-body">${esc(entry)}</div>` : `${facts([['Audience', entry.audience], ['When', first(entry.when, entry.date, entry.timing)], ['Call to action', first(entry.cta, entry.callToAction)]])}<div class="draft-body">${esc(first(entry.copy, entry.text, entry.caption, entry.body, entry.message, 'No copy supplied.'))}</div>${sources(entry)}`)).join('')}${!Array.isArray(promo) ? card('Promotion schedule & guardrails', valueHTML(Object.fromEntries(Object.entries(promo || {}).filter(([key]) => !['posts', 'captions', 'assets', 'items', 'poster'].includes(key)))), true) : ''}</div>`;
   }
   function exportTab() {
-    return `${callout('Saved, shareable, and still subject to confirmation', 'The run link shows the Event Pack and actual execution trace without login. Roster email addresses and OAuth tokens must not appear in shared packs. PDF and email drafts are exports, not bookings or sent messages.', 'info')}<div class="export-grid"><section class="export-option"><h3>A readable event pack</h3><p>Download the structured plan as a PDF for organiser handover and review.</p><a class="button primary" href="/api/runs/${encodeURIComponent(state.id)}/pdf">Download Event Pack PDF ↓</a></section><section class="export-option"><h3>Generate proposal</h3><p>Produces a detailed written proposal as a downloadable PDF, pulled from the Event Pack data: event summary, date, venue, budget, risk plan, and next actions.</p><button class="button primary" id="generate-proposal" type="button">Generate proposal PDF <span aria-hidden="true">↓</span></button><p class="export-excel-note" style="margin-top:8px">Draft for your review — you review and send it yourself.</p></section><section class="export-option"><h3>Share the saved run</h3><p>Read-only plan, sources and genuine specialist trace. No login required.</p><button class="button secondary" data-copy-link>Copy run link ↗</button></section><section class="export-option"><h3>Outreach drafts, not sent mail</h3><p>Gmail compose, clipboard copy and individual .eml exports are available under Sponsors / Gmail.</p><button class="button secondary" data-open-sponsors>Review draft emails →</button></section><section class="export-option"><h3>Inspect real recorded execution</h3><p>Replay preserves recorded tool results and identifies itself as a replay, not new research.</p><button class="button secondary" data-replay>Replay recorded run →</button></section></div>${card('Validation before handover', valueHTML(state.pack.validation), true)}`;
+    return `${callout('Saved, shareable, and still subject to confirmation', 'The run link shows the Event Pack and actual execution trace without login. Roster email addresses and OAuth tokens must not appear in shared packs. PDF and email drafts are exports, not bookings or sent messages.', 'info')}<div class="export-grid"><section class="export-option"><h3>A readable event pack</h3><p>Download the structured plan as a PDF for organiser handover and review.</p><a class="button primary" href="/api/runs/${encodeURIComponent(state.id)}/pdf">Download Event Pack PDF \u2193</a></section><section class="export-option proposal-export"><h3>Generate proposal (PDF)</h3><p>Produces a formatted proposal document with event summary, date, venue, budget, risk plan, and next actions.</p><a class="button primary" href="/api/runs/${encodeURIComponent(state.id)}/proposal">Generate proposal PDF \u2193</a><p class="proposal-note">This is a draft for your review. EventPilot never sends anything automatically \u2014 review and send it yourself.</p></section><section class="export-option"><h3>Export budget to Excel</h3><p>Download the full budget breakdown with category totals, ceiling, contingency, and funding gap as a spreadsheet.</p><button class="button primary" id="export-excel-btn">Download .xlsx \u2193</button><p class="proposal-note">Downloads a spreadsheet you can open in Excel or Google Sheets.</p></section><section class="export-option"><h3>Share the saved run</h3><p>Read-only plan, sources and genuine specialist trace. No login required.</p><button class="button secondary" data-copy-link>Copy run link \u2197</button></section><section class="export-option"><h3>Outreach drafts, not sent mail</h3><p>Gmail compose, clipboard copy and individual .eml exports are available under Sponsors / Gmail.</p><button class="button secondary" data-open-sponsors>Review draft emails \u2192</button></section><section class="export-option"><h3>Inspect real recorded execution</h3><p>Replay preserves recorded tool results and identifies itself as a replay, not new research.</p><button class="button secondary" data-replay>Replay recorded run \u2192</button></section></div>${card('Validation before handover', valueHTML(state.pack.validation), true)}`;
   }
   function renderContent() {
     if (!state.pack) return;
@@ -323,299 +828,10 @@
     try { if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(text); else { const input = document.createElement('textarea'); input.value = text; input.style.position = 'fixed'; input.style.opacity = '0'; document.body.append(input); input.select(); const copied = document.execCommand('copy'); input.remove(); if (!copied) throw new Error('Copy failed'); } notice(success); } catch { notice('Clipboard access was blocked. Select and copy from the visible draft, or copy the saved run address from the browser.'); }
   }
   function copyRunLink() { if (state.id) copyText(`${location.origin}/run/${encodeURIComponent(state.id)}`, 'Saved run link copied. The public pack excludes private roster email addresses.'); }
-
-  function exportBudgetExcel() {
-    try {
-      const b = state.pack.budget || {}, items = array(first(b.items, b.allocations));
-      const amount = (item) => number(first(item.amountRM, item.totalRM, item.amount, item.costRM, item.total, item.cost));
-      const total = first(b.total, b.totalRM, items.reduce((sum, item) => sum + (amount(item) || 0), 0));
-      const limit = first(b.limit, b.limitRM, b.budgetRM, state.pack.goal?.budgetRM);
-      const contingency = first(b.contingencyRM, b.contingency?.amountRM, b.contingency?.amount, b.contingency);
-      const gap = first(b.gapRM, b.gap?.amountRM, b.gap);
-      const organiserFunds = typeof b.organiserFunds === 'object' ? null : first(b.organiserFundsRM, b.organiserFunds);
-
-      // Build category totals
-      const categoryTotals = {};
-      items.forEach((item) => {
-        const cat = first(item.category, item.name, item.item, 'Allocation');
-        const amt = amount(item) || 0;
-        categoryTotals[cat] = (categoryTotals[cat] || 0) + amt;
-      });
-
-      // Build the Excel XML (SpreadsheetML format with chart)
-      const categories = Object.keys(categoryTotals);
-      const chartSeries = categories.map((cat) => `<c:cat><c:strRef><c:f>Sheet1!$A$3:$A$${categories.length + 2}</c:f><c:strCache><c:ptCount val="${categories.length}"/>${categories.map((c, i) => `<c:pt idx="${i}"><c:v>${esc(cat)}</c:v></c:pt>`).join('')}</c:strCache></c:strRef></c:cat>`).join('');
-
-      let xml = '<?xml version="1.0"?>\n';
-      xml += '<?mso-application progid="Excel.Sheet"?>\n';
-      xml += '<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"\n';
-      xml += ' xmlns:o="urn:schemas-microsoft-com:office:office"\n';
-      xml += ' xmlns:x="urn:schemas-microsoft-com:office:excel"\n';
-      xml += ' xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"\n';
-      xml += ' xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet">\n';
-      xml += ' <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">\n';
-      xml += '  <Title>EventPilot Budget</Title>\n';
-      xml += ' </DocumentProperties>\n';
-      xml += ' <Styles>\n';
-      xml += '  <Style ss:ID="Header"><Font ss:Bold="1" ss:Size="12"/><Interior ss:Color="#E8F3ED" ss:Pattern="Solid"/><Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/></Border></Borders></Style>\n';
-      xml += '  <Style ss:ID="Title"><Font ss:Bold="1" ss:Size="14"/></Style>\n';
-      xml += '  <Style ss:ID="Total"><Font ss:Bold="1"/></Style>\n';
-      xml += '  <Style ss:ID="Number"><NumberFormat ss:Format="#,##0.00"/></Style>\n';
-      xml += '  <Style ss:ID="Label"><Font ss:Bold="1" ss:Color="#6C7D7E"/></Style>\n';
-      xml += ' </Styles>\n';
-      xml += ' <Worksheet ss:Name="Budget">\n';
-      xml += '  <Table>\n';
-      // Title
-      xml += '   <Row><Cell ss:StyleID="Title"><Data ss:Type="String">EventPilot — Budget Breakdown</Data></Cell></Row>\n';
-      xml += '   <Row/>\n';
-      // Budget summary section
-      xml += '   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Budget summary</Data></Cell></Row>\n';
-      xml += `   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Budget ceiling (RM)</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${limit ?? ''}</Data></Cell></Row>\n`;
-      xml += `   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Allocated total (RM)</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${total ?? ''}</Data></Cell></Row>\n`;
-      xml += `   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Contingency (RM)</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${contingency ?? ''}</Data></Cell></Row>\n`;
-      xml += `   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Funding gap (RM)</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${gap ?? ''}</Data></Cell></Row>\n`;
-      if (organiserFunds != null) xml += `   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Organiser funds (RM)</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${organiserFunds}</Data></Cell></Row>\n`;
-      xml += '   <Row/>\n';
-      // Category totals
-      xml += '   <Row><Cell ss:StyleID="Header"><Data ss:Type="String">Category</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Total (RM)</Data></Cell></Row>\n';
-      categories.forEach((cat) => {
-        xml += `   <Row><Cell><Data ss:Type="String">${esc(cat)}</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${categoryTotals[cat]}</Data></Cell></Row>\n`;
-      });
-      xml += `   <Row><Cell ss:StyleID="Total"><Data ss:Type="String">Total</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${total ?? ''}</Data></Cell></Row>\n`;
-      xml += '   <Row/>\n';
-      // Full budget breakdown
-      xml += '   <Row><Cell ss:StyleID="Header"><Data ss:Type="String">Item / Category</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Amount (RM)</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Quantity</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Basis / Notes</Data></Cell></Row>\n`;
-      items.forEach((item) => {
-        const cat = esc(first(item.category, item.name, item.item, 'Allocation'));
-        const amt = amount(item);
-        const qty = first(item.quantity, item.qty, '');
-        const notes = esc(first(item.basis, item.notes, item.description, item.rationale, item.assumption, item.status, ''));
-        xml += `   <Row><Cell><Data ss:Type="String">${cat}</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${amt ?? ''}</Data></Cell><Cell><Data ss:Type="String">${esc(qty)}</Data></Cell><Cell><Data ss:Type="String">${notes}</Data></Cell></Row>\n`;
-      });
-      xml += `   <Row><Cell ss:StyleID="Total"><Data ss:Type="String">Total</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${total ?? ''}</Data></Cell></Row>\n`;
-      xml += '  </Table>\n';
-      // Chart
-      xml += `  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel"><PageSetup><Layout x:Orientation="Portrait"/></PageSetup></WorksheetOptions>\n`;
-      xml += ' </Worksheet>\n';
-      // Chart worksheet
-      xml += ' <Worksheet ss:Name="Chart">\n';
-      xml += '  <Table>\n';
-      xml += `   <Row><Cell ss:StyleID="Header"><Data ss:Type="String">Category</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Spend (RM)</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Ceiling (RM)</Data></Cell></Row>\n`;
-      categories.forEach((cat) => {
-        xml += `   <Row><Cell><Data ss:Type="String">${esc(cat)}</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${categoryTotals[cat]}</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${limit ?? 0}</Data></Cell></Row>\n`;
-      });
-      xml += '  </Table>\n';
-      xml += ' </Worksheet>\n';
-      xml += '</Workbook>';
-
-      const blob = new Blob([xml], { type: 'application/vnd.ms-excel' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'EventPilot-Budget.xlsx';
-      document.body.append(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-      notice('Budget spreadsheet downloaded. Open it in Excel or Google Sheets.');
-    } catch (error) {
-      notice(`Could not export budget: ${error.message}`, true);
-    }
-  }
-
-  function generateProposal() {
-    try {
-      const p = state.pack || {};
-      const g = p.goal || {};
-      const b = p.budget || {};
-      const d = p.dateDecision || {};
-      const chosen = d.chosen;
-      const chosenDate = typeof chosen === 'object' ? first(chosen?.date, chosen?.label, chosen?.dateISO) : chosen;
-      const venues = p.venues || {};
-      const venueName = first(venues.selected?.name, venues.recommended?.name, 'To be confirmed');
-      const items = array(first(b.items, b.allocations));
-      const amount = (item) => number(first(item.amountRM, item.totalRM, item.amount, item.costRM, item.total, item.cost));
-      const total = first(b.total, b.totalRM, items.reduce((sum, item) => sum + (amount(item) || 0), 0));
-      const limit = first(b.limit, b.limitRM, b.budgetRM, g.budgetRM);
-      const contingency = first(b.contingencyRM, b.contingency?.amountRM, b.contingency?.amount, b.contingency);
-      const gap = first(b.gapRM, b.gap?.amountRM, b.gap);
-      const risks = p.risks || {};
-      const riskRegister = array(risks.register);
-      const rechecks = array(first(p.rechecks, p.pendingChecks));
-
-      // Build text lines for the proposal PDF
-      const lines = [];
-      lines.push('EVENTPILOT — EVENT PROPOSAL (DRAFT)');
-      lines.push('====================================');
-      lines.push('');
-      lines.push('IMPORTANT: This is a draft proposal for your review.');
-      lines.push('Nothing is confirmed. All bookings, sponsor commitments,');
-      lines.push('and availability require independent verification.');
-      lines.push('Do not send this proposal without reviewing and editing it.');
-      lines.push('');
-      lines.push('Generated: ' + (p.generatedAt || now()));
-      lines.push('');
-
-      // Event summary
-      lines.push('1. EVENT SUMMARY');
-      lines.push('-'.repeat(40));
-      lines.push(`Event type: ${first(g.eventType, 'Not specified')}`);
-      lines.push(`Cause / purpose: ${first(g.cause, 'Not specified')}`);
-      lines.push(`Campus: ${first(g.campus, 'Not specified')}`);
-      lines.push(`Expected attendees: ${first(g.attendance, 'Unconfirmed')}`);
-      if (typeof p.summary === 'string') { lines.push(''); lines.push('Summary:'); lines.push(p.summary); }
-      else if (p.summary) { lines.push(''); lines.push('Summary:'); lines.push(JSON.stringify(p.summary, null, 2)); }
-      lines.push('');
-
-      // Date
-      lines.push('2. PROPOSED DATE');
-      lines.push('-'.repeat(40));
-      lines.push(`Chosen date: ${chosenDate || 'No date selected'}`);
-      if (d.rationale || d.reason) lines.push(`Rationale: ${first(d.rationale, d.reason)}`);
-      const backups = array(first(d.backups, d.alternatives));
-      if (backups.length) lines.push(`Backup dates: ${backups.map((b2) => typeof b2 === 'object' ? first(b2.date, b2.label, b2.dateISO) : b2).join(', ')}`);
-      lines.push('');
-
-      // Venue
-      lines.push('3. VENUE');
-      lines.push('-'.repeat(40));
-      lines.push(`Proposed venue: ${venueName}`);
-      if (venues.selected?.notes || venues.recommended?.notes) lines.push(`Notes: ${first(venues.selected?.notes, venues.recommended?.notes)}`);
-      lines.push('Booking status: Not booked; requires campus approval.');
-      lines.push('');
-
-      // Budget
-      lines.push('4. BUDGET (RM)');
-      lines.push('-'.repeat(40));
-      lines.push(`Budget ceiling: RM ${limit ?? 'Not specified'}`);
-      lines.push(`Allocated total: RM ${total ?? 'Not specified'}`);
-      lines.push(`Contingency: RM ${contingency ?? 'Not specified'}`);
-      lines.push(`Funding gap: RM ${gap ?? 'Not specified'}`);
-      if (b.fundingStatus) lines.push(`Funding status: ${b.fundingStatus}`);
-      lines.push('');
-      lines.push('Budget breakdown:');
-      items.forEach((item) => {
-        lines.push(`  - ${first(item.category, item.name, item.item, 'Allocation')}: RM ${amount(item) ?? 'N/A'}${item.quantity ? ` (qty: ${item.quantity})` : ''}`);
-        if (item.basis || item.notes) lines.push(`    Basis: ${first(item.basis, item.notes, item.description, '')}`);
-      });
-      lines.push('');
-
-      // Risk plan
-      lines.push('5. RISK PLAN');
-      lines.push('-'.repeat(40));
-      if (riskRegister.length) {
-        riskRegister.forEach((r) => {
-          lines.push(`  Risk: ${first(r.risk, r.name, 'Risk')} | Score: ${first(r.score, '—')}`);
-          lines.push(`    Mitigation: ${first(r.mitigation, 'Pending')}`);
-          lines.push(`    Trigger: ${first(r.trigger, 'Pending')}`);
-          lines.push(`    Contingency: ${first(r.contingency, 'Pending')}`);
-          lines.push('');
-        });
-      } else {
-        lines.push('No risk register entries supplied.');
-      }
-      if (risks.planB) {
-        lines.push('Plan B:');
-        if (typeof risks.planB === 'string') lines.push(`  ${risks.planB}`);
-        else lines.push(`  ${JSON.stringify(risks.planB, null, 2)}`);
-      }
-      lines.push('');
-
-      // Next actions
-      lines.push('6. NEXT ACTIONS');
-      lines.push('-'.repeat(40));
-      if (rechecks.length) {
-        rechecks.forEach((r) => {
-          if (typeof r === 'object') {
-            lines.push(`  - ${first(r.action, r.task, r.description, r.label, 'Action needed')}`);
-            if (r.owner || r.responsible) lines.push(`    Owner: ${first(r.owner, r.responsible)}`);
-          } else {
-            lines.push(`  - ${r}`);
-          }
-        });
-      } else {
-        lines.push('  - Confirm venue booking with campus administration');
-        lines.push('  - Confirm event date against academic calendar');
-        lines.push('  - Verify organiser funds and close funding gap');
-        lines.push('  - Recheck weather forecast closer to event date');
-        lines.push('  - Confirm MC and volunteer availability');
-      }
-      lines.push('');
-
-      // Validation
-      if (p.validation) {
-        lines.push('7. VALIDATION STATUS');
-        lines.push('-'.repeat(40));
-        if (typeof p.validation === 'string') lines.push(p.validation);
-        else lines.push(JSON.stringify(p.validation, null, 2));
-        lines.push('');
-      }
-
-      lines.push('====================================');
-      lines.push('END OF PROPOSAL — REVIEW AND EDIT BEFORE SENDING');
-      lines.push('This proposal was generated by EventPilot.');
-      lines.push('All figures are planning allocations, not vendor quotes.');
-
-      // Build PDF using the same approach as server.py pdf_bytes
-      const pdfLines = lines;
-      const pages = [];
-      for (let i = 0; i < pdfLines.length; i += 60) pages.push(pdfLines.slice(i, i + 60));
-      if (!pages.length) pages.push(['No content generated.']);
-
-      const objects = [];
-      function obj(data) {
-        objects.push(typeof data === 'string' ? data : data);
-        return objects.length;
-      }
-      obj('<< /Type /Catalog /Pages 2 0 R >>');
-      obj('');
-      const fontId = obj('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
-      const pageIds = [];
-      pages.forEach((page, index) => {
-        const content = ['BT /F1 8.5 Tf 12 TL 40 797 Td'];
-        page.forEach((line) => {
-          const safe = String(line).replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)');
-          content.push(`(${safe}) Tj T*`);
-        });
-        content.push('ET');
-        content.push(`BT /F1 9 Tf 40 30 Td (EventPilot Proposal | Page ${index + 1} of ${pages.length}) Tj ET`);
-        const stream = content.join('\n');
-        const contentId = obj(`<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`);
-        pageIds.push(obj(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 ${fontId} 0 R >> >> /Contents ${contentId} 0 R >>`));
-      });
-      objects[1] = `<< /Type /Pages /Kids [${pageIds.map((id) => `${id} 0 R`).join(' ')}] /Count ${pages.length} >>`;
-
-      let out = '%PDF-1.4\n%\xe2\xe3\xcf\xd3\n';
-      const offsets = [0];
-      objects.forEach((value, i) => {
-        offsets.push(out.length);
-        const encoded = typeof value === 'string' ? value : String(value);
-        out += `${i + 1} 0 obj\n${encoded}\nendobj\n`;
-      });
-      const xref = out.length;
-      out += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
-      offsets.slice(1).forEach((offset) => { out += `${String(offset).padStart(10, '0')} 00000 n \n`; });
-      out += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;
-
-      const blob = new Blob([out], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'EventPilot-Proposal.pdf';
-      document.body.append(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-      notice('Proposal PDF downloaded. Review and edit it before sending — this is a draft.');
-    } catch (error) {
-      notice(`Could not generate proposal: ${error.message}`, true);
-    }
-  }
-
   function editRerun() {
     const g = state.pack?.goal || {};
     for (const [id, key] of [['event-type', 'eventType'], ['cause', 'cause'], ['date-start', 'dateStart'], ['date-end', 'dateEnd'], ['budget', 'budgetRM'], ['organiser-funds', 'organiserFundsRM'], ['attendance', 'attendance'], ['campus', 'campus'], ['location', 'location']]) if (g[key] != null) $(id).value = String(g[key]);
-    if (!$('prompt').value.trim()) $('prompt').value = `Plan ${first(g.eventType, 'a campus event')} at ${first(g.campus, 'Taylor’s Lakeside Campus')} for ${first(g.attendance, 120)} attendees. Purpose: ${first(g.cause, 'student engagement')}. Use the editable planning assumptions below; all commitments require confirmation.`;
+    if (!$('prompt').value.trim()) $('prompt').value = `Plan ${first(g.eventType, 'a campus event')} at ${first(g.campus, 'Taylor\u2019s Lakeside Campus')} for ${first(g.attendance, 120)} attendees. Purpose: ${first(g.cause, 'student engagement')}. Use the editable planning assumptions below; all commitments require confirmation.`;
     document.querySelector('.brief-details').open = true; $('planner').scrollIntoView({ behavior: 'smooth', block: 'start' }); $('prompt').focus(); notice('Your recorded planning assumptions are loaded below. Edit any field, then build a new run. Private roster data is not recovered from the public pack.');
   }
   async function loadGoogleLibrary() {
@@ -628,7 +844,7 @@
     if (!result) return '';
     const receipts = array(first(result.created, result.drafts, result.items));
     const errors = array(result.errors);
-    const rows = [...receipts.map((receipt) => [esc(receipt.index), esc(receipt.alreadyCreated ? receipt.contentChanged ? 'Existing draft — content changed; review manually' : 'Existing draft — no duplicate created' : 'New draft receipt confirmed'), esc(first(receipt.subject, 'Review in Gmail'))]), ...errors.map((error) => [esc(first(error.index, 'Request')), badge('Failed / review required', 'error'), esc(first(error.error, error.message, 'Use compose, copy or .eml fallback.'))])];
+    const rows = [...receipts.map((receipt) => [esc(receipt.index), esc(receipt.alreadyCreated ? receipt.contentChanged ? 'Existing draft \u2014 content changed; review manually' : 'Existing draft \u2014 no duplicate created' : 'New draft receipt confirmed'), esc(first(receipt.subject, 'Review in Gmail'))]), ...errors.map((error) => [esc(first(error.index, 'Request')), badge('Failed / review required', 'error'), esc(first(error.error, error.message, 'Use compose, copy or .eml fallback.'))])];
     return `${card('Gmail draft results', `${callout('No email was sent', 'Indexes below match the saved draft array. Failed or uncertain items need manual review; do not assume a draft exists without a receipt.', 'info')}${table(['Draft index (zero-based)', 'Receipt / outcome', 'Details'], rows)}${result.unattempted?.length ? `<p class="sources-note">Not attempted after the server stopped processing: ${esc(result.unattempted.join(', '))}. Review the reported failure before retrying.</p>` : ''}`, true)}<div class="mini-separator"></div>`;
   }
   async function createGmailDrafts() {
@@ -668,6 +884,8 @@
       state.gmailBusy = false; if (state.pack) renderContent();
     }
   }
+
+  // === EVENT LISTENERS ===
   $('workflow-toggle').addEventListener('click', () => {
     const expanded = $('workflow-toggle').getAttribute('aria-expanded') !== 'true';
     $('workflow-toggle').setAttribute('aria-expanded', String(expanded));
@@ -675,19 +893,55 @@
     $('workflow-content').hidden = !expanded;
   });
   $('run-form').addEventListener('submit', (event) => { event.preventDefault(); startRun(); });
-  document.querySelectorAll('[data-example]').forEach((button) => button.addEventListener('click', () => { $('prompt').value = examples[button.dataset.example]; $('prompt').focus(); }));
-  $('run-example').addEventListener('click', () => { $('prompt').value = examples.canonical; document.querySelectorAll('.field-grid input').forEach((input) => { input.value = ''; }); $('roster').value = ''; state.demo = false; updateRosterStatus(); startRun(); });
+  document.querySelectorAll('[data-example]').forEach((button) => button.addEventListener('click', () => { $('prompt').value = examples[button.dataset.example]; showPromptPreview(); $('prompt').focus(); }));
+  $('prompt').addEventListener('input', () => { clearTimeout(window._promptTimer); window._promptTimer = setTimeout(showPromptPreview, 400); });
+  // Remove auto-fill marker when user manually edits a form field
+  document.querySelectorAll('.field-grid input').forEach((input) => { input.addEventListener('input', () => { input.removeAttribute('data-autofilled'); }); });
+  $('run-example').addEventListener('click', () => { $('prompt').value = examples.canonical; showPromptPreview(); document.querySelectorAll('.field-grid input').forEach((input) => { input.value = ''; }); $('roster').value = ''; state.demo = false; updateRosterStatus(); startRun(); });
   $('replay-button').addEventListener('click', () => startRun('replay'));
   $('sample-roster').addEventListener('click', () => { state.demo = true; $('roster').value = 'name,role,freeDates,email\nDemo organiser,Organiser,2026-11-07;2026-11-14;2026-11-21,\nDemo MC,MC,2026-11-14;2026-11-21,\nDemo volunteer,Volunteer,2026-11-07;2026-11-21,'; updateRosterStatus(); });
   $('roster').addEventListener('input', () => { state.demo = $('roster').value.includes('Demo organiser'); updateRosterStatus(); });
+
+  // === TOOLS DROPDOWN ===
+  const toolsBtn = $('tools-toggle');
+  const toolsMenu = $('tools-menu');
+  if (toolsBtn && toolsMenu) {
+    toolsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = toolsMenu.classList.toggle('open');
+      toolsBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    toolsMenu.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-tool]');
+      if (!btn) return;
+      toolsMenu.classList.remove('open');
+      toolsBtn.setAttribute('aria-expanded', 'false');
+      const tool = btn.dataset.tool;
+      if (tool === 'canonical') { $('prompt').value = examples.canonical; showPromptPreview(); document.querySelectorAll('.field-grid input').forEach((input) => { input.value = ''; }); $('roster').value = ''; state.demo = false; updateRosterStatus(); startRun(); }
+      else if (tool === 'replay') startRun('replay');
+      else if (tool === 'roster') { state.demo = true; $('roster').value = 'name,role,freeDates,email\nDemo organiser,Organiser,2026-11-07;2026-11-14;2026-11-21,\nDemo MC,MC,2026-11-14;2026-11-21,\nDemo volunteer,Volunteer,2026-11-07;2026-11-21,'; updateRosterStatus(); notice('Demo roster loaded. Names and emails are redacted in the public pack.'); }
+      else if (tool === 'excel') { if (state.pack) { selectTab('Budget'); setTimeout(exportBudgetExcel, 100); } else notice('Run a plan first to export the budget.'); }
+      else if (tool === 'proposal') { if (state.pack && state.id) { window.open(`/api/runs/${encodeURIComponent(state.id)}/proposal`, '_blank'); } else notice('Run a plan first to generate a proposal.'); }
+    });
+    document.addEventListener('click', (e) => {
+      if (!toolsMenu.contains(e.target) && e.target !== toolsBtn) {
+        toolsMenu.classList.remove('open');
+        toolsBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
   $('copy-link').addEventListener('click', copyRunLink); $('edit-rerun').addEventListener('click', editRerun);
   $('tabs').addEventListener('click', (event) => { const button = event.target.closest('[data-tab]'); if (button) selectTab(button.dataset.tab); });
   $('tabs').addEventListener('keydown', (event) => { if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return; event.preventDefault(); const current = tabs.indexOf(state.tab); const index = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length; selectTab(tabs[index]); $(`tab-${index}`).focus(); });
   $('tab-content').addEventListener('click', (event) => {
-    const button = event.target.closest('button'); if (!button) return;
+    const button = event.target.closest('button'); if (!button) {
+      const link = event.target.closest('a'); if (!link) return;
+      // Let proposal/excel links work natively
+      return;
+    }
     if (button.id === 'gmail-drafts') createGmailDrafts();
-    else if (button.id === 'export-budget-excel') exportBudgetExcel();
-    else if (button.id === 'generate-proposal') generateProposal();
+    else if (button.id === 'excel-export-btn') exportBudgetExcel();
+    else if (button.id === 'export-excel-btn') exportBudgetExcel();
     else if (button.hasAttribute('data-copy-link')) copyRunLink();
     else if (button.hasAttribute('data-open-sponsors')) selectTab('Sponsors / Gmail');
     else if (button.hasAttribute('data-replay')) startRun('replay');
