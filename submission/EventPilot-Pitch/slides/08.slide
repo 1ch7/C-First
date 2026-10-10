@@ -1,0 +1,7 @@
+<Slide style={{width:1280,height:720,background:'#FAF7F2',position:'relative'}}>
+<Box style={{position:'absolute',left:60,top:30,width:1160,height:80}}><Text style={{fontFamily:'Arial',fontSize:38,fontWeight:'bold',color:'#103B49'}}>A product organisers can inspect</Text></Box>
+<Box style={{position:'absolute',left:60,top:145,width:700,height:490}}><Image src="assets/home-desktop.png" style={{width:700,height:486,objectFit:'contain'}} /></Box>
+<Box style={{position:'absolute',left:815,top:145,width:390,height:130}}><Text style={{fontFamily:'Arial',fontSize:38,fontWeight:'bold',color:'#117F75'}}>9 inspectable tabs</Text></Box>
+<Box style={{position:'absolute',left:815,top:280,width:390,height:350}}><Text style={{fontFamily:'Arial',fontSize:24,color:'#103B49',lineHeight:1.35}}>Actual local interface.<br /><br />Saved SQLite runs.<br />Source links + real trace.<br />PDF and unsent .eml.<br />Desktop + 390px mobile.<br /><br />Capability links, not authenticated privacy.</Text></Box>
+<Box style={{position:'absolute',left:60,top:665,width:1050,height:35}}><Text style={{fontFamily:'Arial',fontSize:14,color:'#103B49'}}>Actual browser screenshot | No public-deployment screenshot claimed</Text></Box><Box style={{position:'absolute',left:1150,top:665,width:100,height:35}}><Text style={{fontFamily:'Arial',fontSize:14,color:'#103B49'}}>08 / 10</Text></Box>
+</Slide>

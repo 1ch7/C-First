@@ -1,0 +1,9 @@
+# EventPilot pitch design
+
+English product-review pitch, not a scientific or consulting template. Fixed 1280x720 canvas, light background. Four hex colours: #FAF7F2 background, #103B49 text/structure, #117F75 primary teal, #EF9C53 focus accent. Arial headers/body; Georgia closing emphasis. No generated imagery, 3D, animation or video. Visuals are genuine screenshots, editable geometric workflow diagrams, bars and giant numbers.
+
+A title block: x60 y20 width1160 height100. B content: x60 y120 width1160 height540. C footer: x60 y660 width1160 height40. Header 38px bold, hero title 86px bold, giant number 100px bold, subheader 28px bold, body 24px regular lineHeight1.35, evidence note 18px lineHeight1.35, footer 14px. Consistent footer C-First | Taylor's University | Dormathon Track 2, right page number NN / 10.
+
+Light surfaces and dark text throughout. Teal is primarily structural/number emphasis; orange limited to focal thresholds/status. No gradients needed; transparency only background geometry at 0.12. Content containers sized to actual content; no huge empty cards. Minimum 40px breathing room around hero focal points. This short English demo pitch uses concise evidence text plus diagrams rather than 180-word slides; target supporting whitespace <=35%, hero <=45%.
+
+Page colour mapping: 1 teal20/orange10, 2 teal10/orange3, 3 teal15/orange3, 4 teal8/orange3, 5 teal15/orange15, 6 teal15/orange4, 7 teal10/orange3, 8 screenshot40/teal5/orange2, 9 teal10/orange4, 10 teal20/orange10; remaining background/text neutral. Pages 1,5,10 hero; all other pages supporting or transition. Alternate narrow-title ledger, process diagram, prompt ledger, giant-number/chart, budget bars, source ledger, large screenshot, verification ledger, closing diagram. All diagrams fit B zone, all text fit its allocated box. Page 8 actual screenshot assets/home-desktop.png at 680x460 minimum. Other visuals are native text/Box charts and dependency arrows.

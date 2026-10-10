@@ -1,0 +1,11 @@
+<Slide style={{width:1280,height:720,background:'#FAF7F2',position:'relative'}}>
+<Box style={{position:'absolute',left:60,top:30,width:1160,height:80}}><Text style={{fontFamily:'Arial',fontSize:38,fontWeight:'bold',color:'#103B49'}}>Actual tools, actual dependencies</Text></Box>
+<Box style={{position:'absolute',left:60,top:140,width:815,height:80,padding:18,background:'#117F75'}}><Text style={{fontFamily:'Arial',fontSize:26,fontWeight:'bold',color:'#FAF7F2'}}>Goal + sources → Date ∥ Budget ∥ Venue</Text></Box>
+<Box style={{position:'absolute',left:80,top:245,width:795,height:90}}><Text style={{fontFamily:'Arial',fontSize:27,color:'#103B49'}}>↓ Five candidate-weather checks in parallel<br />↓ Risk threshold → genuine indoor re-plan</Text></Box>
+<Box style={{position:'absolute',left:60,top:355,width:815,height:90,padding:18,border:'2px solid #117F75'}}><Text style={{fontFamily:'Arial',fontSize:25,color:'#103B49'}}>Talent ∥ Sponsors ∥ Programme ∥ Risks</Text></Box>
+<Box style={{position:'absolute',left:80,top:475,width:795,height:70}}><Text style={{fontFamily:'Arial',fontSize:27,color:'#103B49'}}>↓ Outreach ∥ Promotion</Text></Box>
+<Box style={{position:'absolute',left:60,top:555,width:815,height:80,padding:18,background:'#117F75'}}><Text style={{fontFamily:'Arial',fontSize:26,fontWeight:'bold',color:'#FAF7F2'}}>Validation → bounded repair → Event Pack</Text></Box>
+<Box style={{position:'absolute',left:930,top:145,width:290,height:160}}><Text style={{fontFamily:'Arial',fontSize:58,fontWeight:'bold',color:'#117F75'}}>0 LLM<br />calls</Text></Box>
+<Box style={{position:'absolute',left:930,top:340,width:290,height:290}}><Text style={{fontFamily:'Arial',fontSize:23,color:'#103B49',lineHeight:1.3}}>Deterministic tools.<br /><br />Keyless activation incomplete.<br /><br />Real thread pools.<br />SQLite + SSE trace.</Text></Box>
+<Box style={{position:'absolute',left:60,top:665,width:1050,height:35}}><Text style={{fontFamily:'Arial',fontSize:14,color:'#103B49'}}>C-First | Taylor's University | Real execution; no simulated progress</Text></Box><Box style={{position:'absolute',left:1150,top:665,width:100,height:35}}><Text style={{fontFamily:'Arial',fontSize:14,color:'#103B49'}}>03 / 10</Text></Box>
+</Slide>
