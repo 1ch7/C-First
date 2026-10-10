@@ -361,6 +361,12 @@
       state.gmailBusy = false; if (state.pack) renderContent();
     }
   }
+  $('workflow-toggle').addEventListener('click', () => {
+    const expanded = $('workflow-toggle').getAttribute('aria-expanded') !== 'true';
+    $('workflow-toggle').setAttribute('aria-expanded', String(expanded));
+    $('workflow-toggle').setAttribute('aria-label', `${expanded ? 'Collapse' : 'Expand'} specialist workflow`);
+    $('workflow-content').hidden = !expanded;
+  });
   $('run-form').addEventListener('submit', (event) => { event.preventDefault(); startRun(); });
   document.querySelectorAll('[data-example]').forEach((button) => button.addEventListener('click', () => { $('prompt').value = examples[button.dataset.example]; $('prompt').focus(); }));
   $('run-example').addEventListener('click', () => { $('prompt').value = examples.canonical; document.querySelectorAll('.field-grid input').forEach((input) => { input.value = ''; }); $('roster').value = ''; state.demo = false; updateRosterStatus(); startRun(); });

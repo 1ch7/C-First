@@ -32,12 +32,17 @@
     </section>
     <div id="notice" class="notice" role="status" hidden></div>
     <section class="workflow panel" id="workflow" aria-labelledby="workflow-title">
-      <div class="section-heading"><div><span class="eyebrow">THE WORK BEHIND THE PACK</span><h2 id="workflow-title">Specialist tools. One connected plan.</h2></div><span class="run-status" id="run-status">Ready for your brief</span></div>
-      <p class="section-subtitle">Parallel research feeds planning, then validation. Cards only change state when the server reports an actual event.</p>
-      <div class="run-meta" id="run-meta" hidden></div>
-      <div id="agent-dag" class="agent-dag" aria-label="Specialist dependencies"></div>
-      <div id="workflow-checks" class="workflow-checks" hidden></div>
-      <details class="trace-details" id="trace-details"><summary><span>Live execution trace</span><span id="trace-count">0 real events</span></summary><div class="trace-head"><span>Agent / state</span><span>Actual tool &amp; result</span><span>Time</span></div><div id="trace-list" class="trace-list" aria-live="polite"><p class="empty-trace">No execution yet. Start a plan to see actual specialist and tool events here.</p></div></details>
+      <div class="workflow-heading">
+        <div class="workflow-heading-meta"><span class="eyebrow">THE WORK BEHIND THE PACK</span><span class="run-status" id="run-status">Ready for your brief</span></div>
+        <div class="section-heading workflow-title-row"><h2 id="workflow-title">Specialist tools. One connected plan.</h2><button class="workflow-toggle" id="workflow-toggle" type="button" aria-expanded="false" aria-controls="workflow-content" aria-label="Expand specialist workflow"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></button></div>
+      </div>
+      <div id="workflow-content" hidden>
+        <p class="section-subtitle">Parallel research feeds planning, then validation. Cards only change state when the server reports an actual event.</p>
+        <div class="run-meta" id="run-meta" hidden></div>
+        <div id="agent-dag" class="agent-dag" aria-label="Specialist dependencies"></div>
+        <div id="workflow-checks" class="workflow-checks" hidden></div>
+        <details class="trace-details" id="trace-details"><summary><span>Live execution trace</span><span id="trace-count">0 real events</span></summary><div class="trace-head"><span>Agent / state</span><span>Actual tool &amp; result</span><span>Time</span></div><div id="trace-list" class="trace-list" aria-live="polite"><p class="empty-trace">No execution yet. Start a plan to see actual specialist and tool events here.</p></div></details>
+      </div>
     </section>
     <section id="results" class="results" aria-labelledby="results-title" hidden>
       <div class="results-heading"><div><span class="eyebrow">YOUR EVENT, CLEARLY PLANNED</span><h2 id="results-title">The Event Pack</h2><p id="results-subtitle">Proposed plans are separated from confirmed facts.</p></div><div class="result-actions"><button class="button secondary" id="copy-link">Copy run link</button><button class="button secondary" id="edit-rerun">Edit &amp; rerun</button><a class="button primary" id="pdf-link" href="#">Export PDF <span aria-hidden="true">↓</span></a></div></div>
