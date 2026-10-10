@@ -5,7 +5,13 @@
 **Language:** English  
 **Currency:** RM / MYR  
 **Documentation snapshot:** 10 October 2026, MYT  
-**Overall status:** **NOT COMPLETE — local evidence exists; public delivery gates remain open.**
+**Final delivery:** existing prototype published on 10 October 2026, without further development or testing campaigns.
+
+- Public source: https://github.com/1ch7/C-First/tree/eventpilot-dormathon (`main` unchanged).
+- Live app: https://c86afee1a0774dd7bb03f964cabaf5d1.sg2.agentos-app.run
+- Slides: `outputs/EventPilot-Pitch.pdf` (existing ten-page PDF).
+- Exactly one public `/api/health` request returned HTTP 200, `status: ok`, SQLite available. Deployed end-to-end behavior is not verified; prior local evidence follows.
+- Remaining limitations: deterministic specialists rather than LLM; visitor Google OAuth unconfigured; approvals, bookings, people and funding require human confirmation. No emails sent.
 
 This record distinguishes verified results from implemented-but-unverified capabilities and work not completed. It is not a receipt for a successful public submission.
 
@@ -206,10 +212,10 @@ Do **not** publish SQLite/WAL files, `.env`, tokens, private rosters, private ma
 | Ten owner Gmail drafts | **PASS, PRIVATE RECEIPTS** | Draft-only owner evidence retained privately; zero sends |
 | Visitor browser OAuth | **NOT CONFIGURED / NOT VERIFIED** | Real client configuration and authorised browser test, or explicitly accept fallback limitation |
 | WorkBuddy keyless LLM runtime | **NOT ACTIVATED** | Actual activation and model execution evidence, or retain explicit deterministic-fallback disclosure |
-| Public deployment link | **NOT COMPLETE** | Obtained real URL plus independently successful public health, run/SSE, reload and export checks |
-| Public source packaging/push | **NOT COMPLETE** | Reviewed source/artifact inventory pushed only to `eventpilot-dormathon`, then read back remotely |
+| Public deployment link | **PUBLISHED; HEALTH PASS ONLY** | Live URL above; one HTTP200 health check. Public run/SSE/reload/export tests omitted per user instruction. |
+| Public source packaging/push | **COMPLETE** | Existing source/artifacts pushed only to public `eventpilot-dormathon`; branch root read back; main unchanged. |
 | `main` unchanged | **REQUIRED; FINAL REMOTE CHECK PENDING** | Remote comparison after final branch push; no merge |
 | Pitch PDF and final presentation review | **PASS LOCALLY** | Ten-page actual PowerPoint PDF generated; all pages visually reviewed with accurate execution/release boundaries |
-| Final public submission | **NOT COMPLETE** | Actual delivered links/artifacts and remaining-limitations statement |
+| Final public handoff | **DELIVERED PROTOTYPE** | Public source/live links and existing slides, with remaining limitations disclosed. Organiser submission remains a user action. |
 
 A later verified result may update a gate. Do not replace these statuses with speculative success, fabricated links or placeholders suggesting completion.

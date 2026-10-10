@@ -4,7 +4,11 @@
 
 EventPilot turns a short campus-event brief into a conditional Event Pack: proposed dates and backups, an integer-cent budget, weather-informed Plan B, people requirements, cited venue and sponsor options, a run sheet, outreach drafts, promotion copy and downloadable exports.
 
-**Release: existing locally verified prototype, feature-frozen for publication.** Source and public evidence are packaged in `https://github.com/1ch7/C-First/tree/eventpilot-dormathon`; `main` is left untouched. Run the commands below from this branch's checkout. Deployment is handled separately; the verification results below describe existing local evidence, not an additional public test campaign.
+**Published prototype — feature-frozen.** Source and public evidence: https://github.com/1ch7/C-First/tree/eventpilot-dormathon (`main` untouched).
+
+**Live application:** https://c86afee1a0774dd7bb03f964cabaf5d1.sg2.agentos-app.run
+
+Released 10 October 2026. One public `/api/health` check returned HTTP 200 and `status: ok`, with SQLite available. Per the user's credit-saving instruction, no deployed event runs, browser testing or new screenshots were performed. The detailed verification below is existing local evidence. Run local commands from this branch's checkout.
 
 ## What actually runs
 
