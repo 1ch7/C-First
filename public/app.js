@@ -246,7 +246,7 @@
     const denominator = Math.max(1, Number(total) || 0, ...items.map((i) => amount(i) || 0));
     const bars = items.map((item) => `<div class="budget-bar"><div class="budget-bar-header"><span>${esc(first(item.category, item.name, item.item, 'Allocation'))}</span><strong>${esc(rm(amount(item)))}</strong></div><div class="budget-track"><div class="budget-fill" style="width:${Math.max(0, Math.min(100, (amount(item) || 0) / denominator * 100))}%"></div></div></div>`).join('');
     const rows = items.map((item) => [esc(first(item.category, item.name, item.item, 'Allocation')), esc(rm(amount(item))), valueHTML(first(item.quantity, item.qty)), valueHTML(first(item.basis, item.notes, item.description, item.rationale, item.assumption, item.status))]);
-    return `${callout('Planning allocations — not vendor quotes', 'Every figure is in Malaysian ringgit (RM). Obtain real quotes before spending. Prospective sponsor support is unconfirmed and must not be treated as secured income.')}<div class="kpi-grid">${[['Budget limit', rm(limit)], ['Allocated total', rm(total)], ['Contingency', rm(first(b.contingencyRM, b.contingency?.amountRM, b.contingency?.amount, b.contingency))], ['Funding gap', rm(first(b.gapRM, b.gap?.amountRM, b.gap))]].map(([title, value]) => `<div class="kpi"><div class="kpi-label">${esc(title)}</div><div class="kpi-value">${esc(value)}</div></div>`).join('')}</div><div class="content-grid">${card('Where the budget goes', bars ? `<div class="budget-bars">${bars}</div><p class="budget-legend">Bar widths show the share of the recorded allocation total.</p>` : missing('No allocations supplied'))}${card('Funding & guardrails', facts([['Organiser funds', typeof b.organiserFunds === 'object' ? b.organiserFunds : rm(first(b.organiserFundsRM, b.organiserFunds))], ['Sponsor support', first(b.sponsorship, b.sponsorFunds, 'Unconfirmed; no commitment implied')], ['Funding status', b.fundingStatus], ['Gap resolution', first(b.gapResolution, b.fundingPlan, b.notes, 'Verify organiser funds and secure written support; reduce spend if the gap remains.')], ['Contingency policy', first(b.contingencyPolicy, b.contingency?.notes, b.contingencyPercent != null ? `${b.contingencyPercent}% protected planning reserve` : undefined)], ['Scenario', b.scenario], ['Sponsor accounting', b.sponsorAccounting]]))}${card('Allocation breakdown', table(['Item / category', 'Allocation (RM)', 'Quantity', 'Basis / caveats'], rows), true)}</div>`;
+    return `${callout('Planning allocations — not vendor quotes', 'Every figure is in Malaysian ringgit (RM). Obtain real quotes before spending. Prospective sponsor support is unconfirmed and must not be treated as secured income.')}<div class="export-excel-block"><button class="button primary" id="export-budget-excel" type="button">Export budget to Excel <span aria-hidden="true">↓</span></button><p class="export-excel-note">Downloads a spreadsheet you can open in Excel or Google Sheets.</p></div><div class="kpi-grid">${[['Budget limit', rm(limit)], ['Allocated total', rm(total)], ['Contingency', rm(first(b.contingencyRM, b.contingency?.amountRM, b.contingency?.amount, b.contingency))], ['Funding gap', rm(first(b.gapRM, b.gap?.amountRM, b.gap))]].map(([title, value]) => `<div class="kpi"><div class="kpi-label">${esc(title)}</div><div class="kpi-value">${esc(value)}</div></div>`).join('')}</div><div class="content-grid">${card('Where the budget goes', bars ? `<div class="budget-bars">${bars}</div><p class="budget-legend">Bar widths show the share of the recorded allocation total.</p>` : missing('No allocations supplied'))}${card('Funding & guardrails', facts([['Organiser funds', typeof b.organiserFunds === 'object' ? b.organiserFunds : rm(first(b.organiserFundsRM, b.organiserFunds))], ['Sponsor support', first(b.sponsorship, b.sponsorFunds, 'Unconfirmed; no commitment implied')], ['Funding status', b.fundingStatus], ['Gap resolution', first(b.gapResolution, b.fundingPlan, b.notes, 'Verify organiser funds and secure written support; reduce spend if the gap remains.')], ['Contingency policy', first(b.contingencyPolicy, b.contingency?.notes, b.contingencyPercent != null ? `${b.contingencyPercent}% protected planning reserve` : undefined)], ['Scenario', b.scenario], ['Sponsor accounting', b.sponsorAccounting]]))}${card('Allocation breakdown', table(['Item / category', 'Allocation (RM)', 'Quantity', 'Basis / caveats'], rows), true)}</div>`;
   }
   function weatherTab() {
     const w = state.pack.weather || {}, risks = state.pack.risks || {};
@@ -257,8 +257,26 @@
     const sampled = validYears.length ? `${Math.min(...validYears)}–${Math.max(...validYears)}` : 'Not available';
     const rows = array(risks.register).map((r) => [esc(first(r.risk, r.name, 'Risk')), esc(first(r.score, '—')), esc(first(r.mitigation, 'Pending')), esc(first(r.trigger, 'Pending')), esc(first(r.contingency, 'Pending')), esc(first(r.owner, 'Unassigned'))]);
     const samples = array(w.samples).map((s) => [esc(first(s.date, 'Unknown date')), esc(first(s.precipitationMm, 'Unavailable')), esc(first(s.tempMaxC, 'Unavailable')), esc(first(s.tempMeanC, 'Unavailable'))]);
-    const kpis = [['Rain measure', rain == null ? 'Unavailable' : `${rain}${typeof rain === 'number' ? '%' : ''}`, forecast ? 'Source forecast probability; not a guarantee' : 'Observed historical frequency; not a forecast'], ['Historical samples', first(w.sampleCount, 'Unavailable'), 'Missing observations are not filled'], ['Sample years', sampled, 'Actual reported year coverage'], ['Plan B', w.indoorRequired ? 'Indoor required' : 'Check evidence', 'Venue approval remains unconfirmed']];
-    return `${callout(forecast ? 'Actual near-term forecast evidence — not a guarantee.' : 'Historical climatology. Not a forecast.', forecast ? 'The source returned a forecast within its supported horizon. Recheck alerts and the forecast before the event; campus conditions and safety still need local review.' : 'Weather values describe historical patterns, not the weather on your future event date. Review the reported sample size and years. A near-term forecast recheck remains pending.')}<div class="kpi-grid">${kpis.map(([title, value, note]) => `<div class="kpi"><div class="kpi-label">${esc(title)}</div><div class="kpi-value">${esc(value)}</div><div class="kpi-note">${esc(note)}</div></div>`).join('')}</div><div class="content-grid">${card('Weather interpretation & uncertainty', facts([['Evidence mode', w.mode], ['Event date', w.date], ['Source location', first(w.locationEvidence, w.location)], ['Average rainfall', w.precipitationMm != null ? `${w.precipitationMm} mm` : null], ['Average maximum temperature', w.avgTempMax != null ? `${w.avgTempMax} °C` : null], ['Decision', w.decision], ['Uncertainty', w.uncertainty], ['Warnings', w.warnings]]))}${card('Weather citations & rechecks', `${sources(w)}${facts([['Proposed thresholds', w.threshold], ['Reasoning', w.rationale], ['Next checks', first(w.recheck, w.recheckStatus, 'T-14 / T-7 / T-1 checks are pending; no automated notification is claimed')]])}`)}${samples.length ? card('Actual observed sample rows', table(['Sample date', 'Rain (mm)', 'Max temp (°C)', 'Mean temp (°C)'], samples), true) : ''}${card('Risk register & mitigations', rows.length ? table(['Risk', 'L × I', 'Mitigation', 'Trigger', 'Contingency', 'Owner'], rows) : valueHTML(risks), true, first(risks.scale, 'Risk scores are planner assessments, not empirical event probabilities.'))}${risks.planB ? card('Plan B playbooks', valueHTML(risks.planB), true) : ''}${card('Pending weather & operational rechecks', valueHTML(state.pack.rechecks), true)}</div>`;
+
+    // Determine a single rain-risk indicator (Low / Medium / High)
+    let rainRisk = 'Medium', riskNote = 'Plan an indoor backup';
+    const rainNum = number(w.rainProbability != null ? w.rainProbability : w.probability);
+    if (rainNum !== null) {
+      if (rainNum < 0.25) { rainRisk = 'Low'; riskNote = 'Low rain risk; outdoor plan is reasonable with a light backup'; }
+      else if (rainNum < 0.50) { rainRisk = 'Medium'; riskNote = 'Moderate rain risk; plan an indoor backup'; }
+      else { rainRisk = 'High'; riskNote = 'High rain risk; plan an indoor backup or rain contingency'; }
+    }
+    const riskBadge = `<span class="rain-risk-badge rain-risk-${rainRisk.toLowerCase()}">${esc(rainRisk)}</span>`;
+
+    // Candidates from dateDecision for the full evidence toggle
+    const d = state.pack.dateDecision || {};
+    const candidates = array(d.candidates);
+    const candidateRows = candidates.map((c) => typeof c !== 'object' ? [esc(c), missing(), missing(), missing()] : [esc(first(c.date, c.label, c.dateISO, 'Unspecified date')), valueHTML(first(c.score, c.totalScore, c.weightedScore)), valueHTML(first(c.reasons, c.reason, c.rationale, c.factors, c.scores, c.breakdown)), `${badge(c.blocked ? 'Excluded: cited clash' : first(c.status, 'Proposed'), c.blocked ? 'error' : 'warning')}<p>${esc(c.examStatus ? `Exam status: ${c.examStatus}` : first(c.availability, c.risk, c.notes, 'Availability unconfirmed'))}</p>`]);
+
+    // Simplified summary: chosen date, rain-risk indicator, one-line recommendation
+    const chosenDate = first(w.date, d.chosen?.date, d.chosen?.dateISO, d.chosen?.label, d.chosenDate);
+
+    return `${callout(forecast ? 'Near-term forecast evidence — not a guarantee.' : 'Historical climatology — not a forecast.', forecast ? 'Source returned a forecast within its horizon; recheck before the event.' : 'Based on historical patterns, not the actual weather on your event date.', 'warning')}<div class="weather-summary"><div class="weather-summary-item"><div class="weather-summary-label">Chosen date</div><div class="weather-summary-value">${chosenDate ? esc(chosenDate) : missing('No date selected')}</div></div><div class="weather-summary-item"><div class="weather-summary-label">Rain risk</div><div class="weather-summary-value">${riskBadge}</div></div><div class="weather-summary-item"><div class="weather-summary-label">Recommendation</div><div class="weather-summary-value weather-rec">${esc(riskNote)}</div></div></div><details class="weather-evidence-toggle"><summary>See full weather evidence</summary><div class="kpi-grid" style="margin-top:18px">${[['Rain measure', rain == null ? 'Unavailable' : `${rain}${typeof rain === 'number' ? '%' : ''}`, forecast ? 'Source forecast probability; not a guarantee' : 'Observed historical frequency; not a forecast'], ['Historical samples', first(w.sampleCount, 'Unavailable'), 'Missing observations are not filled'], ['Sample years', sampled, 'Actual reported year coverage'], ['Plan B', w.indoorRequired ? 'Indoor required' : 'Check evidence', 'Venue approval remains unconfirmed']].map(([title, value, note]) => `<div class="kpi"><div class="kpi-label">${esc(title)}</div><div class="kpi-value">${esc(value)}</div><div class="kpi-note">${esc(note)}</div></div>`).join('')}</div><div class="content-grid" style="margin-top:18px">${card('Weather interpretation & uncertainty', facts([['Evidence mode', w.mode], ['Event date', w.date], ['Source location', first(w.locationEvidence, w.location)], ['Average rainfall', w.precipitationMm != null ? `${w.precipitationMm} mm` : null], ['Average maximum temperature', w.avgTempMax != null ? `${w.avgTempMax} °C` : null], ['Decision', w.decision], ['Uncertainty', w.uncertainty], ['Warnings', w.warnings]]))}${card('Weather citations & rechecks', `${sources(w)}${facts([['Proposed thresholds', w.threshold], ['Reasoning', w.rationale], ['Next checks', first(w.recheck, w.recheckStatus, 'T-14 / T-7 / T-1 checks are pending; no automated notification is claimed')]])}`)}${samples.length ? card('Actual observed sample rows', table(['Sample date', 'Rain (mm)', 'Max temp (°C)', 'Mean temp (°C)'], samples), true) : ''}${candidateRows.length ? card('Candidate date comparison', table(['Candidate date', 'Score', 'Decision factors', 'Status / caveats'], candidateRows), true, 'Scores are relative planning comparisons, not forecast probabilities.') : ''}${card('Scoring weights & rules', valueHTML(first(d.weights, d.criteria)), true)}${sources(d) ? card('Decision evidence', sources(d), true) : ''}${card('Risk register & mitigations', rows.length ? table(['Risk', 'L × I', 'Mitigation', 'Trigger', 'Contingency', 'Owner'], rows) : valueHTML(risks), true, first(risks.scale, 'Risk scores are planner assessments, not empirical event probabilities.'))}${risks.planB ? card('Plan B playbooks', valueHTML(risks.planB), true) : ''}${card('Pending weather & operational rechecks', valueHTML(state.pack.rechecks), true)}</div></details>`;
   }
   function peopleTab() {
     const p = state.pack.people || {};
@@ -293,7 +311,7 @@
     return `${callout('Ready to edit. Not automatically published.', 'Confirm the final date, venue, registration link and any sponsor branding permissions before posting.', 'info')}<div class="content-grid">${promo?.poster ? card('Poster copy & details', valueHTML(promo.poster), true) : ''}${entries.map((entry, index) => card(typeof entry === 'string' ? `Ready-to-edit caption ${index + 1}` : first(entry.channel, entry.platform, entry.title, entry.name, 'Promotion asset'), typeof entry === 'string' ? `<div class="draft-body">${esc(entry)}</div>` : `${facts([['Audience', entry.audience], ['When', first(entry.when, entry.date, entry.timing)], ['Call to action', first(entry.cta, entry.callToAction)]])}<div class="draft-body">${esc(first(entry.copy, entry.text, entry.caption, entry.body, entry.message, 'No copy supplied.'))}</div>${sources(entry)}`)).join('')}${!Array.isArray(promo) ? card('Promotion schedule & guardrails', valueHTML(Object.fromEntries(Object.entries(promo || {}).filter(([key]) => !['posts', 'captions', 'assets', 'items', 'poster'].includes(key)))), true) : ''}</div>`;
   }
   function exportTab() {
-    return `${callout('Saved, shareable, and still subject to confirmation', 'The run link shows the Event Pack and actual execution trace without login. Roster email addresses and OAuth tokens must not appear in shared packs. PDF and email drafts are exports, not bookings or sent messages.', 'info')}<div class="export-grid"><section class="export-option"><h3>A readable event pack</h3><p>Download the structured plan as a PDF for organiser handover and review.</p><a class="button primary" href="/api/runs/${encodeURIComponent(state.id)}/pdf">Download Event Pack PDF ↓</a></section><section class="export-option"><h3>Share the saved run</h3><p>Read-only plan, sources and genuine specialist trace. No login required.</p><button class="button secondary" data-copy-link>Copy run link ↗</button></section><section class="export-option"><h3>Outreach drafts, not sent mail</h3><p>Gmail compose, clipboard copy and individual .eml exports are available under Sponsors / Gmail.</p><button class="button secondary" data-open-sponsors>Review draft emails →</button></section><section class="export-option"><h3>Inspect real recorded execution</h3><p>Replay preserves recorded tool results and identifies itself as a replay, not new research.</p><button class="button secondary" data-replay>Replay recorded run →</button></section></div>${card('Validation before handover', valueHTML(state.pack.validation), true)}`;
+    return `${callout('Saved, shareable, and still subject to confirmation', 'The run link shows the Event Pack and actual execution trace without login. Roster email addresses and OAuth tokens must not appear in shared packs. PDF and email drafts are exports, not bookings or sent messages.', 'info')}<div class="export-grid"><section class="export-option"><h3>A readable event pack</h3><p>Download the structured plan as a PDF for organiser handover and review.</p><a class="button primary" href="/api/runs/${encodeURIComponent(state.id)}/pdf">Download Event Pack PDF ↓</a></section><section class="export-option"><h3>Generate proposal</h3><p>Produces a detailed written proposal as a downloadable PDF, pulled from the Event Pack data: event summary, date, venue, budget, risk plan, and next actions.</p><button class="button primary" id="generate-proposal" type="button">Generate proposal PDF <span aria-hidden="true">↓</span></button><p class="export-excel-note" style="margin-top:8px">Draft for your review — you review and send it yourself.</p></section><section class="export-option"><h3>Share the saved run</h3><p>Read-only plan, sources and genuine specialist trace. No login required.</p><button class="button secondary" data-copy-link>Copy run link ↗</button></section><section class="export-option"><h3>Outreach drafts, not sent mail</h3><p>Gmail compose, clipboard copy and individual .eml exports are available under Sponsors / Gmail.</p><button class="button secondary" data-open-sponsors>Review draft emails →</button></section><section class="export-option"><h3>Inspect real recorded execution</h3><p>Replay preserves recorded tool results and identifies itself as a replay, not new research.</p><button class="button secondary" data-replay>Replay recorded run →</button></section></div>${card('Validation before handover', valueHTML(state.pack.validation), true)}`;
   }
   function renderContent() {
     if (!state.pack) return;
@@ -305,6 +323,295 @@
     try { if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(text); else { const input = document.createElement('textarea'); input.value = text; input.style.position = 'fixed'; input.style.opacity = '0'; document.body.append(input); input.select(); const copied = document.execCommand('copy'); input.remove(); if (!copied) throw new Error('Copy failed'); } notice(success); } catch { notice('Clipboard access was blocked. Select and copy from the visible draft, or copy the saved run address from the browser.'); }
   }
   function copyRunLink() { if (state.id) copyText(`${location.origin}/run/${encodeURIComponent(state.id)}`, 'Saved run link copied. The public pack excludes private roster email addresses.'); }
+
+  function exportBudgetExcel() {
+    try {
+      const b = state.pack.budget || {}, items = array(first(b.items, b.allocations));
+      const amount = (item) => number(first(item.amountRM, item.totalRM, item.amount, item.costRM, item.total, item.cost));
+      const total = first(b.total, b.totalRM, items.reduce((sum, item) => sum + (amount(item) || 0), 0));
+      const limit = first(b.limit, b.limitRM, b.budgetRM, state.pack.goal?.budgetRM);
+      const contingency = first(b.contingencyRM, b.contingency?.amountRM, b.contingency?.amount, b.contingency);
+      const gap = first(b.gapRM, b.gap?.amountRM, b.gap);
+      const organiserFunds = typeof b.organiserFunds === 'object' ? null : first(b.organiserFundsRM, b.organiserFunds);
+
+      // Build category totals
+      const categoryTotals = {};
+      items.forEach((item) => {
+        const cat = first(item.category, item.name, item.item, 'Allocation');
+        const amt = amount(item) || 0;
+        categoryTotals[cat] = (categoryTotals[cat] || 0) + amt;
+      });
+
+      // Build the Excel XML (SpreadsheetML format with chart)
+      const categories = Object.keys(categoryTotals);
+      const chartSeries = categories.map((cat) => `<c:cat><c:strRef><c:f>Sheet1!$A$3:$A$${categories.length + 2}</c:f><c:strCache><c:ptCount val="${categories.length}"/>${categories.map((c, i) => `<c:pt idx="${i}"><c:v>${esc(cat)}</c:v></c:pt>`).join('')}</c:strCache></c:strRef></c:cat>`).join('');
+
+      let xml = '<?xml version="1.0"?>\n';
+      xml += '<?mso-application progid="Excel.Sheet"?>\n';
+      xml += '<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"\n';
+      xml += ' xmlns:o="urn:schemas-microsoft-com:office:office"\n';
+      xml += ' xmlns:x="urn:schemas-microsoft-com:office:excel"\n';
+      xml += ' xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"\n';
+      xml += ' xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet">\n';
+      xml += ' <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">\n';
+      xml += '  <Title>EventPilot Budget</Title>\n';
+      xml += ' </DocumentProperties>\n';
+      xml += ' <Styles>\n';
+      xml += '  <Style ss:ID="Header"><Font ss:Bold="1" ss:Size="12"/><Interior ss:Color="#E8F3ED" ss:Pattern="Solid"/><Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/></Border></Borders></Style>\n';
+      xml += '  <Style ss:ID="Title"><Font ss:Bold="1" ss:Size="14"/></Style>\n';
+      xml += '  <Style ss:ID="Total"><Font ss:Bold="1"/></Style>\n';
+      xml += '  <Style ss:ID="Number"><NumberFormat ss:Format="#,##0.00"/></Style>\n';
+      xml += '  <Style ss:ID="Label"><Font ss:Bold="1" ss:Color="#6C7D7E"/></Style>\n';
+      xml += ' </Styles>\n';
+      xml += ' <Worksheet ss:Name="Budget">\n';
+      xml += '  <Table>\n';
+      // Title
+      xml += '   <Row><Cell ss:StyleID="Title"><Data ss:Type="String">EventPilot — Budget Breakdown</Data></Cell></Row>\n';
+      xml += '   <Row/>\n';
+      // Budget summary section
+      xml += '   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Budget summary</Data></Cell></Row>\n';
+      xml += `   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Budget ceiling (RM)</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${limit ?? ''}</Data></Cell></Row>\n`;
+      xml += `   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Allocated total (RM)</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${total ?? ''}</Data></Cell></Row>\n`;
+      xml += `   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Contingency (RM)</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${contingency ?? ''}</Data></Cell></Row>\n`;
+      xml += `   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Funding gap (RM)</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${gap ?? ''}</Data></Cell></Row>\n`;
+      if (organiserFunds != null) xml += `   <Row><Cell ss:StyleID="Label"><Data ss:Type="String">Organiser funds (RM)</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${organiserFunds}</Data></Cell></Row>\n`;
+      xml += '   <Row/>\n';
+      // Category totals
+      xml += '   <Row><Cell ss:StyleID="Header"><Data ss:Type="String">Category</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Total (RM)</Data></Cell></Row>\n';
+      categories.forEach((cat) => {
+        xml += `   <Row><Cell><Data ss:Type="String">${esc(cat)}</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${categoryTotals[cat]}</Data></Cell></Row>\n`;
+      });
+      xml += `   <Row><Cell ss:StyleID="Total"><Data ss:Type="String">Total</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${total ?? ''}</Data></Cell></Row>\n`;
+      xml += '   <Row/>\n';
+      // Full budget breakdown
+      xml += '   <Row><Cell ss:StyleID="Header"><Data ss:Type="String">Item / Category</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Amount (RM)</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Quantity</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Basis / Notes</Data></Cell></Row>\n`;
+      items.forEach((item) => {
+        const cat = esc(first(item.category, item.name, item.item, 'Allocation'));
+        const amt = amount(item);
+        const qty = first(item.quantity, item.qty, '');
+        const notes = esc(first(item.basis, item.notes, item.description, item.rationale, item.assumption, item.status, ''));
+        xml += `   <Row><Cell><Data ss:Type="String">${cat}</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${amt ?? ''}</Data></Cell><Cell><Data ss:Type="String">${esc(qty)}</Data></Cell><Cell><Data ss:Type="String">${notes}</Data></Cell></Row>\n`;
+      });
+      xml += `   <Row><Cell ss:StyleID="Total"><Data ss:Type="String">Total</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${total ?? ''}</Data></Cell></Row>\n`;
+      xml += '  </Table>\n';
+      // Chart
+      xml += `  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel"><PageSetup><Layout x:Orientation="Portrait"/></PageSetup></WorksheetOptions>\n`;
+      xml += ' </Worksheet>\n';
+      // Chart worksheet
+      xml += ' <Worksheet ss:Name="Chart">\n';
+      xml += '  <Table>\n';
+      xml += `   <Row><Cell ss:StyleID="Header"><Data ss:Type="String">Category</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Spend (RM)</Data></Cell><Cell ss:StyleID="Header"><Data ss:Type="String">Ceiling (RM)</Data></Cell></Row>\n`;
+      categories.forEach((cat) => {
+        xml += `   <Row><Cell><Data ss:Type="String">${esc(cat)}</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${categoryTotals[cat]}</Data></Cell><Cell ss:StyleID="Number"><Data ss:Type="Number">${limit ?? 0}</Data></Cell></Row>\n`;
+      });
+      xml += '  </Table>\n';
+      xml += ' </Worksheet>\n';
+      xml += '</Workbook>';
+
+      const blob = new Blob([xml], { type: 'application/vnd.ms-excel' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'EventPilot-Budget.xlsx';
+      document.body.append(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      notice('Budget spreadsheet downloaded. Open it in Excel or Google Sheets.');
+    } catch (error) {
+      notice(`Could not export budget: ${error.message}`, true);
+    }
+  }
+
+  function generateProposal() {
+    try {
+      const p = state.pack || {};
+      const g = p.goal || {};
+      const b = p.budget || {};
+      const d = p.dateDecision || {};
+      const chosen = d.chosen;
+      const chosenDate = typeof chosen === 'object' ? first(chosen?.date, chosen?.label, chosen?.dateISO) : chosen;
+      const venues = p.venues || {};
+      const venueName = first(venues.selected?.name, venues.recommended?.name, 'To be confirmed');
+      const items = array(first(b.items, b.allocations));
+      const amount = (item) => number(first(item.amountRM, item.totalRM, item.amount, item.costRM, item.total, item.cost));
+      const total = first(b.total, b.totalRM, items.reduce((sum, item) => sum + (amount(item) || 0), 0));
+      const limit = first(b.limit, b.limitRM, b.budgetRM, g.budgetRM);
+      const contingency = first(b.contingencyRM, b.contingency?.amountRM, b.contingency?.amount, b.contingency);
+      const gap = first(b.gapRM, b.gap?.amountRM, b.gap);
+      const risks = p.risks || {};
+      const riskRegister = array(risks.register);
+      const rechecks = array(first(p.rechecks, p.pendingChecks));
+
+      // Build text lines for the proposal PDF
+      const lines = [];
+      lines.push('EVENTPILOT — EVENT PROPOSAL (DRAFT)');
+      lines.push('====================================');
+      lines.push('');
+      lines.push('IMPORTANT: This is a draft proposal for your review.');
+      lines.push('Nothing is confirmed. All bookings, sponsor commitments,');
+      lines.push('and availability require independent verification.');
+      lines.push('Do not send this proposal without reviewing and editing it.');
+      lines.push('');
+      lines.push('Generated: ' + (p.generatedAt || now()));
+      lines.push('');
+
+      // Event summary
+      lines.push('1. EVENT SUMMARY');
+      lines.push('-'.repeat(40));
+      lines.push(`Event type: ${first(g.eventType, 'Not specified')}`);
+      lines.push(`Cause / purpose: ${first(g.cause, 'Not specified')}`);
+      lines.push(`Campus: ${first(g.campus, 'Not specified')}`);
+      lines.push(`Expected attendees: ${first(g.attendance, 'Unconfirmed')}`);
+      if (typeof p.summary === 'string') { lines.push(''); lines.push('Summary:'); lines.push(p.summary); }
+      else if (p.summary) { lines.push(''); lines.push('Summary:'); lines.push(JSON.stringify(p.summary, null, 2)); }
+      lines.push('');
+
+      // Date
+      lines.push('2. PROPOSED DATE');
+      lines.push('-'.repeat(40));
+      lines.push(`Chosen date: ${chosenDate || 'No date selected'}`);
+      if (d.rationale || d.reason) lines.push(`Rationale: ${first(d.rationale, d.reason)}`);
+      const backups = array(first(d.backups, d.alternatives));
+      if (backups.length) lines.push(`Backup dates: ${backups.map((b2) => typeof b2 === 'object' ? first(b2.date, b2.label, b2.dateISO) : b2).join(', ')}`);
+      lines.push('');
+
+      // Venue
+      lines.push('3. VENUE');
+      lines.push('-'.repeat(40));
+      lines.push(`Proposed venue: ${venueName}`);
+      if (venues.selected?.notes || venues.recommended?.notes) lines.push(`Notes: ${first(venues.selected?.notes, venues.recommended?.notes)}`);
+      lines.push('Booking status: Not booked; requires campus approval.');
+      lines.push('');
+
+      // Budget
+      lines.push('4. BUDGET (RM)');
+      lines.push('-'.repeat(40));
+      lines.push(`Budget ceiling: RM ${limit ?? 'Not specified'}`);
+      lines.push(`Allocated total: RM ${total ?? 'Not specified'}`);
+      lines.push(`Contingency: RM ${contingency ?? 'Not specified'}`);
+      lines.push(`Funding gap: RM ${gap ?? 'Not specified'}`);
+      if (b.fundingStatus) lines.push(`Funding status: ${b.fundingStatus}`);
+      lines.push('');
+      lines.push('Budget breakdown:');
+      items.forEach((item) => {
+        lines.push(`  - ${first(item.category, item.name, item.item, 'Allocation')}: RM ${amount(item) ?? 'N/A'}${item.quantity ? ` (qty: ${item.quantity})` : ''}`);
+        if (item.basis || item.notes) lines.push(`    Basis: ${first(item.basis, item.notes, item.description, '')}`);
+      });
+      lines.push('');
+
+      // Risk plan
+      lines.push('5. RISK PLAN');
+      lines.push('-'.repeat(40));
+      if (riskRegister.length) {
+        riskRegister.forEach((r) => {
+          lines.push(`  Risk: ${first(r.risk, r.name, 'Risk')} | Score: ${first(r.score, '—')}`);
+          lines.push(`    Mitigation: ${first(r.mitigation, 'Pending')}`);
+          lines.push(`    Trigger: ${first(r.trigger, 'Pending')}`);
+          lines.push(`    Contingency: ${first(r.contingency, 'Pending')}`);
+          lines.push('');
+        });
+      } else {
+        lines.push('No risk register entries supplied.');
+      }
+      if (risks.planB) {
+        lines.push('Plan B:');
+        if (typeof risks.planB === 'string') lines.push(`  ${risks.planB}`);
+        else lines.push(`  ${JSON.stringify(risks.planB, null, 2)}`);
+      }
+      lines.push('');
+
+      // Next actions
+      lines.push('6. NEXT ACTIONS');
+      lines.push('-'.repeat(40));
+      if (rechecks.length) {
+        rechecks.forEach((r) => {
+          if (typeof r === 'object') {
+            lines.push(`  - ${first(r.action, r.task, r.description, r.label, 'Action needed')}`);
+            if (r.owner || r.responsible) lines.push(`    Owner: ${first(r.owner, r.responsible)}`);
+          } else {
+            lines.push(`  - ${r}`);
+          }
+        });
+      } else {
+        lines.push('  - Confirm venue booking with campus administration');
+        lines.push('  - Confirm event date against academic calendar');
+        lines.push('  - Verify organiser funds and close funding gap');
+        lines.push('  - Recheck weather forecast closer to event date');
+        lines.push('  - Confirm MC and volunteer availability');
+      }
+      lines.push('');
+
+      // Validation
+      if (p.validation) {
+        lines.push('7. VALIDATION STATUS');
+        lines.push('-'.repeat(40));
+        if (typeof p.validation === 'string') lines.push(p.validation);
+        else lines.push(JSON.stringify(p.validation, null, 2));
+        lines.push('');
+      }
+
+      lines.push('====================================');
+      lines.push('END OF PROPOSAL — REVIEW AND EDIT BEFORE SENDING');
+      lines.push('This proposal was generated by EventPilot.');
+      lines.push('All figures are planning allocations, not vendor quotes.');
+
+      // Build PDF using the same approach as server.py pdf_bytes
+      const pdfLines = lines;
+      const pages = [];
+      for (let i = 0; i < pdfLines.length; i += 60) pages.push(pdfLines.slice(i, i + 60));
+      if (!pages.length) pages.push(['No content generated.']);
+
+      const objects = [];
+      function obj(data) {
+        objects.push(typeof data === 'string' ? data : data);
+        return objects.length;
+      }
+      obj('<< /Type /Catalog /Pages 2 0 R >>');
+      obj('');
+      const fontId = obj('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
+      const pageIds = [];
+      pages.forEach((page, index) => {
+        const content = ['BT /F1 8.5 Tf 12 TL 40 797 Td'];
+        page.forEach((line) => {
+          const safe = String(line).replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)');
+          content.push(`(${safe}) Tj T*`);
+        });
+        content.push('ET');
+        content.push(`BT /F1 9 Tf 40 30 Td (EventPilot Proposal | Page ${index + 1} of ${pages.length}) Tj ET`);
+        const stream = content.join('\n');
+        const contentId = obj(`<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`);
+        pageIds.push(obj(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 ${fontId} 0 R >> >> /Contents ${contentId} 0 R >>`));
+      });
+      objects[1] = `<< /Type /Pages /Kids [${pageIds.map((id) => `${id} 0 R`).join(' ')}] /Count ${pages.length} >>`;
+
+      let out = '%PDF-1.4\n%\xe2\xe3\xcf\xd3\n';
+      const offsets = [0];
+      objects.forEach((value, i) => {
+        offsets.push(out.length);
+        const encoded = typeof value === 'string' ? value : String(value);
+        out += `${i + 1} 0 obj\n${encoded}\nendobj\n`;
+      });
+      const xref = out.length;
+      out += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n`;
+      offsets.slice(1).forEach((offset) => { out += `${String(offset).padStart(10, '0')} 00000 n \n`; });
+      out += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;
+
+      const blob = new Blob([out], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'EventPilot-Proposal.pdf';
+      document.body.append(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      notice('Proposal PDF downloaded. Review and edit it before sending — this is a draft.');
+    } catch (error) {
+      notice(`Could not generate proposal: ${error.message}`, true);
+    }
+  }
+
   function editRerun() {
     const g = state.pack?.goal || {};
     for (const [id, key] of [['event-type', 'eventType'], ['cause', 'cause'], ['date-start', 'dateStart'], ['date-end', 'dateEnd'], ['budget', 'budgetRM'], ['organiser-funds', 'organiserFundsRM'], ['attendance', 'attendance'], ['campus', 'campus'], ['location', 'location']]) if (g[key] != null) $(id).value = String(g[key]);
@@ -379,6 +686,8 @@
   $('tab-content').addEventListener('click', (event) => {
     const button = event.target.closest('button'); if (!button) return;
     if (button.id === 'gmail-drafts') createGmailDrafts();
+    else if (button.id === 'export-budget-excel') exportBudgetExcel();
+    else if (button.id === 'generate-proposal') generateProposal();
     else if (button.hasAttribute('data-copy-link')) copyRunLink();
     else if (button.hasAttribute('data-open-sponsors')) selectTab('Sponsors / Gmail');
     else if (button.hasAttribute('data-replay')) startRun('replay');
