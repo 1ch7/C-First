@@ -1,0 +1,5 @@
+# Core runtime uses the standard library. These local-only dependencies enable
+# on-demand budget XLSX and written draft proposal PDF downloads (no AI calls).
+openpyxl>=3.1,<4
+reportlab>=4,<5
+Pillow>=10.1,<13

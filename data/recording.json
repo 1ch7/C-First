@@ -1,0 +1,3938 @@
+{
+  "prompt": "I want to organize a charity event at my university in March with a budget of RM2k.",
+  "pack": {
+    "goal": {
+      "eventType": "charity event",
+      "cause": "a student-selected charity (beneficiary unconfirmed)",
+      "month": 3,
+      "year": 2027,
+      "budgetRM": 2000.0,
+      "location": "Subang Jaya, Selangor, Malaysia",
+      "campus": "Taylor's Lakeside Campus",
+      "attendance": 100,
+      "prompt": "I want to organize a charity event at my university in March with a budget of RM2k.",
+      "scenarioDate": "2026-10-10",
+      "charityPurpose": true,
+      "budgetCents": 200000,
+      "dateStart": "2027-03-01",
+      "dateEnd": "2027-03-31",
+      "organiserFundsRM": 1400.0,
+      "attendanceAssumed": true
+    },
+    "assumptions": [
+      {
+        "field": "cause",
+        "value": "a student-selected charity (beneficiary unconfirmed)",
+        "reason": "No beneficiary or cause was named; organiser must confirm before outreach.",
+        "editable": true,
+        "explicit": true
+      },
+      {
+        "field": "year",
+        "value": 2027,
+        "reason": "Month without year resolves to its next occurrence after the MYT planning date 2026-10-10.",
+        "editable": true,
+        "explicit": true
+      },
+      {
+        "field": "attendance",
+        "value": 100,
+        "reason": "100 attendees is a planning assumption, not a confirmed audience.",
+        "editable": true,
+        "explicit": true
+      },
+      {
+        "field": "campus",
+        "value": "Taylor's Lakeside Campus",
+        "reason": "Campus was not specified; confirm the campus before seeking permission.",
+        "editable": true,
+        "explicit": true
+      },
+      {
+        "field": "location",
+        "value": "Subang Jaya, Selangor, Malaysia",
+        "reason": "Location was not specified; location affects weather and campus relevance.",
+        "editable": true,
+        "explicit": true
+      },
+      {
+        "field": "organiserFundsRM",
+        "value": 1400.0,
+        "reason": "Assume organiser covers 70% of the ceiling; the remaining 30% is an unconfirmed funding gap.",
+        "editable": true,
+        "explicit": true
+      }
+    ],
+    "dateDecision": {
+      "candidates": [
+        {
+          "date": "2027-03-06",
+          "weekday": "Saturday",
+          "score": 44.5,
+          "weather": {
+            "date": "2027-03-06",
+            "location": "Subang Jaya, Selangor, Malaysia",
+            "available": true,
+            "mode": "historical climatology, not a forecast",
+            "rainProbability": 90.0,
+            "rainProbabilityKind": "historical same-calendar-day rainy frequency (%), not forecast probability",
+            "rainDays": 9,
+            "heavyRainDays": 1,
+            "precipitationMm": 9.72,
+            "avgTempMax": 30.63,
+            "avgTempMean": 26.37,
+            "sampleCount": 10,
+            "years": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "sampleYears": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "samples": [
+              {
+                "date": "2016-03-06",
+                "precipitationMm": 4.9,
+                "tempMaxC": 33.3,
+                "tempMeanC": 27.9
+              },
+              {
+                "date": "2017-03-06",
+                "precipitationMm": 10.9,
+                "tempMaxC": 30.0,
+                "tempMeanC": 25.8
+              },
+              {
+                "date": "2018-03-06",
+                "precipitationMm": 9.3,
+                "tempMaxC": 29.8,
+                "tempMeanC": 26.2
+              },
+              {
+                "date": "2019-03-06",
+                "precipitationMm": 1.7,
+                "tempMaxC": 32.2,
+                "tempMeanC": 27.4
+              },
+              {
+                "date": "2020-03-06",
+                "precipitationMm": 14.0,
+                "tempMaxC": 30.4,
+                "tempMeanC": 26.0
+              },
+              {
+                "date": "2021-03-06",
+                "precipitationMm": 21.8,
+                "tempMaxC": 30.6,
+                "tempMeanC": 26.9
+              },
+              {
+                "date": "2022-03-06",
+                "precipitationMm": 11.9,
+                "tempMaxC": 29.7,
+                "tempMeanC": 25.3
+              },
+              {
+                "date": "2023-03-06",
+                "precipitationMm": 0.0,
+                "tempMaxC": 30.5,
+                "tempMeanC": 25.6
+              },
+              {
+                "date": "2024-03-06",
+                "precipitationMm": 4.6,
+                "tempMaxC": 30.9,
+                "tempMeanC": 26.8
+              },
+              {
+                "date": "2025-03-06",
+                "precipitationMm": 18.1,
+                "tempMaxC": 28.9,
+                "tempMeanC": 25.8
+              }
+            ],
+            "sourceUrls": [
+              "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+            ],
+            "warnings": [
+              "Weather represents the sourced Subang Jaya city grid, not a campus microclimate."
+            ],
+            "uncertainty": "Only 10 same-calendar-day samples from ten complete years; coarse reanalysis grid, not campus measurements. Frequency is not a forecast for the event date.",
+            "assumptions": {
+              "rainDayThresholdMm": 1.0,
+              "heavyRainThresholdMm": 20.0,
+              "heavyRainDefinition": "Planning assumption: daily precipitation >=20 mm, not an official warning classification"
+            },
+            "resolvedLocation": {
+              "name": "Subang Jaya",
+              "region": "Selangor",
+              "latitude": 3.04384,
+              "longitude": 101.58062,
+              "source": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "scope": "Subang Jaya city-grid proxy; not campus coordinates"
+            },
+            "probability": 0.9
+          },
+          "weatherConfidence": "low\u2014historical frequency is not an event-date forecast",
+          "holidayClash": null,
+          "examStatus": "unknown",
+          "fastingContext": [
+            {
+              "start": "2027-03-01",
+              "end": "2027-03-09",
+              "source": "https://www.timeanddate.com/holidays/malaysia/2027",
+              "provisional": true,
+              "sourceNote": "Inferred provisional early-March planning window from secondary Ramadan-start and Eid estimates, not a final verified religious calendar.",
+              "note": "Fasting-period logistics: avoid daytime food-centered programming; local dates require confirmation."
+            },
+            {
+              "start": "2027-03-01",
+              "end": "2027-03-09",
+              "source": "https://www.timeanddate.com/holidays/malaysia/2027",
+              "provisional": true,
+              "notes": "Inferred provisional early-March planning window from secondary Ramadan-start and Eid estimates, not a final verified religious calendar."
+            }
+          ],
+          "blocked": false,
+          "reasons": [
+            "Weekend candidate.",
+            "Campus exam timetable is unconfirmed; do not interpret as clear.",
+            "No cited holiday clash found; holiday completeness remains unconfirmed.",
+            "Weather rain-risk estimate 90%; mode: historical climatology, not a forecast.",
+            "Cited provisional fasting-period overlap; avoid food-centred or performance scheduling without local approval."
+          ]
+        },
+        {
+          "date": "2027-03-13",
+          "weekday": "Saturday",
+          "score": 54.5,
+          "weather": {
+            "date": "2027-03-13",
+            "location": "Subang Jaya, Selangor, Malaysia",
+            "available": true,
+            "mode": "historical climatology, not a forecast",
+            "rainProbability": 90.0,
+            "rainProbabilityKind": "historical same-calendar-day rainy frequency (%), not forecast probability",
+            "rainDays": 9,
+            "heavyRainDays": 1,
+            "precipitationMm": 7.62,
+            "avgTempMax": 31.01,
+            "avgTempMean": 26.77,
+            "sampleCount": 10,
+            "years": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "sampleYears": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "samples": [
+              {
+                "date": "2016-03-13",
+                "precipitationMm": 0.8,
+                "tempMaxC": 32.7,
+                "tempMeanC": 28.4
+              },
+              {
+                "date": "2017-03-13",
+                "precipitationMm": 2.4,
+                "tempMaxC": 30.8,
+                "tempMeanC": 26.8
+              },
+              {
+                "date": "2018-03-13",
+                "precipitationMm": 3.2,
+                "tempMaxC": 30.3,
+                "tempMeanC": 26.3
+              },
+              {
+                "date": "2019-03-13",
+                "precipitationMm": 11.9,
+                "tempMaxC": 31.2,
+                "tempMeanC": 26.8
+              },
+              {
+                "date": "2020-03-13",
+                "precipitationMm": 3.0,
+                "tempMaxC": 31.1,
+                "tempMeanC": 26.9
+              },
+              {
+                "date": "2021-03-13",
+                "precipitationMm": 30.7,
+                "tempMaxC": 31.5,
+                "tempMeanC": 25.6
+              },
+              {
+                "date": "2022-03-13",
+                "precipitationMm": 12.6,
+                "tempMaxC": 30.8,
+                "tempMeanC": 26.3
+              },
+              {
+                "date": "2023-03-13",
+                "precipitationMm": 5.3,
+                "tempMaxC": 28.5,
+                "tempMeanC": 25.9
+              },
+              {
+                "date": "2024-03-13",
+                "precipitationMm": 1.9,
+                "tempMaxC": 31.5,
+                "tempMeanC": 27.0
+              },
+              {
+                "date": "2025-03-13",
+                "precipitationMm": 4.4,
+                "tempMaxC": 31.7,
+                "tempMeanC": 27.7
+              }
+            ],
+            "sourceUrls": [
+              "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+            ],
+            "warnings": [
+              "Weather represents the sourced Subang Jaya city grid, not a campus microclimate."
+            ],
+            "uncertainty": "Only 10 same-calendar-day samples from ten complete years; coarse reanalysis grid, not campus measurements. Frequency is not a forecast for the event date.",
+            "assumptions": {
+              "rainDayThresholdMm": 1.0,
+              "heavyRainThresholdMm": 20.0,
+              "heavyRainDefinition": "Planning assumption: daily precipitation >=20 mm, not an official warning classification"
+            },
+            "resolvedLocation": {
+              "name": "Subang Jaya",
+              "region": "Selangor",
+              "latitude": 3.04384,
+              "longitude": 101.58062,
+              "source": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "scope": "Subang Jaya city-grid proxy; not campus coordinates"
+            },
+            "probability": 0.9
+          },
+          "weatherConfidence": "low\u2014historical frequency is not an event-date forecast",
+          "holidayClash": null,
+          "examStatus": "unknown",
+          "fastingContext": [],
+          "blocked": false,
+          "reasons": [
+            "Weekend candidate.",
+            "Campus exam timetable is unconfirmed; do not interpret as clear.",
+            "No cited holiday clash found; holiday completeness remains unconfirmed.",
+            "Weather rain-risk estimate 90%; mode: historical climatology, not a forecast."
+          ]
+        },
+        {
+          "date": "2027-03-20",
+          "weekday": "Saturday",
+          "score": 59.0,
+          "weather": {
+            "date": "2027-03-20",
+            "location": "Subang Jaya, Selangor, Malaysia",
+            "available": true,
+            "mode": "historical climatology, not a forecast",
+            "rainProbability": 80.0,
+            "rainProbabilityKind": "historical same-calendar-day rainy frequency (%), not forecast probability",
+            "rainDays": 8,
+            "heavyRainDays": 1,
+            "precipitationMm": 7.16,
+            "avgTempMax": 30.91,
+            "avgTempMean": 26.9,
+            "sampleCount": 10,
+            "years": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "sampleYears": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "samples": [
+              {
+                "date": "2016-03-20",
+                "precipitationMm": 2.7,
+                "tempMaxC": 31.7,
+                "tempMeanC": 28.0
+              },
+              {
+                "date": "2017-03-20",
+                "precipitationMm": 20.4,
+                "tempMaxC": 28.3,
+                "tempMeanC": 25.4
+              },
+              {
+                "date": "2018-03-20",
+                "precipitationMm": 14.4,
+                "tempMaxC": 29.5,
+                "tempMeanC": 25.8
+              },
+              {
+                "date": "2019-03-20",
+                "precipitationMm": 5.1,
+                "tempMaxC": 30.9,
+                "tempMeanC": 27.2
+              },
+              {
+                "date": "2020-03-20",
+                "precipitationMm": 0.7,
+                "tempMaxC": 30.9,
+                "tempMeanC": 27.0
+              },
+              {
+                "date": "2021-03-20",
+                "precipitationMm": 13.7,
+                "tempMaxC": 31.1,
+                "tempMeanC": 26.3
+              },
+              {
+                "date": "2022-03-20",
+                "precipitationMm": 0.2,
+                "tempMaxC": 31.2,
+                "tempMeanC": 27.6
+              },
+              {
+                "date": "2023-03-20",
+                "precipitationMm": 2.0,
+                "tempMaxC": 32.5,
+                "tempMeanC": 27.3
+              },
+              {
+                "date": "2024-03-20",
+                "precipitationMm": 10.5,
+                "tempMaxC": 31.3,
+                "tempMeanC": 27.1
+              },
+              {
+                "date": "2025-03-20",
+                "precipitationMm": 1.9,
+                "tempMaxC": 31.7,
+                "tempMeanC": 27.3
+              }
+            ],
+            "sourceUrls": [
+              "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+            ],
+            "warnings": [
+              "Weather represents the sourced Subang Jaya city grid, not a campus microclimate."
+            ],
+            "uncertainty": "Only 10 same-calendar-day samples from ten complete years; coarse reanalysis grid, not campus measurements. Frequency is not a forecast for the event date.",
+            "assumptions": {
+              "rainDayThresholdMm": 1.0,
+              "heavyRainThresholdMm": 20.0,
+              "heavyRainDefinition": "Planning assumption: daily precipitation >=20 mm, not an official warning classification"
+            },
+            "resolvedLocation": {
+              "name": "Subang Jaya",
+              "region": "Selangor",
+              "latitude": 3.04384,
+              "longitude": 101.58062,
+              "source": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "scope": "Subang Jaya city-grid proxy; not campus coordinates"
+            },
+            "probability": 0.8
+          },
+          "weatherConfidence": "low\u2014historical frequency is not an event-date forecast",
+          "holidayClash": null,
+          "examStatus": "unknown",
+          "fastingContext": [],
+          "blocked": false,
+          "reasons": [
+            "Weekend candidate.",
+            "Campus exam timetable is unconfirmed; do not interpret as clear.",
+            "No cited holiday clash found; holiday completeness remains unconfirmed.",
+            "Weather rain-risk estimate 80%; mode: historical climatology, not a forecast."
+          ]
+        },
+        {
+          "date": "2027-03-21",
+          "weekday": "Sunday",
+          "score": 59.0,
+          "weather": {
+            "date": "2027-03-21",
+            "location": "Subang Jaya, Selangor, Malaysia",
+            "available": true,
+            "mode": "historical climatology, not a forecast",
+            "rainProbability": 80.0,
+            "rainProbabilityKind": "historical same-calendar-day rainy frequency (%), not forecast probability",
+            "rainDays": 8,
+            "heavyRainDays": 1,
+            "precipitationMm": 7.48,
+            "avgTempMax": 30.45,
+            "avgTempMean": 26.7,
+            "sampleCount": 10,
+            "years": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "sampleYears": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "samples": [
+              {
+                "date": "2016-03-21",
+                "precipitationMm": 10.4,
+                "tempMaxC": 31.4,
+                "tempMeanC": 28.1
+              },
+              {
+                "date": "2017-03-21",
+                "precipitationMm": 0.8,
+                "tempMaxC": 30.7,
+                "tempMeanC": 26.5
+              },
+              {
+                "date": "2018-03-21",
+                "precipitationMm": 7.4,
+                "tempMaxC": 29.3,
+                "tempMeanC": 26.0
+              },
+              {
+                "date": "2019-03-21",
+                "precipitationMm": 23.3,
+                "tempMaxC": 29.5,
+                "tempMeanC": 26.2
+              },
+              {
+                "date": "2020-03-21",
+                "precipitationMm": 8.5,
+                "tempMaxC": 30.7,
+                "tempMeanC": 26.4
+              },
+              {
+                "date": "2021-03-21",
+                "precipitationMm": 8.9,
+                "tempMaxC": 29.9,
+                "tempMeanC": 26.4
+              },
+              {
+                "date": "2022-03-21",
+                "precipitationMm": 0.2,
+                "tempMaxC": 30.5,
+                "tempMeanC": 27.1
+              },
+              {
+                "date": "2023-03-21",
+                "precipitationMm": 4.4,
+                "tempMaxC": 29.9,
+                "tempMeanC": 26.2
+              },
+              {
+                "date": "2024-03-21",
+                "precipitationMm": 7.9,
+                "tempMaxC": 29.3,
+                "tempMeanC": 26.0
+              },
+              {
+                "date": "2025-03-21",
+                "precipitationMm": 3.0,
+                "tempMaxC": 33.3,
+                "tempMeanC": 28.1
+              }
+            ],
+            "sourceUrls": [
+              "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+            ],
+            "warnings": [
+              "Weather represents the sourced Subang Jaya city grid, not a campus microclimate."
+            ],
+            "uncertainty": "Only 10 same-calendar-day samples from ten complete years; coarse reanalysis grid, not campus measurements. Frequency is not a forecast for the event date.",
+            "assumptions": {
+              "rainDayThresholdMm": 1.0,
+              "heavyRainThresholdMm": 20.0,
+              "heavyRainDefinition": "Planning assumption: daily precipitation >=20 mm, not an official warning classification"
+            },
+            "resolvedLocation": {
+              "name": "Subang Jaya",
+              "region": "Selangor",
+              "latitude": 3.04384,
+              "longitude": 101.58062,
+              "source": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "scope": "Subang Jaya city-grid proxy; not campus coordinates"
+            },
+            "probability": 0.8
+          },
+          "weatherConfidence": "low\u2014historical frequency is not an event-date forecast",
+          "holidayClash": null,
+          "examStatus": "unknown",
+          "fastingContext": [],
+          "blocked": false,
+          "reasons": [
+            "Weekend candidate.",
+            "Campus exam timetable is unconfirmed; do not interpret as clear.",
+            "No cited holiday clash found; holiday completeness remains unconfirmed.",
+            "Weather rain-risk estimate 80%; mode: historical climatology, not a forecast."
+          ]
+        },
+        {
+          "date": "2027-03-28",
+          "weekday": "Sunday",
+          "score": 54.5,
+          "weather": {
+            "date": "2027-03-28",
+            "location": "Subang Jaya, Selangor, Malaysia",
+            "available": true,
+            "mode": "historical climatology, not a forecast",
+            "rainProbability": 90.0,
+            "rainProbabilityKind": "historical same-calendar-day rainy frequency (%), not forecast probability",
+            "rainDays": 9,
+            "heavyRainDays": 1,
+            "precipitationMm": 8.5,
+            "avgTempMax": 30.91,
+            "avgTempMean": 26.78,
+            "sampleCount": 10,
+            "years": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "sampleYears": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "samples": [
+              {
+                "date": "2016-03-28",
+                "precipitationMm": 2.3,
+                "tempMaxC": 32.2,
+                "tempMeanC": 27.6
+              },
+              {
+                "date": "2017-03-28",
+                "precipitationMm": 14.2,
+                "tempMaxC": 28.4,
+                "tempMeanC": 25.5
+              },
+              {
+                "date": "2018-03-28",
+                "precipitationMm": 0.2,
+                "tempMaxC": 30.9,
+                "tempMeanC": 26.6
+              },
+              {
+                "date": "2019-03-28",
+                "precipitationMm": 4.8,
+                "tempMaxC": 30.2,
+                "tempMeanC": 27.0
+              },
+              {
+                "date": "2020-03-28",
+                "precipitationMm": 6.9,
+                "tempMaxC": 30.6,
+                "tempMeanC": 26.9
+              },
+              {
+                "date": "2021-03-28",
+                "precipitationMm": 5.0,
+                "tempMaxC": 30.8,
+                "tempMeanC": 26.9
+              },
+              {
+                "date": "2022-03-28",
+                "precipitationMm": 1.5,
+                "tempMaxC": 31.6,
+                "tempMeanC": 27.5
+              },
+              {
+                "date": "2023-03-28",
+                "precipitationMm": 1.5,
+                "tempMaxC": 32.5,
+                "tempMeanC": 27.2
+              },
+              {
+                "date": "2024-03-28",
+                "precipitationMm": 33.4,
+                "tempMaxC": 32.8,
+                "tempMeanC": 27.2
+              },
+              {
+                "date": "2025-03-28",
+                "precipitationMm": 15.2,
+                "tempMaxC": 29.1,
+                "tempMeanC": 25.4
+              }
+            ],
+            "sourceUrls": [
+              "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+            ],
+            "warnings": [
+              "Weather represents the sourced Subang Jaya city grid, not a campus microclimate."
+            ],
+            "uncertainty": "Only 10 same-calendar-day samples from ten complete years; coarse reanalysis grid, not campus measurements. Frequency is not a forecast for the event date.",
+            "assumptions": {
+              "rainDayThresholdMm": 1.0,
+              "heavyRainThresholdMm": 20.0,
+              "heavyRainDefinition": "Planning assumption: daily precipitation >=20 mm, not an official warning classification"
+            },
+            "resolvedLocation": {
+              "name": "Subang Jaya",
+              "region": "Selangor",
+              "latitude": 3.04384,
+              "longitude": 101.58062,
+              "source": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "scope": "Subang Jaya city-grid proxy; not campus coordinates"
+            },
+            "probability": 0.9
+          },
+          "weatherConfidence": "low\u2014historical frequency is not an event-date forecast",
+          "holidayClash": null,
+          "examStatus": "unknown",
+          "fastingContext": [],
+          "blocked": false,
+          "reasons": [
+            "Weekend candidate.",
+            "Campus exam timetable is unconfirmed; do not interpret as clear.",
+            "No cited holiday clash found; holiday completeness remains unconfirmed.",
+            "Weather rain-risk estimate 90%; mode: historical climatology, not a forecast."
+          ]
+        }
+      ],
+      "chosen": {
+        "date": "2027-03-20",
+        "weekday": "Saturday",
+        "score": 59.0,
+        "weather": {
+          "date": "2027-03-20",
+          "location": "Subang Jaya, Selangor, Malaysia",
+          "available": true,
+          "mode": "historical climatology, not a forecast",
+          "rainProbability": 80.0,
+          "rainProbabilityKind": "historical same-calendar-day rainy frequency (%), not forecast probability",
+          "rainDays": 8,
+          "heavyRainDays": 1,
+          "precipitationMm": 7.16,
+          "avgTempMax": 30.91,
+          "avgTempMean": 26.9,
+          "sampleCount": 10,
+          "years": [
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "sampleYears": [
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "samples": [
+            {
+              "date": "2016-03-20",
+              "precipitationMm": 2.7,
+              "tempMaxC": 31.7,
+              "tempMeanC": 28.0
+            },
+            {
+              "date": "2017-03-20",
+              "precipitationMm": 20.4,
+              "tempMaxC": 28.3,
+              "tempMeanC": 25.4
+            },
+            {
+              "date": "2018-03-20",
+              "precipitationMm": 14.4,
+              "tempMaxC": 29.5,
+              "tempMeanC": 25.8
+            },
+            {
+              "date": "2019-03-20",
+              "precipitationMm": 5.1,
+              "tempMaxC": 30.9,
+              "tempMeanC": 27.2
+            },
+            {
+              "date": "2020-03-20",
+              "precipitationMm": 0.7,
+              "tempMaxC": 30.9,
+              "tempMeanC": 27.0
+            },
+            {
+              "date": "2021-03-20",
+              "precipitationMm": 13.7,
+              "tempMaxC": 31.1,
+              "tempMeanC": 26.3
+            },
+            {
+              "date": "2022-03-20",
+              "precipitationMm": 0.2,
+              "tempMaxC": 31.2,
+              "tempMeanC": 27.6
+            },
+            {
+              "date": "2023-03-20",
+              "precipitationMm": 2.0,
+              "tempMaxC": 32.5,
+              "tempMeanC": 27.3
+            },
+            {
+              "date": "2024-03-20",
+              "precipitationMm": 10.5,
+              "tempMaxC": 31.3,
+              "tempMeanC": 27.1
+            },
+            {
+              "date": "2025-03-20",
+              "precipitationMm": 1.9,
+              "tempMaxC": 31.7,
+              "tempMeanC": 27.3
+            }
+          ],
+          "sourceUrls": [
+            "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+            "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+            "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+            "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+            "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+            "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+            "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+            "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+            "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+            "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+            "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+          ],
+          "warnings": [
+            "Weather represents the sourced Subang Jaya city grid, not a campus microclimate."
+          ],
+          "uncertainty": "Only 10 same-calendar-day samples from ten complete years; coarse reanalysis grid, not campus measurements. Frequency is not a forecast for the event date.",
+          "assumptions": {
+            "rainDayThresholdMm": 1.0,
+            "heavyRainThresholdMm": 20.0,
+            "heavyRainDefinition": "Planning assumption: daily precipitation >=20 mm, not an official warning classification"
+          },
+          "resolvedLocation": {
+            "name": "Subang Jaya",
+            "region": "Selangor",
+            "latitude": 3.04384,
+            "longitude": 101.58062,
+            "source": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+            "scope": "Subang Jaya city-grid proxy; not campus coordinates"
+          },
+          "probability": 0.8
+        },
+        "weatherConfidence": "low\u2014historical frequency is not an event-date forecast",
+        "holidayClash": null,
+        "examStatus": "unknown",
+        "fastingContext": [],
+        "blocked": false,
+        "reasons": [
+          "Weekend candidate.",
+          "Campus exam timetable is unconfirmed; do not interpret as clear.",
+          "No cited holiday clash found; holiday completeness remains unconfirmed.",
+          "Weather rain-risk estimate 80%; mode: historical climatology, not a forecast."
+        ]
+      },
+      "backups": [
+        {
+          "date": "2027-03-21",
+          "weekday": "Sunday",
+          "score": 59.0,
+          "weather": {
+            "date": "2027-03-21",
+            "location": "Subang Jaya, Selangor, Malaysia",
+            "available": true,
+            "mode": "historical climatology, not a forecast",
+            "rainProbability": 80.0,
+            "rainProbabilityKind": "historical same-calendar-day rainy frequency (%), not forecast probability",
+            "rainDays": 8,
+            "heavyRainDays": 1,
+            "precipitationMm": 7.48,
+            "avgTempMax": 30.45,
+            "avgTempMean": 26.7,
+            "sampleCount": 10,
+            "years": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "sampleYears": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "samples": [
+              {
+                "date": "2016-03-21",
+                "precipitationMm": 10.4,
+                "tempMaxC": 31.4,
+                "tempMeanC": 28.1
+              },
+              {
+                "date": "2017-03-21",
+                "precipitationMm": 0.8,
+                "tempMaxC": 30.7,
+                "tempMeanC": 26.5
+              },
+              {
+                "date": "2018-03-21",
+                "precipitationMm": 7.4,
+                "tempMaxC": 29.3,
+                "tempMeanC": 26.0
+              },
+              {
+                "date": "2019-03-21",
+                "precipitationMm": 23.3,
+                "tempMaxC": 29.5,
+                "tempMeanC": 26.2
+              },
+              {
+                "date": "2020-03-21",
+                "precipitationMm": 8.5,
+                "tempMaxC": 30.7,
+                "tempMeanC": 26.4
+              },
+              {
+                "date": "2021-03-21",
+                "precipitationMm": 8.9,
+                "tempMaxC": 29.9,
+                "tempMeanC": 26.4
+              },
+              {
+                "date": "2022-03-21",
+                "precipitationMm": 0.2,
+                "tempMaxC": 30.5,
+                "tempMeanC": 27.1
+              },
+              {
+                "date": "2023-03-21",
+                "precipitationMm": 4.4,
+                "tempMaxC": 29.9,
+                "tempMeanC": 26.2
+              },
+              {
+                "date": "2024-03-21",
+                "precipitationMm": 7.9,
+                "tempMaxC": 29.3,
+                "tempMeanC": 26.0
+              },
+              {
+                "date": "2025-03-21",
+                "precipitationMm": 3.0,
+                "tempMaxC": 33.3,
+                "tempMeanC": 28.1
+              }
+            ],
+            "sourceUrls": [
+              "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+            ],
+            "warnings": [
+              "Weather represents the sourced Subang Jaya city grid, not a campus microclimate."
+            ],
+            "uncertainty": "Only 10 same-calendar-day samples from ten complete years; coarse reanalysis grid, not campus measurements. Frequency is not a forecast for the event date.",
+            "assumptions": {
+              "rainDayThresholdMm": 1.0,
+              "heavyRainThresholdMm": 20.0,
+              "heavyRainDefinition": "Planning assumption: daily precipitation >=20 mm, not an official warning classification"
+            },
+            "resolvedLocation": {
+              "name": "Subang Jaya",
+              "region": "Selangor",
+              "latitude": 3.04384,
+              "longitude": 101.58062,
+              "source": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "scope": "Subang Jaya city-grid proxy; not campus coordinates"
+            },
+            "probability": 0.8
+          },
+          "weatherConfidence": "low\u2014historical frequency is not an event-date forecast",
+          "holidayClash": null,
+          "examStatus": "unknown",
+          "fastingContext": [],
+          "blocked": false,
+          "reasons": [
+            "Weekend candidate.",
+            "Campus exam timetable is unconfirmed; do not interpret as clear.",
+            "No cited holiday clash found; holiday completeness remains unconfirmed.",
+            "Weather rain-risk estimate 80%; mode: historical climatology, not a forecast."
+          ]
+        },
+        {
+          "date": "2027-03-13",
+          "weekday": "Saturday",
+          "score": 54.5,
+          "weather": {
+            "date": "2027-03-13",
+            "location": "Subang Jaya, Selangor, Malaysia",
+            "available": true,
+            "mode": "historical climatology, not a forecast",
+            "rainProbability": 90.0,
+            "rainProbabilityKind": "historical same-calendar-day rainy frequency (%), not forecast probability",
+            "rainDays": 9,
+            "heavyRainDays": 1,
+            "precipitationMm": 7.62,
+            "avgTempMax": 31.01,
+            "avgTempMean": 26.77,
+            "sampleCount": 10,
+            "years": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "sampleYears": [
+              2016,
+              2017,
+              2018,
+              2019,
+              2020,
+              2021,
+              2022,
+              2023,
+              2024,
+              2025
+            ],
+            "samples": [
+              {
+                "date": "2016-03-13",
+                "precipitationMm": 0.8,
+                "tempMaxC": 32.7,
+                "tempMeanC": 28.4
+              },
+              {
+                "date": "2017-03-13",
+                "precipitationMm": 2.4,
+                "tempMaxC": 30.8,
+                "tempMeanC": 26.8
+              },
+              {
+                "date": "2018-03-13",
+                "precipitationMm": 3.2,
+                "tempMaxC": 30.3,
+                "tempMeanC": 26.3
+              },
+              {
+                "date": "2019-03-13",
+                "precipitationMm": 11.9,
+                "tempMaxC": 31.2,
+                "tempMeanC": 26.8
+              },
+              {
+                "date": "2020-03-13",
+                "precipitationMm": 3.0,
+                "tempMaxC": 31.1,
+                "tempMeanC": 26.9
+              },
+              {
+                "date": "2021-03-13",
+                "precipitationMm": 30.7,
+                "tempMaxC": 31.5,
+                "tempMeanC": 25.6
+              },
+              {
+                "date": "2022-03-13",
+                "precipitationMm": 12.6,
+                "tempMaxC": 30.8,
+                "tempMeanC": 26.3
+              },
+              {
+                "date": "2023-03-13",
+                "precipitationMm": 5.3,
+                "tempMaxC": 28.5,
+                "tempMeanC": 25.9
+              },
+              {
+                "date": "2024-03-13",
+                "precipitationMm": 1.9,
+                "tempMaxC": 31.5,
+                "tempMeanC": 27.0
+              },
+              {
+                "date": "2025-03-13",
+                "precipitationMm": 4.4,
+                "tempMaxC": 31.7,
+                "tempMeanC": 27.7
+              }
+            ],
+            "sourceUrls": [
+              "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+              "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+            ],
+            "warnings": [
+              "Weather represents the sourced Subang Jaya city grid, not a campus microclimate."
+            ],
+            "uncertainty": "Only 10 same-calendar-day samples from ten complete years; coarse reanalysis grid, not campus measurements. Frequency is not a forecast for the event date.",
+            "assumptions": {
+              "rainDayThresholdMm": 1.0,
+              "heavyRainThresholdMm": 20.0,
+              "heavyRainDefinition": "Planning assumption: daily precipitation >=20 mm, not an official warning classification"
+            },
+            "resolvedLocation": {
+              "name": "Subang Jaya",
+              "region": "Selangor",
+              "latitude": 3.04384,
+              "longitude": 101.58062,
+              "source": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+              "scope": "Subang Jaya city-grid proxy; not campus coordinates"
+            },
+            "probability": 0.9
+          },
+          "weatherConfidence": "low\u2014historical frequency is not an event-date forecast",
+          "holidayClash": null,
+          "examStatus": "unknown",
+          "fastingContext": [],
+          "blocked": false,
+          "reasons": [
+            "Weekend candidate.",
+            "Campus exam timetable is unconfirmed; do not interpret as clear.",
+            "No cited holiday clash found; holiday completeness remains unconfirmed.",
+            "Weather rain-risk estimate 90%; mode: historical climatology, not a forecast."
+          ]
+        }
+      ],
+      "weights": {
+        "weather": 45,
+        "holiday": 25,
+        "weekend": 20,
+        "leadTime": 10,
+        "examUnknownPenalty": 5,
+        "fastingOverlapPenalty": 10
+      },
+      "calendar": [
+        {
+          "year": 2027,
+          "month": 3,
+          "holidays": [
+            {
+              "date": "2027-03-10",
+              "name": "Hari Raya Aidilfitri / Hari Raya Puasa",
+              "source": "https://publicholidays.com.my/selangor/",
+              "provisional": true
+            },
+            {
+              "date": "2027-03-11",
+              "name": "Hari Raya Aidilfitri second day",
+              "source": "https://publicholidays.com.my/selangor/",
+              "provisional": true
+            }
+          ],
+          "ramadanRanges": [
+            {
+              "start": "2027-03-01",
+              "end": "2027-03-09",
+              "source": "https://www.timeanddate.com/holidays/malaysia/2027",
+              "provisional": true,
+              "sourceNote": "Inferred provisional early-March planning window from secondary Ramadan-start and Eid estimates, not a final verified religious calendar.",
+              "note": "Fasting-period logistics: avoid daytime food-centered programming; local dates require confirmation."
+            }
+          ],
+          "ramadanStatus": "sourced provisional dates; local confirmation required",
+          "religiousConflicts": [
+            {
+              "date": "2027-03-10",
+              "name": "Hari Raya Aidilfitri / Hari Raya Puasa",
+              "source": "https://publicholidays.com.my/selangor/",
+              "provisional": true,
+              "note": "Religious observance may affect availability; confirm locally."
+            },
+            {
+              "date": "2027-03-11",
+              "name": "Hari Raya Aidilfitri second day",
+              "source": "https://publicholidays.com.my/selangor/",
+              "provisional": true,
+              "note": "Religious observance may affect availability; confirm locally."
+            }
+          ],
+          "examCalendar": "unknown, campus confirmation needed",
+          "warnings": [
+            "Nager.Date unavailable: HTTP 204: API returned an empty response (possibly unsupported country). Only cited research fallback entries are used.",
+            "Ramadan source caveat: Inferred provisional early-March planning window from secondary Ramadan-start and Eid estimates, not a final verified religious calendar.",
+            "Campus examination and blackout dates are unknown, campus confirmation needed; school calendars do not establish university exam dates."
+          ],
+          "sourceUrls": [
+            "https://date.nager.at/api/v3/PublicHolidays/2027/MY",
+            "https://publicholidays.com.my/selangor/",
+            "https://www.timeanddate.com/holidays/malaysia/2027"
+          ]
+        }
+      ],
+      "status": "Proposed\u2014exam and venue approval required",
+      "assumptions": [
+        "Holiday calendars may be incomplete.",
+        "Campus examination timetable is unknown."
+      ]
+    },
+    "budget": {
+      "items": [
+        {
+          "category": "Venue / indoor cover",
+          "amountRM": 440.0,
+          "amountCents": 44000,
+          "estimated": true,
+          "status": "Estimated allocation\u2014not a vendor quote",
+          "owner": "Finance Lead"
+        },
+        {
+          "category": "AV and production",
+          "amountRM": 280.0,
+          "amountCents": 28000,
+          "estimated": true,
+          "status": "Estimated allocation\u2014not a vendor quote",
+          "owner": "Finance Lead"
+        },
+        {
+          "category": "Refreshments",
+          "amountRM": 400.0,
+          "amountCents": 40000,
+          "estimated": true,
+          "status": "Estimated allocation\u2014not a vendor quote",
+          "owner": "Finance Lead"
+        },
+        {
+          "category": "Promotion and print",
+          "amountRM": 120.0,
+          "amountCents": 12000,
+          "estimated": true,
+          "status": "Estimated allocation\u2014not a vendor quote",
+          "owner": "Finance Lead"
+        },
+        {
+          "category": "Talent and MC",
+          "amountRM": 180.0,
+          "amountCents": 18000,
+          "estimated": true,
+          "status": "Estimated allocation\u2014not a vendor quote",
+          "owner": "Finance Lead"
+        },
+        {
+          "category": "Operations and first aid",
+          "amountRM": 140.0,
+          "amountCents": 14000,
+          "estimated": true,
+          "status": "Estimated allocation\u2014not a vendor quote",
+          "owner": "Finance Lead"
+        },
+        {
+          "category": "Accessibility and charity logistics",
+          "amountRM": 200.0,
+          "amountCents": 20000,
+          "estimated": true,
+          "status": "Estimated allocation\u2014not a vendor quote",
+          "owner": "Finance Lead"
+        },
+        {
+          "category": "Contingency reserve",
+          "amountRM": 240.0,
+          "amountCents": 24000,
+          "estimated": true,
+          "status": "Estimated allocation\u2014not a vendor quote",
+          "owner": "Finance Lead"
+        }
+      ],
+      "total": 2000.0,
+      "limit": 2000.0,
+      "totalCents": 200000,
+      "limitCents": 200000,
+      "contingency": 240.0,
+      "contingencyCents": 24000,
+      "contingencyPercent": 12.0,
+      "gap": 600.0,
+      "gapCents": 60000,
+      "organiserFunds": 1400.0,
+      "organiserFundsCents": 140000,
+      "fundingStatus": "Organiser funds assumed; sponsor commitments not received",
+      "pricingBasis": "All amounts are estimated allocations, not researched quotes or contracted prices.",
+      "scenario": "Indoor weather contingency",
+      "sponsorAccounting": "Prospect asks are hypothetical alternatives, not additive promised revenue."
+    },
+    "weather": {
+      "date": "2027-03-20",
+      "location": "Subang Jaya, Selangor, Malaysia",
+      "available": true,
+      "mode": "historical climatology, not a forecast",
+      "rainProbability": 80.0,
+      "rainProbabilityKind": "historical same-calendar-day rainy frequency (%), not forecast probability",
+      "rainDays": 8,
+      "heavyRainDays": 1,
+      "precipitationMm": 7.16,
+      "avgTempMax": 30.91,
+      "avgTempMean": 26.9,
+      "sampleCount": 10,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "sampleYears": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "samples": [
+        {
+          "date": "2016-03-20",
+          "precipitationMm": 2.7,
+          "tempMaxC": 31.7,
+          "tempMeanC": 28.0
+        },
+        {
+          "date": "2017-03-20",
+          "precipitationMm": 20.4,
+          "tempMaxC": 28.3,
+          "tempMeanC": 25.4
+        },
+        {
+          "date": "2018-03-20",
+          "precipitationMm": 14.4,
+          "tempMaxC": 29.5,
+          "tempMeanC": 25.8
+        },
+        {
+          "date": "2019-03-20",
+          "precipitationMm": 5.1,
+          "tempMaxC": 30.9,
+          "tempMeanC": 27.2
+        },
+        {
+          "date": "2020-03-20",
+          "precipitationMm": 0.7,
+          "tempMaxC": 30.9,
+          "tempMeanC": 27.0
+        },
+        {
+          "date": "2021-03-20",
+          "precipitationMm": 13.7,
+          "tempMaxC": 31.1,
+          "tempMeanC": 26.3
+        },
+        {
+          "date": "2022-03-20",
+          "precipitationMm": 0.2,
+          "tempMaxC": 31.2,
+          "tempMeanC": 27.6
+        },
+        {
+          "date": "2023-03-20",
+          "precipitationMm": 2.0,
+          "tempMaxC": 32.5,
+          "tempMeanC": 27.3
+        },
+        {
+          "date": "2024-03-20",
+          "precipitationMm": 10.5,
+          "tempMaxC": 31.3,
+          "tempMeanC": 27.1
+        },
+        {
+          "date": "2025-03-20",
+          "precipitationMm": 1.9,
+          "tempMaxC": 31.7,
+          "tempMeanC": 27.3
+        }
+      ],
+      "sourceUrls": [
+        "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+        "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+      ],
+      "warnings": [
+        "Weather represents the sourced Subang Jaya city grid, not a campus microclimate."
+      ],
+      "uncertainty": "Only 10 same-calendar-day samples from ten complete years; coarse reanalysis grid, not campus measurements. Frequency is not a forecast for the event date.",
+      "assumptions": {
+        "rainDayThresholdMm": 1.0,
+        "heavyRainThresholdMm": 20.0,
+        "heavyRainDefinition": "Planning assumption: daily precipitation >=20 mm, not an official warning classification"
+      },
+      "resolvedLocation": {
+        "name": "Subang Jaya",
+        "region": "Selangor",
+        "latitude": 3.04384,
+        "longitude": 101.58062,
+        "source": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+        "scope": "Subang Jaya city-grid proxy; not campus coordinates"
+      },
+      "probability": 0.8,
+      "indoorRequired": true,
+      "threshold": 0.4,
+      "decision": "Indoor contingency required",
+      "rationale": "Rain-risk threshold is a planning rule, not a forecast guarantee."
+    },
+    "risks": {
+      "register": [
+        {
+          "risk": "Rain / thunderstorms",
+          "likelihood": 4,
+          "impact": 4,
+          "L": 4,
+          "I": 4,
+          "score": 16,
+          "mitigation": "Book an approved indoor room; weather check at T-14/T-7/T-1",
+          "trigger": "Rain-risk estimate >40%, thunderstorm alert, or missing weather evidence",
+          "contingency": "Move check-in and performances indoors; reduce exposed setup",
+          "owner": "Risk Lead",
+          "basis": "Planner risk assessment; ordinal 1\u20135, not empirical probability"
+        },
+        {
+          "risk": "Campus exam or calendar clash",
+          "likelihood": 3,
+          "impact": 5,
+          "L": 3,
+          "I": 5,
+          "score": 15,
+          "mitigation": "Request written exam timetable and campus calendar sign-off",
+          "trigger": "Exam date unknown at approval deadline or a confirmed clash",
+          "contingency": "Move to ranked backup date; re-run all specialist tools",
+          "owner": "Event Lead",
+          "basis": "Planner risk assessment; ordinal 1\u20135, not empirical probability"
+        },
+        {
+          "risk": "Venue / safety approval withheld",
+          "likelihood": 3,
+          "impact": 5,
+          "L": 3,
+          "I": 5,
+          "score": 15,
+          "mitigation": "Obtain written capacity, permission, safety and AV approvals",
+          "trigger": "No written approval by T-4 weeks",
+          "contingency": "Use approved alternative room or postpone; do not overfill",
+          "owner": "Venue Lead",
+          "basis": "Planner risk assessment; ordinal 1\u20135, not empirical probability"
+        },
+        {
+          "risk": "Sponsor funding shortfall",
+          "likelihood": 4,
+          "impact": 4,
+          "L": 4,
+          "I": 4,
+          "score": 16,
+          "mitigation": "Track only confirmed funds; keep 12% contingency protected",
+          "trigger": "Unconfirmed gap remains at T-2 weeks",
+          "contingency": "Reduce nonessential spend or postpone; never assume prospect revenue",
+          "owner": "Finance Lead",
+          "basis": "Planner risk assessment; ordinal 1\u20135, not empirical probability"
+        },
+        {
+          "risk": "MC / performer cancellation",
+          "likelihood": 3,
+          "impact": 3,
+          "L": 3,
+          "I": 3,
+          "score": 9,
+          "mitigation": "Get signed availability; contact backup role without claiming booking",
+          "trigger": "Talent unconfirmed at T-2 weeks or cancellation received",
+          "contingency": "Use approved student host and shorter acoustic programme",
+          "owner": "Talent Lead",
+          "basis": "Planner risk assessment; ordinal 1\u20135, not empirical probability"
+        },
+        {
+          "risk": "Attendance below planning target",
+          "likelihood": 3,
+          "impact": 3,
+          "L": 3,
+          "I": 3,
+          "score": 9,
+          "mitigation": "Use opt-in RSVP tracking and approved student society promotion",
+          "trigger": "RSVPs below 60% of planning target at T-1 week (planning rule)",
+          "contingency": "Reduce refreshments and room footprint after cost approval",
+          "owner": "Promo Lead",
+          "basis": "Planner risk assessment; ordinal 1\u20135, not empirical probability"
+        },
+        {
+          "risk": "Donation handling / beneficiary uncertainty",
+          "likelihood": 3,
+          "impact": 5,
+          "L": 3,
+          "I": 5,
+          "score": 15,
+          "mitigation": "Confirm beneficiary consent, collection permissions and dual-control ledger",
+          "trigger": "No verified beneficiary or collection approval before publishing",
+          "contingency": "Pause collection; publish only confirmed charity-approved wording",
+          "owner": "Charity / Finance Leads",
+          "basis": "Planner risk assessment; ordinal 1\u20135, not empirical probability"
+        },
+        {
+          "risk": "Safety, access or technical failure",
+          "likelihood": 3,
+          "impact": 5,
+          "L": 3,
+          "I": 5,
+          "score": 15,
+          "mitigation": "Check exits, accessible routes, first aid, AV and protected cables",
+          "trigger": "Failed safety/AV check or emergency during event",
+          "contingency": "Stop affected activity, follow campus emergency instructions and evacuate if required",
+          "owner": "Operations Lead",
+          "basis": "Planner risk assessment; ordinal 1\u20135, not empirical probability"
+        }
+      ],
+      "planB": [
+        {
+          "name": "Wet-weather indoor shift",
+          "trigger": "Rain-risk >40%, alert, or evidence unavailable",
+          "action": "Request approved indoor room, cover arrivals, bring soundcheck forward, rebalance allocations within ceiling",
+          "owner": "Risk / Venue Leads",
+          "status": "Proposed\u2014room approval required"
+        },
+        {
+          "name": "Date / permission switch",
+          "trigger": "Known exam/holiday clash or venue refused",
+          "action": "Use next eligible ranked date and rerun weather, budget, talent and drafts; no date is confirmed automatically",
+          "owner": "Event Lead",
+          "status": "Conditional"
+        },
+        {
+          "name": "Funding / talent scale-down",
+          "trigger": "Funding gap unresolved or principal act unavailable",
+          "action": "Shorter approved acoustic show, lower nonessential spend, backup MC; preserve contingency and charity controls",
+          "owner": "Finance / Talent Leads",
+          "status": "Conditional"
+        }
+      ],
+      "scale": "L and I use 1 (low) to 5 (high); score = L \u00d7 I",
+      "weatherThreshold": 0.4
+    },
+    "people": {
+      "roster": [],
+      "demo": false,
+      "topMC": null,
+      "backupMC": null,
+      "availabilityStatus": "Unconfirmed\u2014user roster is not a signed booking",
+      "selectionRule": "User-listed date availability first, then organiser-provided experience score; demo scores are fictional.",
+      "bookingConfirmed": false
+    },
+    "venues": {
+      "options": [
+        {
+          "name": "Lecture Theatres",
+          "source": "https://university.taylors.edu.my/en/student-life/campus-facilities.html",
+          "capacity": 300,
+          "notes": "Block B Level 2 and Blocks C, D, E Levels 1 and 2. Plausible seated-session option; room, layout, price and availability must be confirmed.",
+          "indoor": null,
+          "approvalStatus": "Unconfirmed\u2014campus approval required",
+          "approvalLeadTime": "Allow 2\u20134 weeks (planning estimate, not campus policy)",
+          "capacityStatus": "Cited capacity; confirm event setup"
+        },
+        {
+          "name": "The Grand Hall",
+          "source": "https://university.taylors.edu.my/en/student-life/campus-facilities.html",
+          "capacity": 1000,
+          "notes": "Block B Level 2; larger than assumed attendance. Consider only if price, layout and activity justify it.",
+          "indoor": null,
+          "approvalStatus": "Unconfirmed\u2014campus approval required",
+          "approvalLeadTime": "Allow 2\u20134 weeks (planning estimate, not campus policy)",
+          "capacityStatus": "Cited capacity; confirm event setup"
+        },
+        {
+          "name": "Experimental Theatre",
+          "source": "https://university.taylors.edu.my/en/student-life/campus-facilities.html",
+          "capacity": null,
+          "notes": "Block B Level 2; stage, acoustics and lighting, surrounding seats. No numerical capacity established publicly; confirm room suitability.",
+          "indoor": null,
+          "approvalStatus": "Unconfirmed\u2014campus approval required",
+          "approvalLeadTime": "Allow 2\u20134 weeks (planning estimate, not campus policy)",
+          "capacityStatus": "Unknown\u2014request written capacity and safety confirmation"
+        }
+      ],
+      "selected": {
+        "name": "Lecture Theatres",
+        "source": "https://university.taylors.edu.my/en/student-life/campus-facilities.html",
+        "capacity": 300,
+        "notes": "Block B Level 2 and Blocks C, D, E Levels 1 and 2. Plausible seated-session option; room, layout, price and availability must be confirmed.",
+        "indoor": null,
+        "approvalStatus": "Unconfirmed\u2014campus approval required",
+        "approvalLeadTime": "Allow 2\u20134 weeks (planning estimate, not campus policy)",
+        "capacityStatus": "Cited capacity; confirm event setup"
+      },
+      "approvalStatus": "Unconfirmed",
+      "requestedMode": "Indoor contingency\u2014confirmed cover and room approval required",
+      "approvalChecklist": [
+        "Written permission and exact date",
+        "Certified capacity and fire exits",
+        "AV, power and indoor cover",
+        "Charity collection consent",
+        "Accessibility and emergency arrangements"
+      ],
+      "studentAffairsGuidance": {
+        "publicContactEmail": "seal@taylors.edu.my",
+        "emailSource": "https://university.taylors.edu.my/en/student-life/your-taylors-journey/clubs-societies-and-sports.html",
+        "emailQuote": "Contact us through email at seal@taylors.edu.my",
+        "contactLocation": "Student Life Centre, Block B, Level 1, Taylor's University Lakeside Campus",
+        "publishedEventApprovalProcedureFound": false,
+        "recommendedQuestionsNotAssertedPolicies": [
+          "Which Student Development/SEAL officer and club or faculty adviser must approve the event?",
+          "What current event proposal, fundraising and beneficiary-validation documents are required?",
+          "Who authorises sponsor approaches, cash/in-kind acceptance and external logo/booth exposure?",
+          "How do room bookings, security, risk assessment, food handling and external-vendor arrangements work?",
+          "What submission lead time and financial reconciliation procedure apply?"
+        ],
+        "fallbackGuidanceSource": "https://university.taylors.edu.my/en/student-life/support-and-services/campus-central.html",
+        "fallbackGuidanceFact": "Campus Central describes itself as one-stop support across academic and non-academic matters."
+      },
+      "calendarSources": [
+        "https://university.taylors.edu.my/en/student-life/manage-your-studies/academic-calendar.html"
+      ],
+      "academicCalendar": {
+        "source": "https://university.taylors.edu.my/en/student-life/manage-your-studies/academic-calendar.html",
+        "publicYearsFound": [
+          2026,
+          2025
+        ],
+        "public2027CalendarFound": false,
+        "march2027TeachingOrExamDates": null,
+        "programmeSpecific": true,
+        "recommendedAction": "Confirm target students' programme and intake timetable before fixing a March 2027 date."
+      },
+      "warning": null
+    },
+    "programme": {
+      "runOfShow": [
+        {
+          "time": "16:30",
+          "activity": "Indoor AV check, protected cable routing and rain-safe arrivals",
+          "owner": "Operations / Activity Leads",
+          "durationMinutes": 60,
+          "mode": "Indoor contingency",
+          "status": "Proposed\u2014not booked"
+        },
+        {
+          "time": "17:30",
+          "activity": "Covered indoor check-in and activity briefing; keep fire exits clear",
+          "owner": "Front-of-house Lead",
+          "durationMinutes": 30,
+          "mode": "Indoor contingency",
+          "status": "Proposed\u2014not booked"
+        },
+        {
+          "time": "18:00",
+          "activity": "MC welcome, cause and donation transparency",
+          "owner": "MC / Charity Liaison",
+          "durationMinutes": 15,
+          "mode": "Indoor contingency",
+          "status": "Proposed\u2014not booked"
+        },
+        {
+          "time": "18:15",
+          "activity": "Student performance set one",
+          "owner": "Talent Lead",
+          "durationMinutes": 40,
+          "mode": "Indoor contingency",
+          "status": "Proposed\u2014not booked"
+        },
+        {
+          "time": "18:55",
+          "activity": "Cause talk and opt-in donation break",
+          "owner": "Charity Liaison",
+          "durationMinutes": 20,
+          "mode": "Indoor contingency",
+          "status": "Proposed\u2014not booked"
+        },
+        {
+          "time": "19:15",
+          "activity": "Student performance set two",
+          "owner": "Talent Lead",
+          "durationMinutes": 40,
+          "mode": "Indoor contingency",
+          "status": "Proposed\u2014not booked"
+        },
+        {
+          "time": "19:55",
+          "activity": "Impact target recap and sponsor acknowledgement",
+          "owner": "MC / Finance Lead",
+          "durationMinutes": 15,
+          "mode": "Indoor contingency",
+          "status": "Proposed\u2014not booked"
+        },
+        {
+          "time": "20:10",
+          "activity": "Close, cash reconciliation and safe exit",
+          "owner": "Operations / Finance Leads",
+          "durationMinutes": 20,
+          "mode": "Indoor contingency",
+          "status": "Proposed\u2014not booked"
+        }
+      ],
+      "countdown": [
+        {
+          "offsetDays": -56,
+          "label": "T-8 weeks",
+          "date": "2027-01-23",
+          "action": "Confirm beneficiary, exam dates, campus permission and provisional indoor room",
+          "owner": "Event Lead",
+          "status": "Pending"
+        },
+        {
+          "offsetDays": -49,
+          "label": "T-7 weeks",
+          "date": "2027-01-30",
+          "action": "Send reviewed sponsor/MC drafts; obtain written capacity",
+          "owner": "Partnerships / Talent Leads",
+          "status": "Pending"
+        },
+        {
+          "offsetDays": -42,
+          "label": "T-6 weeks",
+          "date": "2027-02-06",
+          "action": "Obtain vendor quotes and cost-check all commitments",
+          "owner": "Finance Lead",
+          "status": "Pending"
+        },
+        {
+          "offsetDays": -35,
+          "label": "T-5 weeks",
+          "date": "2027-02-13",
+          "action": "Approve charity messaging and promotional permissions",
+          "owner": "Charity / Promo Leads",
+          "status": "Pending"
+        },
+        {
+          "offsetDays": -28,
+          "label": "T-4 weeks",
+          "date": "2027-02-20",
+          "action": "Confirm acts and MC; secure backup room and AV",
+          "owner": "Talent / Venue Leads",
+          "status": "Pending"
+        },
+        {
+          "offsetDays": -21,
+          "label": "T-3 weeks",
+          "date": "2027-02-27",
+          "action": "Check RSVPs, accessibility requests and volunteer rota",
+          "owner": "Operations Lead",
+          "status": "Pending"
+        },
+        {
+          "offsetDays": -14,
+          "label": "T-2 weeks",
+          "date": "2027-03-06",
+          "action": "Recheck weather, exams, approvals and funding; activate Plan B if needed",
+          "owner": "Risk Lead",
+          "status": "Pending"
+        },
+        {
+          "offsetDays": -7,
+          "label": "T-1 week",
+          "date": "2027-03-13",
+          "action": "Confirm short-range forecast, final attendance and vendor amounts",
+          "owner": "Event Lead",
+          "status": "Pending"
+        },
+        {
+          "offsetDays": -1,
+          "label": "T-1 day",
+          "date": "2027-03-19",
+          "action": "Final weather and safety go/no-go, cash controls and rehearsal",
+          "owner": "Operations / Finance Leads",
+          "status": "Pending"
+        },
+        {
+          "offsetDays": 0,
+          "label": "Event day",
+          "date": "2027-03-20",
+          "action": "Execute run sheet, reconcile donations and log incidents",
+          "owner": "Event Lead",
+          "status": "Pending"
+        }
+      ],
+      "mode": "Indoor contingency",
+      "variant": "concert",
+      "startTime": "16:30",
+      "endTime": "20:30",
+      "timezone": "Asia/Kuala_Lumpur",
+      "date": "2027-03-20"
+    },
+    "sponsors": [
+      {
+        "name": "Printcious",
+        "url": "https://www.printcious.com/my/sponsorship-program",
+        "email": "sponsorship@printcious.com",
+        "emailSource": "https://www.printcious.com/my/sponsorship-program",
+        "contactType": "dedicated sponsorship email",
+        "category": "custom merchandise and printing",
+        "fit": "Official sponsorship programme expressly covers schools, universities, colleges, NGOs and charities; good in-kind rather than assumed cash fit.",
+        "fitStatus": "Planner assessment\u2014not expressed sponsor interest",
+        "contactVerified": true,
+        "status": "Prospect only\u2014no commitment",
+        "promisedRM": 0,
+        "fitSource": "https://www.printcious.com/my/sponsorship-program",
+        "suggestedHypotheticalAsk": "100 button badges or lanyards, or an approved merchandise-printing discount; quantities and acceptance to be negotiated.",
+        "constraints": [
+          "Complete proposal at least 30 days before event",
+          "Products or special sponsorship pricing subject to approval and terms",
+          "Shipping not included",
+          "Do not guarantee unapproved social-media deliverables"
+        ],
+        "priority": "high",
+        "contactUrl": "https://www.printcious.com/my/sponsorship-program",
+        "appropriatePartnershipContact": true,
+        "countsTowardVerifiedSuitableEmailMinimum": true,
+        "emailVerificationNote": "official page full text",
+        "askRM": 120.0,
+        "askCents": 12000,
+        "askStatus": "Hypothetical proposed ask; not promised revenue",
+        "tiers": [
+          {
+            "name": "Supporting",
+            "askRM": 150.0,
+            "benefit": "Proposed acknowledgement; campus and charity approval required"
+          },
+          {
+            "name": "Partner",
+            "askRM": 300.0,
+            "benefit": "Proposed poster/logo acknowledgement, subject to approval"
+          },
+          {
+            "name": "Lead supporter",
+            "askRM": 600.0,
+            "benefit": "Proposed lead acknowledgement, not exclusivity or guaranteed reach"
+          }
+        ],
+        "accounting": "One exploratory portfolio or alternative tiers; not additive committed funds"
+      },
+      {
+        "name": "SQ PrintBar",
+        "url": "https://sqprintbar.com/sponsorship-program/",
+        "email": "enquiry@sqprintbar.com",
+        "emailSource": "https://sqprintbar.com/sponsorship-program/",
+        "contactType": "public event-proposal email on sponsorship page",
+        "category": "printing and promotional gifts",
+        "fit": "Sponsorship page explicitly lists Charity, University, Event and Non-Profit Organization.",
+        "fitStatus": "Planner assessment\u2014not expressed sponsor interest",
+        "contactVerified": true,
+        "status": "Prospect only\u2014no commitment",
+        "promisedRM": 0,
+        "fitSource": "https://sqprintbar.com/sponsorship-program/",
+        "suggestedHypotheticalAsk": "Printed posters, signage or volunteer merchandise discount; ask for an itemised in-kind quote.",
+        "constraints": [
+          "Proposal review, not guaranteed support",
+          "No public award amount or turnaround established"
+        ],
+        "priority": "high",
+        "contactUrl": "https://sqprintbar.com/sponsorship-program/",
+        "appropriatePartnershipContact": true,
+        "countsTowardVerifiedSuitableEmailMinimum": true,
+        "emailVerificationNote": "official page full text",
+        "askRM": 120.0,
+        "askCents": 12000,
+        "askStatus": "Hypothetical proposed ask; not promised revenue",
+        "tiers": [
+          {
+            "name": "Supporting",
+            "askRM": 150.0,
+            "benefit": "Proposed acknowledgement; campus and charity approval required"
+          },
+          {
+            "name": "Partner",
+            "askRM": 300.0,
+            "benefit": "Proposed poster/logo acknowledgement, subject to approval"
+          },
+          {
+            "name": "Lead supporter",
+            "askRM": 600.0,
+            "benefit": "Proposed lead acknowledgement, not exclusivity or guaranteed reach"
+          }
+        ],
+        "accounting": "One exploratory portfolio or alternative tiers; not additive committed funds"
+      },
+      {
+        "name": "Gigi Coffee",
+        "url": "https://www.gigicoffee.com/contact-us/",
+        "email": "collaborations@gigicoffee.com",
+        "emailSource": "https://www.gigicoffee.com/contact-us/",
+        "contactType": "official Media & Brands Collab email; alternate Business Partners email",
+        "category": "coffee and beverage vouchers",
+        "fit": "Explicitly invites co-branding, marketing and promotional proposals; potential student-facing beverage partner, with no charity-support commitment verified.",
+        "fitStatus": "Planner assessment\u2014not expressed sponsor interest",
+        "contactVerified": true,
+        "status": "Prospect only\u2014no commitment",
+        "promisedRM": 0,
+        "fitSource": "https://www.gigicoffee.com/contact-us/",
+        "suggestedHypotheticalAsk": "20-30 beverage vouchers or refreshments for volunteers, with university-approved acknowledgement only.",
+        "constraints": [
+          "Detailed objectives and benefits requested for partnership proposals",
+          "Avoid customer-care inbox for sponsor request",
+          "Refreshments timing must respect possible Ramadan overlap"
+        ],
+        "priority": "high",
+        "contactUrl": "https://www.gigicoffee.com/contact-us/",
+        "appropriatePartnershipContact": true,
+        "countsTowardVerifiedSuitableEmailMinimum": true,
+        "emailVerificationNote": "official page full text",
+        "askRM": 120.0,
+        "askCents": 12000,
+        "askStatus": "Hypothetical proposed ask; not promised revenue",
+        "tiers": [
+          {
+            "name": "Supporting",
+            "askRM": 150.0,
+            "benefit": "Proposed acknowledgement; campus and charity approval required"
+          },
+          {
+            "name": "Partner",
+            "askRM": 300.0,
+            "benefit": "Proposed poster/logo acknowledgement, subject to approval"
+          },
+          {
+            "name": "Lead supporter",
+            "askRM": 600.0,
+            "benefit": "Proposed lead acknowledgement, not exclusivity or guaranteed reach"
+          }
+        ],
+        "accounting": "One exploratory portfolio or alternative tiers; not additive committed funds"
+      },
+      {
+        "name": "Signature Market",
+        "url": "https://www.signaturemarket.co/my/marketplace/about/contact-us.html",
+        "email": "general@signaturemarket.co",
+        "emailSource": "https://www.signaturemarket.co/my/marketplace/about/contact-us.html",
+        "contactType": "general-named email explicitly designated for collaborations/sponsorship",
+        "category": "snacks and gifting",
+        "fit": "Official contact page explicitly solicits sponsorship and collaboration enquiries; snack samples or giveaway packs can support a small campus event.",
+        "fitStatus": "Planner assessment\u2014not expressed sponsor interest",
+        "contactVerified": true,
+        "status": "Prospect only\u2014no commitment",
+        "promisedRM": 0,
+        "fitSource": "https://www.signaturemarket.co/my/marketplace/about/contact-us.html",
+        "suggestedHypotheticalAsk": "50-100 snack sample packs or 5 small gift bundles, subject to product availability and approval.",
+        "constraints": [
+          "Check nut/allergen, dietary and serving requirements",
+          "No public minimum audience or award amount established"
+        ],
+        "priority": "high",
+        "contactUrl": "https://www.signaturemarket.co/my/marketplace/about/contact-us.html",
+        "appropriatePartnershipContact": true,
+        "countsTowardVerifiedSuitableEmailMinimum": true,
+        "emailVerificationNote": "exact text inspected from raw official webpage HTML using in-memory extraction; WebFetch omitted main route",
+        "askRM": 120.0,
+        "askCents": 12000,
+        "askStatus": "Hypothetical proposed ask; not promised revenue",
+        "tiers": [
+          {
+            "name": "Supporting",
+            "askRM": 150.0,
+            "benefit": "Proposed acknowledgement; campus and charity approval required"
+          },
+          {
+            "name": "Partner",
+            "askRM": 300.0,
+            "benefit": "Proposed poster/logo acknowledgement, subject to approval"
+          },
+          {
+            "name": "Lead supporter",
+            "askRM": 600.0,
+            "benefit": "Proposed lead acknowledgement, not exclusivity or guaranteed reach"
+          }
+        ],
+        "accounting": "One exploratory portfolio or alternative tiers; not additive committed funds"
+      },
+      {
+        "name": "VICTOR Sport Malaysia / Universal Sports Sdn. Bhd.",
+        "url": "https://www.victorsports.my/pages/contact-us",
+        "email": "marketing@victorsports.my",
+        "emailSource": "https://www.victorsports.my/pages/contact-us",
+        "contactType": "dedicated marketing/sponsorship email",
+        "category": "badminton equipment and sports prizes",
+        "fit": "Official Malaysian distributor sells badminton-related products; relevant only if event includes badminton/sports fundraising or suitable prize use.",
+        "fitStatus": "Planner assessment\u2014not expressed sponsor interest",
+        "contactVerified": true,
+        "status": "Prospect only\u2014no commitment",
+        "promisedRM": 0,
+        "fitSource": "https://www.victorsports.my/about-us",
+        "suggestedHypotheticalAsk": "2-3 small badminton-related prizes, shuttlecocks or accessory vouchers for a charity sports segment.",
+        "constraints": [
+          "Conditional sports fit, not a general charity cash sponsor",
+          "Event format is not yet confirmed"
+        ],
+        "priority": "conditional",
+        "contactUrl": "https://www.victorsports.my/pages/contact-us",
+        "appropriatePartnershipContact": true,
+        "countsTowardVerifiedSuitableEmailMinimum": true,
+        "emailVerificationNote": "official page full text",
+        "askRM": 120.0,
+        "askCents": 12000,
+        "askStatus": "Hypothetical proposed ask; not promised revenue",
+        "tiers": [
+          {
+            "name": "Supporting",
+            "askRM": 150.0,
+            "benefit": "Proposed acknowledgement; campus and charity approval required"
+          },
+          {
+            "name": "Partner",
+            "askRM": 300.0,
+            "benefit": "Proposed poster/logo acknowledgement, subject to approval"
+          },
+          {
+            "name": "Lead supporter",
+            "askRM": 600.0,
+            "benefit": "Proposed lead acknowledgement, not exclusivity or guaranteed reach"
+          }
+        ],
+        "accounting": "One exploratory portfolio or alternative tiers; not additive committed funds"
+      },
+      {
+        "name": "Secret Recipe Malaysia",
+        "url": "https://www.secretrecipe.com.my",
+        "email": "marketing@secretrecipe.com.my",
+        "emailSource": "https://www.sunwaypyramid.com/directory/secret-recipe",
+        "contactType": "public marketing email in official shopping-mall tenant directory; not first-party company-page verification",
+        "category": "cakes, cafe food and vouchers",
+        "fit": "Sunway Pyramid's official tenant directory identifies Secret Recipe cafe/cake offering and its marketing address; potential food/prize partner near the university locality.",
+        "fitStatus": "Planner assessment\u2014not expressed sponsor interest",
+        "contactVerified": true,
+        "status": "Prospect only\u2014no commitment",
+        "promisedRM": 0,
+        "fitSource": "https://www.sunwaypyramid.com/directory/secret-recipe",
+        "suggestedHypotheticalAsk": "A whole-cake voucher or 10-20 small dessert vouchers/volunteer snacks; no amount or approval assumed.",
+        "constraints": [
+          "Reconfirm routing because email verification is from mall directory",
+          "Do not claim established campus-charity sponsorship eligibility"
+        ],
+        "priority": "medium",
+        "contactUrl": "https://www.secretrecipe.com.my",
+        "appropriatePartnershipContact": true,
+        "countsTowardVerifiedSuitableEmailMinimum": true,
+        "emailVerificationNote": "exact email inspected in raw official Sunway Pyramid HTML; also returned by WebSearch",
+        "askRM": 120.0,
+        "askCents": 12000,
+        "askStatus": "Hypothetical proposed ask; not promised revenue",
+        "tiers": [
+          {
+            "name": "Supporting",
+            "askRM": 150.0,
+            "benefit": "Proposed acknowledgement; campus and charity approval required"
+          },
+          {
+            "name": "Partner",
+            "askRM": 300.0,
+            "benefit": "Proposed poster/logo acknowledgement, subject to approval"
+          },
+          {
+            "name": "Lead supporter",
+            "askRM": 600.0,
+            "benefit": "Proposed lead acknowledgement, not exclusivity or guaranteed reach"
+          }
+        ],
+        "accounting": "One exploratory portfolio or alternative tiers; not additive committed funds"
+      },
+      {
+        "name": "Kantan Food Asia Sdn Bhd",
+        "url": "https://www.kantanfood.com/sponsorship-collaboration/",
+        "email": null,
+        "emailSource": null,
+        "contactType": "general corporate/product-services contact; dedicated sponsor route not verified",
+        "category": "Malaysian cooking pastes and local food support",
+        "fit": "Subang Jaya-based manufacturer explicitly invites food sponsorship for Malaysian events; local and food-themed fit, but standard contact is general.",
+        "fitStatus": "Planner assessment\u2014not expressed sponsor interest",
+        "contactVerified": false,
+        "status": "Prospect only\u2014no commitment",
+        "promisedRM": 0,
+        "fitSource": "https://www.kantanfood.com/sponsorship-collaboration/",
+        "suggestedHypotheticalAsk": "10-20 cooking-paste sample packs or ingredients for an approved charity cooking/food booth; first ask for routing to partnerships.",
+        "constraints": [
+          "Not counted as verified dedicated partnership/CSR/marketing email",
+          "Published influencer criteria: at least 15K Instagram followers, average 500 likes, age 23 or older; these are influencer conditions, not proven campus-event eligibility"
+        ],
+        "priority": "conditional",
+        "contactUrl": "https://www.kantanfood.com/sponsorship-collaboration/",
+        "appropriatePartnershipContact": false,
+        "countsTowardVerifiedSuitableEmailMinimum": false,
+        "emailVerificationNote": "official contact page plus raw sponsorship HTML",
+        "askRM": 120.0,
+        "askCents": 12000,
+        "askStatus": "Hypothetical proposed ask; not promised revenue",
+        "tiers": [
+          {
+            "name": "Supporting",
+            "askRM": 150.0,
+            "benefit": "Proposed acknowledgement; campus and charity approval required"
+          },
+          {
+            "name": "Partner",
+            "askRM": 300.0,
+            "benefit": "Proposed poster/logo acknowledgement, subject to approval"
+          },
+          {
+            "name": "Lead supporter",
+            "askRM": 600.0,
+            "benefit": "Proposed lead acknowledgement, not exclusivity or guaranteed reach"
+          }
+        ],
+        "accounting": "One exploratory portfolio or alternative tiers; not additive committed funds"
+      },
+      {
+        "name": "myBurgerLab",
+        "url": "https://myburgerlab.com/cateringandevents/",
+        "email": null,
+        "emailSource": null,
+        "contactType": "public catering/brands-collaboration quote form; no appropriate public email verified",
+        "category": "event catering and food vouchers",
+        "fit": "Official event page includes Outlet Bookings & Brands Collaboration and caters to different event scales; plausible negotiated in-kind/discounted supplier.",
+        "fitStatus": "Planner assessment\u2014not expressed sponsor interest",
+        "contactVerified": false,
+        "status": "Prospect only\u2014no commitment",
+        "promisedRM": 0,
+        "fitSource": "https://myburgerlab.com/cateringandevents/",
+        "suggestedHypotheticalAsk": "10-20 burger vouchers or a discounted volunteer meal package; request a quote and partnership discussion rather than assume donation.",
+        "constraints": [
+          "Use verified form; no guessed employee email",
+          "Commercial catering experience is not proof of free sponsorship"
+        ],
+        "priority": "medium",
+        "contactUrl": "https://forms.gle/pZUEeKvjeh2pqF6V9",
+        "appropriatePartnershipContact": false,
+        "countsTowardVerifiedSuitableEmailMinimum": false,
+        "emailVerificationNote": "official page full text and linked quote form",
+        "askRM": 120.0,
+        "askCents": 12000,
+        "askStatus": "Hypothetical proposed ask; not promised revenue",
+        "tiers": [
+          {
+            "name": "Supporting",
+            "askRM": 150.0,
+            "benefit": "Proposed acknowledgement; campus and charity approval required"
+          },
+          {
+            "name": "Partner",
+            "askRM": 300.0,
+            "benefit": "Proposed poster/logo acknowledgement, subject to approval"
+          },
+          {
+            "name": "Lead supporter",
+            "askRM": 600.0,
+            "benefit": "Proposed lead acknowledgement, not exclusivity or guaranteed reach"
+          }
+        ],
+        "accounting": "One exploratory portfolio or alternative tiers; not additive committed funds"
+      },
+      {
+        "name": "PichaEats",
+        "url": "https://www.pichaeats.com/",
+        "email": null,
+        "emailSource": null,
+        "contactType": "public corporate catering WhatsApp/quote route; no appropriate public sponsorship email verified",
+        "category": "social-enterprise catering and refugee-livelihood partner",
+        "fit": "Official site states catering supports refugee chefs and their families in Malaysia; mission-aligned supplier/co-campaign prospect, not verified donor.",
+        "fitStatus": "Planner assessment\u2014not expressed sponsor interest",
+        "contactVerified": false,
+        "status": "Prospect only\u2014no commitment",
+        "promisedRM": 0,
+        "fitSource": "https://www.pichaeats.com/",
+        "suggestedHypotheticalAsk": "A discounted 10-20 volunteer bento package or a co-campaign where an independently secured sponsor pays the meal costs.",
+        "constraints": [
+          "Do not ask vulnerable livelihood partner to subsidise all food without a funding plan",
+          "Published bento starting price RM17 per box, 10-person minimum; 100 boxes would start around RM1700 before extras, not a quote"
+        ],
+        "priority": "conditional mission partner",
+        "contactUrl": "https://wa.me/60182894353",
+        "appropriatePartnershipContact": false,
+        "countsTowardVerifiedSuitableEmailMinimum": false,
+        "emailVerificationNote": "official page full text and linked public corporate contact",
+        "askRM": 120.0,
+        "askCents": 12000,
+        "askStatus": "Hypothetical proposed ask; not promised revenue",
+        "tiers": [
+          {
+            "name": "Supporting",
+            "askRM": 150.0,
+            "benefit": "Proposed acknowledgement; campus and charity approval required"
+          },
+          {
+            "name": "Partner",
+            "askRM": 300.0,
+            "benefit": "Proposed poster/logo acknowledgement, subject to approval"
+          },
+          {
+            "name": "Lead supporter",
+            "askRM": 600.0,
+            "benefit": "Proposed lead acknowledgement, not exclusivity or guaranteed reach"
+          }
+        ],
+        "accounting": "One exploratory portfolio or alternative tiers; not additive committed funds"
+      }
+    ],
+    "drafts": [
+      {
+        "id": "sponsor-1",
+        "recipient": "Printcious",
+        "to": "sponsorship@printcious.com",
+        "contactType": "dedicated sponsorship email",
+        "contactUrl": "https://www.printcious.com/my/sponsorship-program",
+        "subject": "EventPilot | Proposed charity event partnership \u2014 2027-03-20",
+        "body": "Dear Printcious team,\n\nWe are preparing a proposed charity event for a student-selected charity (beneficiary unconfirmed) at Taylor's Lakeside Campus. Proposed date: 2027-03-20. Proposed venue: Lecture Theatres (approval and capacity unconfirmed). Our target is 100 attendees (planning assumption; not confirmed attendance). The proposed impact target is to direct net proceeds to the beneficiary after documented costs; the beneficiary, collection permission and amount raised are not yet confirmed.\n\nWould you consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap, without assuming that your programme offers cash? A researched, proposed in-kind discussion could be: 100 button badges or lanyards, or an approved merchandise-printing discount; quantities and acceptance to be negotiated. Published constraints to review: Complete proposal at least 30 days before event; Products or special sponsorship pricing subject to approval and terms; Shipping not included; Do not guarantee unapproved social-media deliverables. Alternative proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives, not combined commitments. Any acknowledgement, logo use or student reach requires approval; no reach, tax benefit or exclusivity is guaranteed.\n\nPlease reply by 2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships channel. We will share approved beneficiary details and final venue confirmation before seeking a commitment.\n\nEvent organising team\nDraft created by EventPilot; not sent.",
+        "status": "Draft\u2014unsent",
+        "source": "https://www.printcious.com/my/sponsorship-program",
+        "sourceVerified": true,
+        "replyBy": "2027-02-13",
+        "askRM": 120.0,
+        "proposedDate": "2027-03-20",
+        "proposedVenue": "Lecture Theatres",
+        "attendance": 100,
+        "cause": "a student-selected charity (beneficiary unconfirmed)",
+        "needsReview": true,
+        "type": "sponsor"
+      },
+      {
+        "id": "sponsor-2",
+        "recipient": "SQ PrintBar",
+        "to": "enquiry@sqprintbar.com",
+        "contactType": "public event-proposal email on sponsorship page",
+        "contactUrl": "https://sqprintbar.com/sponsorship-program/",
+        "subject": "EventPilot | Proposed charity event partnership \u2014 2027-03-20",
+        "body": "Dear SQ PrintBar team,\n\nWe are preparing a proposed charity event for a student-selected charity (beneficiary unconfirmed) at Taylor's Lakeside Campus. Proposed date: 2027-03-20. Proposed venue: Lecture Theatres (approval and capacity unconfirmed). Our target is 100 attendees (planning assumption; not confirmed attendance). The proposed impact target is to direct net proceeds to the beneficiary after documented costs; the beneficiary, collection permission and amount raised are not yet confirmed.\n\nWould you consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap, without assuming that your programme offers cash? A researched, proposed in-kind discussion could be: Printed posters, signage or volunteer merchandise discount; ask for an itemised in-kind quote. Published constraints to review: Proposal review, not guaranteed support; No public award amount or turnaround established. Alternative proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives, not combined commitments. Any acknowledgement, logo use or student reach requires approval; no reach, tax benefit or exclusivity is guaranteed.\n\nPlease reply by 2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships channel. We will share approved beneficiary details and final venue confirmation before seeking a commitment.\n\nEvent organising team\nDraft created by EventPilot; not sent.",
+        "status": "Draft\u2014unsent",
+        "source": "https://sqprintbar.com/sponsorship-program/",
+        "sourceVerified": true,
+        "replyBy": "2027-02-13",
+        "askRM": 120.0,
+        "proposedDate": "2027-03-20",
+        "proposedVenue": "Lecture Theatres",
+        "attendance": 100,
+        "cause": "a student-selected charity (beneficiary unconfirmed)",
+        "needsReview": true,
+        "type": "sponsor"
+      },
+      {
+        "id": "sponsor-3",
+        "recipient": "Gigi Coffee",
+        "to": "collaborations@gigicoffee.com",
+        "contactType": "official Media & Brands Collab email; alternate Business Partners email",
+        "contactUrl": "https://www.gigicoffee.com/contact-us/",
+        "subject": "EventPilot | Proposed charity event partnership \u2014 2027-03-20",
+        "body": "Dear Gigi Coffee team,\n\nWe are preparing a proposed charity event for a student-selected charity (beneficiary unconfirmed) at Taylor's Lakeside Campus. Proposed date: 2027-03-20. Proposed venue: Lecture Theatres (approval and capacity unconfirmed). Our target is 100 attendees (planning assumption; not confirmed attendance). The proposed impact target is to direct net proceeds to the beneficiary after documented costs; the beneficiary, collection permission and amount raised are not yet confirmed.\n\nWould you consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap, without assuming that your programme offers cash? A researched, proposed in-kind discussion could be: 20-30 beverage vouchers or refreshments for volunteers, with university-approved acknowledgement only. Published constraints to review: Detailed objectives and benefits requested for partnership proposals; Avoid customer-care inbox for sponsor request; Refreshments timing must respect possible Ramadan overlap. Alternative proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives, not combined commitments. Any acknowledgement, logo use or student reach requires approval; no reach, tax benefit or exclusivity is guaranteed.\n\nPlease reply by 2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships channel. We will share approved beneficiary details and final venue confirmation before seeking a commitment.\n\nEvent organising team\nDraft created by EventPilot; not sent.",
+        "status": "Draft\u2014unsent",
+        "source": "https://www.gigicoffee.com/contact-us/",
+        "sourceVerified": true,
+        "replyBy": "2027-02-13",
+        "askRM": 120.0,
+        "proposedDate": "2027-03-20",
+        "proposedVenue": "Lecture Theatres",
+        "attendance": 100,
+        "cause": "a student-selected charity (beneficiary unconfirmed)",
+        "needsReview": true,
+        "type": "sponsor"
+      },
+      {
+        "id": "sponsor-4",
+        "recipient": "Signature Market",
+        "to": "general@signaturemarket.co",
+        "contactType": "general-named email explicitly designated for collaborations/sponsorship",
+        "contactUrl": "https://www.signaturemarket.co/my/marketplace/about/contact-us.html",
+        "subject": "EventPilot | Proposed charity event partnership \u2014 2027-03-20",
+        "body": "Dear Signature Market team,\n\nWe are preparing a proposed charity event for a student-selected charity (beneficiary unconfirmed) at Taylor's Lakeside Campus. Proposed date: 2027-03-20. Proposed venue: Lecture Theatres (approval and capacity unconfirmed). Our target is 100 attendees (planning assumption; not confirmed attendance). The proposed impact target is to direct net proceeds to the beneficiary after documented costs; the beneficiary, collection permission and amount raised are not yet confirmed.\n\nWould you consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap, without assuming that your programme offers cash? A researched, proposed in-kind discussion could be: 50-100 snack sample packs or 5 small gift bundles, subject to product availability and approval. Published constraints to review: Check nut/allergen, dietary and serving requirements; No public minimum audience or award amount established. Alternative proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives, not combined commitments. Any acknowledgement, logo use or student reach requires approval; no reach, tax benefit or exclusivity is guaranteed.\n\nPlease reply by 2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships channel. We will share approved beneficiary details and final venue confirmation before seeking a commitment.\n\nEvent organising team\nDraft created by EventPilot; not sent.",
+        "status": "Draft\u2014unsent",
+        "source": "https://www.signaturemarket.co/my/marketplace/about/contact-us.html",
+        "sourceVerified": true,
+        "replyBy": "2027-02-13",
+        "askRM": 120.0,
+        "proposedDate": "2027-03-20",
+        "proposedVenue": "Lecture Theatres",
+        "attendance": 100,
+        "cause": "a student-selected charity (beneficiary unconfirmed)",
+        "needsReview": true,
+        "type": "sponsor"
+      },
+      {
+        "id": "sponsor-5",
+        "recipient": "VICTOR Sport Malaysia / Universal Sports Sdn. Bhd.",
+        "to": "marketing@victorsports.my",
+        "contactType": "dedicated marketing/sponsorship email",
+        "contactUrl": "https://www.victorsports.my/pages/contact-us",
+        "subject": "EventPilot | Proposed charity event partnership \u2014 2027-03-20",
+        "body": "Dear VICTOR Sport Malaysia / Universal Sports Sdn. Bhd. team,\n\nWe are preparing a proposed charity event for a student-selected charity (beneficiary unconfirmed) at Taylor's Lakeside Campus. Proposed date: 2027-03-20. Proposed venue: Lecture Theatres (approval and capacity unconfirmed). Our target is 100 attendees (planning assumption; not confirmed attendance). The proposed impact target is to direct net proceeds to the beneficiary after documented costs; the beneficiary, collection permission and amount raised are not yet confirmed.\n\nWould you consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap, without assuming that your programme offers cash? A researched, proposed in-kind discussion could be: 2-3 small badminton-related prizes, shuttlecocks or accessory vouchers for a charity sports segment. Published constraints to review: Conditional sports fit, not a general charity cash sponsor; Event format is not yet confirmed. Alternative proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives, not combined commitments. Any acknowledgement, logo use or student reach requires approval; no reach, tax benefit or exclusivity is guaranteed.\n\nPlease reply by 2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships channel. We will share approved beneficiary details and final venue confirmation before seeking a commitment.\n\nEvent organising team\nDraft created by EventPilot; not sent.",
+        "status": "Draft\u2014unsent",
+        "source": "https://www.victorsports.my/pages/contact-us",
+        "sourceVerified": true,
+        "replyBy": "2027-02-13",
+        "askRM": 120.0,
+        "proposedDate": "2027-03-20",
+        "proposedVenue": "Lecture Theatres",
+        "attendance": 100,
+        "cause": "a student-selected charity (beneficiary unconfirmed)",
+        "needsReview": true,
+        "type": "sponsor"
+      },
+      {
+        "id": "sponsor-6",
+        "recipient": "Secret Recipe Malaysia",
+        "to": "marketing@secretrecipe.com.my",
+        "contactType": "public marketing email in official shopping-mall tenant directory; not first-party company-page verification",
+        "contactUrl": "https://www.secretrecipe.com.my",
+        "subject": "EventPilot | Proposed charity event partnership \u2014 2027-03-20",
+        "body": "Dear Secret Recipe Malaysia team,\n\nWe are preparing a proposed charity event for a student-selected charity (beneficiary unconfirmed) at Taylor's Lakeside Campus. Proposed date: 2027-03-20. Proposed venue: Lecture Theatres (approval and capacity unconfirmed). Our target is 100 attendees (planning assumption; not confirmed attendance). The proposed impact target is to direct net proceeds to the beneficiary after documented costs; the beneficiary, collection permission and amount raised are not yet confirmed.\n\nWould you consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap, without assuming that your programme offers cash? A researched, proposed in-kind discussion could be: A whole-cake voucher or 10-20 small dessert vouchers/volunteer snacks; no amount or approval assumed. Published constraints to review: Reconfirm routing because email verification is from mall directory; Do not claim established campus-charity sponsorship eligibility. Alternative proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives, not combined commitments. Any acknowledgement, logo use or student reach requires approval; no reach, tax benefit or exclusivity is guaranteed.\n\nPlease reply by 2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships channel. We will share approved beneficiary details and final venue confirmation before seeking a commitment.\n\nEvent organising team\nDraft created by EventPilot; not sent.",
+        "status": "Draft\u2014unsent",
+        "source": "https://www.sunwaypyramid.com/directory/secret-recipe",
+        "sourceVerified": true,
+        "replyBy": "2027-02-13",
+        "askRM": 120.0,
+        "proposedDate": "2027-03-20",
+        "proposedVenue": "Lecture Theatres",
+        "attendance": 100,
+        "cause": "a student-selected charity (beneficiary unconfirmed)",
+        "needsReview": true,
+        "type": "sponsor"
+      },
+      {
+        "id": "sponsor-7",
+        "recipient": "Kantan Food Asia Sdn Bhd",
+        "to": null,
+        "contactType": "general corporate/product-services contact; dedicated sponsor route not verified",
+        "contactUrl": "https://www.kantanfood.com/sponsorship-collaboration/",
+        "subject": "EventPilot | Proposed charity event partnership \u2014 2027-03-20",
+        "body": "Dear Kantan Food Asia Sdn Bhd team,\n\nWe are preparing a proposed charity event for a student-selected charity (beneficiary unconfirmed) at Taylor's Lakeside Campus. Proposed date: 2027-03-20. Proposed venue: Lecture Theatres (approval and capacity unconfirmed). Our target is 100 attendees (planning assumption; not confirmed attendance). The proposed impact target is to direct net proceeds to the beneficiary after documented costs; the beneficiary, collection permission and amount raised are not yet confirmed.\n\nPlease advise whether this belongs with your partnerships team; this published address is not a verified dedicated sponsorship route. Would you consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap, without assuming that your programme offers cash? A researched, proposed in-kind discussion could be: 10-20 cooking-paste sample packs or ingredients for an approved charity cooking/food booth; first ask for routing to partnerships. Published constraints to review: Not counted as verified dedicated partnership/CSR/marketing email; Published influencer criteria: at least 15K Instagram followers, average 500 likes, age 23 or older; these are influencer conditions, not proven campus-event eligibility. Alternative proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives, not combined commitments. Any acknowledgement, logo use or student reach requires approval; no reach, tax benefit or exclusivity is guaranteed.\n\nPlease reply by 2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships channel. We will share approved beneficiary details and final venue confirmation before seeking a commitment.\n\nEvent organising team\nDraft created by EventPilot; not sent.",
+        "status": "Draft\u2014unsent",
+        "source": "https://www.kantanfood.com/sponsorship-collaboration/",
+        "sourceVerified": false,
+        "replyBy": "2027-02-13",
+        "askRM": 120.0,
+        "proposedDate": "2027-03-20",
+        "proposedVenue": "Lecture Theatres",
+        "attendance": 100,
+        "cause": "a student-selected charity (beneficiary unconfirmed)",
+        "needsReview": true,
+        "type": "sponsor"
+      },
+      {
+        "id": "sponsor-8",
+        "recipient": "myBurgerLab",
+        "to": null,
+        "contactType": "public catering/brands-collaboration quote form; no appropriate public email verified",
+        "contactUrl": "https://forms.gle/pZUEeKvjeh2pqF6V9",
+        "subject": "EventPilot | Proposed charity event partnership \u2014 2027-03-20",
+        "body": "Dear myBurgerLab team,\n\nWe are preparing a proposed charity event for a student-selected charity (beneficiary unconfirmed) at Taylor's Lakeside Campus. Proposed date: 2027-03-20. Proposed venue: Lecture Theatres (approval and capacity unconfirmed). Our target is 100 attendees (planning assumption; not confirmed attendance). The proposed impact target is to direct net proceeds to the beneficiary after documented costs; the beneficiary, collection permission and amount raised are not yet confirmed.\n\nPlease advise whether this belongs with your partnerships team; this published address is not a verified dedicated sponsorship route. Would you consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap, without assuming that your programme offers cash? A researched, proposed in-kind discussion could be: 10-20 burger vouchers or a discounted volunteer meal package; request a quote and partnership discussion rather than assume donation. Published constraints to review: Use verified form; no guessed employee email; Commercial catering experience is not proof of free sponsorship. Alternative proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives, not combined commitments. Any acknowledgement, logo use or student reach requires approval; no reach, tax benefit or exclusivity is guaranteed.\n\nPlease reply by 2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships channel. We will share approved beneficiary details and final venue confirmation before seeking a commitment.\n\nEvent organising team\nDraft created by EventPilot; not sent.",
+        "status": "Draft\u2014unsent",
+        "source": "https://myburgerlab.com/cateringandevents/",
+        "sourceVerified": false,
+        "replyBy": "2027-02-13",
+        "askRM": 120.0,
+        "proposedDate": "2027-03-20",
+        "proposedVenue": "Lecture Theatres",
+        "attendance": 100,
+        "cause": "a student-selected charity (beneficiary unconfirmed)",
+        "needsReview": true,
+        "type": "sponsor"
+      },
+      {
+        "id": "sponsor-9",
+        "recipient": "PichaEats",
+        "to": null,
+        "contactType": "public corporate catering WhatsApp/quote route; no appropriate public sponsorship email verified",
+        "contactUrl": "https://wa.me/60182894353",
+        "subject": "EventPilot | Proposed charity event partnership \u2014 2027-03-20",
+        "body": "Dear PichaEats team,\n\nWe are preparing a proposed charity event for a student-selected charity (beneficiary unconfirmed) at Taylor's Lakeside Campus. Proposed date: 2027-03-20. Proposed venue: Lecture Theatres (approval and capacity unconfirmed). Our target is 100 attendees (planning assumption; not confirmed attendance). The proposed impact target is to direct net proceeds to the beneficiary after documented costs; the beneficiary, collection permission and amount raised are not yet confirmed.\n\nPlease advise whether this belongs with your partnerships team; this published address is not a verified dedicated sponsorship route. Would you consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap, without assuming that your programme offers cash? A researched, proposed in-kind discussion could be: A discounted 10-20 volunteer bento package or a co-campaign where an independently secured sponsor pays the meal costs. Published constraints to review: Do not ask vulnerable livelihood partner to subsidise all food without a funding plan; Published bento starting price RM17 per box, 10-person minimum; 100 boxes would start around RM1700 before extras, not a quote. Alternative proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives, not combined commitments. Any acknowledgement, logo use or student reach requires approval; no reach, tax benefit or exclusivity is guaranteed.\n\nPlease reply by 2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships channel. We will share approved beneficiary details and final venue confirmation before seeking a commitment.\n\nEvent organising team\nDraft created by EventPilot; not sent.",
+        "status": "Draft\u2014unsent",
+        "source": "https://www.pichaeats.com/",
+        "sourceVerified": false,
+        "replyBy": "2027-02-13",
+        "askRM": 120.0,
+        "proposedDate": "2027-03-20",
+        "proposedVenue": "Lecture Theatres",
+        "attendance": 100,
+        "cause": "a student-selected charity (beneficiary unconfirmed)",
+        "needsReview": true,
+        "type": "sponsor"
+      },
+      {
+        "recipient": "Printcious",
+        "to": "sponsorship@printcious.com",
+        "subject": "EventPilot | First follow-up: proposed student charity partnership",
+        "body": "Dear Printcious team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "First follow-up",
+        "sendAfterDays": 7,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.printcious.com/my/sponsorship-program",
+        "type": "followup"
+      },
+      {
+        "recipient": "Printcious",
+        "to": "sponsorship@printcious.com",
+        "subject": "EventPilot | Final polite follow-up: proposed student charity partnership",
+        "body": "Dear Printcious team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "Final polite follow-up",
+        "sendAfterDays": 14,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.printcious.com/my/sponsorship-program",
+        "type": "followup"
+      },
+      {
+        "recipient": "SQ PrintBar",
+        "to": "enquiry@sqprintbar.com",
+        "subject": "EventPilot | First follow-up: proposed student charity partnership",
+        "body": "Dear SQ PrintBar team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "First follow-up",
+        "sendAfterDays": 7,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://sqprintbar.com/sponsorship-program/",
+        "type": "followup"
+      },
+      {
+        "recipient": "SQ PrintBar",
+        "to": "enquiry@sqprintbar.com",
+        "subject": "EventPilot | Final polite follow-up: proposed student charity partnership",
+        "body": "Dear SQ PrintBar team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "Final polite follow-up",
+        "sendAfterDays": 14,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://sqprintbar.com/sponsorship-program/",
+        "type": "followup"
+      },
+      {
+        "recipient": "Gigi Coffee",
+        "to": "collaborations@gigicoffee.com",
+        "subject": "EventPilot | First follow-up: proposed student charity partnership",
+        "body": "Dear Gigi Coffee team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "First follow-up",
+        "sendAfterDays": 7,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.gigicoffee.com/contact-us/",
+        "type": "followup"
+      },
+      {
+        "recipient": "Gigi Coffee",
+        "to": "collaborations@gigicoffee.com",
+        "subject": "EventPilot | Final polite follow-up: proposed student charity partnership",
+        "body": "Dear Gigi Coffee team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "Final polite follow-up",
+        "sendAfterDays": 14,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.gigicoffee.com/contact-us/",
+        "type": "followup"
+      },
+      {
+        "recipient": "Signature Market",
+        "to": "general@signaturemarket.co",
+        "subject": "EventPilot | First follow-up: proposed student charity partnership",
+        "body": "Dear Signature Market team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "First follow-up",
+        "sendAfterDays": 7,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.signaturemarket.co/my/marketplace/about/contact-us.html",
+        "type": "followup"
+      },
+      {
+        "recipient": "Signature Market",
+        "to": "general@signaturemarket.co",
+        "subject": "EventPilot | Final polite follow-up: proposed student charity partnership",
+        "body": "Dear Signature Market team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "Final polite follow-up",
+        "sendAfterDays": 14,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.signaturemarket.co/my/marketplace/about/contact-us.html",
+        "type": "followup"
+      },
+      {
+        "recipient": "VICTOR Sport Malaysia / Universal Sports Sdn. Bhd.",
+        "to": "marketing@victorsports.my",
+        "subject": "EventPilot | First follow-up: proposed student charity partnership",
+        "body": "Dear VICTOR Sport Malaysia / Universal Sports Sdn. Bhd. team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "First follow-up",
+        "sendAfterDays": 7,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.victorsports.my/pages/contact-us",
+        "type": "followup"
+      },
+      {
+        "recipient": "VICTOR Sport Malaysia / Universal Sports Sdn. Bhd.",
+        "to": "marketing@victorsports.my",
+        "subject": "EventPilot | Final polite follow-up: proposed student charity partnership",
+        "body": "Dear VICTOR Sport Malaysia / Universal Sports Sdn. Bhd. team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "Final polite follow-up",
+        "sendAfterDays": 14,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.victorsports.my/pages/contact-us",
+        "type": "followup"
+      },
+      {
+        "recipient": "Secret Recipe Malaysia",
+        "to": "marketing@secretrecipe.com.my",
+        "subject": "EventPilot | First follow-up: proposed student charity partnership",
+        "body": "Dear Secret Recipe Malaysia team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "First follow-up",
+        "sendAfterDays": 7,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.sunwaypyramid.com/directory/secret-recipe",
+        "type": "followup"
+      },
+      {
+        "recipient": "Secret Recipe Malaysia",
+        "to": "marketing@secretrecipe.com.my",
+        "subject": "EventPilot | Final polite follow-up: proposed student charity partnership",
+        "body": "Dear Secret Recipe Malaysia team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "Final polite follow-up",
+        "sendAfterDays": 14,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.sunwaypyramid.com/directory/secret-recipe",
+        "type": "followup"
+      },
+      {
+        "recipient": "Kantan Food Asia Sdn Bhd",
+        "to": null,
+        "subject": "EventPilot | First follow-up: proposed student charity partnership",
+        "body": "Dear Kantan Food Asia Sdn Bhd team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "First follow-up",
+        "sendAfterDays": 7,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.kantanfood.com/sponsorship-collaboration/",
+        "type": "followup"
+      },
+      {
+        "recipient": "Kantan Food Asia Sdn Bhd",
+        "to": null,
+        "subject": "EventPilot | Final polite follow-up: proposed student charity partnership",
+        "body": "Dear Kantan Food Asia Sdn Bhd team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "Final polite follow-up",
+        "sendAfterDays": 14,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.kantanfood.com/sponsorship-collaboration/",
+        "type": "followup"
+      },
+      {
+        "recipient": "myBurgerLab",
+        "to": null,
+        "subject": "EventPilot | First follow-up: proposed student charity partnership",
+        "body": "Dear myBurgerLab team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "First follow-up",
+        "sendAfterDays": 7,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://myburgerlab.com/cateringandevents/",
+        "type": "followup"
+      },
+      {
+        "recipient": "myBurgerLab",
+        "to": null,
+        "subject": "EventPilot | Final polite follow-up: proposed student charity partnership",
+        "body": "Dear myBurgerLab team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "Final polite follow-up",
+        "sendAfterDays": 14,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://myburgerlab.com/cateringandevents/",
+        "type": "followup"
+      },
+      {
+        "recipient": "PichaEats",
+        "to": null,
+        "subject": "EventPilot | First follow-up: proposed student charity partnership",
+        "body": "Dear PichaEats team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "First follow-up",
+        "sendAfterDays": 7,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.pichaeats.com/",
+        "type": "followup"
+      },
+      {
+        "recipient": "PichaEats",
+        "to": null,
+        "subject": "EventPilot | Final polite follow-up: proposed student charity partnership",
+        "body": "Dear PichaEats team,\nFollowing our proposed charity event for a student-selected charity (beneficiary unconfirmed) on 2027-03-20, may we check whether this is relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice on the right channel; no response will be treated as no commitment.\nThank you, event organising team.\nDraft only; not sent.",
+        "status": "Draft\u2014unsent",
+        "label": "Final polite follow-up",
+        "sendAfterDays": 14,
+        "condition": "Only after initial draft is reviewed and actually sent; do not send if declined",
+        "source": "https://www.pichaeats.com/",
+        "type": "followup"
+      }
+    ],
+    "promo": {
+      "captions": [
+        "Music with a purpose: a proposed charity event supporting a student-selected charity (beneficiary unconfirmed). Save the tentative date 2027-03-20; watch for approved details. Proposed event; date, venue and charity permission pending. RSVP details not yet published.",
+        "Student voices, shared purpose. Our planning target is 100 attendees\u2014not confirmed attendance. Interested participants can contact the organising team once its approved contact is published. Proposed event; date, venue and charity permission pending. RSVP details not yet published.",
+        "Help shape a transparent charity event. Proposed location: Lecture Theatres, Taylor's Lakeside Campus. Net-proceeds target and beneficiary will be disclosed after approval, not promised in advance. Proposed event; date, venue and charity permission pending. RSVP details not yet published."
+      ],
+      "variant": "concert",
+      "poster": {
+        "headline": "Student music. Shared purpose.",
+        "eventType": "charity event",
+        "cause": "a student-selected charity (beneficiary unconfirmed)",
+        "date": "2027-03-20",
+        "venue": "Lecture Theatres",
+        "campus": "Taylor's Lakeside Campus",
+        "cta": "Approved RSVP link to be added by organiser",
+        "disclaimer": "Proposed event; date, venue and charity permission pending. RSVP details not yet published.",
+        "status": "Draft copy\u2014not a published poster"
+      },
+      "channels": [
+        "Campus-approved society channels",
+        "Organiser-approved student newsletter",
+        "Opt-in social posts after consent"
+      ],
+      "approvalChecklist": [
+        "Beneficiary permission",
+        "Campus promotional permission",
+        "No guaranteed funds or reach",
+        "Only consenting images and verified organiser contact"
+      ],
+      "calendar": [
+        {
+          "offsetDays": -21,
+          "action": "Publish approved save-the-date"
+        },
+        {
+          "offsetDays": -14,
+          "action": "Volunteer and RSVP reminder"
+        },
+        {
+          "offsetDays": -7,
+          "action": "Confirmed access and indoor logistics"
+        },
+        {
+          "offsetDays": 1,
+          "action": "Publish reconciled outcomes, not planning targets"
+        }
+      ]
+    },
+    "engine": "Tool-driven specialist agents. LLM unavailable: WorkBuddy keyless activation dismissed.",
+    "validation": {
+      "status": "Conditional plan\u2014approvals required",
+      "passed": true,
+      "ready": false,
+      "errors": [],
+      "warnings": [
+        "Campus examination timetable is unknown; no exam-clear claim is made.",
+        "Venue permission, usable capacity and exact room remain unconfirmed.",
+        "Real MC / performer availability and contracts are unconfirmed.",
+        "Beneficiary and donation collection permission require written confirmation.",
+        "Budget amounts are estimated allocations, not vendor quotes.",
+        "Organiser funding is an assumption unless confirmed separately; sponsor asks are hypothetical.",
+        "No outreach was sent; review all drafts before using verified contacts.",
+        "Some sponsor drafts have no verified email; use the cited official contact route, not a guessed address.",
+        "Sponsor asks and fit rankings are proposals, not commitments. Source research is dated 2026-10-10; company contacts should be rechecked before sending."
+      ],
+      "checks": [
+        {
+          "name": "Budget ceiling and integer-cent arithmetic",
+          "passed": true,
+          "detail": "Every estimated allocation must reconcile in integer cents within the ceiling."
+        },
+        {
+          "name": "Contingency at least 10%",
+          "passed": true,
+          "detail": "At least 10% of planned spending must be a protected reserve."
+        },
+        {
+          "name": "Funding gap arithmetic",
+          "passed": true,
+          "detail": "Gap uses organiser funds only; prospect asks are not committed revenue."
+        },
+        {
+          "name": "Eligible proposed date",
+          "passed": true,
+          "detail": "Proposed date must be a weekend in range without a known cited clash."
+        },
+        {
+          "name": "Cited sponsor / venue facts",
+          "passed": true,
+          "detail": "Every named external sponsor and venue requires a source URL."
+        },
+        {
+          "name": "Verified contact boundaries",
+          "passed": true,
+          "detail": "Sponsor emails require an exact researched address, source URL and verified suitable sponsorship purpose; general unsuitable inboxes stay blank."
+        },
+        {
+          "name": "Draft recipient purpose boundaries",
+          "passed": true,
+          "detail": "Sponsor and follow-up recipients must match an approved researched partnership-purpose contact."
+        },
+        {
+          "name": "Draft factual consistency and unsent status",
+          "passed": true,
+          "detail": "Drafts must match date, proposed venue, attendance target and cause, with no implied confirmation."
+        },
+        {
+          "name": "Weather contingency propagation",
+          "passed": true,
+          "detail": "Weather evidence must agree with both the programme mode and within-budget allocations."
+        },
+        {
+          "name": "Chosen-date weather consistency",
+          "passed": true,
+          "detail": "The chosen candidate and pack weather must use the same updated evidence."
+        }
+      ],
+      "repairLoops": 0,
+      "maxRepairLoops": 2,
+      "readiness": "Conditional plan\u2014approvals required"
+    },
+    "rechecks": [
+      {
+        "label": "T-14",
+        "date": "2027-03-06",
+        "daysBefore": 14,
+        "checks": [
+          "Weather and thunderstorm alerts",
+          "Campus examinations and holiday clashes",
+          "Venue approval and capacity",
+          "MC / act availability",
+          "Committed funding and actual vendor costs"
+        ],
+        "owner": "Event Lead",
+        "status": "Scheduled planning checkpoint\u2014not an automated notification"
+      },
+      {
+        "label": "T-7",
+        "date": "2027-03-13",
+        "daysBefore": 7,
+        "checks": [
+          "Weather and thunderstorm alerts",
+          "Campus examinations and holiday clashes",
+          "Venue approval and capacity",
+          "MC / act availability",
+          "Committed funding and actual vendor costs"
+        ],
+        "owner": "Event Lead",
+        "status": "Scheduled planning checkpoint\u2014not an automated notification"
+      },
+      {
+        "label": "T-1",
+        "date": "2027-03-19",
+        "daysBefore": 1,
+        "checks": [
+          "Weather and thunderstorm alerts",
+          "Campus examinations and holiday clashes",
+          "Venue approval and capacity",
+          "MC / act availability",
+          "Committed funding and actual vendor costs"
+        ],
+        "owner": "Event Lead",
+        "status": "Scheduled planning checkpoint\u2014not an automated notification"
+      }
+    ],
+    "summary": {
+      "narrative": "Proposed charity event for a student-selected charity (beneficiary unconfirmed); 2027-03-20, Taylor's Lakeside Campus. Plan for 100 attendees as an unconfirmed target. Ceiling RM2000.00; estimated spending RM2000.00, protected contingency RM240.00, unconfirmed funding gap RM600.00. Conditional plan\u2014approvals required.",
+      "readiness": "Conditional plan\u2014approvals required",
+      "nextActions": [
+        "Confirm beneficiary, exam timetable and date with campus",
+        "Request written indoor venue, capacity and safety approval",
+        "Replace demo talent or confirm real MC and backup",
+        "Confirm organiser funds and obtain vendor quotes",
+        "Review source-verified sponsor drafts; send manually only after approval",
+        "Approve promotional wording and RSVP channel",
+        "Recheck weather and all dependencies at T-14, T-7 and T-1"
+      ],
+      "tabCoverage": [
+        "Goal",
+        "Dates",
+        "Budget",
+        "Weather",
+        "Risk",
+        "People",
+        "Venues",
+        "Programme",
+        "Sponsors",
+        "Drafts",
+        "Promotion",
+        "Validation"
+      ],
+      "sending": "No emails sent; all outreach is draft-only",
+      "engine": "tool-driven agents; LLM unavailable (keyless activation dismissed)"
+    },
+    "metrics": {
+      "engine": "tool-driven agents; LLM unavailable (keyless activation dismissed)",
+      "llmCalls": 0,
+      "toolCalls": 31,
+      "traceEvents": 76,
+      "elapsedSeconds": 10.89,
+      "parallelDAG": true,
+      "candidateWeatherChecks": 5,
+      "repairLoops": 0,
+      "emailsSent": 0,
+      "agents": [
+        "Goal Interpreter",
+        "Source Librarian",
+        "Orchestrator",
+        "Date Scout",
+        "Budget Architect",
+        "Venue Liaison",
+        "Weather & Logistics",
+        "Risk Sentinel",
+        "Talent Coordinator",
+        "Sponsor Matcher",
+        "Programme Director",
+        "Outreach Drafter",
+        "Promo Studio",
+        "Validator",
+        "Integrator"
+      ],
+      "networkRequests": 12,
+      "networkRequestsDefinition": "Actual HTTP fetch attempts emitted by the weather/calendar tools; cache hits excluded.",
+      "draftsPrepared": 27,
+      "gmailDraftsCreated": 0
+    },
+    "runId": "lrEBSyNn1OpxYN2idLatgorL",
+    "generatedAt": "2026-10-10T17:43:50.948955+08:00",
+    "mode": "live",
+    "privacy": "Anyone with this random share URL can view this pack. Roster names/contact details are redacted; do not enter sensitive information in prompts."
+  },
+  "trace": [
+    {
+      "agent": "Orchestrator",
+      "status": "running",
+      "tool": "SQLite + thread pool",
+      "message": "Live execution started; specialist events below reflect actual work, not animations.",
+      "time": "2026-10-10T17:43:40.062256+08:00",
+      "data": null,
+      "seq": 1
+    },
+    {
+      "agent": "Goal Interpreter",
+      "status": "running",
+      "tool": "parse_event_goal",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:40.134640+08:00",
+      "data": null,
+      "seq": 2
+    },
+    {
+      "agent": "Goal Interpreter",
+      "status": "completed",
+      "tool": "parse_event_goal",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:40.257456+08:00",
+      "data": {
+        "resultType": "tuple"
+      },
+      "seq": 3
+    },
+    {
+      "agent": "Source Librarian",
+      "status": "running",
+      "tool": "read_verified_research",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:40.380244+08:00",
+      "data": null,
+      "seq": 4
+    },
+    {
+      "agent": "Source Librarian",
+      "status": "completed",
+      "tool": "read_verified_research",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:40.556228+08:00",
+      "data": {
+        "resultType": "dict"
+      },
+      "seq": 5
+    },
+    {
+      "agent": "Orchestrator",
+      "status": "handoff",
+      "tool": "parallel_dag",
+      "message": "Dispatching independent date, budget and venue tools concurrently.",
+      "time": "2026-10-10T17:43:40.676895+08:00",
+      "data": {
+        "parallel": [
+          "Date Scout",
+          "Budget Architect",
+          "Venue Liaison"
+        ],
+        "engine": "tool-driven agents; LLM unavailable (keyless activation dismissed)"
+      },
+      "seq": 6
+    },
+    {
+      "agent": "Date Scout",
+      "status": "running",
+      "tool": "candidate_weather_calendar_rank",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:40.797401+08:00",
+      "data": null,
+      "seq": 7
+    },
+    {
+      "agent": "Budget Architect",
+      "status": "running",
+      "tool": "integer_cent_allocations",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:40.915470+08:00",
+      "data": null,
+      "seq": 8
+    },
+    {
+      "agent": "Venue Liaison",
+      "status": "running",
+      "tool": "cited_venue_filter",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:40.979180+08:00",
+      "data": null,
+      "seq": 9
+    },
+    {
+      "agent": "Date Scout",
+      "status": "tool_call",
+      "tool": "calendar_context",
+      "message": "Checking calendar evidence for 2027-03.",
+      "time": "2026-10-10T17:43:41.047728+08:00",
+      "data": null,
+      "seq": 10
+    },
+    {
+      "agent": "Budget Architect",
+      "status": "completed",
+      "tool": "integer_cent_allocations",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:41.118868+08:00",
+      "data": {
+        "resultType": "dict"
+      },
+      "seq": 11
+    },
+    {
+      "agent": "Venue Liaison",
+      "status": "completed",
+      "tool": "cited_venue_filter",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:41.180108+08:00",
+      "data": {
+        "resultType": "dict"
+      },
+      "seq": 12
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Nager.Date holidays",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:41.241506+08:00",
+      "data": {
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2027/MY",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 13
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "warning",
+      "tool": "Nager.Date holidays",
+      "message": "HTTP 204: API returned an empty response (possibly unsupported country)",
+      "time": "2026-10-10T17:43:42.179012+08:00",
+      "data": {
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2027/MY"
+      },
+      "seq": 14
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Calendar context",
+      "message": "Return cited holidays with explicit campus-calendar uncertainty",
+      "time": "2026-10-10T17:43:42.282887+08:00",
+      "data": {
+        "holidays": 2,
+        "examCalendar": "unknown, campus confirmation needed"
+      },
+      "seq": 15
+    },
+    {
+      "agent": "Date Scout",
+      "status": "tool_call",
+      "tool": "date_weather",
+      "message": "Checking real weather evidence for 2027-03-06 in Subang Jaya, Selangor, Malaysia.",
+      "time": "2026-10-10T17:43:42.394155+08:00",
+      "data": {
+        "date": "2027-03-06"
+      },
+      "seq": 16
+    },
+    {
+      "agent": "Date Scout",
+      "status": "tool_call",
+      "tool": "date_weather",
+      "message": "Checking real weather evidence for 2027-03-13 in Subang Jaya, Selangor, Malaysia.",
+      "time": "2026-10-10T17:43:42.500116+08:00",
+      "data": {
+        "date": "2027-03-13"
+      },
+      "seq": 17
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "cached",
+      "tool": "Open-Meteo geocoding",
+      "message": "Share in-flight source request",
+      "time": "2026-10-10T17:43:42.612994+08:00",
+      "data": {
+        "url": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY"
+      },
+      "seq": 18
+    },
+    {
+      "agent": "Date Scout",
+      "status": "tool_call",
+      "tool": "date_weather",
+      "message": "Checking real weather evidence for 2027-03-21 in Subang Jaya, Selangor, Malaysia.",
+      "time": "2026-10-10T17:43:42.708935+08:00",
+      "data": {
+        "date": "2027-03-21"
+      },
+      "seq": 19
+    },
+    {
+      "agent": "Date Scout",
+      "status": "tool_call",
+      "tool": "date_weather",
+      "message": "Checking real weather evidence for 2027-03-28 in Subang Jaya, Selangor, Malaysia.",
+      "time": "2026-10-10T17:43:42.893112+08:00",
+      "data": {
+        "date": "2027-03-28"
+      },
+      "seq": 20
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Open-Meteo geocoding",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:43.020962+08:00",
+      "data": {
+        "url": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 21
+    },
+    {
+      "agent": "Date Scout",
+      "status": "tool_call",
+      "tool": "date_weather",
+      "message": "Checking real weather evidence for 2027-03-20 in Subang Jaya, Selangor, Malaysia.",
+      "time": "2026-10-10T17:43:43.085878+08:00",
+      "data": {
+        "date": "2027-03-20"
+      },
+      "seq": 22
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "cached",
+      "tool": "Open-Meteo geocoding",
+      "message": "Share in-flight source request",
+      "time": "2026-10-10T17:43:43.152345+08:00",
+      "data": {
+        "url": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY"
+      },
+      "seq": 23
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "cached",
+      "tool": "Open-Meteo geocoding",
+      "message": "Share in-flight source request",
+      "time": "2026-10-10T17:43:43.217864+08:00",
+      "data": {
+        "url": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY"
+      },
+      "seq": 24
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "cached",
+      "tool": "Open-Meteo geocoding",
+      "message": "Share in-flight source request",
+      "time": "2026-10-10T17:43:43.282904+08:00",
+      "data": {
+        "url": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY"
+      },
+      "seq": 25
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Open-Meteo geocoding",
+      "message": "Source API response received",
+      "time": "2026-10-10T17:43:43.945188+08:00",
+      "data": {
+        "url": "https://geocoding-api.open-meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY",
+        "httpStatus": 200
+      },
+      "seq": 26
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "cached",
+      "tool": "Open-Meteo archive",
+      "message": "Share in-flight source request",
+      "time": "2026-10-10T17:43:44.013847+08:00",
+      "data": {
+        "urls": [
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+        ],
+        "years": [
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "seq": 27
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "cached",
+      "tool": "Open-Meteo archive",
+      "message": "Share in-flight source request",
+      "time": "2026-10-10T17:43:44.084046+08:00",
+      "data": {
+        "urls": [
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+        ],
+        "years": [
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "seq": 28
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "cached",
+      "tool": "Open-Meteo archive",
+      "message": "Share in-flight source request",
+      "time": "2026-10-10T17:43:44.211236+08:00",
+      "data": {
+        "urls": [
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+        ],
+        "years": [
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "seq": 29
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "cached",
+      "tool": "Open-Meteo archive",
+      "message": "Share in-flight source request",
+      "time": "2026-10-10T17:43:44.337949+08:00",
+      "data": {
+        "urls": [
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+          "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur"
+        ],
+        "years": [
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      },
+      "seq": 30
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Open-Meteo archive",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:44.422267+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 31
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Open-Meteo archive",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:44.491448+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 32
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Open-Meteo archive",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:44.561528+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 33
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Open-Meteo archive",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:44.627975+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 34
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Open-Meteo archive",
+      "message": "Source API response received",
+      "time": "2026-10-10T17:43:45.560495+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2016-03-01&end_date=2016-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "httpStatus": 200
+      },
+      "seq": 35
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Open-Meteo archive",
+      "message": "Source API response received",
+      "time": "2026-10-10T17:43:45.626615+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2019-03-01&end_date=2019-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "httpStatus": 200
+      },
+      "seq": 36
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Open-Meteo archive",
+      "message": "Source API response received",
+      "time": "2026-10-10T17:43:45.691175+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2017-03-01&end_date=2017-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "httpStatus": 200
+      },
+      "seq": 37
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Open-Meteo archive",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:45.757215+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 38
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Open-Meteo archive",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:45.825738+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 39
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Open-Meteo archive",
+      "message": "Source API response received",
+      "time": "2026-10-10T17:43:45.892779+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2018-03-01&end_date=2018-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "httpStatus": 200
+      },
+      "seq": 40
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Open-Meteo archive",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:45.957918+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 41
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Open-Meteo archive",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:46.027162+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 42
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Open-Meteo archive",
+      "message": "Source API response received",
+      "time": "2026-10-10T17:43:46.755242+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2020-03-01&end_date=2020-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "httpStatus": 200
+      },
+      "seq": 43
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Open-Meteo archive",
+      "message": "Source API response received",
+      "time": "2026-10-10T17:43:46.842303+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2021-03-01&end_date=2021-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "httpStatus": 200
+      },
+      "seq": 44
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Open-Meteo archive",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:46.965128+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 45
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Open-Meteo archive",
+      "message": "Source API response received",
+      "time": "2026-10-10T17:43:47.033583+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2022-03-01&end_date=2022-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "httpStatus": 200
+      },
+      "seq": 46
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "running",
+      "tool": "Open-Meteo archive",
+      "message": "Send actual source API request",
+      "time": "2026-10-10T17:43:47.103874+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "attempt": 1,
+        "networkRequest": true
+      },
+      "seq": 47
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Open-Meteo archive",
+      "message": "Source API response received",
+      "time": "2026-10-10T17:43:47.261927+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2023-03-01&end_date=2023-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "httpStatus": 200
+      },
+      "seq": 48
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Open-Meteo archive",
+      "message": "Source API response received",
+      "time": "2026-10-10T17:43:48.271012+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2025-03-01&end_date=2025-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "httpStatus": 200
+      },
+      "seq": 49
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Open-Meteo archive",
+      "message": "Source API response received",
+      "time": "2026-10-10T17:43:48.336293+08:00",
+      "data": {
+        "url": "https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_date=2024-03-01&end_date=2024-03-31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lumpur",
+        "httpStatus": 200
+      },
+      "seq": 50
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Weather calculation",
+      "message": "historical climatology, not a forecast",
+      "time": "2026-10-10T17:43:48.405423+08:00",
+      "data": {
+        "date": "2027-03-06",
+        "sampleCount": 10,
+        "available": true
+      },
+      "seq": 51
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Weather calculation",
+      "message": "historical climatology, not a forecast",
+      "time": "2026-10-10T17:43:48.476750+08:00",
+      "data": {
+        "date": "2027-03-13",
+        "sampleCount": 10,
+        "available": true
+      },
+      "seq": 52
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Weather calculation",
+      "message": "historical climatology, not a forecast",
+      "time": "2026-10-10T17:43:48.540976+08:00",
+      "data": {
+        "date": "2027-03-21",
+        "sampleCount": 10,
+        "available": true
+      },
+      "seq": 53
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Weather calculation",
+      "message": "historical climatology, not a forecast",
+      "time": "2026-10-10T17:43:48.610230+08:00",
+      "data": {
+        "date": "2027-03-28",
+        "sampleCount": 10,
+        "available": true
+      },
+      "seq": 54
+    },
+    {
+      "agent": "Weather & Logistics",
+      "status": "completed",
+      "tool": "Weather calculation",
+      "message": "historical climatology, not a forecast",
+      "time": "2026-10-10T17:43:48.754103+08:00",
+      "data": {
+        "date": "2027-03-20",
+        "sampleCount": 10,
+        "available": true
+      },
+      "seq": 55
+    },
+    {
+      "agent": "Date Scout",
+      "status": "tool_result",
+      "tool": "weighted_date_rank",
+      "message": "Ranked real weather/calendar tool results; known clashes excluded.",
+      "time": "2026-10-10T17:43:49.082872+08:00",
+      "data": {
+        "chosen": "2027-03-20",
+        "candidateCount": 5
+      },
+      "seq": 56
+    },
+    {
+      "agent": "Date Scout",
+      "status": "completed",
+      "tool": "candidate_weather_calendar_rank",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:49.345997+08:00",
+      "data": {
+        "resultType": "dict"
+      },
+      "seq": 57
+    },
+    {
+      "agent": "Risk Sentinel",
+      "status": "replan",
+      "tool": "weather_threshold",
+      "message": "Re-plan: wet-risk exceeds 40% or evidence is unknown; move proposed programme indoors and rebalance within the same ceiling.",
+      "time": "2026-10-10T17:43:49.480106+08:00",
+      "data": {
+        "probability": 0.8,
+        "threshold": 0.4,
+        "trigger": "threshold exceeded"
+      },
+      "seq": 58
+    },
+    {
+      "agent": "Budget Architect",
+      "status": "running",
+      "tool": "rebalance_indoor_allocations",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:49.549704+08:00",
+      "data": null,
+      "seq": 59
+    },
+    {
+      "agent": "Budget Architect",
+      "status": "completed",
+      "tool": "rebalance_indoor_allocations",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:49.615666+08:00",
+      "data": {
+        "resultType": "dict"
+      },
+      "seq": 60
+    },
+    {
+      "agent": "Talent Coordinator",
+      "status": "running",
+      "tool": "roster_availability_rank",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:49.678279+08:00",
+      "data": null,
+      "seq": 61
+    },
+    {
+      "agent": "Sponsor Matcher",
+      "status": "running",
+      "tool": "verified_contacts_and_hypothetical_asks",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:49.741086+08:00",
+      "data": null,
+      "seq": 62
+    },
+    {
+      "agent": "Programme Director",
+      "status": "running",
+      "tool": "owned_run_sheet_and_countdown",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:49.869553+08:00",
+      "data": null,
+      "seq": 63
+    },
+    {
+      "agent": "Risk Sentinel",
+      "status": "running",
+      "tool": "risk_register_and_plan_b",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:49.996938+08:00",
+      "data": null,
+      "seq": 64
+    },
+    {
+      "agent": "Talent Coordinator",
+      "status": "completed",
+      "tool": "roster_availability_rank",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:50.064708+08:00",
+      "data": {
+        "resultType": "dict"
+      },
+      "seq": 65
+    },
+    {
+      "agent": "Sponsor Matcher",
+      "status": "completed",
+      "tool": "verified_contacts_and_hypothetical_asks",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:50.127008+08:00",
+      "data": {
+        "resultType": "list"
+      },
+      "seq": 66
+    },
+    {
+      "agent": "Programme Director",
+      "status": "completed",
+      "tool": "owned_run_sheet_and_countdown",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:50.190245+08:00",
+      "data": {
+        "resultType": "dict"
+      },
+      "seq": 67
+    },
+    {
+      "agent": "Risk Sentinel",
+      "status": "completed",
+      "tool": "risk_register_and_plan_b",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:50.249843+08:00",
+      "data": {
+        "resultType": "dict"
+      },
+      "seq": 68
+    },
+    {
+      "agent": "Orchestrator",
+      "status": "handoff",
+      "tool": "dependency_handoff",
+      "message": "Date, venue, funding gap and roster outputs handed to outreach and promotion tools.",
+      "time": "2026-10-10T17:43:50.315161+08:00",
+      "data": null,
+      "seq": 69
+    },
+    {
+      "agent": "Outreach Drafter",
+      "status": "running",
+      "tool": "source_bound_unsent_drafts",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:50.378227+08:00",
+      "data": null,
+      "seq": 70
+    },
+    {
+      "agent": "Promo Studio",
+      "status": "running",
+      "tool": "conditional_approved_copy",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:50.443983+08:00",
+      "data": null,
+      "seq": 71
+    },
+    {
+      "agent": "Outreach Drafter",
+      "status": "completed",
+      "tool": "source_bound_unsent_drafts",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:50.567509+08:00",
+      "data": {
+        "resultType": "dict"
+      },
+      "seq": 72
+    },
+    {
+      "agent": "Promo Studio",
+      "status": "completed",
+      "tool": "conditional_approved_copy",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:50.695628+08:00",
+      "data": {
+        "resultType": "dict"
+      },
+      "seq": 73
+    },
+    {
+      "agent": "Validator",
+      "status": "running",
+      "tool": "cross_specialist_checks",
+      "message": "Executing specialist tool; no language model or simulated progress.",
+      "time": "2026-10-10T17:43:50.763251+08:00",
+      "data": null,
+      "seq": 74
+    },
+    {
+      "agent": "Validator",
+      "status": "completed",
+      "tool": "cross_specialist_checks",
+      "message": "Tool result produced.",
+      "time": "2026-10-10T17:43:50.825996+08:00",
+      "data": {
+        "resultType": "dict"
+      },
+      "seq": 75
+    },
+    {
+      "agent": "Integrator",
+      "status": "completed",
+      "tool": "assemble_event_pack",
+      "message": "Integrated every specialist result; planning checks do not imply campus or talent approval.",
+      "time": "2026-10-10T17:43:50.889717+08:00",
+      "data": {
+        "readiness": "Conditional plan\u2014approvals required",
+        "repairLoops": 0
+      },
+      "seq": 76
+    },
+    {
+      "agent": "Integrator Agent",
+      "status": "complete",
+      "tool": "SQLite",
+      "message": "Event Pack saved in 10.89s; PDF export is available.",
+      "time": "2026-10-10T17:43:51.129211+08:00",
+      "data": null,
+      "seq": 77
+    }
+  ],
+  "recordedAt": "2026-10-10T17:43:51.431510+08:00"
+}
