@@ -1,0 +1,4465 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R 23 0 R 25 0 R 27 0 R 29 0 R 31 0 R 33 0 R 35 0 R 37 0 R 39 0 R 41 0 R 43 0 R 45 0 R 47 0 R 49 0 R 51 0 R 53 0 R 55 0 R 57 0 R 59 0 R 61 0 R 63 0 R 65 0 R 67 0 R 69 0 R 71 0 R 73 0 R 75 0 R 77 0 R 79 0 R 81 0 R 83 0 R 85 0 R 87 0 R 89 0 R 91 0 R 93 0 R 95 0 R 97 0 R 99 0 R 101 0 R 103 0 R 105 0 R 107 0 R 109 0 R 111 0 R 113 0 R 115 0 R 117 0 R 119 0 R 121 0 R] /Count 59 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 2282 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(EVENTPILOT | C-First | Taylor's University) Tj T*
+(EVENT PACK - proposed plan, approvals required) Tj T*
+(Generated: 2026-10-10T17:43:50.948955+08:00) Tj T*
+() Tj T*
+() Tj T*
+(EXECUTIVE SUMMARY) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(narrative: Proposed charity event for a student-selected charity \(beneficiary unconfirmed\);) Tj T*
+(  2027-03-20, Taylor's Lakeside Campus. Plan for 100 attendees as an unconfirmed target.) Tj T*
+(  Ceiling RM2000.00; estimated spending RM2000.00, protected contingency RM240.00, unconfirmed) Tj T*
+(  funding gap RM600.00. Conditional plan?approvals required.) Tj T*
+(readiness: Conditional plan?approvals required) Tj T*
+(nextActions:) Tj T*
+(  [1]) Tj T*
+(    Confirm beneficiary, exam timetable and date with campus) Tj T*
+(  [2]) Tj T*
+(    Request written indoor venue, capacity and safety approval) Tj T*
+(  [3]) Tj T*
+(    Replace demo talent or confirm real MC and backup) Tj T*
+(  [4]) Tj T*
+(    Confirm organiser funds and obtain vendor quotes) Tj T*
+(  [5]) Tj T*
+(    Review source-verified sponsor drafts; send manually only after approval) Tj T*
+(  [6]) Tj T*
+(    Approve promotional wording and RSVP channel) Tj T*
+(  [7]) Tj T*
+(    Recheck weather and all dependencies at T-14, T-7 and T-1) Tj T*
+(tabCoverage:) Tj T*
+(  [1]) Tj T*
+(    Goal) Tj T*
+(  [2]) Tj T*
+(    Dates) Tj T*
+(  [3]) Tj T*
+(    Budget) Tj T*
+(  [4]) Tj T*
+(    Weather) Tj T*
+(  [5]) Tj T*
+(    Risk) Tj T*
+(  [6]) Tj T*
+(    People) Tj T*
+(  [7]) Tj T*
+(    Venues) Tj T*
+(  [8]) Tj T*
+(    Programme) Tj T*
+(  [9]) Tj T*
+(    Sponsors) Tj T*
+(  [10]) Tj T*
+(    Drafts) Tj T*
+(  [11]) Tj T*
+(    Promotion) Tj T*
+(  [12]) Tj T*
+(    Validation) Tj T*
+(sending: No emails sent; all outreach is draft-only) Tj T*
+(engine: tool-driven agents; LLM unavailable \(keyless activation dismissed\)) Tj T*
+() Tj T*
+(GOAL AND ASSUMPTIONS) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(eventType: charity event) Tj T*
+(cause: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(month: 3) Tj T*
+(year: 2027) Tj T*
+(budgetRM: 2000.0) Tj T*
+(location: Subang Jaya, Selangor, Malaysia) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 1 of 59) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2312 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(campus: Taylor's Lakeside Campus) Tj T*
+(attendance: 100) Tj T*
+(prompt: I want to organize a charity event at my university in March with a budget of RM2k.) Tj T*
+(scenarioDate: 2026-10-10) Tj T*
+(charityPurpose: True) Tj T*
+(budgetCents: 200000) Tj T*
+(dateStart: 2027-03-01) Tj T*
+(dateEnd: 2027-03-31) Tj T*
+(organiserFundsRM: 1400.0) Tj T*
+(attendanceAssumed: True) Tj T*
+() Tj T*
+(EDITABLE ASSUMPTIONS) Tj T*
+(-----------------------------------------------------------------) Tj T*
+([1]) Tj T*
+(  field: cause) Tj T*
+(  value: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(  reason: No beneficiary or cause was named; organiser must confirm before outreach.) Tj T*
+(  editable: True) Tj T*
+(  explicit: True) Tj T*
+([2]) Tj T*
+(  field: year) Tj T*
+(  value: 2027) Tj T*
+(  reason: Month without year resolves to its next occurrence after the MYT planning date) Tj T*
+(    2026-10-10.) Tj T*
+(  editable: True) Tj T*
+(  explicit: True) Tj T*
+([3]) Tj T*
+(  field: attendance) Tj T*
+(  value: 100) Tj T*
+(  reason: 100 attendees is a planning assumption, not a confirmed audience.) Tj T*
+(  editable: True) Tj T*
+(  explicit: True) Tj T*
+([4]) Tj T*
+(  field: campus) Tj T*
+(  value: Taylor's Lakeside Campus) Tj T*
+(  reason: Campus was not specified; confirm the campus before seeking permission.) Tj T*
+(  editable: True) Tj T*
+(  explicit: True) Tj T*
+([5]) Tj T*
+(  field: location) Tj T*
+(  value: Subang Jaya, Selangor, Malaysia) Tj T*
+(  reason: Location was not specified; location affects weather and campus relevance.) Tj T*
+(  editable: True) Tj T*
+(  explicit: True) Tj T*
+([6]) Tj T*
+(  field: organiserFundsRM) Tj T*
+(  value: 1400.0) Tj T*
+(  reason: Assume organiser covers 70% of the ceiling; the remaining 30% is an unconfirmed) Tj T*
+(    funding gap.) Tj T*
+(  editable: True) Tj T*
+(  explicit: True) Tj T*
+() Tj T*
+(DATE DECISION AND BACKUPS) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(candidates:) Tj T*
+(  [1]) Tj T*
+(    date: 2027-03-06) Tj T*
+(    weekday: Saturday) Tj T*
+(    score: 44.5) Tj T*
+(    weather:) Tj T*
+(      date: 2027-03-06) Tj T*
+(      location: Subang Jaya, Selangor, Malaysia) Tj T*
+(      available: True) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 2 of 59) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 1754 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(      mode: historical climatology, not a forecast) Tj T*
+(      rainProbability: 90.0) Tj T*
+(      rainProbabilityKind: historical same-calendar-day rainy frequency \(%\), not forecast) Tj T*
+(        probability) Tj T*
+(      rainDays: 9) Tj T*
+(      heavyRainDays: 1) Tj T*
+(      precipitationMm: 9.72) Tj T*
+(      avgTempMax: 30.63) Tj T*
+(      avgTempMean: 26.37) Tj T*
+(      sampleCount: 10) Tj T*
+(      years:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      sampleYears:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      samples:) Tj T*
+(        [1]) Tj T*
+(          date: 2016-03-06) Tj T*
+(          precipitationMm: 4.9) Tj T*
+(          tempMaxC: 33.3) Tj T*
+(          tempMeanC: 27.9) Tj T*
+(        [2]) Tj T*
+(          date: 2017-03-06) Tj T*
+(          precipitationMm: 10.9) Tj T*
+(          tempMaxC: 30.0) Tj T*
+(          tempMeanC: 25.8) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 3 of 59) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 2696 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(        [3]) Tj T*
+(          date: 2018-03-06) Tj T*
+(          precipitationMm: 9.3) Tj T*
+(          tempMaxC: 29.8) Tj T*
+(          tempMeanC: 26.2) Tj T*
+(        [4]) Tj T*
+(          date: 2019-03-06) Tj T*
+(          precipitationMm: 1.7) Tj T*
+(          tempMaxC: 32.2) Tj T*
+(          tempMeanC: 27.4) Tj T*
+(        [5]) Tj T*
+(          date: 2020-03-06) Tj T*
+(          precipitationMm: 14.0) Tj T*
+(          tempMaxC: 30.4) Tj T*
+(          tempMeanC: 26.0) Tj T*
+(        [6]) Tj T*
+(          date: 2021-03-06) Tj T*
+(          precipitationMm: 21.8) Tj T*
+(          tempMaxC: 30.6) Tj T*
+(          tempMeanC: 26.9) Tj T*
+(        [7]) Tj T*
+(          date: 2022-03-06) Tj T*
+(          precipitationMm: 11.9) Tj T*
+(          tempMaxC: 29.7) Tj T*
+(          tempMeanC: 25.3) Tj T*
+(        [8]) Tj T*
+(          date: 2023-03-06) Tj T*
+(          precipitationMm: 0.0) Tj T*
+(          tempMaxC: 30.5) Tj T*
+(          tempMeanC: 25.6) Tj T*
+(        [9]) Tj T*
+(          date: 2024-03-06) Tj T*
+(          precipitationMm: 4.6) Tj T*
+(          tempMaxC: 30.9) Tj T*
+(          tempMeanC: 26.8) Tj T*
+(        [10]) Tj T*
+(          date: 2025-03-06) Tj T*
+(          precipitationMm: 18.1) Tj T*
+(          tempMaxC: 28.9) Tj T*
+(          tempMeanC: 25.8) Tj T*
+(      sourceUrls:) Tj T*
+(        [1]) Tj T*
+(          https://geocoding-api.open-) Tj T*
+(meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        [2]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2016-03-01&end_date=2016-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [3]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2017-03-01&end_date=2017-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [4]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2018-03-01&end_date=2018-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [5]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2019-03-01&end_date=2019-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 4 of 59) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 3539 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(pur) Tj T*
+(        [6]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2020-03-01&end_date=2020-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [7]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2021-03-01&end_date=2021-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [8]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2022-03-01&end_date=2022-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [9]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2023-03-01&end_date=2023-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [10]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2024-03-01&end_date=2024-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [11]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2025-03-01&end_date=2025-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      warnings:) Tj T*
+(        [1]) Tj T*
+(          Weather represents the sourced Subang Jaya city grid, not a campus microclimate.) Tj T*
+(      uncertainty: Only 10 same-calendar-day samples from ten complete years; coarse reanalysis) Tj T*
+(        grid, not campus measurements. Frequency is not a forecast for the event date.) Tj T*
+(      assumptions:) Tj T*
+(        rainDayThresholdMm: 1.0) Tj T*
+(        heavyRainThresholdMm: 20.0) Tj T*
+(        heavyRainDefinition: Planning assumption: daily precipitation >=20 mm, not an official) Tj T*
+(          warning classification) Tj T*
+(      resolvedLocation:) Tj T*
+(        name: Subang Jaya) Tj T*
+(        region: Selangor) Tj T*
+(        latitude: 3.04384) Tj T*
+(        longitude: 101.58062) Tj T*
+(        source: https://geocoding-api.open-) Tj T*
+(          meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        scope: Subang Jaya city-grid proxy; not campus coordinates) Tj T*
+(      probability: 0.9) Tj T*
+(    weatherConfidence: low?historical frequency is not an event-date forecast) Tj T*
+(    holidayClash: None) Tj T*
+(    examStatus: unknown) Tj T*
+(    fastingContext:) Tj T*
+(      [1]) Tj T*
+(        start: 2027-03-01) Tj T*
+(        end: 2027-03-09) Tj T*
+(        source: https://www.timeanddate.com/holidays/malaysia/2027) Tj T*
+(        provisional: True) Tj T*
+(        sourceNote: Inferred provisional early-March planning window from secondary Ramadan-) Tj T*
+(          start and Eid estimates, not a final verified religious calendar.) Tj T*
+(        note: Fasting-period logistics: avoid daytime food-centered programming; local dates) Tj T*
+(          require confirmation.) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 5 of 59) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 2218 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(      [2]) Tj T*
+(        start: 2027-03-01) Tj T*
+(        end: 2027-03-09) Tj T*
+(        source: https://www.timeanddate.com/holidays/malaysia/2027) Tj T*
+(        provisional: True) Tj T*
+(        notes: Inferred provisional early-March planning window from secondary Ramadan-start) Tj T*
+(          and Eid estimates, not a final verified religious calendar.) Tj T*
+(    blocked: False) Tj T*
+(    reasons:) Tj T*
+(      [1]) Tj T*
+(        Weekend candidate.) Tj T*
+(      [2]) Tj T*
+(        Campus exam timetable is unconfirmed; do not interpret as clear.) Tj T*
+(      [3]) Tj T*
+(        No cited holiday clash found; holiday completeness remains unconfirmed.) Tj T*
+(      [4]) Tj T*
+(        Weather rain-risk estimate 90%; mode: historical climatology, not a forecast.) Tj T*
+(      [5]) Tj T*
+(        Cited provisional fasting-period overlap; avoid food-centred or performance scheduling) Tj T*
+(without local approval.) Tj T*
+(  [2]) Tj T*
+(    date: 2027-03-13) Tj T*
+(    weekday: Saturday) Tj T*
+(    score: 54.5) Tj T*
+(    weather:) Tj T*
+(      date: 2027-03-13) Tj T*
+(      location: Subang Jaya, Selangor, Malaysia) Tj T*
+(      available: True) Tj T*
+(      mode: historical climatology, not a forecast) Tj T*
+(      rainProbability: 90.0) Tj T*
+(      rainProbabilityKind: historical same-calendar-day rainy frequency \(%\), not forecast) Tj T*
+(        probability) Tj T*
+(      rainDays: 9) Tj T*
+(      heavyRainDays: 1) Tj T*
+(      precipitationMm: 7.62) Tj T*
+(      avgTempMax: 31.01) Tj T*
+(      avgTempMean: 26.77) Tj T*
+(      sampleCount: 10) Tj T*
+(      years:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      sampleYears:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 6 of 59) Tj ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 1930 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      samples:) Tj T*
+(        [1]) Tj T*
+(          date: 2016-03-13) Tj T*
+(          precipitationMm: 0.8) Tj T*
+(          tempMaxC: 32.7) Tj T*
+(          tempMeanC: 28.4) Tj T*
+(        [2]) Tj T*
+(          date: 2017-03-13) Tj T*
+(          precipitationMm: 2.4) Tj T*
+(          tempMaxC: 30.8) Tj T*
+(          tempMeanC: 26.8) Tj T*
+(        [3]) Tj T*
+(          date: 2018-03-13) Tj T*
+(          precipitationMm: 3.2) Tj T*
+(          tempMaxC: 30.3) Tj T*
+(          tempMeanC: 26.3) Tj T*
+(        [4]) Tj T*
+(          date: 2019-03-13) Tj T*
+(          precipitationMm: 11.9) Tj T*
+(          tempMaxC: 31.2) Tj T*
+(          tempMeanC: 26.8) Tj T*
+(        [5]) Tj T*
+(          date: 2020-03-13) Tj T*
+(          precipitationMm: 3.0) Tj T*
+(          tempMaxC: 31.1) Tj T*
+(          tempMeanC: 26.9) Tj T*
+(        [6]) Tj T*
+(          date: 2021-03-13) Tj T*
+(          precipitationMm: 30.7) Tj T*
+(          tempMaxC: 31.5) Tj T*
+(          tempMeanC: 25.6) Tj T*
+(        [7]) Tj T*
+(          date: 2022-03-13) Tj T*
+(          precipitationMm: 12.6) Tj T*
+(          tempMaxC: 30.8) Tj T*
+(          tempMeanC: 26.3) Tj T*
+(        [8]) Tj T*
+(          date: 2023-03-13) Tj T*
+(          precipitationMm: 5.3) Tj T*
+(          tempMaxC: 28.5) Tj T*
+(          tempMeanC: 25.9) Tj T*
+(        [9]) Tj T*
+(          date: 2024-03-13) Tj T*
+(          precipitationMm: 1.9) Tj T*
+(          tempMaxC: 31.5) Tj T*
+(          tempMeanC: 27.0) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 7 of 59) Tj ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 3542 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(        [10]) Tj T*
+(          date: 2025-03-13) Tj T*
+(          precipitationMm: 4.4) Tj T*
+(          tempMaxC: 31.7) Tj T*
+(          tempMeanC: 27.7) Tj T*
+(      sourceUrls:) Tj T*
+(        [1]) Tj T*
+(          https://geocoding-api.open-) Tj T*
+(meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        [2]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2016-03-01&end_date=2016-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [3]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2017-03-01&end_date=2017-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [4]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2018-03-01&end_date=2018-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [5]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2019-03-01&end_date=2019-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [6]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2020-03-01&end_date=2020-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [7]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2021-03-01&end_date=2021-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [8]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2022-03-01&end_date=2022-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [9]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2023-03-01&end_date=2023-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [10]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2024-03-01&end_date=2024-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [11]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2025-03-01&end_date=2025-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      warnings:) Tj T*
+(        [1]) Tj T*
+(          Weather represents the sourced Subang Jaya city grid, not a campus microclimate.) Tj T*
+(      uncertainty: Only 10 same-calendar-day samples from ten complete years; coarse reanalysis) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 8 of 59) Tj ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 18 0 R >>
+endobj
+20 0 obj
+<< /Length 2448 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(        grid, not campus measurements. Frequency is not a forecast for the event date.) Tj T*
+(      assumptions:) Tj T*
+(        rainDayThresholdMm: 1.0) Tj T*
+(        heavyRainThresholdMm: 20.0) Tj T*
+(        heavyRainDefinition: Planning assumption: daily precipitation >=20 mm, not an official) Tj T*
+(          warning classification) Tj T*
+(      resolvedLocation:) Tj T*
+(        name: Subang Jaya) Tj T*
+(        region: Selangor) Tj T*
+(        latitude: 3.04384) Tj T*
+(        longitude: 101.58062) Tj T*
+(        source: https://geocoding-api.open-) Tj T*
+(          meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        scope: Subang Jaya city-grid proxy; not campus coordinates) Tj T*
+(      probability: 0.9) Tj T*
+(    weatherConfidence: low?historical frequency is not an event-date forecast) Tj T*
+(    holidayClash: None) Tj T*
+(    examStatus: unknown) Tj T*
+(    fastingContext:) Tj T*
+(    blocked: False) Tj T*
+(    reasons:) Tj T*
+(      [1]) Tj T*
+(        Weekend candidate.) Tj T*
+(      [2]) Tj T*
+(        Campus exam timetable is unconfirmed; do not interpret as clear.) Tj T*
+(      [3]) Tj T*
+(        No cited holiday clash found; holiday completeness remains unconfirmed.) Tj T*
+(      [4]) Tj T*
+(        Weather rain-risk estimate 90%; mode: historical climatology, not a forecast.) Tj T*
+(  [3]) Tj T*
+(    date: 2027-03-20) Tj T*
+(    weekday: Saturday) Tj T*
+(    score: 59.0) Tj T*
+(    weather:) Tj T*
+(      date: 2027-03-20) Tj T*
+(      location: Subang Jaya, Selangor, Malaysia) Tj T*
+(      available: True) Tj T*
+(      mode: historical climatology, not a forecast) Tj T*
+(      rainProbability: 80.0) Tj T*
+(      rainProbabilityKind: historical same-calendar-day rainy frequency \(%\), not forecast) Tj T*
+(        probability) Tj T*
+(      rainDays: 8) Tj T*
+(      heavyRainDays: 1) Tj T*
+(      precipitationMm: 7.16) Tj T*
+(      avgTempMax: 30.91) Tj T*
+(      avgTempMean: 26.9) Tj T*
+(      sampleCount: 10) Tj T*
+(      years:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 9 of 59) Tj ET
+endstream
+endobj
+21 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 20 0 R >>
+endobj
+22 0 obj
+<< /Length 1829 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      sampleYears:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      samples:) Tj T*
+(        [1]) Tj T*
+(          date: 2016-03-20) Tj T*
+(          precipitationMm: 2.7) Tj T*
+(          tempMaxC: 31.7) Tj T*
+(          tempMeanC: 28.0) Tj T*
+(        [2]) Tj T*
+(          date: 2017-03-20) Tj T*
+(          precipitationMm: 20.4) Tj T*
+(          tempMaxC: 28.3) Tj T*
+(          tempMeanC: 25.4) Tj T*
+(        [3]) Tj T*
+(          date: 2018-03-20) Tj T*
+(          precipitationMm: 14.4) Tj T*
+(          tempMaxC: 29.5) Tj T*
+(          tempMeanC: 25.8) Tj T*
+(        [4]) Tj T*
+(          date: 2019-03-20) Tj T*
+(          precipitationMm: 5.1) Tj T*
+(          tempMaxC: 30.9) Tj T*
+(          tempMeanC: 27.2) Tj T*
+(        [5]) Tj T*
+(          date: 2020-03-20) Tj T*
+(          precipitationMm: 0.7) Tj T*
+(          tempMaxC: 30.9) Tj T*
+(          tempMeanC: 27.0) Tj T*
+(        [6]) Tj T*
+(          date: 2021-03-20) Tj T*
+(          precipitationMm: 13.7) Tj T*
+(          tempMaxC: 31.1) Tj T*
+(          tempMeanC: 26.3) Tj T*
+(        [7]) Tj T*
+(          date: 2022-03-20) Tj T*
+(          precipitationMm: 0.2) Tj T*
+(          tempMaxC: 31.2) Tj T*
+(          tempMeanC: 27.6) Tj T*
+(        [8]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 10 of 59) Tj ET
+endstream
+endobj
+23 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 22 0 R >>
+endobj
+24 0 obj
+<< /Length 3312 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(          date: 2023-03-20) Tj T*
+(          precipitationMm: 2.0) Tj T*
+(          tempMaxC: 32.5) Tj T*
+(          tempMeanC: 27.3) Tj T*
+(        [9]) Tj T*
+(          date: 2024-03-20) Tj T*
+(          precipitationMm: 10.5) Tj T*
+(          tempMaxC: 31.3) Tj T*
+(          tempMeanC: 27.1) Tj T*
+(        [10]) Tj T*
+(          date: 2025-03-20) Tj T*
+(          precipitationMm: 1.9) Tj T*
+(          tempMaxC: 31.7) Tj T*
+(          tempMeanC: 27.3) Tj T*
+(      sourceUrls:) Tj T*
+(        [1]) Tj T*
+(          https://geocoding-api.open-) Tj T*
+(meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        [2]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2016-03-01&end_date=2016-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [3]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2017-03-01&end_date=2017-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [4]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2018-03-01&end_date=2018-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [5]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2019-03-01&end_date=2019-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [6]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2020-03-01&end_date=2020-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [7]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2021-03-01&end_date=2021-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [8]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2022-03-01&end_date=2022-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [9]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2023-03-01&end_date=2023-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [10]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2024-03-01&end_date=2024-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 11 of 59) Tj ET
+endstream
+endobj
+25 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 24 0 R >>
+endobj
+26 0 obj
+<< /Length 2789 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(        [11]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2025-03-01&end_date=2025-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      warnings:) Tj T*
+(        [1]) Tj T*
+(          Weather represents the sourced Subang Jaya city grid, not a campus microclimate.) Tj T*
+(      uncertainty: Only 10 same-calendar-day samples from ten complete years; coarse reanalysis) Tj T*
+(        grid, not campus measurements. Frequency is not a forecast for the event date.) Tj T*
+(      assumptions:) Tj T*
+(        rainDayThresholdMm: 1.0) Tj T*
+(        heavyRainThresholdMm: 20.0) Tj T*
+(        heavyRainDefinition: Planning assumption: daily precipitation >=20 mm, not an official) Tj T*
+(          warning classification) Tj T*
+(      resolvedLocation:) Tj T*
+(        name: Subang Jaya) Tj T*
+(        region: Selangor) Tj T*
+(        latitude: 3.04384) Tj T*
+(        longitude: 101.58062) Tj T*
+(        source: https://geocoding-api.open-) Tj T*
+(          meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        scope: Subang Jaya city-grid proxy; not campus coordinates) Tj T*
+(      probability: 0.8) Tj T*
+(    weatherConfidence: low?historical frequency is not an event-date forecast) Tj T*
+(    holidayClash: None) Tj T*
+(    examStatus: unknown) Tj T*
+(    fastingContext:) Tj T*
+(    blocked: False) Tj T*
+(    reasons:) Tj T*
+(      [1]) Tj T*
+(        Weekend candidate.) Tj T*
+(      [2]) Tj T*
+(        Campus exam timetable is unconfirmed; do not interpret as clear.) Tj T*
+(      [3]) Tj T*
+(        No cited holiday clash found; holiday completeness remains unconfirmed.) Tj T*
+(      [4]) Tj T*
+(        Weather rain-risk estimate 80%; mode: historical climatology, not a forecast.) Tj T*
+(  [4]) Tj T*
+(    date: 2027-03-21) Tj T*
+(    weekday: Sunday) Tj T*
+(    score: 59.0) Tj T*
+(    weather:) Tj T*
+(      date: 2027-03-21) Tj T*
+(      location: Subang Jaya, Selangor, Malaysia) Tj T*
+(      available: True) Tj T*
+(      mode: historical climatology, not a forecast) Tj T*
+(      rainProbability: 80.0) Tj T*
+(      rainProbabilityKind: historical same-calendar-day rainy frequency \(%\), not forecast) Tj T*
+(        probability) Tj T*
+(      rainDays: 8) Tj T*
+(      heavyRainDays: 1) Tj T*
+(      precipitationMm: 7.48) Tj T*
+(      avgTempMax: 30.45) Tj T*
+(      avgTempMean: 26.7) Tj T*
+(      sampleCount: 10) Tj T*
+(      years:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 12 of 59) Tj ET
+endstream
+endobj
+27 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 26 0 R >>
+endobj
+28 0 obj
+<< /Length 1733 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      sampleYears:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      samples:) Tj T*
+(        [1]) Tj T*
+(          date: 2016-03-21) Tj T*
+(          precipitationMm: 10.4) Tj T*
+(          tempMaxC: 31.4) Tj T*
+(          tempMeanC: 28.1) Tj T*
+(        [2]) Tj T*
+(          date: 2017-03-21) Tj T*
+(          precipitationMm: 0.8) Tj T*
+(          tempMaxC: 30.7) Tj T*
+(          tempMeanC: 26.5) Tj T*
+(        [3]) Tj T*
+(          date: 2018-03-21) Tj T*
+(          precipitationMm: 7.4) Tj T*
+(          tempMaxC: 29.3) Tj T*
+(          tempMeanC: 26.0) Tj T*
+(        [4]) Tj T*
+(          date: 2019-03-21) Tj T*
+(          precipitationMm: 23.3) Tj T*
+(          tempMaxC: 29.5) Tj T*
+(          tempMeanC: 26.2) Tj T*
+(        [5]) Tj T*
+(          date: 2020-03-21) Tj T*
+(          precipitationMm: 8.5) Tj T*
+(          tempMaxC: 30.7) Tj T*
+(          tempMeanC: 26.4) Tj T*
+(        [6]) Tj T*
+(          date: 2021-03-21) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 13 of 59) Tj ET
+endstream
+endobj
+29 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 28 0 R >>
+endobj
+30 0 obj
+<< /Length 3045 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(          precipitationMm: 8.9) Tj T*
+(          tempMaxC: 29.9) Tj T*
+(          tempMeanC: 26.4) Tj T*
+(        [7]) Tj T*
+(          date: 2022-03-21) Tj T*
+(          precipitationMm: 0.2) Tj T*
+(          tempMaxC: 30.5) Tj T*
+(          tempMeanC: 27.1) Tj T*
+(        [8]) Tj T*
+(          date: 2023-03-21) Tj T*
+(          precipitationMm: 4.4) Tj T*
+(          tempMaxC: 29.9) Tj T*
+(          tempMeanC: 26.2) Tj T*
+(        [9]) Tj T*
+(          date: 2024-03-21) Tj T*
+(          precipitationMm: 7.9) Tj T*
+(          tempMaxC: 29.3) Tj T*
+(          tempMeanC: 26.0) Tj T*
+(        [10]) Tj T*
+(          date: 2025-03-21) Tj T*
+(          precipitationMm: 3.0) Tj T*
+(          tempMaxC: 33.3) Tj T*
+(          tempMeanC: 28.1) Tj T*
+(      sourceUrls:) Tj T*
+(        [1]) Tj T*
+(          https://geocoding-api.open-) Tj T*
+(meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        [2]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2016-03-01&end_date=2016-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [3]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2017-03-01&end_date=2017-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [4]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2018-03-01&end_date=2018-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [5]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2019-03-01&end_date=2019-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [6]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2020-03-01&end_date=2020-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [7]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2021-03-01&end_date=2021-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [8]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2022-03-01&end_date=2022-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [9]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 14 of 59) Tj ET
+endstream
+endobj
+31 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 30 0 R >>
+endobj
+32 0 obj
+<< /Length 3129 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2023-03-01&end_date=2023-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [10]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2024-03-01&end_date=2024-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [11]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2025-03-01&end_date=2025-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      warnings:) Tj T*
+(        [1]) Tj T*
+(          Weather represents the sourced Subang Jaya city grid, not a campus microclimate.) Tj T*
+(      uncertainty: Only 10 same-calendar-day samples from ten complete years; coarse reanalysis) Tj T*
+(        grid, not campus measurements. Frequency is not a forecast for the event date.) Tj T*
+(      assumptions:) Tj T*
+(        rainDayThresholdMm: 1.0) Tj T*
+(        heavyRainThresholdMm: 20.0) Tj T*
+(        heavyRainDefinition: Planning assumption: daily precipitation >=20 mm, not an official) Tj T*
+(          warning classification) Tj T*
+(      resolvedLocation:) Tj T*
+(        name: Subang Jaya) Tj T*
+(        region: Selangor) Tj T*
+(        latitude: 3.04384) Tj T*
+(        longitude: 101.58062) Tj T*
+(        source: https://geocoding-api.open-) Tj T*
+(          meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        scope: Subang Jaya city-grid proxy; not campus coordinates) Tj T*
+(      probability: 0.8) Tj T*
+(    weatherConfidence: low?historical frequency is not an event-date forecast) Tj T*
+(    holidayClash: None) Tj T*
+(    examStatus: unknown) Tj T*
+(    fastingContext:) Tj T*
+(    blocked: False) Tj T*
+(    reasons:) Tj T*
+(      [1]) Tj T*
+(        Weekend candidate.) Tj T*
+(      [2]) Tj T*
+(        Campus exam timetable is unconfirmed; do not interpret as clear.) Tj T*
+(      [3]) Tj T*
+(        No cited holiday clash found; holiday completeness remains unconfirmed.) Tj T*
+(      [4]) Tj T*
+(        Weather rain-risk estimate 80%; mode: historical climatology, not a forecast.) Tj T*
+(  [5]) Tj T*
+(    date: 2027-03-28) Tj T*
+(    weekday: Sunday) Tj T*
+(    score: 54.5) Tj T*
+(    weather:) Tj T*
+(      date: 2027-03-28) Tj T*
+(      location: Subang Jaya, Selangor, Malaysia) Tj T*
+(      available: True) Tj T*
+(      mode: historical climatology, not a forecast) Tj T*
+(      rainProbability: 90.0) Tj T*
+(      rainProbabilityKind: historical same-calendar-day rainy frequency \(%\), not forecast) Tj T*
+(        probability) Tj T*
+(      rainDays: 9) Tj T*
+(      heavyRainDays: 1) Tj T*
+(      precipitationMm: 8.5) Tj T*
+(      avgTempMax: 30.91) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 15 of 59) Tj ET
+endstream
+endobj
+33 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 32 0 R >>
+endobj
+34 0 obj
+<< /Length 1662 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(      avgTempMean: 26.78) Tj T*
+(      sampleCount: 10) Tj T*
+(      years:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      sampleYears:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      samples:) Tj T*
+(        [1]) Tj T*
+(          date: 2016-03-28) Tj T*
+(          precipitationMm: 2.3) Tj T*
+(          tempMaxC: 32.2) Tj T*
+(          tempMeanC: 27.6) Tj T*
+(        [2]) Tj T*
+(          date: 2017-03-28) Tj T*
+(          precipitationMm: 14.2) Tj T*
+(          tempMaxC: 28.4) Tj T*
+(          tempMeanC: 25.5) Tj T*
+(        [3]) Tj T*
+(          date: 2018-03-28) Tj T*
+(          precipitationMm: 0.2) Tj T*
+(          tempMaxC: 30.9) Tj T*
+(          tempMeanC: 26.6) Tj T*
+(        [4]) Tj T*
+(          date: 2019-03-28) Tj T*
+(          precipitationMm: 4.8) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 16 of 59) Tj ET
+endstream
+endobj
+35 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 34 0 R >>
+endobj
+36 0 obj
+<< /Length 2862 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(          tempMaxC: 30.2) Tj T*
+(          tempMeanC: 27.0) Tj T*
+(        [5]) Tj T*
+(          date: 2020-03-28) Tj T*
+(          precipitationMm: 6.9) Tj T*
+(          tempMaxC: 30.6) Tj T*
+(          tempMeanC: 26.9) Tj T*
+(        [6]) Tj T*
+(          date: 2021-03-28) Tj T*
+(          precipitationMm: 5.0) Tj T*
+(          tempMaxC: 30.8) Tj T*
+(          tempMeanC: 26.9) Tj T*
+(        [7]) Tj T*
+(          date: 2022-03-28) Tj T*
+(          precipitationMm: 1.5) Tj T*
+(          tempMaxC: 31.6) Tj T*
+(          tempMeanC: 27.5) Tj T*
+(        [8]) Tj T*
+(          date: 2023-03-28) Tj T*
+(          precipitationMm: 1.5) Tj T*
+(          tempMaxC: 32.5) Tj T*
+(          tempMeanC: 27.2) Tj T*
+(        [9]) Tj T*
+(          date: 2024-03-28) Tj T*
+(          precipitationMm: 33.4) Tj T*
+(          tempMaxC: 32.8) Tj T*
+(          tempMeanC: 27.2) Tj T*
+(        [10]) Tj T*
+(          date: 2025-03-28) Tj T*
+(          precipitationMm: 15.2) Tj T*
+(          tempMaxC: 29.1) Tj T*
+(          tempMeanC: 25.4) Tj T*
+(      sourceUrls:) Tj T*
+(        [1]) Tj T*
+(          https://geocoding-api.open-) Tj T*
+(meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        [2]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2016-03-01&end_date=2016-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [3]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2017-03-01&end_date=2017-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [4]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2018-03-01&end_date=2018-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [5]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2019-03-01&end_date=2019-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [6]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2020-03-01&end_date=2020-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [7]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 17 of 59) Tj ET
+endstream
+endobj
+37 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 36 0 R >>
+endobj
+38 0 obj
+<< /Length 3212 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(art_date=2021-03-01&end_date=2021-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [8]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2022-03-01&end_date=2022-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [9]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2023-03-01&end_date=2023-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [10]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2024-03-01&end_date=2024-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [11]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2025-03-01&end_date=2025-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      warnings:) Tj T*
+(        [1]) Tj T*
+(          Weather represents the sourced Subang Jaya city grid, not a campus microclimate.) Tj T*
+(      uncertainty: Only 10 same-calendar-day samples from ten complete years; coarse reanalysis) Tj T*
+(        grid, not campus measurements. Frequency is not a forecast for the event date.) Tj T*
+(      assumptions:) Tj T*
+(        rainDayThresholdMm: 1.0) Tj T*
+(        heavyRainThresholdMm: 20.0) Tj T*
+(        heavyRainDefinition: Planning assumption: daily precipitation >=20 mm, not an official) Tj T*
+(          warning classification) Tj T*
+(      resolvedLocation:) Tj T*
+(        name: Subang Jaya) Tj T*
+(        region: Selangor) Tj T*
+(        latitude: 3.04384) Tj T*
+(        longitude: 101.58062) Tj T*
+(        source: https://geocoding-api.open-) Tj T*
+(          meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        scope: Subang Jaya city-grid proxy; not campus coordinates) Tj T*
+(      probability: 0.9) Tj T*
+(    weatherConfidence: low?historical frequency is not an event-date forecast) Tj T*
+(    holidayClash: None) Tj T*
+(    examStatus: unknown) Tj T*
+(    fastingContext:) Tj T*
+(    blocked: False) Tj T*
+(    reasons:) Tj T*
+(      [1]) Tj T*
+(        Weekend candidate.) Tj T*
+(      [2]) Tj T*
+(        Campus exam timetable is unconfirmed; do not interpret as clear.) Tj T*
+(      [3]) Tj T*
+(        No cited holiday clash found; holiday completeness remains unconfirmed.) Tj T*
+(      [4]) Tj T*
+(        Weather rain-risk estimate 90%; mode: historical climatology, not a forecast.) Tj T*
+(chosen:) Tj T*
+(  date: 2027-03-20) Tj T*
+(  weekday: Saturday) Tj T*
+(  score: 59.0) Tj T*
+(  weather:) Tj T*
+(    date: 2027-03-20) Tj T*
+(    location: Subang Jaya, Selangor, Malaysia) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 18 of 59) Tj ET
+endstream
+endobj
+39 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 38 0 R >>
+endobj
+40 0 obj
+<< /Length 1624 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    available: True) Tj T*
+(    mode: historical climatology, not a forecast) Tj T*
+(    rainProbability: 80.0) Tj T*
+(    rainProbabilityKind: historical same-calendar-day rainy frequency \(%\), not forecast) Tj T*
+(      probability) Tj T*
+(    rainDays: 8) Tj T*
+(    heavyRainDays: 1) Tj T*
+(    precipitationMm: 7.16) Tj T*
+(    avgTempMax: 30.91) Tj T*
+(    avgTempMean: 26.9) Tj T*
+(    sampleCount: 10) Tj T*
+(    years:) Tj T*
+(      [1]) Tj T*
+(        2016) Tj T*
+(      [2]) Tj T*
+(        2017) Tj T*
+(      [3]) Tj T*
+(        2018) Tj T*
+(      [4]) Tj T*
+(        2019) Tj T*
+(      [5]) Tj T*
+(        2020) Tj T*
+(      [6]) Tj T*
+(        2021) Tj T*
+(      [7]) Tj T*
+(        2022) Tj T*
+(      [8]) Tj T*
+(        2023) Tj T*
+(      [9]) Tj T*
+(        2024) Tj T*
+(      [10]) Tj T*
+(        2025) Tj T*
+(    sampleYears:) Tj T*
+(      [1]) Tj T*
+(        2016) Tj T*
+(      [2]) Tj T*
+(        2017) Tj T*
+(      [3]) Tj T*
+(        2018) Tj T*
+(      [4]) Tj T*
+(        2019) Tj T*
+(      [5]) Tj T*
+(        2020) Tj T*
+(      [6]) Tj T*
+(        2021) Tj T*
+(      [7]) Tj T*
+(        2022) Tj T*
+(      [8]) Tj T*
+(        2023) Tj T*
+(      [9]) Tj T*
+(        2024) Tj T*
+(      [10]) Tj T*
+(        2025) Tj T*
+(    samples:) Tj T*
+(      [1]) Tj T*
+(        date: 2016-03-20) Tj T*
+(        precipitationMm: 2.7) Tj T*
+(        tempMaxC: 31.7) Tj T*
+(        tempMeanC: 28.0) Tj T*
+(      [2]) Tj T*
+(        date: 2017-03-20) Tj T*
+(        precipitationMm: 20.4) Tj T*
+(        tempMaxC: 28.3) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 19 of 59) Tj ET
+endstream
+endobj
+41 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 40 0 R >>
+endobj
+42 0 obj
+<< /Length 2522 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(        tempMeanC: 25.4) Tj T*
+(      [3]) Tj T*
+(        date: 2018-03-20) Tj T*
+(        precipitationMm: 14.4) Tj T*
+(        tempMaxC: 29.5) Tj T*
+(        tempMeanC: 25.8) Tj T*
+(      [4]) Tj T*
+(        date: 2019-03-20) Tj T*
+(        precipitationMm: 5.1) Tj T*
+(        tempMaxC: 30.9) Tj T*
+(        tempMeanC: 27.2) Tj T*
+(      [5]) Tj T*
+(        date: 2020-03-20) Tj T*
+(        precipitationMm: 0.7) Tj T*
+(        tempMaxC: 30.9) Tj T*
+(        tempMeanC: 27.0) Tj T*
+(      [6]) Tj T*
+(        date: 2021-03-20) Tj T*
+(        precipitationMm: 13.7) Tj T*
+(        tempMaxC: 31.1) Tj T*
+(        tempMeanC: 26.3) Tj T*
+(      [7]) Tj T*
+(        date: 2022-03-20) Tj T*
+(        precipitationMm: 0.2) Tj T*
+(        tempMaxC: 31.2) Tj T*
+(        tempMeanC: 27.6) Tj T*
+(      [8]) Tj T*
+(        date: 2023-03-20) Tj T*
+(        precipitationMm: 2.0) Tj T*
+(        tempMaxC: 32.5) Tj T*
+(        tempMeanC: 27.3) Tj T*
+(      [9]) Tj T*
+(        date: 2024-03-20) Tj T*
+(        precipitationMm: 10.5) Tj T*
+(        tempMaxC: 31.3) Tj T*
+(        tempMeanC: 27.1) Tj T*
+(      [10]) Tj T*
+(        date: 2025-03-20) Tj T*
+(        precipitationMm: 1.9) Tj T*
+(        tempMaxC: 31.7) Tj T*
+(        tempMeanC: 27.3) Tj T*
+(    sourceUrls:) Tj T*
+(      [1]) Tj T*
+(        https://geocoding-api.open-) Tj T*
+(meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(      [2]) Tj T*
+(        https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&star) Tj T*
+(t_date=2016-03-01&end_date=2016-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      [3]) Tj T*
+(        https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&star) Tj T*
+(t_date=2017-03-01&end_date=2017-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      [4]) Tj T*
+(        https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&star) Tj T*
+(t_date=2018-03-01&end_date=2018-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      [5]) Tj T*
+(        https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&star) Tj T*
+(t_date=2019-03-01&end_date=2019-03-) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 20 of 59) Tj ET
+endstream
+endobj
+43 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 42 0 R >>
+endobj
+44 0 obj
+<< /Length 3345 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      [6]) Tj T*
+(        https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&star) Tj T*
+(t_date=2020-03-01&end_date=2020-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      [7]) Tj T*
+(        https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&star) Tj T*
+(t_date=2021-03-01&end_date=2021-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      [8]) Tj T*
+(        https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&star) Tj T*
+(t_date=2022-03-01&end_date=2022-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      [9]) Tj T*
+(        https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&star) Tj T*
+(t_date=2023-03-01&end_date=2023-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      [10]) Tj T*
+(        https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&star) Tj T*
+(t_date=2024-03-01&end_date=2024-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      [11]) Tj T*
+(        https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&star) Tj T*
+(t_date=2025-03-01&end_date=2025-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(    warnings:) Tj T*
+(      [1]) Tj T*
+(        Weather represents the sourced Subang Jaya city grid, not a campus microclimate.) Tj T*
+(    uncertainty: Only 10 same-calendar-day samples from ten complete years; coarse reanalysis) Tj T*
+(      grid, not campus measurements. Frequency is not a forecast for the event date.) Tj T*
+(    assumptions:) Tj T*
+(      rainDayThresholdMm: 1.0) Tj T*
+(      heavyRainThresholdMm: 20.0) Tj T*
+(      heavyRainDefinition: Planning assumption: daily precipitation >=20 mm, not an official) Tj T*
+(        warning classification) Tj T*
+(    resolvedLocation:) Tj T*
+(      name: Subang Jaya) Tj T*
+(      region: Selangor) Tj T*
+(      latitude: 3.04384) Tj T*
+(      longitude: 101.58062) Tj T*
+(      source: https://geocoding-api.open-) Tj T*
+(        meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(      scope: Subang Jaya city-grid proxy; not campus coordinates) Tj T*
+(    probability: 0.8) Tj T*
+(  weatherConfidence: low?historical frequency is not an event-date forecast) Tj T*
+(  holidayClash: None) Tj T*
+(  examStatus: unknown) Tj T*
+(  fastingContext:) Tj T*
+(  blocked: False) Tj T*
+(  reasons:) Tj T*
+(    [1]) Tj T*
+(      Weekend candidate.) Tj T*
+(    [2]) Tj T*
+(      Campus exam timetable is unconfirmed; do not interpret as clear.) Tj T*
+(    [3]) Tj T*
+(      No cited holiday clash found; holiday completeness remains unconfirmed.) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 21 of 59) Tj ET
+endstream
+endobj
+45 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 44 0 R >>
+endobj
+46 0 obj
+<< /Length 1766 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    [4]) Tj T*
+(      Weather rain-risk estimate 80%; mode: historical climatology, not a forecast.) Tj T*
+(backups:) Tj T*
+(  [1]) Tj T*
+(    date: 2027-03-21) Tj T*
+(    weekday: Sunday) Tj T*
+(    score: 59.0) Tj T*
+(    weather:) Tj T*
+(      date: 2027-03-21) Tj T*
+(      location: Subang Jaya, Selangor, Malaysia) Tj T*
+(      available: True) Tj T*
+(      mode: historical climatology, not a forecast) Tj T*
+(      rainProbability: 80.0) Tj T*
+(      rainProbabilityKind: historical same-calendar-day rainy frequency \(%\), not forecast) Tj T*
+(        probability) Tj T*
+(      rainDays: 8) Tj T*
+(      heavyRainDays: 1) Tj T*
+(      precipitationMm: 7.48) Tj T*
+(      avgTempMax: 30.45) Tj T*
+(      avgTempMean: 26.7) Tj T*
+(      sampleCount: 10) Tj T*
+(      years:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      sampleYears:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 22 of 59) Tj ET
+endstream
+endobj
+47 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 46 0 R >>
+endobj
+48 0 obj
+<< /Length 2364 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(      samples:) Tj T*
+(        [1]) Tj T*
+(          date: 2016-03-21) Tj T*
+(          precipitationMm: 10.4) Tj T*
+(          tempMaxC: 31.4) Tj T*
+(          tempMeanC: 28.1) Tj T*
+(        [2]) Tj T*
+(          date: 2017-03-21) Tj T*
+(          precipitationMm: 0.8) Tj T*
+(          tempMaxC: 30.7) Tj T*
+(          tempMeanC: 26.5) Tj T*
+(        [3]) Tj T*
+(          date: 2018-03-21) Tj T*
+(          precipitationMm: 7.4) Tj T*
+(          tempMaxC: 29.3) Tj T*
+(          tempMeanC: 26.0) Tj T*
+(        [4]) Tj T*
+(          date: 2019-03-21) Tj T*
+(          precipitationMm: 23.3) Tj T*
+(          tempMaxC: 29.5) Tj T*
+(          tempMeanC: 26.2) Tj T*
+(        [5]) Tj T*
+(          date: 2020-03-21) Tj T*
+(          precipitationMm: 8.5) Tj T*
+(          tempMaxC: 30.7) Tj T*
+(          tempMeanC: 26.4) Tj T*
+(        [6]) Tj T*
+(          date: 2021-03-21) Tj T*
+(          precipitationMm: 8.9) Tj T*
+(          tempMaxC: 29.9) Tj T*
+(          tempMeanC: 26.4) Tj T*
+(        [7]) Tj T*
+(          date: 2022-03-21) Tj T*
+(          precipitationMm: 0.2) Tj T*
+(          tempMaxC: 30.5) Tj T*
+(          tempMeanC: 27.1) Tj T*
+(        [8]) Tj T*
+(          date: 2023-03-21) Tj T*
+(          precipitationMm: 4.4) Tj T*
+(          tempMaxC: 29.9) Tj T*
+(          tempMeanC: 26.2) Tj T*
+(        [9]) Tj T*
+(          date: 2024-03-21) Tj T*
+(          precipitationMm: 7.9) Tj T*
+(          tempMaxC: 29.3) Tj T*
+(          tempMeanC: 26.0) Tj T*
+(        [10]) Tj T*
+(          date: 2025-03-21) Tj T*
+(          precipitationMm: 3.0) Tj T*
+(          tempMaxC: 33.3) Tj T*
+(          tempMeanC: 28.1) Tj T*
+(      sourceUrls:) Tj T*
+(        [1]) Tj T*
+(          https://geocoding-api.open-) Tj T*
+(meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        [2]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2016-03-01&end_date=2016-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [3]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2017-03-01&end_date=2017-03-) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 23 of 59) Tj ET
+endstream
+endobj
+49 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 48 0 R >>
+endobj
+50 0 obj
+<< /Length 3637 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [4]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2018-03-01&end_date=2018-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [5]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2019-03-01&end_date=2019-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [6]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2020-03-01&end_date=2020-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [7]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2021-03-01&end_date=2021-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [8]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2022-03-01&end_date=2022-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [9]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2023-03-01&end_date=2023-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [10]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2024-03-01&end_date=2024-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [11]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2025-03-01&end_date=2025-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      warnings:) Tj T*
+(        [1]) Tj T*
+(          Weather represents the sourced Subang Jaya city grid, not a campus microclimate.) Tj T*
+(      uncertainty: Only 10 same-calendar-day samples from ten complete years; coarse reanalysis) Tj T*
+(        grid, not campus measurements. Frequency is not a forecast for the event date.) Tj T*
+(      assumptions:) Tj T*
+(        rainDayThresholdMm: 1.0) Tj T*
+(        heavyRainThresholdMm: 20.0) Tj T*
+(        heavyRainDefinition: Planning assumption: daily precipitation >=20 mm, not an official) Tj T*
+(          warning classification) Tj T*
+(      resolvedLocation:) Tj T*
+(        name: Subang Jaya) Tj T*
+(        region: Selangor) Tj T*
+(        latitude: 3.04384) Tj T*
+(        longitude: 101.58062) Tj T*
+(        source: https://geocoding-api.open-) Tj T*
+(          meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        scope: Subang Jaya city-grid proxy; not campus coordinates) Tj T*
+(      probability: 0.8) Tj T*
+(    weatherConfidence: low?historical frequency is not an event-date forecast) Tj T*
+(    holidayClash: None) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 24 of 59) Tj ET
+endstream
+endobj
+51 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 50 0 R >>
+endobj
+52 0 obj
+<< /Length 1926 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    examStatus: unknown) Tj T*
+(    fastingContext:) Tj T*
+(    blocked: False) Tj T*
+(    reasons:) Tj T*
+(      [1]) Tj T*
+(        Weekend candidate.) Tj T*
+(      [2]) Tj T*
+(        Campus exam timetable is unconfirmed; do not interpret as clear.) Tj T*
+(      [3]) Tj T*
+(        No cited holiday clash found; holiday completeness remains unconfirmed.) Tj T*
+(      [4]) Tj T*
+(        Weather rain-risk estimate 80%; mode: historical climatology, not a forecast.) Tj T*
+(  [2]) Tj T*
+(    date: 2027-03-13) Tj T*
+(    weekday: Saturday) Tj T*
+(    score: 54.5) Tj T*
+(    weather:) Tj T*
+(      date: 2027-03-13) Tj T*
+(      location: Subang Jaya, Selangor, Malaysia) Tj T*
+(      available: True) Tj T*
+(      mode: historical climatology, not a forecast) Tj T*
+(      rainProbability: 90.0) Tj T*
+(      rainProbabilityKind: historical same-calendar-day rainy frequency \(%\), not forecast) Tj T*
+(        probability) Tj T*
+(      rainDays: 9) Tj T*
+(      heavyRainDays: 1) Tj T*
+(      precipitationMm: 7.62) Tj T*
+(      avgTempMax: 31.01) Tj T*
+(      avgTempMean: 26.77) Tj T*
+(      sampleCount: 10) Tj T*
+(      years:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      sampleYears:) Tj T*
+(        [1]) Tj T*
+(          2016) Tj T*
+(        [2]) Tj T*
+(          2017) Tj T*
+(        [3]) Tj T*
+(          2018) Tj T*
+(        [4]) Tj T*
+(          2019) Tj T*
+(        [5]) Tj T*
+(          2020) Tj T*
+(        [6]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 25 of 59) Tj ET
+endstream
+endobj
+53 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 52 0 R >>
+endobj
+54 0 obj
+<< /Length 2013 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(          2021) Tj T*
+(        [7]) Tj T*
+(          2022) Tj T*
+(        [8]) Tj T*
+(          2023) Tj T*
+(        [9]) Tj T*
+(          2024) Tj T*
+(        [10]) Tj T*
+(          2025) Tj T*
+(      samples:) Tj T*
+(        [1]) Tj T*
+(          date: 2016-03-13) Tj T*
+(          precipitationMm: 0.8) Tj T*
+(          tempMaxC: 32.7) Tj T*
+(          tempMeanC: 28.4) Tj T*
+(        [2]) Tj T*
+(          date: 2017-03-13) Tj T*
+(          precipitationMm: 2.4) Tj T*
+(          tempMaxC: 30.8) Tj T*
+(          tempMeanC: 26.8) Tj T*
+(        [3]) Tj T*
+(          date: 2018-03-13) Tj T*
+(          precipitationMm: 3.2) Tj T*
+(          tempMaxC: 30.3) Tj T*
+(          tempMeanC: 26.3) Tj T*
+(        [4]) Tj T*
+(          date: 2019-03-13) Tj T*
+(          precipitationMm: 11.9) Tj T*
+(          tempMaxC: 31.2) Tj T*
+(          tempMeanC: 26.8) Tj T*
+(        [5]) Tj T*
+(          date: 2020-03-13) Tj T*
+(          precipitationMm: 3.0) Tj T*
+(          tempMaxC: 31.1) Tj T*
+(          tempMeanC: 26.9) Tj T*
+(        [6]) Tj T*
+(          date: 2021-03-13) Tj T*
+(          precipitationMm: 30.7) Tj T*
+(          tempMaxC: 31.5) Tj T*
+(          tempMeanC: 25.6) Tj T*
+(        [7]) Tj T*
+(          date: 2022-03-13) Tj T*
+(          precipitationMm: 12.6) Tj T*
+(          tempMaxC: 30.8) Tj T*
+(          tempMeanC: 26.3) Tj T*
+(        [8]) Tj T*
+(          date: 2023-03-13) Tj T*
+(          precipitationMm: 5.3) Tj T*
+(          tempMaxC: 28.5) Tj T*
+(          tempMeanC: 25.9) Tj T*
+(        [9]) Tj T*
+(          date: 2024-03-13) Tj T*
+(          precipitationMm: 1.9) Tj T*
+(          tempMaxC: 31.5) Tj T*
+(          tempMeanC: 27.0) Tj T*
+(        [10]) Tj T*
+(          date: 2025-03-13) Tj T*
+(          precipitationMm: 4.4) Tj T*
+(          tempMaxC: 31.7) Tj T*
+(          tempMeanC: 27.7) Tj T*
+(      sourceUrls:) Tj T*
+(        [1]) Tj T*
+(          https://geocoding-api.open-) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 26 of 59) Tj ET
+endstream
+endobj
+55 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 54 0 R >>
+endobj
+56 0 obj
+<< /Length 3704 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        [2]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2016-03-01&end_date=2016-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [3]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2017-03-01&end_date=2017-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [4]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2018-03-01&end_date=2018-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [5]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2019-03-01&end_date=2019-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [6]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2020-03-01&end_date=2020-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [7]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2021-03-01&end_date=2021-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [8]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2022-03-01&end_date=2022-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [9]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2023-03-01&end_date=2023-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [10]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2024-03-01&end_date=2024-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(        [11]) Tj T*
+(          https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&st) Tj T*
+(art_date=2025-03-01&end_date=2025-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(      warnings:) Tj T*
+(        [1]) Tj T*
+(          Weather represents the sourced Subang Jaya city grid, not a campus microclimate.) Tj T*
+(      uncertainty: Only 10 same-calendar-day samples from ten complete years; coarse reanalysis) Tj T*
+(        grid, not campus measurements. Frequency is not a forecast for the event date.) Tj T*
+(      assumptions:) Tj T*
+(        rainDayThresholdMm: 1.0) Tj T*
+(        heavyRainThresholdMm: 20.0) Tj T*
+(        heavyRainDefinition: Planning assumption: daily precipitation >=20 mm, not an official) Tj T*
+(          warning classification) Tj T*
+(      resolvedLocation:) Tj T*
+(        name: Subang Jaya) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 27 of 59) Tj ET
+endstream
+endobj
+57 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 56 0 R >>
+endobj
+58 0 obj
+<< /Length 2738 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(        region: Selangor) Tj T*
+(        latitude: 3.04384) Tj T*
+(        longitude: 101.58062) Tj T*
+(        source: https://geocoding-api.open-) Tj T*
+(          meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(        scope: Subang Jaya city-grid proxy; not campus coordinates) Tj T*
+(      probability: 0.9) Tj T*
+(    weatherConfidence: low?historical frequency is not an event-date forecast) Tj T*
+(    holidayClash: None) Tj T*
+(    examStatus: unknown) Tj T*
+(    fastingContext:) Tj T*
+(    blocked: False) Tj T*
+(    reasons:) Tj T*
+(      [1]) Tj T*
+(        Weekend candidate.) Tj T*
+(      [2]) Tj T*
+(        Campus exam timetable is unconfirmed; do not interpret as clear.) Tj T*
+(      [3]) Tj T*
+(        No cited holiday clash found; holiday completeness remains unconfirmed.) Tj T*
+(      [4]) Tj T*
+(        Weather rain-risk estimate 90%; mode: historical climatology, not a forecast.) Tj T*
+(weights:) Tj T*
+(  weather: 45) Tj T*
+(  holiday: 25) Tj T*
+(  weekend: 20) Tj T*
+(  leadTime: 10) Tj T*
+(  examUnknownPenalty: 5) Tj T*
+(  fastingOverlapPenalty: 10) Tj T*
+(calendar:) Tj T*
+(  [1]) Tj T*
+(    year: 2027) Tj T*
+(    month: 3) Tj T*
+(    holidays:) Tj T*
+(      [1]) Tj T*
+(        date: 2027-03-10) Tj T*
+(        name: Hari Raya Aidilfitri / Hari Raya Puasa) Tj T*
+(        source: https://publicholidays.com.my/selangor/) Tj T*
+(        provisional: True) Tj T*
+(      [2]) Tj T*
+(        date: 2027-03-11) Tj T*
+(        name: Hari Raya Aidilfitri second day) Tj T*
+(        source: https://publicholidays.com.my/selangor/) Tj T*
+(        provisional: True) Tj T*
+(    ramadanRanges:) Tj T*
+(      [1]) Tj T*
+(        start: 2027-03-01) Tj T*
+(        end: 2027-03-09) Tj T*
+(        source: https://www.timeanddate.com/holidays/malaysia/2027) Tj T*
+(        provisional: True) Tj T*
+(        sourceNote: Inferred provisional early-March planning window from secondary Ramadan-) Tj T*
+(          start and Eid estimates, not a final verified religious calendar.) Tj T*
+(        note: Fasting-period logistics: avoid daytime food-centered programming; local dates) Tj T*
+(          require confirmation.) Tj T*
+(    ramadanStatus: sourced provisional dates; local confirmation required) Tj T*
+(    religiousConflicts:) Tj T*
+(      [1]) Tj T*
+(        date: 2027-03-10) Tj T*
+(        name: Hari Raya Aidilfitri / Hari Raya Puasa) Tj T*
+(        source: https://publicholidays.com.my/selangor/) Tj T*
+(        provisional: True) Tj T*
+(        note: Religious observance may affect availability; confirm locally.) Tj T*
+(      [2]) Tj T*
+(        date: 2027-03-11) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 28 of 59) Tj ET
+endstream
+endobj
+59 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 58 0 R >>
+endobj
+60 0 obj
+<< /Length 2619 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(        name: Hari Raya Aidilfitri second day) Tj T*
+(        source: https://publicholidays.com.my/selangor/) Tj T*
+(        provisional: True) Tj T*
+(        note: Religious observance may affect availability; confirm locally.) Tj T*
+(    examCalendar: unknown, campus confirmation needed) Tj T*
+(    warnings:) Tj T*
+(      [1]) Tj T*
+(        Nager.Date unavailable: HTTP 204: API returned an empty response \(possibly unsupported) Tj T*
+(country\). Only cited research fallback entries are used.) Tj T*
+(      [2]) Tj T*
+(        Ramadan source caveat: Inferred provisional early-March planning window from secondary) Tj T*
+(Ramadan-start and Eid estimates, not a final verified religious calendar.) Tj T*
+(      [3]) Tj T*
+(        Campus examination and blackout dates are unknown, campus confirmation needed; school) Tj T*
+(calendars do not establish university exam dates.) Tj T*
+(    sourceUrls:) Tj T*
+(      [1]) Tj T*
+(        https://date.nager.at/api/v3/PublicHolidays/2027/MY) Tj T*
+(      [2]) Tj T*
+(        https://publicholidays.com.my/selangor/) Tj T*
+(      [3]) Tj T*
+(        https://www.timeanddate.com/holidays/malaysia/2027) Tj T*
+(status: Proposed?exam and venue approval required) Tj T*
+(assumptions:) Tj T*
+(  [1]) Tj T*
+(    Holiday calendars may be incomplete.) Tj T*
+(  [2]) Tj T*
+(    Campus examination timetable is unknown.) Tj T*
+() Tj T*
+(BUDGET \(RM\) - ALLOCATIONS, NOT VENDOR QUOTES) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(items:) Tj T*
+(  [1]) Tj T*
+(    category: Venue / indoor cover) Tj T*
+(    amountRM: 440.0) Tj T*
+(    amountCents: 44000) Tj T*
+(    estimated: True) Tj T*
+(    status: Estimated allocation?not a vendor quote) Tj T*
+(    owner: Finance Lead) Tj T*
+(  [2]) Tj T*
+(    category: AV and production) Tj T*
+(    amountRM: 280.0) Tj T*
+(    amountCents: 28000) Tj T*
+(    estimated: True) Tj T*
+(    status: Estimated allocation?not a vendor quote) Tj T*
+(    owner: Finance Lead) Tj T*
+(  [3]) Tj T*
+(    category: Refreshments) Tj T*
+(    amountRM: 400.0) Tj T*
+(    amountCents: 40000) Tj T*
+(    estimated: True) Tj T*
+(    status: Estimated allocation?not a vendor quote) Tj T*
+(    owner: Finance Lead) Tj T*
+(  [4]) Tj T*
+(    category: Promotion and print) Tj T*
+(    amountRM: 120.0) Tj T*
+(    amountCents: 12000) Tj T*
+(    estimated: True) Tj T*
+(    status: Estimated allocation?not a vendor quote) Tj T*
+(    owner: Finance Lead) Tj T*
+(  [5]) Tj T*
+(    category: Talent and MC) Tj T*
+(    amountRM: 180.0) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 29 of 59) Tj ET
+endstream
+endobj
+61 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 60 0 R >>
+endobj
+62 0 obj
+<< /Length 2285 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    amountCents: 18000) Tj T*
+(    estimated: True) Tj T*
+(    status: Estimated allocation?not a vendor quote) Tj T*
+(    owner: Finance Lead) Tj T*
+(  [6]) Tj T*
+(    category: Operations and first aid) Tj T*
+(    amountRM: 140.0) Tj T*
+(    amountCents: 14000) Tj T*
+(    estimated: True) Tj T*
+(    status: Estimated allocation?not a vendor quote) Tj T*
+(    owner: Finance Lead) Tj T*
+(  [7]) Tj T*
+(    category: Accessibility and charity logistics) Tj T*
+(    amountRM: 200.0) Tj T*
+(    amountCents: 20000) Tj T*
+(    estimated: True) Tj T*
+(    status: Estimated allocation?not a vendor quote) Tj T*
+(    owner: Finance Lead) Tj T*
+(  [8]) Tj T*
+(    category: Contingency reserve) Tj T*
+(    amountRM: 240.0) Tj T*
+(    amountCents: 24000) Tj T*
+(    estimated: True) Tj T*
+(    status: Estimated allocation?not a vendor quote) Tj T*
+(    owner: Finance Lead) Tj T*
+(total: 2000.0) Tj T*
+(limit: 2000.0) Tj T*
+(totalCents: 200000) Tj T*
+(limitCents: 200000) Tj T*
+(contingency: 240.0) Tj T*
+(contingencyCents: 24000) Tj T*
+(contingencyPercent: 12.0) Tj T*
+(gap: 600.0) Tj T*
+(gapCents: 60000) Tj T*
+(organiserFunds: 1400.0) Tj T*
+(organiserFundsCents: 140000) Tj T*
+(fundingStatus: Organiser funds assumed; sponsor commitments not received) Tj T*
+(pricingBasis: All amounts are estimated allocations, not researched quotes or contracted) Tj T*
+(  prices.) Tj T*
+(scenario: Indoor weather contingency) Tj T*
+(sponsorAccounting: Prospect asks are hypothetical alternatives, not additive promised revenue.) Tj T*
+() Tj T*
+(DATE-SPECIFIC WEATHER AND LIMITATIONS) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(date: 2027-03-20) Tj T*
+(location: Subang Jaya, Selangor, Malaysia) Tj T*
+(available: True) Tj T*
+(mode: historical climatology, not a forecast) Tj T*
+(rainProbability: 80.0) Tj T*
+(rainProbabilityKind: historical same-calendar-day rainy frequency \(%\), not forecast probability) Tj T*
+(rainDays: 8) Tj T*
+(heavyRainDays: 1) Tj T*
+(precipitationMm: 7.16) Tj T*
+(avgTempMax: 30.91) Tj T*
+(avgTempMean: 26.9) Tj T*
+(sampleCount: 10) Tj T*
+(years:) Tj T*
+(  [1]) Tj T*
+(    2016) Tj T*
+(  [2]) Tj T*
+(    2017) Tj T*
+(  [3]) Tj T*
+(    2018) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 30 of 59) Tj ET
+endstream
+endobj
+63 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 62 0 R >>
+endobj
+64 0 obj
+<< /Length 1355 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(  [4]) Tj T*
+(    2019) Tj T*
+(  [5]) Tj T*
+(    2020) Tj T*
+(  [6]) Tj T*
+(    2021) Tj T*
+(  [7]) Tj T*
+(    2022) Tj T*
+(  [8]) Tj T*
+(    2023) Tj T*
+(  [9]) Tj T*
+(    2024) Tj T*
+(  [10]) Tj T*
+(    2025) Tj T*
+(sampleYears:) Tj T*
+(  [1]) Tj T*
+(    2016) Tj T*
+(  [2]) Tj T*
+(    2017) Tj T*
+(  [3]) Tj T*
+(    2018) Tj T*
+(  [4]) Tj T*
+(    2019) Tj T*
+(  [5]) Tj T*
+(    2020) Tj T*
+(  [6]) Tj T*
+(    2021) Tj T*
+(  [7]) Tj T*
+(    2022) Tj T*
+(  [8]) Tj T*
+(    2023) Tj T*
+(  [9]) Tj T*
+(    2024) Tj T*
+(  [10]) Tj T*
+(    2025) Tj T*
+(samples:) Tj T*
+(  [1]) Tj T*
+(    date: 2016-03-20) Tj T*
+(    precipitationMm: 2.7) Tj T*
+(    tempMaxC: 31.7) Tj T*
+(    tempMeanC: 28.0) Tj T*
+(  [2]) Tj T*
+(    date: 2017-03-20) Tj T*
+(    precipitationMm: 20.4) Tj T*
+(    tempMaxC: 28.3) Tj T*
+(    tempMeanC: 25.4) Tj T*
+(  [3]) Tj T*
+(    date: 2018-03-20) Tj T*
+(    precipitationMm: 14.4) Tj T*
+(    tempMaxC: 29.5) Tj T*
+(    tempMeanC: 25.8) Tj T*
+(  [4]) Tj T*
+(    date: 2019-03-20) Tj T*
+(    precipitationMm: 5.1) Tj T*
+(    tempMaxC: 30.9) Tj T*
+(    tempMeanC: 27.2) Tj T*
+(  [5]) Tj T*
+(    date: 2020-03-20) Tj T*
+(    precipitationMm: 0.7) Tj T*
+(    tempMaxC: 30.9) Tj T*
+(    tempMeanC: 27.0) Tj T*
+(  [6]) Tj T*
+(    date: 2021-03-20) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 31 of 59) Tj ET
+endstream
+endobj
+65 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 64 0 R >>
+endobj
+66 0 obj
+<< /Length 2801 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    precipitationMm: 13.7) Tj T*
+(    tempMaxC: 31.1) Tj T*
+(    tempMeanC: 26.3) Tj T*
+(  [7]) Tj T*
+(    date: 2022-03-20) Tj T*
+(    precipitationMm: 0.2) Tj T*
+(    tempMaxC: 31.2) Tj T*
+(    tempMeanC: 27.6) Tj T*
+(  [8]) Tj T*
+(    date: 2023-03-20) Tj T*
+(    precipitationMm: 2.0) Tj T*
+(    tempMaxC: 32.5) Tj T*
+(    tempMeanC: 27.3) Tj T*
+(  [9]) Tj T*
+(    date: 2024-03-20) Tj T*
+(    precipitationMm: 10.5) Tj T*
+(    tempMaxC: 31.3) Tj T*
+(    tempMeanC: 27.1) Tj T*
+(  [10]) Tj T*
+(    date: 2025-03-20) Tj T*
+(    precipitationMm: 1.9) Tj T*
+(    tempMaxC: 31.7) Tj T*
+(    tempMeanC: 27.3) Tj T*
+(sourceUrls:) Tj T*
+(  [1]) Tj T*
+(    https://geocoding-api.open-) Tj T*
+(meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(  [2]) Tj T*
+(    https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_da) Tj T*
+(te=2016-03-01&end_date=2016-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(  [3]) Tj T*
+(    https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_da) Tj T*
+(te=2017-03-01&end_date=2017-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(  [4]) Tj T*
+(    https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_da) Tj T*
+(te=2018-03-01&end_date=2018-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(  [5]) Tj T*
+(    https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_da) Tj T*
+(te=2019-03-01&end_date=2019-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(  [6]) Tj T*
+(    https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_da) Tj T*
+(te=2020-03-01&end_date=2020-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(  [7]) Tj T*
+(    https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_da) Tj T*
+(te=2021-03-01&end_date=2021-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(  [8]) Tj T*
+(    https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_da) Tj T*
+(te=2022-03-01&end_date=2022-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(  [9]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 32 of 59) Tj ET
+endstream
+endobj
+67 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 66 0 R >>
+endobj
+68 0 obj
+<< /Length 3072 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_da) Tj T*
+(te=2023-03-01&end_date=2023-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(  [10]) Tj T*
+(    https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_da) Tj T*
+(te=2024-03-01&end_date=2024-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(  [11]) Tj T*
+(    https://archive-api.open-meteo.com/v1/archive?latitude=3.04384&longitude=101.58062&start_da) Tj T*
+(te=2025-03-01&end_date=2025-03-) Tj T*
+(31&daily=precipitation_sum%2Ctemperature_2m_max%2Ctemperature_2m_mean&timezone=Asia%2FKuala_Lum) Tj T*
+(pur) Tj T*
+(warnings:) Tj T*
+(  [1]) Tj T*
+(    Weather represents the sourced Subang Jaya city grid, not a campus microclimate.) Tj T*
+(uncertainty: Only 10 same-calendar-day samples from ten complete years; coarse reanalysis grid,) Tj T*
+(  not campus measurements. Frequency is not a forecast for the event date.) Tj T*
+(assumptions:) Tj T*
+(  rainDayThresholdMm: 1.0) Tj T*
+(  heavyRainThresholdMm: 20.0) Tj T*
+(  heavyRainDefinition: Planning assumption: daily precipitation >=20 mm, not an official) Tj T*
+(    warning classification) Tj T*
+(resolvedLocation:) Tj T*
+(  name: Subang Jaya) Tj T*
+(  region: Selangor) Tj T*
+(  latitude: 3.04384) Tj T*
+(  longitude: 101.58062) Tj T*
+(  source: https://geocoding-api.open-) Tj T*
+(    meteo.com/v1/search?name=Subang+Jaya&count=5&language=en&format=json&countryCode=MY) Tj T*
+(  scope: Subang Jaya city-grid proxy; not campus coordinates) Tj T*
+(probability: 0.8) Tj T*
+(indoorRequired: True) Tj T*
+(threshold: 0.4) Tj T*
+(decision: Indoor contingency required) Tj T*
+(rationale: Rain-risk threshold is a planning rule, not a forecast guarantee.) Tj T*
+() Tj T*
+(RISK REGISTER AND PLAN B) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(register:) Tj T*
+(  [1]) Tj T*
+(    risk: Rain / thunderstorms) Tj T*
+(    likelihood: 4) Tj T*
+(    impact: 4) Tj T*
+(    L: 4) Tj T*
+(    I: 4) Tj T*
+(    score: 16) Tj T*
+(    mitigation: Book an approved indoor room; weather check at T-14/T-7/T-1) Tj T*
+(    trigger: Rain-risk estimate >40%, thunderstorm alert, or missing weather evidence) Tj T*
+(    contingency: Move check-in and performances indoors; reduce exposed setup) Tj T*
+(    owner: Risk Lead) Tj T*
+(    basis: Planner risk assessment; ordinal 1?5, not empirical probability) Tj T*
+(  [2]) Tj T*
+(    risk: Campus exam or calendar clash) Tj T*
+(    likelihood: 3) Tj T*
+(    impact: 5) Tj T*
+(    L: 3) Tj T*
+(    I: 5) Tj T*
+(    score: 15) Tj T*
+(    mitigation: Request written exam timetable and campus calendar sign-off) Tj T*
+(    trigger: Exam date unknown at approval deadline or a confirmed clash) Tj T*
+(    contingency: Move to ranked backup date; re-run all specialist tools) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 33 of 59) Tj ET
+endstream
+endobj
+69 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 68 0 R >>
+endobj
+70 0 obj
+<< /Length 2885 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    owner: Event Lead) Tj T*
+(    basis: Planner risk assessment; ordinal 1?5, not empirical probability) Tj T*
+(  [3]) Tj T*
+(    risk: Venue / safety approval withheld) Tj T*
+(    likelihood: 3) Tj T*
+(    impact: 5) Tj T*
+(    L: 3) Tj T*
+(    I: 5) Tj T*
+(    score: 15) Tj T*
+(    mitigation: Obtain written capacity, permission, safety and AV approvals) Tj T*
+(    trigger: No written approval by T-4 weeks) Tj T*
+(    contingency: Use approved alternative room or postpone; do not overfill) Tj T*
+(    owner: Venue Lead) Tj T*
+(    basis: Planner risk assessment; ordinal 1?5, not empirical probability) Tj T*
+(  [4]) Tj T*
+(    risk: Sponsor funding shortfall) Tj T*
+(    likelihood: 4) Tj T*
+(    impact: 4) Tj T*
+(    L: 4) Tj T*
+(    I: 4) Tj T*
+(    score: 16) Tj T*
+(    mitigation: Track only confirmed funds; keep 12% contingency protected) Tj T*
+(    trigger: Unconfirmed gap remains at T-2 weeks) Tj T*
+(    contingency: Reduce nonessential spend or postpone; never assume prospect revenue) Tj T*
+(    owner: Finance Lead) Tj T*
+(    basis: Planner risk assessment; ordinal 1?5, not empirical probability) Tj T*
+(  [5]) Tj T*
+(    risk: MC / performer cancellation) Tj T*
+(    likelihood: 3) Tj T*
+(    impact: 3) Tj T*
+(    L: 3) Tj T*
+(    I: 3) Tj T*
+(    score: 9) Tj T*
+(    mitigation: Get signed availability; contact backup role without claiming booking) Tj T*
+(    trigger: Talent unconfirmed at T-2 weeks or cancellation received) Tj T*
+(    contingency: Use approved student host and shorter acoustic programme) Tj T*
+(    owner: Talent Lead) Tj T*
+(    basis: Planner risk assessment; ordinal 1?5, not empirical probability) Tj T*
+(  [6]) Tj T*
+(    risk: Attendance below planning target) Tj T*
+(    likelihood: 3) Tj T*
+(    impact: 3) Tj T*
+(    L: 3) Tj T*
+(    I: 3) Tj T*
+(    score: 9) Tj T*
+(    mitigation: Use opt-in RSVP tracking and approved student society promotion) Tj T*
+(    trigger: RSVPs below 60% of planning target at T-1 week \(planning rule\)) Tj T*
+(    contingency: Reduce refreshments and room footprint after cost approval) Tj T*
+(    owner: Promo Lead) Tj T*
+(    basis: Planner risk assessment; ordinal 1?5, not empirical probability) Tj T*
+(  [7]) Tj T*
+(    risk: Donation handling / beneficiary uncertainty) Tj T*
+(    likelihood: 3) Tj T*
+(    impact: 5) Tj T*
+(    L: 3) Tj T*
+(    I: 5) Tj T*
+(    score: 15) Tj T*
+(    mitigation: Confirm beneficiary consent, collection permissions and dual-control ledger) Tj T*
+(    trigger: No verified beneficiary or collection approval before publishing) Tj T*
+(    contingency: Pause collection; publish only confirmed charity-approved wording) Tj T*
+(    owner: Charity / Finance Leads) Tj T*
+(    basis: Planner risk assessment; ordinal 1?5, not empirical probability) Tj T*
+(  [8]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 34 of 59) Tj ET
+endstream
+endobj
+71 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 70 0 R >>
+endobj
+72 0 obj
+<< /Length 3000 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    risk: Safety, access or technical failure) Tj T*
+(    likelihood: 3) Tj T*
+(    impact: 5) Tj T*
+(    L: 3) Tj T*
+(    I: 5) Tj T*
+(    score: 15) Tj T*
+(    mitigation: Check exits, accessible routes, first aid, AV and protected cables) Tj T*
+(    trigger: Failed safety/AV check or emergency during event) Tj T*
+(    contingency: Stop affected activity, follow campus emergency instructions and evacuate if) Tj T*
+(      required) Tj T*
+(    owner: Operations Lead) Tj T*
+(    basis: Planner risk assessment; ordinal 1?5, not empirical probability) Tj T*
+(planB:) Tj T*
+(  [1]) Tj T*
+(    name: Wet-weather indoor shift) Tj T*
+(    trigger: Rain-risk >40%, alert, or evidence unavailable) Tj T*
+(    action: Request approved indoor room, cover arrivals, bring soundcheck forward, rebalance) Tj T*
+(      allocations within ceiling) Tj T*
+(    owner: Risk / Venue Leads) Tj T*
+(    status: Proposed?room approval required) Tj T*
+(  [2]) Tj T*
+(    name: Date / permission switch) Tj T*
+(    trigger: Known exam/holiday clash or venue refused) Tj T*
+(    action: Use next eligible ranked date and rerun weather, budget, talent and drafts; no date) Tj T*
+(      is confirmed automatically) Tj T*
+(    owner: Event Lead) Tj T*
+(    status: Conditional) Tj T*
+(  [3]) Tj T*
+(    name: Funding / talent scale-down) Tj T*
+(    trigger: Funding gap unresolved or principal act unavailable) Tj T*
+(    action: Shorter approved acoustic show, lower nonessential spend, backup MC; preserve) Tj T*
+(      contingency and charity controls) Tj T*
+(    owner: Finance / Talent Leads) Tj T*
+(    status: Conditional) Tj T*
+(scale: L and I use 1 \(low\) to 5 \(high\); score = L ◊ I) Tj T*
+(weatherThreshold: 0.4) Tj T*
+() Tj T*
+(PEOPLE AND MC AVAILABILITY) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(roster:) Tj T*
+(demo: False) Tj T*
+(topMC: None) Tj T*
+(backupMC: None) Tj T*
+(availabilityStatus: Unconfirmed?user roster is not a signed booking) Tj T*
+(selectionRule: User-listed date availability first, then organiser-provided experience score;) Tj T*
+(  demo scores are fictional.) Tj T*
+(bookingConfirmed: False) Tj T*
+() Tj T*
+(VENUES AND APPROVALS) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(options:) Tj T*
+(  [1]) Tj T*
+(    name: Lecture Theatres) Tj T*
+(    source: https://university.taylors.edu.my/en/student-life/campus-facilities.html) Tj T*
+(    capacity: 300) Tj T*
+(    notes: Block B Level 2 and Blocks C, D, E Levels 1 and 2. Plausible seated-session option;) Tj T*
+(      room, layout, price and availability must be confirmed.) Tj T*
+(    indoor: None) Tj T*
+(    approvalStatus: Unconfirmed?campus approval required) Tj T*
+(    approvalLeadTime: Allow 2?4 weeks \(planning estimate, not campus policy\)) Tj T*
+(    capacityStatus: Cited capacity; confirm event setup) Tj T*
+(  [2]) Tj T*
+(    name: The Grand Hall) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 35 of 59) Tj ET
+endstream
+endobj
+73 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 72 0 R >>
+endobj
+74 0 obj
+<< /Length 3331 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    source: https://university.taylors.edu.my/en/student-life/campus-facilities.html) Tj T*
+(    capacity: 1000) Tj T*
+(    notes: Block B Level 2; larger than assumed attendance. Consider only if price, layout and) Tj T*
+(      activity justify it.) Tj T*
+(    indoor: None) Tj T*
+(    approvalStatus: Unconfirmed?campus approval required) Tj T*
+(    approvalLeadTime: Allow 2?4 weeks \(planning estimate, not campus policy\)) Tj T*
+(    capacityStatus: Cited capacity; confirm event setup) Tj T*
+(  [3]) Tj T*
+(    name: Experimental Theatre) Tj T*
+(    source: https://university.taylors.edu.my/en/student-life/campus-facilities.html) Tj T*
+(    capacity: None) Tj T*
+(    notes: Block B Level 2; stage, acoustics and lighting, surrounding seats. No numerical) Tj T*
+(      capacity established publicly; confirm room suitability.) Tj T*
+(    indoor: None) Tj T*
+(    approvalStatus: Unconfirmed?campus approval required) Tj T*
+(    approvalLeadTime: Allow 2?4 weeks \(planning estimate, not campus policy\)) Tj T*
+(    capacityStatus: Unknown?request written capacity and safety confirmation) Tj T*
+(selected:) Tj T*
+(  name: Lecture Theatres) Tj T*
+(  source: https://university.taylors.edu.my/en/student-life/campus-facilities.html) Tj T*
+(  capacity: 300) Tj T*
+(  notes: Block B Level 2 and Blocks C, D, E Levels 1 and 2. Plausible seated-session option;) Tj T*
+(    room, layout, price and availability must be confirmed.) Tj T*
+(  indoor: None) Tj T*
+(  approvalStatus: Unconfirmed?campus approval required) Tj T*
+(  approvalLeadTime: Allow 2?4 weeks \(planning estimate, not campus policy\)) Tj T*
+(  capacityStatus: Cited capacity; confirm event setup) Tj T*
+(approvalStatus: Unconfirmed) Tj T*
+(requestedMode: Indoor contingency?confirmed cover and room approval required) Tj T*
+(approvalChecklist:) Tj T*
+(  [1]) Tj T*
+(    Written permission and exact date) Tj T*
+(  [2]) Tj T*
+(    Certified capacity and fire exits) Tj T*
+(  [3]) Tj T*
+(    AV, power and indoor cover) Tj T*
+(  [4]) Tj T*
+(    Charity collection consent) Tj T*
+(  [5]) Tj T*
+(    Accessibility and emergency arrangements) Tj T*
+(studentAffairsGuidance:) Tj T*
+(  publicContactEmail: seal@taylors.edu.my) Tj T*
+(  emailSource: https://university.taylors.edu.my/en/student-life/your-taylors-journey/clubs-) Tj T*
+(    societies-and-sports.html) Tj T*
+(  emailQuote: Contact us through email at seal@taylors.edu.my) Tj T*
+(  contactLocation: Student Life Centre, Block B, Level 1, Taylor's University Lakeside Campus) Tj T*
+(  publishedEventApprovalProcedureFound: False) Tj T*
+(  recommendedQuestionsNotAssertedPolicies:) Tj T*
+(    [1]) Tj T*
+(      Which Student Development/SEAL officer and club or faculty adviser must approve the) Tj T*
+(event?) Tj T*
+(    [2]) Tj T*
+(      What current event proposal, fundraising and beneficiary-validation documents are) Tj T*
+(required?) Tj T*
+(    [3]) Tj T*
+(      Who authorises sponsor approaches, cash/in-kind acceptance and external logo/booth) Tj T*
+(exposure?) Tj T*
+(    [4]) Tj T*
+(      How do room bookings, security, risk assessment, food handling and external-vendor) Tj T*
+(arrangements work?) Tj T*
+(    [5]) Tj T*
+(      What submission lead time and financial reconciliation procedure apply?) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 36 of 59) Tj ET
+endstream
+endobj
+75 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 74 0 R >>
+endobj
+76 0 obj
+<< /Length 2490 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(  fallbackGuidanceSource: https://university.taylors.edu.my/en/student-life/support-and-) Tj T*
+(    services/campus-central.html) Tj T*
+(  fallbackGuidanceFact: Campus Central describes itself as one-stop support across academic and) Tj T*
+(    non-academic matters.) Tj T*
+(calendarSources:) Tj T*
+(  [1]) Tj T*
+(    https://university.taylors.edu.my/en/student-life/manage-your-studies/academic-) Tj T*
+(calendar.html) Tj T*
+(academicCalendar:) Tj T*
+(  source: https://university.taylors.edu.my/en/student-life/manage-your-studies/academic-) Tj T*
+(    calendar.html) Tj T*
+(  publicYearsFound:) Tj T*
+(    [1]) Tj T*
+(      2026) Tj T*
+(    [2]) Tj T*
+(      2025) Tj T*
+(  public2027CalendarFound: False) Tj T*
+(  march2027TeachingOrExamDates: None) Tj T*
+(  programmeSpecific: True) Tj T*
+(  recommendedAction: Confirm target students' programme and intake timetable before fixing a) Tj T*
+(    March 2027 date.) Tj T*
+(warning: None) Tj T*
+() Tj T*
+(RUN OF SHOW AND COUNTDOWN) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(runOfShow:) Tj T*
+(  [1]) Tj T*
+(    time: 16:30) Tj T*
+(    activity: Indoor AV check, protected cable routing and rain-safe arrivals) Tj T*
+(    owner: Operations / Activity Leads) Tj T*
+(    durationMinutes: 60) Tj T*
+(    mode: Indoor contingency) Tj T*
+(    status: Proposed?not booked) Tj T*
+(  [2]) Tj T*
+(    time: 17:30) Tj T*
+(    activity: Covered indoor check-in and activity briefing; keep fire exits clear) Tj T*
+(    owner: Front-of-house Lead) Tj T*
+(    durationMinutes: 30) Tj T*
+(    mode: Indoor contingency) Tj T*
+(    status: Proposed?not booked) Tj T*
+(  [3]) Tj T*
+(    time: 18:00) Tj T*
+(    activity: MC welcome, cause and donation transparency) Tj T*
+(    owner: MC / Charity Liaison) Tj T*
+(    durationMinutes: 15) Tj T*
+(    mode: Indoor contingency) Tj T*
+(    status: Proposed?not booked) Tj T*
+(  [4]) Tj T*
+(    time: 18:15) Tj T*
+(    activity: Student performance set one) Tj T*
+(    owner: Talent Lead) Tj T*
+(    durationMinutes: 40) Tj T*
+(    mode: Indoor contingency) Tj T*
+(    status: Proposed?not booked) Tj T*
+(  [5]) Tj T*
+(    time: 18:55) Tj T*
+(    activity: Cause talk and opt-in donation break) Tj T*
+(    owner: Charity Liaison) Tj T*
+(    durationMinutes: 20) Tj T*
+(    mode: Indoor contingency) Tj T*
+(    status: Proposed?not booked) Tj T*
+(  [6]) Tj T*
+(    time: 19:15) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 37 of 59) Tj ET
+endstream
+endobj
+77 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 76 0 R >>
+endobj
+78 0 obj
+<< /Length 2278 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    activity: Student performance set two) Tj T*
+(    owner: Talent Lead) Tj T*
+(    durationMinutes: 40) Tj T*
+(    mode: Indoor contingency) Tj T*
+(    status: Proposed?not booked) Tj T*
+(  [7]) Tj T*
+(    time: 19:55) Tj T*
+(    activity: Impact target recap and sponsor acknowledgement) Tj T*
+(    owner: MC / Finance Lead) Tj T*
+(    durationMinutes: 15) Tj T*
+(    mode: Indoor contingency) Tj T*
+(    status: Proposed?not booked) Tj T*
+(  [8]) Tj T*
+(    time: 20:10) Tj T*
+(    activity: Close, cash reconciliation and safe exit) Tj T*
+(    owner: Operations / Finance Leads) Tj T*
+(    durationMinutes: 20) Tj T*
+(    mode: Indoor contingency) Tj T*
+(    status: Proposed?not booked) Tj T*
+(countdown:) Tj T*
+(  [1]) Tj T*
+(    offsetDays: -56) Tj T*
+(    label: T-8 weeks) Tj T*
+(    date: 2027-01-23) Tj T*
+(    action: Confirm beneficiary, exam dates, campus permission and provisional indoor room) Tj T*
+(    owner: Event Lead) Tj T*
+(    status: Pending) Tj T*
+(  [2]) Tj T*
+(    offsetDays: -49) Tj T*
+(    label: T-7 weeks) Tj T*
+(    date: 2027-01-30) Tj T*
+(    action: Send reviewed sponsor/MC drafts; obtain written capacity) Tj T*
+(    owner: Partnerships / Talent Leads) Tj T*
+(    status: Pending) Tj T*
+(  [3]) Tj T*
+(    offsetDays: -42) Tj T*
+(    label: T-6 weeks) Tj T*
+(    date: 2027-02-06) Tj T*
+(    action: Obtain vendor quotes and cost-check all commitments) Tj T*
+(    owner: Finance Lead) Tj T*
+(    status: Pending) Tj T*
+(  [4]) Tj T*
+(    offsetDays: -35) Tj T*
+(    label: T-5 weeks) Tj T*
+(    date: 2027-02-13) Tj T*
+(    action: Approve charity messaging and promotional permissions) Tj T*
+(    owner: Charity / Promo Leads) Tj T*
+(    status: Pending) Tj T*
+(  [5]) Tj T*
+(    offsetDays: -28) Tj T*
+(    label: T-4 weeks) Tj T*
+(    date: 2027-02-20) Tj T*
+(    action: Confirm acts and MC; secure backup room and AV) Tj T*
+(    owner: Talent / Venue Leads) Tj T*
+(    status: Pending) Tj T*
+(  [6]) Tj T*
+(    offsetDays: -21) Tj T*
+(    label: T-3 weeks) Tj T*
+(    date: 2027-02-27) Tj T*
+(    action: Check RSVPs, accessibility requests and volunteer rota) Tj T*
+(    owner: Operations Lead) Tj T*
+(    status: Pending) Tj T*
+(  [7]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 38 of 59) Tj ET
+endstream
+endobj
+79 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 78 0 R >>
+endobj
+80 0 obj
+<< /Length 2690 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    offsetDays: -14) Tj T*
+(    label: T-2 weeks) Tj T*
+(    date: 2027-03-06) Tj T*
+(    action: Recheck weather, exams, approvals and funding; activate Plan B if needed) Tj T*
+(    owner: Risk Lead) Tj T*
+(    status: Pending) Tj T*
+(  [8]) Tj T*
+(    offsetDays: -7) Tj T*
+(    label: T-1 week) Tj T*
+(    date: 2027-03-13) Tj T*
+(    action: Confirm short-range forecast, final attendance and vendor amounts) Tj T*
+(    owner: Event Lead) Tj T*
+(    status: Pending) Tj T*
+(  [9]) Tj T*
+(    offsetDays: -1) Tj T*
+(    label: T-1 day) Tj T*
+(    date: 2027-03-19) Tj T*
+(    action: Final weather and safety go/no-go, cash controls and rehearsal) Tj T*
+(    owner: Operations / Finance Leads) Tj T*
+(    status: Pending) Tj T*
+(  [10]) Tj T*
+(    offsetDays: 0) Tj T*
+(    label: Event day) Tj T*
+(    date: 2027-03-20) Tj T*
+(    action: Execute run sheet, reconcile donations and log incidents) Tj T*
+(    owner: Event Lead) Tj T*
+(    status: Pending) Tj T*
+(mode: Indoor contingency) Tj T*
+(variant: concert) Tj T*
+(startTime: 16:30) Tj T*
+(endTime: 20:30) Tj T*
+(timezone: Asia/Kuala_Lumpur) Tj T*
+(date: 2027-03-20) Tj T*
+() Tj T*
+(SPONSOR SHORTLIST - NOT COMMITMENTS) Tj T*
+(-----------------------------------------------------------------) Tj T*
+([1]) Tj T*
+(  name: Printcious) Tj T*
+(  url: https://www.printcious.com/my/sponsorship-program) Tj T*
+(  email: sponsorship@printcious.com) Tj T*
+(  emailSource: https://www.printcious.com/my/sponsorship-program) Tj T*
+(  contactType: dedicated sponsorship email) Tj T*
+(  category: custom merchandise and printing) Tj T*
+(  fit: Official sponsorship programme expressly covers schools, universities, colleges, NGOs) Tj T*
+(    and charities; good in-kind rather than assumed cash fit.) Tj T*
+(  fitStatus: Planner assessment?not expressed sponsor interest) Tj T*
+(  contactVerified: True) Tj T*
+(  status: Prospect only?no commitment) Tj T*
+(  promisedRM: 0) Tj T*
+(  fitSource: https://www.printcious.com/my/sponsorship-program) Tj T*
+(  suggestedHypotheticalAsk: 100 button badges or lanyards, or an approved merchandise-printing) Tj T*
+(    discount; quantities and acceptance to be negotiated.) Tj T*
+(  constraints:) Tj T*
+(    [1]) Tj T*
+(      Complete proposal at least 30 days before event) Tj T*
+(    [2]) Tj T*
+(      Products or special sponsorship pricing subject to approval and terms) Tj T*
+(    [3]) Tj T*
+(      Shipping not included) Tj T*
+(    [4]) Tj T*
+(      Do not guarantee unapproved social-media deliverables) Tj T*
+(  priority: high) Tj T*
+(  contactUrl: https://www.printcious.com/my/sponsorship-program) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 39 of 59) Tj ET
+endstream
+endobj
+81 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 80 0 R >>
+endobj
+82 0 obj
+<< /Length 2925 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(  appropriatePartnershipContact: True) Tj T*
+(  countsTowardVerifiedSuitableEmailMinimum: True) Tj T*
+(  emailVerificationNote: official page full text) Tj T*
+(  askRM: 120.0) Tj T*
+(  askCents: 12000) Tj T*
+(  askStatus: Hypothetical proposed ask; not promised revenue) Tj T*
+(  tiers:) Tj T*
+(    [1]) Tj T*
+(      name: Supporting) Tj T*
+(      askRM: 150.0) Tj T*
+(      benefit: Proposed acknowledgement; campus and charity approval required) Tj T*
+(    [2]) Tj T*
+(      name: Partner) Tj T*
+(      askRM: 300.0) Tj T*
+(      benefit: Proposed poster/logo acknowledgement, subject to approval) Tj T*
+(    [3]) Tj T*
+(      name: Lead supporter) Tj T*
+(      askRM: 600.0) Tj T*
+(      benefit: Proposed lead acknowledgement, not exclusivity or guaranteed reach) Tj T*
+(  accounting: One exploratory portfolio or alternative tiers; not additive committed funds) Tj T*
+([2]) Tj T*
+(  name: SQ PrintBar) Tj T*
+(  url: https://sqprintbar.com/sponsorship-program/) Tj T*
+(  email: enquiry@sqprintbar.com) Tj T*
+(  emailSource: https://sqprintbar.com/sponsorship-program/) Tj T*
+(  contactType: public event-proposal email on sponsorship page) Tj T*
+(  category: printing and promotional gifts) Tj T*
+(  fit: Sponsorship page explicitly lists Charity, University, Event and Non-Profit) Tj T*
+(    Organization.) Tj T*
+(  fitStatus: Planner assessment?not expressed sponsor interest) Tj T*
+(  contactVerified: True) Tj T*
+(  status: Prospect only?no commitment) Tj T*
+(  promisedRM: 0) Tj T*
+(  fitSource: https://sqprintbar.com/sponsorship-program/) Tj T*
+(  suggestedHypotheticalAsk: Printed posters, signage or volunteer merchandise discount; ask for) Tj T*
+(    an itemised in-kind quote.) Tj T*
+(  constraints:) Tj T*
+(    [1]) Tj T*
+(      Proposal review, not guaranteed support) Tj T*
+(    [2]) Tj T*
+(      No public award amount or turnaround established) Tj T*
+(  priority: high) Tj T*
+(  contactUrl: https://sqprintbar.com/sponsorship-program/) Tj T*
+(  appropriatePartnershipContact: True) Tj T*
+(  countsTowardVerifiedSuitableEmailMinimum: True) Tj T*
+(  emailVerificationNote: official page full text) Tj T*
+(  askRM: 120.0) Tj T*
+(  askCents: 12000) Tj T*
+(  askStatus: Hypothetical proposed ask; not promised revenue) Tj T*
+(  tiers:) Tj T*
+(    [1]) Tj T*
+(      name: Supporting) Tj T*
+(      askRM: 150.0) Tj T*
+(      benefit: Proposed acknowledgement; campus and charity approval required) Tj T*
+(    [2]) Tj T*
+(      name: Partner) Tj T*
+(      askRM: 300.0) Tj T*
+(      benefit: Proposed poster/logo acknowledgement, subject to approval) Tj T*
+(    [3]) Tj T*
+(      name: Lead supporter) Tj T*
+(      askRM: 600.0) Tj T*
+(      benefit: Proposed lead acknowledgement, not exclusivity or guaranteed reach) Tj T*
+(  accounting: One exploratory portfolio or alternative tiers; not additive committed funds) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 40 of 59) Tj ET
+endstream
+endobj
+83 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 82 0 R >>
+endobj
+84 0 obj
+<< /Length 3270 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+([3]) Tj T*
+(  name: Gigi Coffee) Tj T*
+(  url: https://www.gigicoffee.com/contact-us/) Tj T*
+(  email: collaborations@gigicoffee.com) Tj T*
+(  emailSource: https://www.gigicoffee.com/contact-us/) Tj T*
+(  contactType: official Media & Brands Collab email; alternate Business Partners email) Tj T*
+(  category: coffee and beverage vouchers) Tj T*
+(  fit: Explicitly invites co-branding, marketing and promotional proposals; potential student-) Tj T*
+(    facing beverage partner, with no charity-support commitment verified.) Tj T*
+(  fitStatus: Planner assessment?not expressed sponsor interest) Tj T*
+(  contactVerified: True) Tj T*
+(  status: Prospect only?no commitment) Tj T*
+(  promisedRM: 0) Tj T*
+(  fitSource: https://www.gigicoffee.com/contact-us/) Tj T*
+(  suggestedHypotheticalAsk: 20-30 beverage vouchers or refreshments for volunteers, with) Tj T*
+(    university-approved acknowledgement only.) Tj T*
+(  constraints:) Tj T*
+(    [1]) Tj T*
+(      Detailed objectives and benefits requested for partnership proposals) Tj T*
+(    [2]) Tj T*
+(      Avoid customer-care inbox for sponsor request) Tj T*
+(    [3]) Tj T*
+(      Refreshments timing must respect possible Ramadan overlap) Tj T*
+(  priority: high) Tj T*
+(  contactUrl: https://www.gigicoffee.com/contact-us/) Tj T*
+(  appropriatePartnershipContact: True) Tj T*
+(  countsTowardVerifiedSuitableEmailMinimum: True) Tj T*
+(  emailVerificationNote: official page full text) Tj T*
+(  askRM: 120.0) Tj T*
+(  askCents: 12000) Tj T*
+(  askStatus: Hypothetical proposed ask; not promised revenue) Tj T*
+(  tiers:) Tj T*
+(    [1]) Tj T*
+(      name: Supporting) Tj T*
+(      askRM: 150.0) Tj T*
+(      benefit: Proposed acknowledgement; campus and charity approval required) Tj T*
+(    [2]) Tj T*
+(      name: Partner) Tj T*
+(      askRM: 300.0) Tj T*
+(      benefit: Proposed poster/logo acknowledgement, subject to approval) Tj T*
+(    [3]) Tj T*
+(      name: Lead supporter) Tj T*
+(      askRM: 600.0) Tj T*
+(      benefit: Proposed lead acknowledgement, not exclusivity or guaranteed reach) Tj T*
+(  accounting: One exploratory portfolio or alternative tiers; not additive committed funds) Tj T*
+([4]) Tj T*
+(  name: Signature Market) Tj T*
+(  url: https://www.signaturemarket.co/my/marketplace/about/contact-us.html) Tj T*
+(  email: general@signaturemarket.co) Tj T*
+(  emailSource: https://www.signaturemarket.co/my/marketplace/about/contact-us.html) Tj T*
+(  contactType: general-named email explicitly designated for collaborations/sponsorship) Tj T*
+(  category: snacks and gifting) Tj T*
+(  fit: Official contact page explicitly solicits sponsorship and collaboration enquiries; snack) Tj T*
+(    samples or giveaway packs can support a small campus event.) Tj T*
+(  fitStatus: Planner assessment?not expressed sponsor interest) Tj T*
+(  contactVerified: True) Tj T*
+(  status: Prospect only?no commitment) Tj T*
+(  promisedRM: 0) Tj T*
+(  fitSource: https://www.signaturemarket.co/my/marketplace/about/contact-us.html) Tj T*
+(  suggestedHypotheticalAsk: 50-100 snack sample packs or 5 small gift bundles, subject to) Tj T*
+(    product availability and approval.) Tj T*
+(  constraints:) Tj T*
+(    [1]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 41 of 59) Tj ET
+endstream
+endobj
+85 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 84 0 R >>
+endobj
+86 0 obj
+<< /Length 3051 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(      Check nut/allergen, dietary and serving requirements) Tj T*
+(    [2]) Tj T*
+(      No public minimum audience or award amount established) Tj T*
+(  priority: high) Tj T*
+(  contactUrl: https://www.signaturemarket.co/my/marketplace/about/contact-us.html) Tj T*
+(  appropriatePartnershipContact: True) Tj T*
+(  countsTowardVerifiedSuitableEmailMinimum: True) Tj T*
+(  emailVerificationNote: exact text inspected from raw official webpage HTML using in-memory) Tj T*
+(    extraction; WebFetch omitted main route) Tj T*
+(  askRM: 120.0) Tj T*
+(  askCents: 12000) Tj T*
+(  askStatus: Hypothetical proposed ask; not promised revenue) Tj T*
+(  tiers:) Tj T*
+(    [1]) Tj T*
+(      name: Supporting) Tj T*
+(      askRM: 150.0) Tj T*
+(      benefit: Proposed acknowledgement; campus and charity approval required) Tj T*
+(    [2]) Tj T*
+(      name: Partner) Tj T*
+(      askRM: 300.0) Tj T*
+(      benefit: Proposed poster/logo acknowledgement, subject to approval) Tj T*
+(    [3]) Tj T*
+(      name: Lead supporter) Tj T*
+(      askRM: 600.0) Tj T*
+(      benefit: Proposed lead acknowledgement, not exclusivity or guaranteed reach) Tj T*
+(  accounting: One exploratory portfolio or alternative tiers; not additive committed funds) Tj T*
+([5]) Tj T*
+(  name: VICTOR Sport Malaysia / Universal Sports Sdn. Bhd.) Tj T*
+(  url: https://www.victorsports.my/pages/contact-us) Tj T*
+(  email: marketing@victorsports.my) Tj T*
+(  emailSource: https://www.victorsports.my/pages/contact-us) Tj T*
+(  contactType: dedicated marketing/sponsorship email) Tj T*
+(  category: badminton equipment and sports prizes) Tj T*
+(  fit: Official Malaysian distributor sells badminton-related products; relevant only if event) Tj T*
+(    includes badminton/sports fundraising or suitable prize use.) Tj T*
+(  fitStatus: Planner assessment?not expressed sponsor interest) Tj T*
+(  contactVerified: True) Tj T*
+(  status: Prospect only?no commitment) Tj T*
+(  promisedRM: 0) Tj T*
+(  fitSource: https://www.victorsports.my/about-us) Tj T*
+(  suggestedHypotheticalAsk: 2-3 small badminton-related prizes, shuttlecocks or accessory) Tj T*
+(    vouchers for a charity sports segment.) Tj T*
+(  constraints:) Tj T*
+(    [1]) Tj T*
+(      Conditional sports fit, not a general charity cash sponsor) Tj T*
+(    [2]) Tj T*
+(      Event format is not yet confirmed) Tj T*
+(  priority: conditional) Tj T*
+(  contactUrl: https://www.victorsports.my/pages/contact-us) Tj T*
+(  appropriatePartnershipContact: True) Tj T*
+(  countsTowardVerifiedSuitableEmailMinimum: True) Tj T*
+(  emailVerificationNote: official page full text) Tj T*
+(  askRM: 120.0) Tj T*
+(  askCents: 12000) Tj T*
+(  askStatus: Hypothetical proposed ask; not promised revenue) Tj T*
+(  tiers:) Tj T*
+(    [1]) Tj T*
+(      name: Supporting) Tj T*
+(      askRM: 150.0) Tj T*
+(      benefit: Proposed acknowledgement; campus and charity approval required) Tj T*
+(    [2]) Tj T*
+(      name: Partner) Tj T*
+(      askRM: 300.0) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 42 of 59) Tj ET
+endstream
+endobj
+87 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 86 0 R >>
+endobj
+88 0 obj
+<< /Length 3365 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(      benefit: Proposed poster/logo acknowledgement, subject to approval) Tj T*
+(    [3]) Tj T*
+(      name: Lead supporter) Tj T*
+(      askRM: 600.0) Tj T*
+(      benefit: Proposed lead acknowledgement, not exclusivity or guaranteed reach) Tj T*
+(  accounting: One exploratory portfolio or alternative tiers; not additive committed funds) Tj T*
+([6]) Tj T*
+(  name: Secret Recipe Malaysia) Tj T*
+(  url: https://www.secretrecipe.com.my) Tj T*
+(  email: marketing@secretrecipe.com.my) Tj T*
+(  emailSource: https://www.sunwaypyramid.com/directory/secret-recipe) Tj T*
+(  contactType: public marketing email in official shopping-mall tenant directory; not first-) Tj T*
+(    party company-page verification) Tj T*
+(  category: cakes, cafe food and vouchers) Tj T*
+(  fit: Sunway Pyramid's official tenant directory identifies Secret Recipe cafe/cake offering) Tj T*
+(    and its marketing address; potential food/prize partner near the university locality.) Tj T*
+(  fitStatus: Planner assessment?not expressed sponsor interest) Tj T*
+(  contactVerified: True) Tj T*
+(  status: Prospect only?no commitment) Tj T*
+(  promisedRM: 0) Tj T*
+(  fitSource: https://www.sunwaypyramid.com/directory/secret-recipe) Tj T*
+(  suggestedHypotheticalAsk: A whole-cake voucher or 10-20 small dessert vouchers/volunteer) Tj T*
+(    snacks; no amount or approval assumed.) Tj T*
+(  constraints:) Tj T*
+(    [1]) Tj T*
+(      Reconfirm routing because email verification is from mall directory) Tj T*
+(    [2]) Tj T*
+(      Do not claim established campus-charity sponsorship eligibility) Tj T*
+(  priority: medium) Tj T*
+(  contactUrl: https://www.secretrecipe.com.my) Tj T*
+(  appropriatePartnershipContact: True) Tj T*
+(  countsTowardVerifiedSuitableEmailMinimum: True) Tj T*
+(  emailVerificationNote: exact email inspected in raw official Sunway Pyramid HTML; also) Tj T*
+(    returned by WebSearch) Tj T*
+(  askRM: 120.0) Tj T*
+(  askCents: 12000) Tj T*
+(  askStatus: Hypothetical proposed ask; not promised revenue) Tj T*
+(  tiers:) Tj T*
+(    [1]) Tj T*
+(      name: Supporting) Tj T*
+(      askRM: 150.0) Tj T*
+(      benefit: Proposed acknowledgement; campus and charity approval required) Tj T*
+(    [2]) Tj T*
+(      name: Partner) Tj T*
+(      askRM: 300.0) Tj T*
+(      benefit: Proposed poster/logo acknowledgement, subject to approval) Tj T*
+(    [3]) Tj T*
+(      name: Lead supporter) Tj T*
+(      askRM: 600.0) Tj T*
+(      benefit: Proposed lead acknowledgement, not exclusivity or guaranteed reach) Tj T*
+(  accounting: One exploratory portfolio or alternative tiers; not additive committed funds) Tj T*
+([7]) Tj T*
+(  name: Kantan Food Asia Sdn Bhd) Tj T*
+(  url: https://www.kantanfood.com/sponsorship-collaboration/) Tj T*
+(  email: None) Tj T*
+(  emailSource: None) Tj T*
+(  contactType: general corporate/product-services contact; dedicated sponsor route not verified) Tj T*
+(  category: Malaysian cooking pastes and local food support) Tj T*
+(  fit: Subang Jaya-based manufacturer explicitly invites food sponsorship for Malaysian events;) Tj T*
+(    local and food-themed fit, but standard contact is general.) Tj T*
+(  fitStatus: Planner assessment?not expressed sponsor interest) Tj T*
+(  contactVerified: False) Tj T*
+(  status: Prospect only?no commitment) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 43 of 59) Tj ET
+endstream
+endobj
+89 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 88 0 R >>
+endobj
+90 0 obj
+<< /Length 3222 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(  promisedRM: 0) Tj T*
+(  fitSource: https://www.kantanfood.com/sponsorship-collaboration/) Tj T*
+(  suggestedHypotheticalAsk: 10-20 cooking-paste sample packs or ingredients for an approved) Tj T*
+(    charity cooking/food booth; first ask for routing to partnerships.) Tj T*
+(  constraints:) Tj T*
+(    [1]) Tj T*
+(      Not counted as verified dedicated partnership/CSR/marketing email) Tj T*
+(    [2]) Tj T*
+(      Published influencer criteria: at least 15K Instagram followers, average 500 likes, age) Tj T*
+(23 or older; these are influencer conditions, not proven campus-event eligibility) Tj T*
+(  priority: conditional) Tj T*
+(  contactUrl: https://www.kantanfood.com/sponsorship-collaboration/) Tj T*
+(  appropriatePartnershipContact: False) Tj T*
+(  countsTowardVerifiedSuitableEmailMinimum: False) Tj T*
+(  emailVerificationNote: official contact page plus raw sponsorship HTML) Tj T*
+(  askRM: 120.0) Tj T*
+(  askCents: 12000) Tj T*
+(  askStatus: Hypothetical proposed ask; not promised revenue) Tj T*
+(  tiers:) Tj T*
+(    [1]) Tj T*
+(      name: Supporting) Tj T*
+(      askRM: 150.0) Tj T*
+(      benefit: Proposed acknowledgement; campus and charity approval required) Tj T*
+(    [2]) Tj T*
+(      name: Partner) Tj T*
+(      askRM: 300.0) Tj T*
+(      benefit: Proposed poster/logo acknowledgement, subject to approval) Tj T*
+(    [3]) Tj T*
+(      name: Lead supporter) Tj T*
+(      askRM: 600.0) Tj T*
+(      benefit: Proposed lead acknowledgement, not exclusivity or guaranteed reach) Tj T*
+(  accounting: One exploratory portfolio or alternative tiers; not additive committed funds) Tj T*
+([8]) Tj T*
+(  name: myBurgerLab) Tj T*
+(  url: https://myburgerlab.com/cateringandevents/) Tj T*
+(  email: None) Tj T*
+(  emailSource: None) Tj T*
+(  contactType: public catering/brands-collaboration quote form; no appropriate public email) Tj T*
+(    verified) Tj T*
+(  category: event catering and food vouchers) Tj T*
+(  fit: Official event page includes Outlet Bookings & Brands Collaboration and caters to) Tj T*
+(    different event scales; plausible negotiated in-kind/discounted supplier.) Tj T*
+(  fitStatus: Planner assessment?not expressed sponsor interest) Tj T*
+(  contactVerified: False) Tj T*
+(  status: Prospect only?no commitment) Tj T*
+(  promisedRM: 0) Tj T*
+(  fitSource: https://myburgerlab.com/cateringandevents/) Tj T*
+(  suggestedHypotheticalAsk: 10-20 burger vouchers or a discounted volunteer meal package;) Tj T*
+(    request a quote and partnership discussion rather than assume donation.) Tj T*
+(  constraints:) Tj T*
+(    [1]) Tj T*
+(      Use verified form; no guessed employee email) Tj T*
+(    [2]) Tj T*
+(      Commercial catering experience is not proof of free sponsorship) Tj T*
+(  priority: medium) Tj T*
+(  contactUrl: https://forms.gle/pZUEeKvjeh2pqF6V9) Tj T*
+(  appropriatePartnershipContact: False) Tj T*
+(  countsTowardVerifiedSuitableEmailMinimum: False) Tj T*
+(  emailVerificationNote: official page full text and linked quote form) Tj T*
+(  askRM: 120.0) Tj T*
+(  askCents: 12000) Tj T*
+(  askStatus: Hypothetical proposed ask; not promised revenue) Tj T*
+(  tiers:) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 44 of 59) Tj ET
+endstream
+endobj
+91 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 90 0 R >>
+endobj
+92 0 obj
+<< /Length 3058 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    [1]) Tj T*
+(      name: Supporting) Tj T*
+(      askRM: 150.0) Tj T*
+(      benefit: Proposed acknowledgement; campus and charity approval required) Tj T*
+(    [2]) Tj T*
+(      name: Partner) Tj T*
+(      askRM: 300.0) Tj T*
+(      benefit: Proposed poster/logo acknowledgement, subject to approval) Tj T*
+(    [3]) Tj T*
+(      name: Lead supporter) Tj T*
+(      askRM: 600.0) Tj T*
+(      benefit: Proposed lead acknowledgement, not exclusivity or guaranteed reach) Tj T*
+(  accounting: One exploratory portfolio or alternative tiers; not additive committed funds) Tj T*
+([9]) Tj T*
+(  name: PichaEats) Tj T*
+(  url: https://www.pichaeats.com/) Tj T*
+(  email: None) Tj T*
+(  emailSource: None) Tj T*
+(  contactType: public corporate catering WhatsApp/quote route; no appropriate public) Tj T*
+(    sponsorship email verified) Tj T*
+(  category: social-enterprise catering and refugee-livelihood partner) Tj T*
+(  fit: Official site states catering supports refugee chefs and their families in Malaysia;) Tj T*
+(    mission-aligned supplier/co-campaign prospect, not verified donor.) Tj T*
+(  fitStatus: Planner assessment?not expressed sponsor interest) Tj T*
+(  contactVerified: False) Tj T*
+(  status: Prospect only?no commitment) Tj T*
+(  promisedRM: 0) Tj T*
+(  fitSource: https://www.pichaeats.com/) Tj T*
+(  suggestedHypotheticalAsk: A discounted 10-20 volunteer bento package or a co-campaign where) Tj T*
+(    an independently secured sponsor pays the meal costs.) Tj T*
+(  constraints:) Tj T*
+(    [1]) Tj T*
+(      Do not ask vulnerable livelihood partner to subsidise all food without a funding plan) Tj T*
+(    [2]) Tj T*
+(      Published bento starting price RM17 per box, 10-person minimum; 100 boxes would start) Tj T*
+(around RM1700 before extras, not a quote) Tj T*
+(  priority: conditional mission partner) Tj T*
+(  contactUrl: https://wa.me/60182894353) Tj T*
+(  appropriatePartnershipContact: False) Tj T*
+(  countsTowardVerifiedSuitableEmailMinimum: False) Tj T*
+(  emailVerificationNote: official page full text and linked public corporate contact) Tj T*
+(  askRM: 120.0) Tj T*
+(  askCents: 12000) Tj T*
+(  askStatus: Hypothetical proposed ask; not promised revenue) Tj T*
+(  tiers:) Tj T*
+(    [1]) Tj T*
+(      name: Supporting) Tj T*
+(      askRM: 150.0) Tj T*
+(      benefit: Proposed acknowledgement; campus and charity approval required) Tj T*
+(    [2]) Tj T*
+(      name: Partner) Tj T*
+(      askRM: 300.0) Tj T*
+(      benefit: Proposed poster/logo acknowledgement, subject to approval) Tj T*
+(    [3]) Tj T*
+(      name: Lead supporter) Tj T*
+(      askRM: 600.0) Tj T*
+(      benefit: Proposed lead acknowledgement, not exclusivity or guaranteed reach) Tj T*
+(  accounting: One exploratory portfolio or alternative tiers; not additive committed funds) Tj T*
+() Tj T*
+(SPONSOR EMAILS AND FOLLOW-UPS - NEVER SENT) Tj T*
+(-----------------------------------------------------------------) Tj T*
+([1]) Tj T*
+(  id: sponsor-1) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 45 of 59) Tj ET
+endstream
+endobj
+93 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 92 0 R >>
+endobj
+94 0 obj
+<< /Length 4777 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(  recipient: Printcious) Tj T*
+(  to: sponsorship@printcious.com) Tj T*
+(  contactType: dedicated sponsorship email) Tj T*
+(  contactUrl: https://www.printcious.com/my/sponsorship-program) Tj T*
+(  subject: EventPilot | Proposed charity event partnership ? 2027-03-20) Tj T*
+(  body: Dear Printcious team,  We are preparing a proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) at Taylor's Lakeside Campus. Proposed date: 2027-03-20.) Tj T*
+(    Proposed venue: Lecture Theatres \(approval and capacity unconfirmed\). Our target is 100) Tj T*
+(    attendees \(planning assumption; not confirmed attendance\). The proposed impact target is to) Tj T*
+(    direct net proceeds to the beneficiary after documented costs; the beneficiary, collection) Tj T*
+(    permission and amount raised are not yet confirmed.  Would you consider a hypothetical) Tj T*
+(    contribution of up to RM120.00 toward our unconfirmed funding gap, without assuming that) Tj T*
+(    your programme offers cash? A researched, proposed in-kind discussion could be: 100 button) Tj T*
+(    badges or lanyards, or an approved merchandise-printing discount; quantities and acceptance) Tj T*
+(    to be negotiated. Published constraints to review: Complete proposal at least 30 days) Tj T*
+(    before event; Products or special sponsorship pricing subject to approval and terms;) Tj T*
+(    Shipping not included; Do not guarantee unapproved social-media deliverables. Alternative) Tj T*
+(    proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These) Tj T*
+(    are alternatives, not combined commitments. Any acknowledgement, logo use or student reach) Tj T*
+(    requires approval; no reach, tax benefit or exclusivity is guaranteed.  Please reply by) Tj T*
+(    2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships) Tj T*
+(    channel. We will share approved beneficiary details and final venue confirmation before) Tj T*
+(    seeking a commitment.  Event organising team Draft created by EventPilot; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  source: https://www.printcious.com/my/sponsorship-program) Tj T*
+(  sourceVerified: True) Tj T*
+(  replyBy: 2027-02-13) Tj T*
+(  askRM: 120.0) Tj T*
+(  proposedDate: 2027-03-20) Tj T*
+(  proposedVenue: Lecture Theatres) Tj T*
+(  attendance: 100) Tj T*
+(  cause: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(  needsReview: True) Tj T*
+(  type: sponsor) Tj T*
+([2]) Tj T*
+(  id: sponsor-2) Tj T*
+(  recipient: SQ PrintBar) Tj T*
+(  to: enquiry@sqprintbar.com) Tj T*
+(  contactType: public event-proposal email on sponsorship page) Tj T*
+(  contactUrl: https://sqprintbar.com/sponsorship-program/) Tj T*
+(  subject: EventPilot | Proposed charity event partnership ? 2027-03-20) Tj T*
+(  body: Dear SQ PrintBar team,  We are preparing a proposed charity event for a student-) Tj T*
+(    selected charity \(beneficiary unconfirmed\) at Taylor's Lakeside Campus. Proposed date:) Tj T*
+(    2027-03-20. Proposed venue: Lecture Theatres \(approval and capacity unconfirmed\). Our) Tj T*
+(    target is 100 attendees \(planning assumption; not confirmed attendance\). The proposed) Tj T*
+(    impact target is to direct net proceeds to the beneficiary after documented costs; the) Tj T*
+(    beneficiary, collection permission and amount raised are not yet confirmed.  Would you) Tj T*
+(    consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap,) Tj T*
+(    without assuming that your programme offers cash? A researched, proposed in-kind discussion) Tj T*
+(    could be: Printed posters, signage or volunteer merchandise discount; ask for an itemised) Tj T*
+(    in-kind quote. Published constraints to review: Proposal review, not guaranteed support; No) Tj T*
+(    public award amount or turnaround established. Alternative proposed tiers are Supporting:) Tj T*
+(    RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives, not combined) Tj T*
+(    commitments. Any acknowledgement, logo use or student reach requires approval; no reach,) Tj T*
+(    tax benefit or exclusivity is guaranteed.  Please reply by 2027-02-13 if the proposal is) Tj T*
+(    relevant, or direct us to the appropriate partnerships channel. We will share approved) Tj T*
+(    beneficiary details and final venue confirmation before seeking a commitment.  Event) Tj T*
+(    organising team Draft created by EventPilot; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  source: https://sqprintbar.com/sponsorship-program/) Tj T*
+(  sourceVerified: True) Tj T*
+(  replyBy: 2027-02-13) Tj T*
+(  askRM: 120.0) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 46 of 59) Tj ET
+endstream
+endobj
+95 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 94 0 R >>
+endobj
+96 0 obj
+<< /Length 4641 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(  proposedDate: 2027-03-20) Tj T*
+(  proposedVenue: Lecture Theatres) Tj T*
+(  attendance: 100) Tj T*
+(  cause: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(  needsReview: True) Tj T*
+(  type: sponsor) Tj T*
+([3]) Tj T*
+(  id: sponsor-3) Tj T*
+(  recipient: Gigi Coffee) Tj T*
+(  to: collaborations@gigicoffee.com) Tj T*
+(  contactType: official Media & Brands Collab email; alternate Business Partners email) Tj T*
+(  contactUrl: https://www.gigicoffee.com/contact-us/) Tj T*
+(  subject: EventPilot | Proposed charity event partnership ? 2027-03-20) Tj T*
+(  body: Dear Gigi Coffee team,  We are preparing a proposed charity event for a student-) Tj T*
+(    selected charity \(beneficiary unconfirmed\) at Taylor's Lakeside Campus. Proposed date:) Tj T*
+(    2027-03-20. Proposed venue: Lecture Theatres \(approval and capacity unconfirmed\). Our) Tj T*
+(    target is 100 attendees \(planning assumption; not confirmed attendance\). The proposed) Tj T*
+(    impact target is to direct net proceeds to the beneficiary after documented costs; the) Tj T*
+(    beneficiary, collection permission and amount raised are not yet confirmed.  Would you) Tj T*
+(    consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap,) Tj T*
+(    without assuming that your programme offers cash? A researched, proposed in-kind discussion) Tj T*
+(    could be: 20-30 beverage vouchers or refreshments for volunteers, with university-approved) Tj T*
+(    acknowledgement only. Published constraints to review: Detailed objectives and benefits) Tj T*
+(    requested for partnership proposals; Avoid customer-care inbox for sponsor request;) Tj T*
+(    Refreshments timing must respect possible Ramadan overlap. Alternative proposed tiers are) Tj T*
+(    Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives,) Tj T*
+(    not combined commitments. Any acknowledgement, logo use or student reach requires approval;) Tj T*
+(    no reach, tax benefit or exclusivity is guaranteed.  Please reply by 2027-02-13 if the) Tj T*
+(    proposal is relevant, or direct us to the appropriate partnerships channel. We will share) Tj T*
+(    approved beneficiary details and final venue confirmation before seeking a commitment.) Tj T*
+(    Event organising team Draft created by EventPilot; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  source: https://www.gigicoffee.com/contact-us/) Tj T*
+(  sourceVerified: True) Tj T*
+(  replyBy: 2027-02-13) Tj T*
+(  askRM: 120.0) Tj T*
+(  proposedDate: 2027-03-20) Tj T*
+(  proposedVenue: Lecture Theatres) Tj T*
+(  attendance: 100) Tj T*
+(  cause: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(  needsReview: True) Tj T*
+(  type: sponsor) Tj T*
+([4]) Tj T*
+(  id: sponsor-4) Tj T*
+(  recipient: Signature Market) Tj T*
+(  to: general@signaturemarket.co) Tj T*
+(  contactType: general-named email explicitly designated for collaborations/sponsorship) Tj T*
+(  contactUrl: https://www.signaturemarket.co/my/marketplace/about/contact-us.html) Tj T*
+(  subject: EventPilot | Proposed charity event partnership ? 2027-03-20) Tj T*
+(  body: Dear Signature Market team,  We are preparing a proposed charity event for a student-) Tj T*
+(    selected charity \(beneficiary unconfirmed\) at Taylor's Lakeside Campus. Proposed date:) Tj T*
+(    2027-03-20. Proposed venue: Lecture Theatres \(approval and capacity unconfirmed\). Our) Tj T*
+(    target is 100 attendees \(planning assumption; not confirmed attendance\). The proposed) Tj T*
+(    impact target is to direct net proceeds to the beneficiary after documented costs; the) Tj T*
+(    beneficiary, collection permission and amount raised are not yet confirmed.  Would you) Tj T*
+(    consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap,) Tj T*
+(    without assuming that your programme offers cash? A researched, proposed in-kind discussion) Tj T*
+(    could be: 50-100 snack sample packs or 5 small gift bundles, subject to product) Tj T*
+(    availability and approval. Published constraints to review: Check nut/allergen, dietary and) Tj T*
+(    serving requirements; No public minimum audience or award amount established. Alternative) Tj T*
+(    proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These) Tj T*
+(    are alternatives, not combined commitments. Any acknowledgement, logo use or student reach) Tj T*
+(    requires approval; no reach, tax benefit or exclusivity is guaranteed.  Please reply by) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 47 of 59) Tj ET
+endstream
+endobj
+97 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 96 0 R >>
+endobj
+98 0 obj
+<< /Length 4220 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships) Tj T*
+(    channel. We will share approved beneficiary details and final venue confirmation before) Tj T*
+(    seeking a commitment.  Event organising team Draft created by EventPilot; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  source: https://www.signaturemarket.co/my/marketplace/about/contact-us.html) Tj T*
+(  sourceVerified: True) Tj T*
+(  replyBy: 2027-02-13) Tj T*
+(  askRM: 120.0) Tj T*
+(  proposedDate: 2027-03-20) Tj T*
+(  proposedVenue: Lecture Theatres) Tj T*
+(  attendance: 100) Tj T*
+(  cause: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(  needsReview: True) Tj T*
+(  type: sponsor) Tj T*
+([5]) Tj T*
+(  id: sponsor-5) Tj T*
+(  recipient: VICTOR Sport Malaysia / Universal Sports Sdn. Bhd.) Tj T*
+(  to: marketing@victorsports.my) Tj T*
+(  contactType: dedicated marketing/sponsorship email) Tj T*
+(  contactUrl: https://www.victorsports.my/pages/contact-us) Tj T*
+(  subject: EventPilot | Proposed charity event partnership ? 2027-03-20) Tj T*
+(  body: Dear VICTOR Sport Malaysia / Universal Sports Sdn. Bhd. team,  We are preparing a) Tj T*
+(    proposed charity event for a student-selected charity \(beneficiary unconfirmed\) at Taylor's) Tj T*
+(    Lakeside Campus. Proposed date: 2027-03-20. Proposed venue: Lecture Theatres \(approval and) Tj T*
+(    capacity unconfirmed\). Our target is 100 attendees \(planning assumption; not confirmed) Tj T*
+(    attendance\). The proposed impact target is to direct net proceeds to the beneficiary after) Tj T*
+(    documented costs; the beneficiary, collection permission and amount raised are not yet) Tj T*
+(    confirmed.  Would you consider a hypothetical contribution of up to RM120.00 toward our) Tj T*
+(    unconfirmed funding gap, without assuming that your programme offers cash? A researched,) Tj T*
+(    proposed in-kind discussion could be: 2-3 small badminton-related prizes, shuttlecocks or) Tj T*
+(    accessory vouchers for a charity sports segment. Published constraints to review:) Tj T*
+(    Conditional sports fit, not a general charity cash sponsor; Event format is not yet) Tj T*
+(    confirmed. Alternative proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead) Tj T*
+(    supporter: RM600.00. These are alternatives, not combined commitments. Any acknowledgement,) Tj T*
+(    logo use or student reach requires approval; no reach, tax benefit or exclusivity is) Tj T*
+(    guaranteed.  Please reply by 2027-02-13 if the proposal is relevant, or direct us to the) Tj T*
+(    appropriate partnerships channel. We will share approved beneficiary details and final) Tj T*
+(    venue confirmation before seeking a commitment.  Event organising team Draft created by) Tj T*
+(    EventPilot; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  source: https://www.victorsports.my/pages/contact-us) Tj T*
+(  sourceVerified: True) Tj T*
+(  replyBy: 2027-02-13) Tj T*
+(  askRM: 120.0) Tj T*
+(  proposedDate: 2027-03-20) Tj T*
+(  proposedVenue: Lecture Theatres) Tj T*
+(  attendance: 100) Tj T*
+(  cause: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(  needsReview: True) Tj T*
+(  type: sponsor) Tj T*
+([6]) Tj T*
+(  id: sponsor-6) Tj T*
+(  recipient: Secret Recipe Malaysia) Tj T*
+(  to: marketing@secretrecipe.com.my) Tj T*
+(  contactType: public marketing email in official shopping-mall tenant directory; not first-) Tj T*
+(    party company-page verification) Tj T*
+(  contactUrl: https://www.secretrecipe.com.my) Tj T*
+(  subject: EventPilot | Proposed charity event partnership ? 2027-03-20) Tj T*
+(  body: Dear Secret Recipe Malaysia team,  We are preparing a proposed charity event for a) Tj T*
+(    student-selected charity \(beneficiary unconfirmed\) at Taylor's Lakeside Campus. Proposed) Tj T*
+(    date: 2027-03-20. Proposed venue: Lecture Theatres \(approval and capacity unconfirmed\). Our) Tj T*
+(    target is 100 attendees \(planning assumption; not confirmed attendance\). The proposed) Tj T*
+(    impact target is to direct net proceeds to the beneficiary after documented costs; the) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 48 of 59) Tj ET
+endstream
+endobj
+99 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 98 0 R >>
+endobj
+100 0 obj
+<< /Length 4580 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    beneficiary, collection permission and amount raised are not yet confirmed.  Would you) Tj T*
+(    consider a hypothetical contribution of up to RM120.00 toward our unconfirmed funding gap,) Tj T*
+(    without assuming that your programme offers cash? A researched, proposed in-kind discussion) Tj T*
+(    could be: A whole-cake voucher or 10-20 small dessert vouchers/volunteer snacks; no amount) Tj T*
+(    or approval assumed. Published constraints to review: Reconfirm routing because email) Tj T*
+(    verification is from mall directory; Do not claim established campus-charity sponsorship) Tj T*
+(    eligibility. Alternative proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead) Tj T*
+(    supporter: RM600.00. These are alternatives, not combined commitments. Any acknowledgement,) Tj T*
+(    logo use or student reach requires approval; no reach, tax benefit or exclusivity is) Tj T*
+(    guaranteed.  Please reply by 2027-02-13 if the proposal is relevant, or direct us to the) Tj T*
+(    appropriate partnerships channel. We will share approved beneficiary details and final) Tj T*
+(    venue confirmation before seeking a commitment.  Event organising team Draft created by) Tj T*
+(    EventPilot; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  source: https://www.sunwaypyramid.com/directory/secret-recipe) Tj T*
+(  sourceVerified: True) Tj T*
+(  replyBy: 2027-02-13) Tj T*
+(  askRM: 120.0) Tj T*
+(  proposedDate: 2027-03-20) Tj T*
+(  proposedVenue: Lecture Theatres) Tj T*
+(  attendance: 100) Tj T*
+(  cause: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(  needsReview: True) Tj T*
+(  type: sponsor) Tj T*
+([7]) Tj T*
+(  id: sponsor-7) Tj T*
+(  recipient: Kantan Food Asia Sdn Bhd) Tj T*
+(  to: None) Tj T*
+(  contactType: general corporate/product-services contact; dedicated sponsor route not verified) Tj T*
+(  contactUrl: https://www.kantanfood.com/sponsorship-collaboration/) Tj T*
+(  subject: EventPilot | Proposed charity event partnership ? 2027-03-20) Tj T*
+(  body: Dear Kantan Food Asia Sdn Bhd team,  We are preparing a proposed charity event for a) Tj T*
+(    student-selected charity \(beneficiary unconfirmed\) at Taylor's Lakeside Campus. Proposed) Tj T*
+(    date: 2027-03-20. Proposed venue: Lecture Theatres \(approval and capacity unconfirmed\). Our) Tj T*
+(    target is 100 attendees \(planning assumption; not confirmed attendance\). The proposed) Tj T*
+(    impact target is to direct net proceeds to the beneficiary after documented costs; the) Tj T*
+(    beneficiary, collection permission and amount raised are not yet confirmed.  Please advise) Tj T*
+(    whether this belongs with your partnerships team; this published address is not a verified) Tj T*
+(    dedicated sponsorship route. Would you consider a hypothetical contribution of up to) Tj T*
+(    RM120.00 toward our unconfirmed funding gap, without assuming that your programme offers) Tj T*
+(    cash? A researched, proposed in-kind discussion could be: 10-20 cooking-paste sample packs) Tj T*
+(    or ingredients for an approved charity cooking/food booth; first ask for routing to) Tj T*
+(    partnerships. Published constraints to review: Not counted as verified dedicated) Tj T*
+(    partnership/CSR/marketing email; Published influencer criteria: at least 15K Instagram) Tj T*
+(    followers, average 500 likes, age 23 or older; these are influencer conditions, not proven) Tj T*
+(    campus-event eligibility. Alternative proposed tiers are Supporting: RM150.00, Partner:) Tj T*
+(    RM300.00, Lead supporter: RM600.00. These are alternatives, not combined commitments. Any) Tj T*
+(    acknowledgement, logo use or student reach requires approval; no reach, tax benefit or) Tj T*
+(    exclusivity is guaranteed.  Please reply by 2027-02-13 if the proposal is relevant, or) Tj T*
+(    direct us to the appropriate partnerships channel. We will share approved beneficiary) Tj T*
+(    details and final venue confirmation before seeking a commitment.  Event organising team) Tj T*
+(    Draft created by EventPilot; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  source: https://www.kantanfood.com/sponsorship-collaboration/) Tj T*
+(  sourceVerified: False) Tj T*
+(  replyBy: 2027-02-13) Tj T*
+(  askRM: 120.0) Tj T*
+(  proposedDate: 2027-03-20) Tj T*
+(  proposedVenue: Lecture Theatres) Tj T*
+(  attendance: 100) Tj T*
+(  cause: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(  needsReview: True) Tj T*
+(  type: sponsor) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 49 of 59) Tj ET
+endstream
+endobj
+101 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 100 0 R >>
+endobj
+102 0 obj
+<< /Length 4816 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+([8]) Tj T*
+(  id: sponsor-8) Tj T*
+(  recipient: myBurgerLab) Tj T*
+(  to: None) Tj T*
+(  contactType: public catering/brands-collaboration quote form; no appropriate public email) Tj T*
+(    verified) Tj T*
+(  contactUrl: https://forms.gle/pZUEeKvjeh2pqF6V9) Tj T*
+(  subject: EventPilot | Proposed charity event partnership ? 2027-03-20) Tj T*
+(  body: Dear myBurgerLab team,  We are preparing a proposed charity event for a student-) Tj T*
+(    selected charity \(beneficiary unconfirmed\) at Taylor's Lakeside Campus. Proposed date:) Tj T*
+(    2027-03-20. Proposed venue: Lecture Theatres \(approval and capacity unconfirmed\). Our) Tj T*
+(    target is 100 attendees \(planning assumption; not confirmed attendance\). The proposed) Tj T*
+(    impact target is to direct net proceeds to the beneficiary after documented costs; the) Tj T*
+(    beneficiary, collection permission and amount raised are not yet confirmed.  Please advise) Tj T*
+(    whether this belongs with your partnerships team; this published address is not a verified) Tj T*
+(    dedicated sponsorship route. Would you consider a hypothetical contribution of up to) Tj T*
+(    RM120.00 toward our unconfirmed funding gap, without assuming that your programme offers) Tj T*
+(    cash? A researched, proposed in-kind discussion could be: 10-20 burger vouchers or a) Tj T*
+(    discounted volunteer meal package; request a quote and partnership discussion rather than) Tj T*
+(    assume donation. Published constraints to review: Use verified form; no guessed employee) Tj T*
+(    email; Commercial catering experience is not proof of free sponsorship. Alternative) Tj T*
+(    proposed tiers are Supporting: RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These) Tj T*
+(    are alternatives, not combined commitments. Any acknowledgement, logo use or student reach) Tj T*
+(    requires approval; no reach, tax benefit or exclusivity is guaranteed.  Please reply by) Tj T*
+(    2027-02-13 if the proposal is relevant, or direct us to the appropriate partnerships) Tj T*
+(    channel. We will share approved beneficiary details and final venue confirmation before) Tj T*
+(    seeking a commitment.  Event organising team Draft created by EventPilot; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  source: https://myburgerlab.com/cateringandevents/) Tj T*
+(  sourceVerified: False) Tj T*
+(  replyBy: 2027-02-13) Tj T*
+(  askRM: 120.0) Tj T*
+(  proposedDate: 2027-03-20) Tj T*
+(  proposedVenue: Lecture Theatres) Tj T*
+(  attendance: 100) Tj T*
+(  cause: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(  needsReview: True) Tj T*
+(  type: sponsor) Tj T*
+([9]) Tj T*
+(  id: sponsor-9) Tj T*
+(  recipient: PichaEats) Tj T*
+(  to: None) Tj T*
+(  contactType: public corporate catering WhatsApp/quote route; no appropriate public) Tj T*
+(    sponsorship email verified) Tj T*
+(  contactUrl: https://wa.me/60182894353) Tj T*
+(  subject: EventPilot | Proposed charity event partnership ? 2027-03-20) Tj T*
+(  body: Dear PichaEats team,  We are preparing a proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) at Taylor's Lakeside Campus. Proposed date: 2027-03-20.) Tj T*
+(    Proposed venue: Lecture Theatres \(approval and capacity unconfirmed\). Our target is 100) Tj T*
+(    attendees \(planning assumption; not confirmed attendance\). The proposed impact target is to) Tj T*
+(    direct net proceeds to the beneficiary after documented costs; the beneficiary, collection) Tj T*
+(    permission and amount raised are not yet confirmed.  Please advise whether this belongs) Tj T*
+(    with your partnerships team; this published address is not a verified dedicated sponsorship) Tj T*
+(    route. Would you consider a hypothetical contribution of up to RM120.00 toward our) Tj T*
+(    unconfirmed funding gap, without assuming that your programme offers cash? A researched,) Tj T*
+(    proposed in-kind discussion could be: A discounted 10-20 volunteer bento package or a co-) Tj T*
+(    campaign where an independently secured sponsor pays the meal costs. Published constraints) Tj T*
+(    to review: Do not ask vulnerable livelihood partner to subsidise all food without a funding) Tj T*
+(    plan; Published bento starting price RM17 per box, 10-person minimum; 100 boxes would start) Tj T*
+(    around RM1700 before extras, not a quote. Alternative proposed tiers are Supporting:) Tj T*
+(    RM150.00, Partner: RM300.00, Lead supporter: RM600.00. These are alternatives, not combined) Tj T*
+(    commitments. Any acknowledgement, logo use or student reach requires approval; no reach,) Tj T*
+(    tax benefit or exclusivity is guaranteed.  Please reply by 2027-02-13 if the proposal is) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 50 of 59) Tj ET
+endstream
+endobj
+103 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 102 0 R >>
+endobj
+104 0 obj
+<< /Length 3619 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    relevant, or direct us to the appropriate partnerships channel. We will share approved) Tj T*
+(    beneficiary details and final venue confirmation before seeking a commitment.  Event) Tj T*
+(    organising team Draft created by EventPilot; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  source: https://www.pichaeats.com/) Tj T*
+(  sourceVerified: False) Tj T*
+(  replyBy: 2027-02-13) Tj T*
+(  askRM: 120.0) Tj T*
+(  proposedDate: 2027-03-20) Tj T*
+(  proposedVenue: Lecture Theatres) Tj T*
+(  attendance: 100) Tj T*
+(  cause: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(  needsReview: True) Tj T*
+(  type: sponsor) Tj T*
+([10]) Tj T*
+(  recipient: Printcious) Tj T*
+(  to: sponsorship@printcious.com) Tj T*
+(  subject: EventPilot | First follow-up: proposed student charity partnership) Tj T*
+(  body: Dear Printcious team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: First follow-up) Tj T*
+(  sendAfterDays: 7) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.printcious.com/my/sponsorship-program) Tj T*
+(  type: followup) Tj T*
+([11]) Tj T*
+(  recipient: Printcious) Tj T*
+(  to: sponsorship@printcious.com) Tj T*
+(  subject: EventPilot | Final polite follow-up: proposed student charity partnership) Tj T*
+(  body: Dear Printcious team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: Final polite follow-up) Tj T*
+(  sendAfterDays: 14) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.printcious.com/my/sponsorship-program) Tj T*
+(  type: followup) Tj T*
+([12]) Tj T*
+(  recipient: SQ PrintBar) Tj T*
+(  to: enquiry@sqprintbar.com) Tj T*
+(  subject: EventPilot | First follow-up: proposed student charity partnership) Tj T*
+(  body: Dear SQ PrintBar team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: First follow-up) Tj T*
+(  sendAfterDays: 7) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://sqprintbar.com/sponsorship-program/) Tj T*
+(  type: followup) Tj T*
+([13]) Tj T*
+(  recipient: SQ PrintBar) Tj T*
+(  to: enquiry@sqprintbar.com) Tj T*
+(  subject: EventPilot | Final polite follow-up: proposed student charity partnership) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 51 of 59) Tj ET
+endstream
+endobj
+105 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 104 0 R >>
+endobj
+106 0 obj
+<< /Length 4040 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(  body: Dear SQ PrintBar team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: Final polite follow-up) Tj T*
+(  sendAfterDays: 14) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://sqprintbar.com/sponsorship-program/) Tj T*
+(  type: followup) Tj T*
+([14]) Tj T*
+(  recipient: Gigi Coffee) Tj T*
+(  to: collaborations@gigicoffee.com) Tj T*
+(  subject: EventPilot | First follow-up: proposed student charity partnership) Tj T*
+(  body: Dear Gigi Coffee team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: First follow-up) Tj T*
+(  sendAfterDays: 7) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.gigicoffee.com/contact-us/) Tj T*
+(  type: followup) Tj T*
+([15]) Tj T*
+(  recipient: Gigi Coffee) Tj T*
+(  to: collaborations@gigicoffee.com) Tj T*
+(  subject: EventPilot | Final polite follow-up: proposed student charity partnership) Tj T*
+(  body: Dear Gigi Coffee team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: Final polite follow-up) Tj T*
+(  sendAfterDays: 14) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.gigicoffee.com/contact-us/) Tj T*
+(  type: followup) Tj T*
+([16]) Tj T*
+(  recipient: Signature Market) Tj T*
+(  to: general@signaturemarket.co) Tj T*
+(  subject: EventPilot | First follow-up: proposed student charity partnership) Tj T*
+(  body: Dear Signature Market team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: First follow-up) Tj T*
+(  sendAfterDays: 7) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.signaturemarket.co/my/marketplace/about/contact-us.html) Tj T*
+(  type: followup) Tj T*
+([17]) Tj T*
+(  recipient: Signature Market) Tj T*
+(  to: general@signaturemarket.co) Tj T*
+(  subject: EventPilot | Final polite follow-up: proposed student charity partnership) Tj T*
+(  body: Dear Signature Market team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 52 of 59) Tj ET
+endstream
+endobj
+107 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 106 0 R >>
+endobj
+108 0 obj
+<< /Length 4112 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: Final polite follow-up) Tj T*
+(  sendAfterDays: 14) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.signaturemarket.co/my/marketplace/about/contact-us.html) Tj T*
+(  type: followup) Tj T*
+([18]) Tj T*
+(  recipient: VICTOR Sport Malaysia / Universal Sports Sdn. Bhd.) Tj T*
+(  to: marketing@victorsports.my) Tj T*
+(  subject: EventPilot | First follow-up: proposed student charity partnership) Tj T*
+(  body: Dear VICTOR Sport Malaysia / Universal Sports Sdn. Bhd. team, Following our proposed) Tj T*
+(    charity event for a student-selected charity \(beneficiary unconfirmed\) on 2027-03-20, may) Tj T*
+(    we check whether this is relevant to your team? The venue and attendance remain) Tj T*
+(    unconfirmed. We would welcome advice on the right channel; no response will be treated as) Tj T*
+(    no commitment. Thank you, event organising team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: First follow-up) Tj T*
+(  sendAfterDays: 7) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.victorsports.my/pages/contact-us) Tj T*
+(  type: followup) Tj T*
+([19]) Tj T*
+(  recipient: VICTOR Sport Malaysia / Universal Sports Sdn. Bhd.) Tj T*
+(  to: marketing@victorsports.my) Tj T*
+(  subject: EventPilot | Final polite follow-up: proposed student charity partnership) Tj T*
+(  body: Dear VICTOR Sport Malaysia / Universal Sports Sdn. Bhd. team, Following our proposed) Tj T*
+(    charity event for a student-selected charity \(beneficiary unconfirmed\) on 2027-03-20, may) Tj T*
+(    we check whether this is relevant to your team? The venue and attendance remain) Tj T*
+(    unconfirmed. We would welcome advice on the right channel; no response will be treated as) Tj T*
+(    no commitment. Thank you, event organising team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: Final polite follow-up) Tj T*
+(  sendAfterDays: 14) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.victorsports.my/pages/contact-us) Tj T*
+(  type: followup) Tj T*
+([20]) Tj T*
+(  recipient: Secret Recipe Malaysia) Tj T*
+(  to: marketing@secretrecipe.com.my) Tj T*
+(  subject: EventPilot | First follow-up: proposed student charity partnership) Tj T*
+(  body: Dear Secret Recipe Malaysia team, Following our proposed charity event for a student-) Tj T*
+(    selected charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is) Tj T*
+(    relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice) Tj T*
+(    on the right channel; no response will be treated as no commitment. Thank you, event) Tj T*
+(    organising team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: First follow-up) Tj T*
+(  sendAfterDays: 7) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.sunwaypyramid.com/directory/secret-recipe) Tj T*
+(  type: followup) Tj T*
+([21]) Tj T*
+(  recipient: Secret Recipe Malaysia) Tj T*
+(  to: marketing@secretrecipe.com.my) Tj T*
+(  subject: EventPilot | Final polite follow-up: proposed student charity partnership) Tj T*
+(  body: Dear Secret Recipe Malaysia team, Following our proposed charity event for a student-) Tj T*
+(    selected charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is) Tj T*
+(    relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice) Tj T*
+(    on the right channel; no response will be treated as no commitment. Thank you, event) Tj T*
+(    organising team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 53 of 59) Tj ET
+endstream
+endobj
+109 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 108 0 R >>
+endobj
+110 0 obj
+<< /Length 3862 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(  label: Final polite follow-up) Tj T*
+(  sendAfterDays: 14) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.sunwaypyramid.com/directory/secret-recipe) Tj T*
+(  type: followup) Tj T*
+([22]) Tj T*
+(  recipient: Kantan Food Asia Sdn Bhd) Tj T*
+(  to: None) Tj T*
+(  subject: EventPilot | First follow-up: proposed student charity partnership) Tj T*
+(  body: Dear Kantan Food Asia Sdn Bhd team, Following our proposed charity event for a student-) Tj T*
+(    selected charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is) Tj T*
+(    relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice) Tj T*
+(    on the right channel; no response will be treated as no commitment. Thank you, event) Tj T*
+(    organising team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: First follow-up) Tj T*
+(  sendAfterDays: 7) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.kantanfood.com/sponsorship-collaboration/) Tj T*
+(  type: followup) Tj T*
+([23]) Tj T*
+(  recipient: Kantan Food Asia Sdn Bhd) Tj T*
+(  to: None) Tj T*
+(  subject: EventPilot | Final polite follow-up: proposed student charity partnership) Tj T*
+(  body: Dear Kantan Food Asia Sdn Bhd team, Following our proposed charity event for a student-) Tj T*
+(    selected charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is) Tj T*
+(    relevant to your team? The venue and attendance remain unconfirmed. We would welcome advice) Tj T*
+(    on the right channel; no response will be treated as no commitment. Thank you, event) Tj T*
+(    organising team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: Final polite follow-up) Tj T*
+(  sendAfterDays: 14) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.kantanfood.com/sponsorship-collaboration/) Tj T*
+(  type: followup) Tj T*
+([24]) Tj T*
+(  recipient: myBurgerLab) Tj T*
+(  to: None) Tj T*
+(  subject: EventPilot | First follow-up: proposed student charity partnership) Tj T*
+(  body: Dear myBurgerLab team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: First follow-up) Tj T*
+(  sendAfterDays: 7) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://myburgerlab.com/cateringandevents/) Tj T*
+(  type: followup) Tj T*
+([25]) Tj T*
+(  recipient: myBurgerLab) Tj T*
+(  to: None) Tj T*
+(  subject: EventPilot | Final polite follow-up: proposed student charity partnership) Tj T*
+(  body: Dear myBurgerLab team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: Final polite follow-up) Tj T*
+(  sendAfterDays: 14) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 54 of 59) Tj ET
+endstream
+endobj
+111 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 110 0 R >>
+endobj
+112 0 obj
+<< /Length 3555 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(  source: https://myburgerlab.com/cateringandevents/) Tj T*
+(  type: followup) Tj T*
+([26]) Tj T*
+(  recipient: PichaEats) Tj T*
+(  to: None) Tj T*
+(  subject: EventPilot | First follow-up: proposed student charity partnership) Tj T*
+(  body: Dear PichaEats team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: First follow-up) Tj T*
+(  sendAfterDays: 7) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.pichaeats.com/) Tj T*
+(  type: followup) Tj T*
+([27]) Tj T*
+(  recipient: PichaEats) Tj T*
+(  to: None) Tj T*
+(  subject: EventPilot | Final polite follow-up: proposed student charity partnership) Tj T*
+(  body: Dear PichaEats team, Following our proposed charity event for a student-selected) Tj T*
+(    charity \(beneficiary unconfirmed\) on 2027-03-20, may we check whether this is relevant to) Tj T*
+(    your team? The venue and attendance remain unconfirmed. We would welcome advice on the) Tj T*
+(    right channel; no response will be treated as no commitment. Thank you, event organising) Tj T*
+(    team. Draft only; not sent.) Tj T*
+(  status: Draft?unsent) Tj T*
+(  label: Final polite follow-up) Tj T*
+(  sendAfterDays: 14) Tj T*
+(  condition: Only after initial draft is reviewed and actually sent; do not send if declined) Tj T*
+(  source: https://www.pichaeats.com/) Tj T*
+(  type: followup) Tj T*
+() Tj T*
+(PROMO KIT) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(captions:) Tj T*
+(  [1]) Tj T*
+(    Music with a purpose: a proposed charity event supporting a student-selected charity) Tj T*
+(\(beneficiary unconfirmed\). Save the tentative date 2027-03-20; watch for approved details.) Tj T*
+(Proposed event; date, venue and charity permission pending. RSVP details not yet published.) Tj T*
+(  [2]) Tj T*
+(    Student voices, shared purpose. Our planning target is 100 attendees?not confirmed) Tj T*
+(attendance. Interested participants can contact the organising team once its approved contact) Tj T*
+(is published. Proposed event; date, venue and charity permission pending. RSVP details not yet) Tj T*
+(published.) Tj T*
+(  [3]) Tj T*
+(    Help shape a transparent charity event. Proposed location: Lecture Theatres, Taylor's) Tj T*
+(Lakeside Campus. Net-proceeds target and beneficiary will be disclosed after approval, not) Tj T*
+(promised in advance. Proposed event; date, venue and charity permission pending. RSVP details) Tj T*
+(not yet published.) Tj T*
+(variant: concert) Tj T*
+(poster:) Tj T*
+(  headline: Student music. Shared purpose.) Tj T*
+(  eventType: charity event) Tj T*
+(  cause: a student-selected charity \(beneficiary unconfirmed\)) Tj T*
+(  date: 2027-03-20) Tj T*
+(  venue: Lecture Theatres) Tj T*
+(  campus: Taylor's Lakeside Campus) Tj T*
+(  cta: Approved RSVP link to be added by organiser) Tj T*
+(  disclaimer: Proposed event; date, venue and charity permission pending. RSVP details not yet) Tj T*
+(    published.) Tj T*
+(  status: Draft copy?not a published poster) Tj T*
+(channels:) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 55 of 59) Tj ET
+endstream
+endobj
+113 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 112 0 R >>
+endobj
+114 0 obj
+<< /Length 2460 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(  [1]) Tj T*
+(    Campus-approved society channels) Tj T*
+(  [2]) Tj T*
+(    Organiser-approved student newsletter) Tj T*
+(  [3]) Tj T*
+(    Opt-in social posts after consent) Tj T*
+(approvalChecklist:) Tj T*
+(  [1]) Tj T*
+(    Beneficiary permission) Tj T*
+(  [2]) Tj T*
+(    Campus promotional permission) Tj T*
+(  [3]) Tj T*
+(    No guaranteed funds or reach) Tj T*
+(  [4]) Tj T*
+(    Only consenting images and verified organiser contact) Tj T*
+(calendar:) Tj T*
+(  [1]) Tj T*
+(    offsetDays: -21) Tj T*
+(    action: Publish approved save-the-date) Tj T*
+(  [2]) Tj T*
+(    offsetDays: -14) Tj T*
+(    action: Volunteer and RSVP reminder) Tj T*
+(  [3]) Tj T*
+(    offsetDays: -7) Tj T*
+(    action: Confirmed access and indoor logistics) Tj T*
+(  [4]) Tj T*
+(    offsetDays: 1) Tj T*
+(    action: Publish reconciled outcomes, not planning targets) Tj T*
+() Tj T*
+(VALIDATION AND OUTSTANDING CONFIRMATIONS) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(status: Conditional plan?approvals required) Tj T*
+(passed: True) Tj T*
+(ready: False) Tj T*
+(errors:) Tj T*
+(warnings:) Tj T*
+(  [1]) Tj T*
+(    Campus examination timetable is unknown; no exam-clear claim is made.) Tj T*
+(  [2]) Tj T*
+(    Venue permission, usable capacity and exact room remain unconfirmed.) Tj T*
+(  [3]) Tj T*
+(    Real MC / performer availability and contracts are unconfirmed.) Tj T*
+(  [4]) Tj T*
+(    Beneficiary and donation collection permission require written confirmation.) Tj T*
+(  [5]) Tj T*
+(    Budget amounts are estimated allocations, not vendor quotes.) Tj T*
+(  [6]) Tj T*
+(    Organiser funding is an assumption unless confirmed separately; sponsor asks are) Tj T*
+(hypothetical.) Tj T*
+(  [7]) Tj T*
+(    No outreach was sent; review all drafts before using verified contacts.) Tj T*
+(  [8]) Tj T*
+(    Some sponsor drafts have no verified email; use the cited official contact route, not a) Tj T*
+(guessed address.) Tj T*
+(  [9]) Tj T*
+(    Sponsor asks and fit rankings are proposals, not commitments. Source research is dated) Tj T*
+(2026-10-10; company contacts should be rechecked before sending.) Tj T*
+(checks:) Tj T*
+(  [1]) Tj T*
+(    name: Budget ceiling and integer-cent arithmetic) Tj T*
+(    passed: True) Tj T*
+(    detail: Every estimated allocation must reconcile in integer cents within the ceiling.) Tj T*
+(  [2]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 56 of 59) Tj ET
+endstream
+endobj
+115 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 114 0 R >>
+endobj
+116 0 obj
+<< /Length 2621 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    name: Contingency at least 10%) Tj T*
+(    passed: True) Tj T*
+(    detail: At least 10% of planned spending must be a protected reserve.) Tj T*
+(  [3]) Tj T*
+(    name: Funding gap arithmetic) Tj T*
+(    passed: True) Tj T*
+(    detail: Gap uses organiser funds only; prospect asks are not committed revenue.) Tj T*
+(  [4]) Tj T*
+(    name: Eligible proposed date) Tj T*
+(    passed: True) Tj T*
+(    detail: Proposed date must be a weekend in range without a known cited clash.) Tj T*
+(  [5]) Tj T*
+(    name: Cited sponsor / venue facts) Tj T*
+(    passed: True) Tj T*
+(    detail: Every named external sponsor and venue requires a source URL.) Tj T*
+(  [6]) Tj T*
+(    name: Verified contact boundaries) Tj T*
+(    passed: True) Tj T*
+(    detail: Sponsor emails require an exact researched address, source URL and verified) Tj T*
+(      suitable sponsorship purpose; general unsuitable inboxes stay blank.) Tj T*
+(  [7]) Tj T*
+(    name: Draft recipient purpose boundaries) Tj T*
+(    passed: True) Tj T*
+(    detail: Sponsor and follow-up recipients must match an approved researched partnership-) Tj T*
+(      purpose contact.) Tj T*
+(  [8]) Tj T*
+(    name: Draft factual consistency and unsent status) Tj T*
+(    passed: True) Tj T*
+(    detail: Drafts must match date, proposed venue, attendance target and cause, with no) Tj T*
+(      implied confirmation.) Tj T*
+(  [9]) Tj T*
+(    name: Weather contingency propagation) Tj T*
+(    passed: True) Tj T*
+(    detail: Weather evidence must agree with both the programme mode and within-budget) Tj T*
+(      allocations.) Tj T*
+(  [10]) Tj T*
+(    name: Chosen-date weather consistency) Tj T*
+(    passed: True) Tj T*
+(    detail: The chosen candidate and pack weather must use the same updated evidence.) Tj T*
+(repairLoops: 0) Tj T*
+(maxRepairLoops: 2) Tj T*
+(readiness: Conditional plan?approvals required) Tj T*
+() Tj T*
+(SCHEDULED WEATHER RECHECKS) Tj T*
+(-----------------------------------------------------------------) Tj T*
+([1]) Tj T*
+(  label: T-14) Tj T*
+(  date: 2027-03-06) Tj T*
+(  daysBefore: 14) Tj T*
+(  checks:) Tj T*
+(    [1]) Tj T*
+(      Weather and thunderstorm alerts) Tj T*
+(    [2]) Tj T*
+(      Campus examinations and holiday clashes) Tj T*
+(    [3]) Tj T*
+(      Venue approval and capacity) Tj T*
+(    [4]) Tj T*
+(      MC / act availability) Tj T*
+(    [5]) Tj T*
+(      Committed funding and actual vendor costs) Tj T*
+(  owner: Event Lead) Tj T*
+(  status: Scheduled planning checkpoint?not an automated notification) Tj T*
+([2]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 57 of 59) Tj ET
+endstream
+endobj
+117 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 116 0 R >>
+endobj
+118 0 obj
+<< /Length 1879 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(  label: T-7) Tj T*
+(  date: 2027-03-13) Tj T*
+(  daysBefore: 7) Tj T*
+(  checks:) Tj T*
+(    [1]) Tj T*
+(      Weather and thunderstorm alerts) Tj T*
+(    [2]) Tj T*
+(      Campus examinations and holiday clashes) Tj T*
+(    [3]) Tj T*
+(      Venue approval and capacity) Tj T*
+(    [4]) Tj T*
+(      MC / act availability) Tj T*
+(    [5]) Tj T*
+(      Committed funding and actual vendor costs) Tj T*
+(  owner: Event Lead) Tj T*
+(  status: Scheduled planning checkpoint?not an automated notification) Tj T*
+([3]) Tj T*
+(  label: T-1) Tj T*
+(  date: 2027-03-19) Tj T*
+(  daysBefore: 1) Tj T*
+(  checks:) Tj T*
+(    [1]) Tj T*
+(      Weather and thunderstorm alerts) Tj T*
+(    [2]) Tj T*
+(      Campus examinations and holiday clashes) Tj T*
+(    [3]) Tj T*
+(      Venue approval and capacity) Tj T*
+(    [4]) Tj T*
+(      MC / act availability) Tj T*
+(    [5]) Tj T*
+(      Committed funding and actual vendor costs) Tj T*
+(  owner: Event Lead) Tj T*
+(  status: Scheduled planning checkpoint?not an automated notification) Tj T*
+() Tj T*
+(MEASURED RUN RESULTS) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(engine: tool-driven agents; LLM unavailable \(keyless activation dismissed\)) Tj T*
+(llmCalls: 0) Tj T*
+(toolCalls: 31) Tj T*
+(traceEvents: 76) Tj T*
+(elapsedSeconds: 10.89) Tj T*
+(parallelDAG: True) Tj T*
+(candidateWeatherChecks: 5) Tj T*
+(repairLoops: 0) Tj T*
+(emailsSent: 0) Tj T*
+(agents:) Tj T*
+(  [1]) Tj T*
+(    Goal Interpreter) Tj T*
+(  [2]) Tj T*
+(    Source Librarian) Tj T*
+(  [3]) Tj T*
+(    Orchestrator) Tj T*
+(  [4]) Tj T*
+(    Date Scout) Tj T*
+(  [5]) Tj T*
+(    Budget Architect) Tj T*
+(  [6]) Tj T*
+(    Venue Liaison) Tj T*
+(  [7]) Tj T*
+(    Weather & Logistics) Tj T*
+(  [8]) Tj T*
+(    Risk Sentinel) Tj T*
+(  [9]) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 58 of 59) Tj ET
+endstream
+endobj
+119 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 118 0 R >>
+endobj
+120 0 obj
+<< /Length 788 >>
+stream
+BT /F1 8.5 Tf 12 TL 40 797 Td
+(    Talent Coordinator) Tj T*
+(  [10]) Tj T*
+(    Sponsor Matcher) Tj T*
+(  [11]) Tj T*
+(    Programme Director) Tj T*
+(  [12]) Tj T*
+(    Outreach Drafter) Tj T*
+(  [13]) Tj T*
+(    Promo Studio) Tj T*
+(  [14]) Tj T*
+(    Validator) Tj T*
+(  [15]) Tj T*
+(    Integrator) Tj T*
+(networkRequests: 12) Tj T*
+(networkRequestsDefinition: Actual HTTP fetch attempts emitted by the weather/calendar tools;) Tj T*
+(  cache hits excluded.) Tj T*
+(draftsPrepared: 27) Tj T*
+(gmailDraftsCreated: 0) Tj T*
+() Tj T*
+(EXECUTION ENGINE) Tj T*
+(-----------------------------------------------------------------) Tj T*
+(Tool-driven specialist agents. LLM unavailable: WorkBuddy keyless activation dismissed.) Tj T*
+ET
+BT /F1 9 Tf 40 30 Td (EventPilot | Page 59 of 59) Tj ET
+endstream
+endobj
+121 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 120 0 R >>
+endobj
+xref
+0 122
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000537 00000 n 
+0000000607 00000 n 
+0000002941 00000 n 
+0000003067 00000 n 
+0000005431 00000 n 
+0000005557 00000 n 
+0000007363 00000 n 
+0000007489 00000 n 
+0000010238 00000 n 
+0000010366 00000 n 
+0000013958 00000 n 
+0000014086 00000 n 
+0000016357 00000 n 
+0000016485 00000 n 
+0000018468 00000 n 
+0000018596 00000 n 
+0000022191 00000 n 
+0000022319 00000 n 
+0000024820 00000 n 
+0000024948 00000 n 
+0000026830 00000 n 
+0000026958 00000 n 
+0000030323 00000 n 
+0000030451 00000 n 
+0000033293 00000 n 
+0000033421 00000 n 
+0000035207 00000 n 
+0000035335 00000 n 
+0000038433 00000 n 
+0000038561 00000 n 
+0000041743 00000 n 
+0000041871 00000 n 
+0000043586 00000 n 
+0000043714 00000 n 
+0000046629 00000 n 
+0000046757 00000 n 
+0000050022 00000 n 
+0000050150 00000 n 
+0000051827 00000 n 
+0000051955 00000 n 
+0000054530 00000 n 
+0000054658 00000 n 
+0000058056 00000 n 
+0000058184 00000 n 
+0000060003 00000 n 
+0000060131 00000 n 
+0000062548 00000 n 
+0000062676 00000 n 
+0000066366 00000 n 
+0000066494 00000 n 
+0000068473 00000 n 
+0000068601 00000 n 
+0000070667 00000 n 
+0000070795 00000 n 
+0000074552 00000 n 
+0000074680 00000 n 
+0000077471 00000 n 
+0000077599 00000 n 
+0000080271 00000 n 
+0000080399 00000 n 
+0000082737 00000 n 
+0000082865 00000 n 
+0000084273 00000 n 
+0000084401 00000 n 
+0000087255 00000 n 
+0000087383 00000 n 
+0000090508 00000 n 
+0000090636 00000 n 
+0000093574 00000 n 
+0000093702 00000 n 
+0000096755 00000 n 
+0000096883 00000 n 
+0000100267 00000 n 
+0000100395 00000 n 
+0000102938 00000 n 
+0000103066 00000 n 
+0000105397 00000 n 
+0000105525 00000 n 
+0000108268 00000 n 
+0000108396 00000 n 
+0000111374 00000 n 
+0000111502 00000 n 
+0000114825 00000 n 
+0000114953 00000 n 
+0000118057 00000 n 
+0000118185 00000 n 
+0000121603 00000 n 
+0000121731 00000 n 
+0000125006 00000 n 
+0000125134 00000 n 
+0000128245 00000 n 
+0000128373 00000 n 
+0000133203 00000 n 
+0000133331 00000 n 
+0000138025 00000 n 
+0000138153 00000 n 
+0000142426 00000 n 
+0000142554 00000 n 
+0000147188 00000 n 
+0000147318 00000 n 
+0000152188 00000 n 
+0000152318 00000 n 
+0000155991 00000 n 
+0000156121 00000 n 
+0000160215 00000 n 
+0000160345 00000 n 
+0000164511 00000 n 
+0000164641 00000 n 
+0000168557 00000 n 
+0000168687 00000 n 
+0000172296 00000 n 
+0000172426 00000 n 
+0000174940 00000 n 
+0000175070 00000 n 
+0000177745 00000 n 
+0000177875 00000 n 
+0000179808 00000 n 
+0000179938 00000 n 
+0000180779 00000 n 
+trailer
+<< /Size 122 /Root 1 0 R >>
+startxref
+180909
+%%EOF

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#113c3d">
+  <meta name="description" content="EventPilot turns a campus event brief into a sourced, validated event pack with a visible specialist workflow.">
+  <title>EventPilot — Your next great campus event</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="EventPilot home"><span class="brand-mark" aria-hidden="true">e<span>p</span></span><span>EventPilot<small>C-FIRST · DORMATHON TRACK 2</small></span></a>
+    <nav class="header-links" aria-label="Primary"><a href="#planner">Planner</a><a href="#workflow">How it works</a><span class="campus-pill"><span class="status-dot"></span>Taylor's University</span></nav>
+  </header>
+  <main>
+    <div class="engine-banner" role="note"><span class="engine-symbol" aria-hidden="true">↗</span><div><strong>A transparent, tool-driven planning engine.</strong><span id="engine-description">Loading engine status...</span></div><span class="tiny-badge">NO LOGIN NEEDED</span></div>
+    <section class="hero" id="planner">
+      <div class="hero-copy"><div class="eyebrow"><span></span>LESS ADMIN. MORE IMPACT.</div><h1>Your next great event,<br><em>already taking shape.</em></h1><p>One brief. Connected specialist tools. A practical campus event pack, with the decisions, sources and checks visible along the way.</p><div class="hero-points"><span>✓ Sourced decisions</span><span>✓ Budget in RM</span><span>✓ Drafts, never sends</span></div></div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-card card-calendar"><span class="art-label">THE PLAN</span><div class="calendar-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="selected">✓</i><i></i><i></i><i></i></div><strong>A date that makes sense.</strong></div><div class="art-card card-budget"><span class="art-label">THE DETAILS</span><strong>Every ringgit has a role.</strong><div class="mini-bars"><i></i><i></i><i></i><i></i></div></div><span class="art-spark spark-one">✳</span><span class="art-spark spark-two">+</span><div class="art-tag">From idea → proposed pack</div></div>
+    </section>
+    <section class="composer panel" aria-labelledby="brief-title">
+      <div class="section-heading"><div><span class="eyebrow">START WITH YOUR IDEA</span><h2 id="brief-title">What are we planning?</h2></div><span class="quiet">Plain English is perfect.</span></div>
+      <form id="run-form">
+        <label class="sr-only" for="prompt">Your event brief</label><textarea id="prompt" name="prompt" rows="3" maxlength="3000" aria-describedby="prompt-privacy" placeholder="Plan a charity bazaar at Taylor's Lakeside Campus for 120 students in November 2026, with a RM 5,000 budget…" required></textarea>
+        <div id="prompt-preview" class="prompt-preview" role="status" aria-live="polite"></div>
+        <p class="callout warning" id="prompt-privacy"><strong>This run will have a public, read-only share link.</strong>Anyone with the link can view the plan and trace. Do not put names, email addresses, credentials or other sensitive information in your brief. Roster names and contact details are redacted before planning. Maximum brief length: 3,000 characters.</p>
+        <div class="composer-bottom"><div class="prompt-chips" aria-label="Example event briefs"><button class="chip" type="button" data-example="canonical">Charity event · RM 2k</button><button class="chip" type="button" data-example="bazaar">Charity bazaar</button><button class="chip" type="button" data-example="workshop">Career workshop</button><button class="chip" type="button" data-example="dormathon">Dormathon showcase</button><button class="chip" type="button" data-example="esports">E-sports tournament</button></div><div class="tools-dropdown"><button class="tools-dropdown-btn" type="button" id="tools-toggle" aria-haspopup="true" aria-expanded="false">Tools</button><div class="tools-dropdown-menu" id="tools-menu" role="menu"><button type="button" data-tool="canonical">Run canonical example</button><button type="button" data-tool="replay">Replay recorded run</button><div class="divider"></div><button type="button" data-tool="roster">Use demo roster</button><div class="divider"></div><button type="button" data-tool="excel">Export budget to Excel</button><button type="button" data-tool="proposal">Generate proposal PDF</button></div></div><button class="button primary" type="submit" id="run-button">Build my event pack <span aria-hidden="true">↗</span></button></div>
+        <details class="brief-details"><summary>Adjust assumptions &amp; add an optional roster <span>Proposed defaults · editable</span></summary><div class="assumption-intro">These are proposed planning defaults, not confirmed campus bookings or vendor quotes. Edit them before running; your brief may supply other details.</div><div class="field-grid"><label>Event type<input id="event-type" name="eventType" placeholder="From your brief"></label><label>Cause / purpose<input id="cause" name="cause" placeholder="From your brief"></label><label>Earliest date<input id="date-start" name="dateStart" type="date"></label><label>Latest date<input id="date-end" name="dateEnd" type="date"></label><label>Budget cap (RM)<input id="budget" name="budgetRM" type="number" min="1" step="0.01" placeholder="5000"></label><label>Organiser funds (RM)<input id="organiser-funds" name="organiserFundsRM" type="number" min="0" step="0.01" placeholder="Proposed default: 70% of budget"></label><label>Expected attendees<input id="attendance" name="attendance" type="number" min="1" placeholder="120"></label><label>Campus<input id="campus" name="campus" placeholder="Taylor's Lakeside Campus"></label><label>Preferred location<input id="location" name="location" placeholder="Unconfirmed; compare venue options"></label></div><div class="roster-heading"><label for="roster">Optional organiser / MC availability roster</label><button type="button" class="text-button" id="sample-roster">Use clearly labelled demo roster</button></div><p class="help">CSV columns: name, role, freeDates, email. Separate multiple free dates with semicolons. Use only information you are authorised to share. Names and email addresses are redacted in the public Event Pack; people appear as role aliases.</p><textarea id="roster" rows="3" spellcheck="false" placeholder="name,role,freeDates,email"></textarea><p class="help" id="roster-status">No roster supplied. People and MC availability will remain unconfirmed.</p></details>
+      </form>
+      <div class="example-row"><button class="text-button" id="run-example" type="button">Run the canonical example <span aria-hidden="true">→</span></button><span>Or inspect an actual recorded execution.</span><button class="text-button" id="replay-button" type="button">Replay recorded run</button></div>
+    </section>
+    <div id="notice" class="notice" role="status" hidden></div>
+    <section class="workflow panel" id="workflow" aria-labelledby="workflow-title">
+      <div class="workflow-heading">
+        <div class="workflow-heading-meta"><span class="eyebrow">THE WORK BEHIND THE PACK</span><span class="run-status" id="run-status">Ready for your brief</span></div>
+        <div class="section-heading workflow-title-row"><h2 id="workflow-title">Specialist tools. One connected plan.</h2><button class="workflow-toggle" id="workflow-toggle" type="button" aria-expanded="false" aria-controls="workflow-content" aria-label="Expand specialist workflow"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></button></div>
+      </div>
+      <div id="workflow-content" hidden>
+        <p class="section-subtitle">Parallel research feeds planning, then validation. Cards only change state when the server reports an actual event.</p>
+        <div class="run-meta" id="run-meta" hidden></div>
+        <div id="agent-dag" class="agent-dag" aria-label="Specialist dependencies"></div>
+        <div id="workflow-checks" class="workflow-checks" hidden></div>
+        <details class="trace-details" id="trace-details"><summary><span>Live execution trace</span><span id="trace-count">0 real events</span></summary><div class="trace-head"><span>Agent / state</span><span>Actual tool &amp; result</span><span>Time</span></div><div id="trace-list" class="trace-list" aria-live="polite"><p class="empty-trace">No execution yet. Start a plan to see actual specialist and tool events here.</p></div></details>
+      </div>
+    </section>
+    <section id="results" class="results" aria-labelledby="results-title" hidden>
+      <div class="results-heading"><div><span class="eyebrow">YOUR EVENT, CLEARLY PLANNED</span><h2 id="results-title">The Event Pack</h2><p id="results-subtitle">Proposed plans are separated from confirmed facts.</p></div><div class="result-actions"><button class="button secondary" id="copy-link">Copy run link</button><button class="button secondary" id="edit-rerun">Edit &amp; rerun</button><a class="button primary" id="pdf-link" href="#">Export PDF <span aria-hidden="true">↓</span></a></div></div>
+      <nav id="tabs" class="tabs" aria-label="Event Pack sections" role="tablist"></nav>
+      <div id="tab-content" class="tab-content" role="tabpanel" tabindex="0"></div>
+    </section>
+    <section id="empty-results" class="empty-results"><div class="empty-icon" aria-hidden="true">↗</div><div><h3>The brief goes in. A usable plan comes out.</h3><p>Date comparison, run of show, RM budget, weather risk, people, sponsor outreach and promo — all in one shareable pack.</p></div><span class="quiet">No imaginary bookings.<br>No automatic emails.</span></section>
+  </main>
+  <footer><a class="footer-brand" href="/">EventPilot</a><span>Built for C-First · Taylor's University Dormathon · Track 2</span><span>Plan thoughtfully. Verify locally.</span></footer>
+</body>
+</html>

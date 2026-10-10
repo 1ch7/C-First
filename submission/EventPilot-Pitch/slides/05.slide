@@ -1,0 +1,10 @@
+<Slide style={{width:1280,height:720,background:'#FAF7F2',position:'relative'}}>
+<Box style={{position:'absolute',left:60,top:30,width:1160,height:80}}><Text style={{fontFamily:'Arial',fontSize:38,fontWeight:'bold',color:'#103B49'}}>Weather changes the plan</Text></Box>
+<Box style={{position:'absolute',left:60,top:145,width:490,height:170}}><Text style={{fontFamily:'Arial',fontSize:118,fontWeight:'bold',color:'#117F75'}}>80%</Text></Box>
+<Box style={{position:'absolute',left:60,top:315,width:495,height:220}}><Text style={{fontFamily:'Arial',fontSize:26,color:'#103B49',lineHeight:1.3}}>8 wet observations / 10 years<br />20 March, 2016–2025<br /><br />Historical climatology.<br />Not an event-date forecast.</Text></Box>
+<Box style={{position:'absolute',left:60,top:550,width:495,height:80}}><Text style={{fontFamily:'Arial',fontSize:19,color:'#103B49'}}>Open-Meteo sourced Subang Jaya grid.<br />Wet day ≥1 mm; city proxy, not campus station.</Text></Box>
+<Box style={{position:'absolute',left:620,top:155,width:570,height:120,padding:20,background:'#EF9C53'}}><Text style={{fontFamily:'Arial',fontSize:29,fontWeight:'bold',color:'#103B49'}}>Planning policy:<br />risk above 40% → indoor Plan B</Text></Box>
+<Box style={{position:'absolute',left:640,top:320,width:540,height:180}}><Text style={{fontFamily:'Arial',fontSize:27,color:'#103B49',lineHeight:1.4}}>↓ Indoor venue mode<br />↓ Budget reallocation<br />↓ Programme, risks and draft logistics</Text></Box>
+<Box style={{position:'absolute',left:620,top:555,width:570,height:80,padding:18,border:'2px solid #117F75'}}><Text style={{fontFamily:'Arial',fontSize:24,color:'#103B49'}}>Same RM2,000 ceiling. Real re-plan trace.</Text></Box>
+<Box style={{position:'absolute',left:60,top:665,width:1050,height:35}}><Text style={{fontFamily:'Arial',fontSize:14,color:'#103B49'}}>Source evidence is displayed | Threshold is a planning assumption, not an official alert</Text></Box><Box style={{position:'absolute',left:1150,top:665,width:100,height:35}}><Text style={{fontFamily:'Arial',fontSize:14,color:'#103B49'}}>05 / 10</Text></Box>
+</Slide>

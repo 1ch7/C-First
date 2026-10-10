@@ -1,0 +1,2 @@
+# Runtime uses Python 3.10+ standard library only.
+# SQLite, urllib, threading, concurrent.futures and http.server are built in.

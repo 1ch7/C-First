@@ -1,0 +1,7 @@
+<Slide style={{width:1280,height:720,background:'#FAF7F2',position:'relative'}}>
+<Box style={{position:'absolute',left:60,top:30,width:1160,height:80}}><Text style={{fontFamily:'Arial',fontSize:38,fontWeight:'bold',color:'#103B49'}}>Evidence, not a success animation</Text></Box>
+<Box style={{position:'absolute',left:60,top:150,width:395,height:160}}><Text style={{fontFamily:'Arial',fontSize:110,fontWeight:'bold',color:'#117F75'}}>76</Text></Box>
+<Box style={{position:'absolute',left:60,top:340,width:395,height:240}}><Text style={{fontFamily:'Arial',fontSize:27,color:'#103B49',lineHeight:1.35}}>Tests passed.<br />1 optional live test skipped.<br /><br />Current-source loopback queue safeguard verified.</Text></Box>
+<Box style={{position:'absolute',left:520,top:150,width:680,height:465}}><Text style={{fontFamily:'Arial',fontSize:24,color:'#103B49',lineHeight:1.4}}>PASS: two actual local scenarios<br />PASS: repaired canonical browser flow<br />PASS: 10 owner Gmail drafts<br /><br />SQLite lifecycle race reproduced,<br />fixed and regression-tested.<br />OPEN: public deploy + source release<br />OPEN: final presentation PDF review</Text></Box>
+<Box style={{position:'absolute',left:60,top:665,width:1050,height:35}}><Text style={{fontFamily:'Arial',fontSize:14,color:'#103B49'}}>Tests are not deployed evidence | Failures remain visible; no public-release PASS</Text></Box><Box style={{position:'absolute',left:1150,top:665,width:100,height:35}}><Text style={{fontFamily:'Arial',fontSize:14,color:'#103B49'}}>09 / 10</Text></Box>
+</Slide>
