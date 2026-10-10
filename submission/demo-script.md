@@ -3,7 +3,7 @@
 **Campus:** Taylor's University  
 **Language/currency:** English, RM / MYR  
 **Demonstration mode:** actual local service unless a public deployment is later verified  
-**Delivery:** public source https://github.com/1ch7/C-First/tree/eventpilot-dormathon; live app https://d4b9a8c30a6544259346fcec7549ee20.sg2.agentos-app.run; ten-page pitch PDF in outputs/EventPilot-Pitch.pdf. One public health check passed. The evidence narrated below was captured locally; no deployed end-to-end tests or new screenshots were performed.
+**Delivery:** public source https://github.com/1ch7/C-First/tree/eventpilot-dormathon; live app https://ec8cd1f8d7a242a7acf0cf1ed71dd9b8.sg2.agentos-app.run; ten-page pitch PDF in outputs/EventPilot-Pitch.pdf. One public health check passed. The evidence narrated below was captured locally; no deployed end-to-end tests or new screenshots were performed.
 
 ## Before presenting
 
