@@ -90,9 +90,49 @@ def parse_goal(prompt, overrides=None):
         assumptions.append({"field": field, "value": value, "reason": reason, "editable": True, "explicit": True})
         return value
 
-    event_type = next((kind for kind in ("charity concert", "charity gala", "fundraising concert", "concert", "gala", "fundraiser", "workshop", "bazaar", "showcase", "festival", "charity event") if kind in lower), None)
+    # Detect event type from the prompt. Ordered roughly from most specific
+    # (multi-word) to single-word so that e.g. "charity concert" wins over
+    # "concert".  The list is intentionally broad — if nothing matches we fall
+    # back to extracting any noun phrase near "event" or the first significant
+    # noun phrase, rather than hard-coding a single type.
+    EVENT_KEYWORDS = (
+        "hackathon", "coding competition", "programming competition",
+        "esports tournament", "gaming tournament", "sports tournament",
+        "tournament", "competition", "contest", "challenge",
+        "career fair", "job fair", "networking event",
+        "charity concert", "charity gala", "fundraising concert",
+        "charity bazaar", "charity dinner",
+        "concert", "gala", "fundraiser",
+        "workshop", "bazaar", "showcase", "festival",
+        "seminar", "conference", "symposium", "forum",
+        "exhibition", "expo", "fair",
+        "competition", "game jam", "design jam",
+        "cultural night", "cultural festival",
+        "sports day", "sports carnival",
+        "food fair", "food festival",
+        "art exhibition", "art show",
+        "tech talk", "talk", "panel discussion", "panel",
+        "bootcamp", "training",
+        "orientation", "open day", "open house",
+        "graduation party", "award ceremony", "awards night",
+        "reunion", "networking session",
+        "fundraising event", "charity event", "community event",
+        "student event", "campus event",
+    )
+    event_type = next((kind for kind in EVENT_KEYWORDS if kind in lower), None)
     if not event_type:
-        event_type = assume("eventType", "charity concert", "No event type was specified; planning assumption, not a confirmed booking.")
+        # Try to extract a noun phrase near the word "event" or "organize/plan/host"
+        phrase = re.search(r"\b(?:organiz\w+|organis\w+|plan|host|run|hold|put on|throw)\s+(?:a |an |the )?\s*(.+?)(?:\s+(?:at|on|in|for|with|during|between|budget)\b|[.;,\n]|$)", text, re.I)
+        if phrase:
+            candidate = phrase.group(1).strip().lower()
+            # Strip leading articles and common filler words
+            candidate = re.sub(r"^(?:a |an |the |my |our |student |campus )+", "", candidate).strip()
+            # If the remaining text is just "event" or similar generic words, don't use it
+            if candidate and len(candidate) <= 100 and candidate not in ("event", "thing", "activity"):
+                event_type = candidate
+        if not event_type:
+            # Last resort: use "event" as a neutral label rather than inventing a type
+            event_type = assume("eventType", "campus event", "No specific event type was identified; using a neutral label. Edit this field to specify your event type.")
     cause = None
     explicit_purpose = False
     for marker in (r"raising (?:money|funds) for|supporting|benefiting|benefitting|to support", r"for"):
@@ -112,9 +152,36 @@ def parse_goal(prompt, overrides=None):
         if charity_purpose:
             cause = assume("cause", "a student-selected charity (beneficiary unconfirmed)", "No beneficiary or cause was named; organiser must confirm before outreach.")
         else:
-            topic_match = re.search(r"([^.;\n]*?)\b(?:workshop|showcase|bazaar|concert|festival|gala)\b", text, re.I)
-            topic = re.sub(r"^(?:(?:please|plan|organise|organize|create|host|a|an|the|student|campus)\s+)+", "", topic_match.group(1).strip(), flags=re.I).strip() if topic_match else ""
-            purpose = f"{topic} learning and practice" if event_type == "workshop" and topic else "participant learning and practice" if event_type == "workshop" else f"{topic or 'student'} project presentation and peer exchange" if event_type == "showcase" else "student stall participation and community engagement" if event_type == "bazaar" else "student participation and shared activities"
+            # Extract the topic preceding the event keyword for a purpose description
+            topic_match = re.search(r"([^.;\n]*?)\b(?:" + "|".join(re.escape(k) for k in EVENT_KEYWORDS if " " not in k) + r")\b", text, re.I)
+            topic = re.sub(r"^(?:(?:please|plan|organise|organize|create|host|run|a|an|the|student|campus)\s+)+", "", topic_match.group(1).strip(), flags=re.I).strip() if topic_match else ""
+            # Infer a sensible default purpose based on event type category
+            _PURPOSE_MAP = {
+                "hackathon": "collaborative building, coding and project creation",
+                "competition": "skill demonstration and friendly contest",
+                "tournament": "competitive play and spectator engagement",
+                "contest": "skill demonstration and friendly contest",
+                "challenge": "creative problem-solving and skill demonstration",
+                "workshop": f"{topic} learning and practice" if topic else "participant learning and practice",
+                "showcase": f"{topic or 'student'} project presentation and peer exchange",
+                "bazaar": "student stall participation and community engagement",
+                "seminar": "knowledge sharing and academic discussion",
+                "conference": "knowledge sharing, networking and academic discussion",
+                "symposium": "academic presentation and expert discussion",
+                "forum": "open discussion and idea exchange",
+                "exhibition": f"{topic} display and visitor engagement",
+                "expo": "information sharing and visitor engagement",
+                "fair": "information sharing and community engagement",
+                "concert": "musical performance and audience entertainment",
+                "gala": "formal gathering and celebration",
+                "festival": "celebration and community participation",
+                "seminar": "knowledge sharing and academic discussion",
+                "talk": "knowledge sharing and discussion",
+                "panel": "expert discussion and audience Q&A",
+                "bootcamp": "intensive learning and skill building",
+                "training": "skill development and guided practice",
+            }
+            purpose = _PURPOSE_MAP.get(event_type, f"{topic + ' ' if topic else ''}student participation and engagement")
             cause = assume("cause", purpose, "No separate purpose was specified; inferred editable planning objective from event type/topic, not a charity beneficiary or confirmed outcome.")
     month_match = re.search(r"\b(" + "|".join(sorted(MONTHS, key=len, reverse=True)) + r")\b(?:\s+(20\d{2}))?", lower)
     if month_match:
