@@ -151,7 +151,7 @@ def execute_run(run_id, prompt, overrides, roster):
         pack = normalize_public_pack(pack)
         pack["runId"] = run_id
         pack["generatedAt"] = now()
-        pack["engine"] = "Tool-driven specialist agents. LLM-powered prompt interpretation." if (os.environ.get("AIML_API_KEY") or (os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY"))) else "Tool-driven specialist agents. LLM unavailable: WorkBuddy keyless activation not completed."
+        pack["engine"] = "Tool-driven specialist agents. LLM-powered prompt interpretation." if (os.environ.get("GROQ_API_KEY") or os.environ.get("GROK_API_KEY") or os.environ.get("AIML_API_KEY") or (os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY"))) else "Tool-driven specialist agents. LLM unavailable: WorkBuddy keyless activation not completed."
         pack["mode"] = "live"
         pack["privacy"] = "Anyone with this random share URL can view this pack. Roster names/contact details are redacted; do not enter sensitive information in prompts."
         elapsed = round(time.monotonic() - start, 2)
@@ -439,13 +439,13 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 with db() as c:
                     c.execute("SELECT 1").fetchone()
-                llm_status = "available - AI/ML API key configured" if os.environ.get("AIML_API_KEY") else ("available - WorkBuddy keyless LLM activated" if os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY") else "unavailable - not activated")
+                llm_status = "available - Groq LLM configured" if (os.environ.get("GROQ_API_KEY") or os.environ.get("GROK_API_KEY")) else ("available - AI/ML API key configured" if os.environ.get("AIML_API_KEY") else ("available - WorkBuddy keyless LLM activated" if os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY") else "unavailable - not activated"))
                 return self.response(200, {"status": "ok", "product": "EventPilot", "version": VERSION, "database": "SQLite", "llm": llm_status, "gmail": "drafts only; OAuth optional", "time": now()})
             except Exception:
                 return self.response(503, {"status": "error", "database": "unavailable"})
         if path == "/api/config":
-            llm_engine = "Tool-driven agents; LLM-powered prompt interpretation" if (os.environ.get("AIML_API_KEY") or (os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY"))) else "Tool-driven agents; LLM unavailable"
-            return self.response(200, {"googleClientId": os.environ.get("GOOGLE_CLIENT_ID", ""), "gmailScope": "https://www.googleapis.com/auth/gmail.compose", "engine": llm_engine, "replayAvailable": (DATA / "recording.json").exists(), "llmEnabled": bool(os.environ.get("AIML_API_KEY")), "cloudEndpoint": os.environ.get("WB_CLOUD_ENDPOINT", ""), "cloudPublishableKey": os.environ.get("WB_CLOUD_PUBLISHABLE_KEY", ""), "cloudOauthRelay": os.environ.get("WB_CLOUD_OAUTH_RELAY", "")})
+            llm_engine = "Tool-driven agents; LLM-powered prompt interpretation" if (os.environ.get("GROQ_API_KEY") or os.environ.get("GROK_API_KEY") or os.environ.get("AIML_API_KEY") or (os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY"))) else "Tool-driven agents; LLM unavailable"
+            return self.response(200, {"googleClientId": os.environ.get("GOOGLE_CLIENT_ID", ""), "gmailScope": "https://www.googleapis.com/auth/gmail.compose", "engine": llm_engine, "replayAvailable": (DATA / "recording.json").exists(), "llmEnabled": bool(os.environ.get("GROQ_API_KEY") or os.environ.get("GROK_API_KEY") or os.environ.get("AIML_API_KEY")), "cloudEndpoint": os.environ.get("WB_CLOUD_ENDPOINT", ""), "cloudPublishableKey": os.environ.get("WB_CLOUD_PUBLISHABLE_KEY", ""), "cloudOauthRelay": os.environ.get("WB_CLOUD_OAUTH_RELAY", "")})
         if path.startswith("/api/runs/"):
             bits = path.strip("/").split("/")
             run = row_run(bits[2])
@@ -556,9 +556,9 @@ class Handler(BaseHTTPRequestHandler):
             c.execute("INSERT INTO runs(id,status,prompt,pack,trace,created_at,mode) VALUES (?,?,?,?,?,?,?)", (run_id, "complete", recording["prompt"], json.dumps(pack), json.dumps(replay_trace), now(), "replay"))
         return self.response(200, {"id": run_id, "status": "complete", "mode": "replay"})
     def llm_interpret(self, value):
-        """Server-side proxy for LLM prompt interpretation using AI/ML API.
+        """Server-side proxy for LLM prompt interpretation using Groq API.
         The API key stays server-side and is never exposed to the browser."""
-        api_key = os.environ.get("AIML_API_KEY")
+        api_key = os.environ.get("GROQ_API_KEY") or os.environ.get("GROK_API_KEY")
         if not api_key:
             return self.response(409, {"error": "LLM is not configured. Using deterministic interpretation.", "fallback": True})
         prompt = str(value.get("prompt", "")).strip()
@@ -574,7 +574,7 @@ class Handler(BaseHTTPRequestHandler):
             "If a field is not mentioned, use null or empty string."
         )
         body = json.dumps({
-            "model": "gpt-4o-mini",
+            "model": os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b"),
             "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": prompt},
@@ -585,11 +585,12 @@ class Handler(BaseHTTPRequestHandler):
         }).encode()
         try:
             req = Request(
-                "https://api.aimlapi.com/v1/chat/completions",
+                "https://api.groq.com/openai/v1/chat/completions",
                 data=body,
                 headers={
                     "Authorization": "Bearer " + api_key,
                     "Content-Type": "application/json",
+                    "User-Agent": "EventPilot/1.1",
                 },
                 method="POST",
             )
@@ -603,7 +604,7 @@ class Handler(BaseHTTPRequestHandler):
             for key in list(parsed.keys()):
                 if parsed[key] == "" or parsed[key] is None:
                     parsed[key] = None
-            return self.response(200, {"interpretation": parsed, "model": result.get("model", "gpt-4o-mini")})
+            return self.response(200, {"interpretation": parsed, "model": result.get("model", "openai/gpt-oss-120b")})
         except HTTPError as exc:
             print("LLM API HTTP error: " + str(exc.code), flush=True)
             return self.response(502, {"error": "LLM API request failed. Using deterministic interpretation.", "fallback": True})
