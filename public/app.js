@@ -24,7 +24,7 @@
     { id: 'validator', label: 'Validator', icon: '12', lane: 3, deps: ['all specialist outputs'] }
   ];
   const tabs = ['Overview', 'Date Decision', 'Timeline', 'Budget', 'Risk / Weather', 'People / MCs', 'Sponsors / Gmail', 'Promo', 'Export'];
-  const state = { id: null, status: 'idle', pack: null, trace: [], metrics: null, tab: 'Overview', source: null, demo: false, replay: false, clientId: '', configLoaded: false, gmailBusy: false, gmailResult: null, startedAt: null, cloud: null, llmModel: null, llmBusy: false };
+  const state = { id: null, status: 'idle', pack: null, trace: [], metrics: null, tab: 'Overview', source: null, demo: false, replay: false, clientId: '', configLoaded: false, gmailBusy: false, gmailResult: null, startedAt: null, llmEnabled: false, llmModel: null, llmBusy: false };
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const array = (value) => Array.isArray(value) ? value.filter((item) => item != null) : value == null ? [] : [value];
   const first = (...values) => values.find((v) => v !== null && v !== undefined && v !== '');
@@ -70,35 +70,18 @@
   function notice(text, error = false) { $('notice').textContent = text; $('notice').className = `notice${error ? ' error' : ''}`; $('notice').hidden = false; }
 
   // === LLM-POWERED PROMPT INTERPRETER ===
-  // Uses WorkBuddy keyless LLM to interpret free-text event briefs into structured parameters.
+  // Calls the server-side /api/llm-interpret proxy which uses the AI/ML API.
+  // The API key stays server-side and is never exposed to the browser.
   // Falls back to deterministic keyword extraction when LLM is unavailable.
   async function interpretPromptWithLLM(text) {
-    if (!state.cloud || !text || text.length < 5) return null;
+    if (!state.llmEnabled || !text || text.length < 5) return null;
     try {
-      const models = await state.cloud.llm.models.list();
-      if (!models || models.length === 0) return null;
-      const model = models.find((m) => m.disabled !== true) || models[0];
-      state.llmModel = model;
-      const systemPrompt = 'You are an event planning assistant. Extract structured event details from the user brief. Reply with JSON only, no markdown. Keys: eventType (string), cause (string or empty), budgetRM (number or null), attendance (number or null), dateStart (YYYY-MM-DD or empty), dateEnd (YYYY-MM-DD or empty), month (1-12 or null), year (number or null), campus (string or empty), location (string or empty), eventName (string). Use only information explicitly stated in the brief. If a field is not mentioned, use null or empty string.';
-      let answer = '';
-      for await (const chunk of state.cloud.llm.chat.completions.create({
-        model: model.id,
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: text },
-        ],
-        stream: true,
-        response_format: { type: 'json_object' },
-      })) {
-        const delta = chunk.choices?.[0]?.delta?.content;
-        if (delta) answer += delta;
-      }
-      const parsed = JSON.parse(answer);
-      // Normalize: convert empty strings to null for consistency with deterministic interpreter
-      for (const key of Object.keys(parsed)) {
-        if (parsed[key] === '' || parsed[key] === undefined) parsed[key] = null;
-      }
-      return parsed;
+      const result = await request('/api/llm-interpret', {
+        method: 'POST',
+        body: JSON.stringify({ prompt: text }),
+      });
+      if (result.fallback || !result.interpretation) return null;
+      return result.interpretation;
     } catch (error) {
       console.warn('LLM interpretation failed, will use deterministic fallback:', error.message || error);
       return null;
@@ -322,10 +305,10 @@
 
     // Always show deterministic result immediately
     const detInterp = interpretPrompt(text);
-    if (detInterp) { detInterp._source = state.cloud ? 'llm-pending' : 'rules'; applyInterpretation(detInterp); }
+    if (detInterp) { detInterp._source = state.llmEnabled ? 'llm-pending' : 'rules'; applyInterpretation(detInterp); }
 
     // If LLM is available, try to enhance asynchronously
-    if (state.cloud && !state.llmBusy) {
+    if (state.llmEnabled && !state.llmBusy) {
       const myToken = ++llmPreviewToken;
       state.llmBusy = true;
       interpretPromptWithLLM(text).then((llmInterp) => {
@@ -589,7 +572,7 @@
       if (mode !== 'replay') {
         // Try LLM interpretation first, fall back to deterministic
         let interp = null;
-        if (state.cloud) {
+        if (state.llmEnabled) {
           interp = await interpretPromptWithLLM(prompt);
         }
         if (!interp) interp = interpretPrompt(prompt) || {};
@@ -1017,26 +1000,16 @@
   request('/api/config').then((config) => {
     state.clientId = config.googleClientId || '';
     state.configLoaded = true;
+    state.llmEnabled = !!config.llmEnabled;
     if (state.clientId) loadGoogleLibrary().catch(() => {});
-    // Initialize WorkBuddy Cloud SDK for keyless LLM if config is present
-    if (config.cloudEndpoint && config.cloudPublishableKey && typeof WorkBuddyCloud !== 'undefined') {
-      try {
-        state.cloud = WorkBuddyCloud.createWorkBuddyCloud({
-          endpoint: config.cloudEndpoint,
-          oauthRelayBaseUrl: config.cloudOauthRelay || undefined,
-          publishableKey: config.cloudPublishableKey,
-        });
-        $('engine-description').textContent = 'WorkBuddy keyless LLM is activated. AI-powered prompt interpretation with deterministic specialist tools.';
-      } catch (e) {
-        $('engine-description').textContent = 'WorkBuddy keyless LLM activation detected but SDK initialization failed. Using deterministic specialist runtime.';
-      }
+    // Update engine banner based on LLM availability
+    if (state.llmEnabled) {
+      $('engine-description').textContent = 'AI-powered prompt interpretation is active. The LLM interprets your brief; deterministic specialist tools execute the plan.';
     } else {
-      $('engine-description').textContent = config.cloudEndpoint
-        ? 'WorkBuddy cloud SDK loading. Deterministic specialist runtime as fallback.'
-        : 'WorkBuddy keyless LLM is not activated. This build uses a deterministic specialist runtime with real tool results.';
+      $('engine-description').textContent = 'LLM is not configured. This build uses a deterministic specialist runtime with real tool results.';
     }
     if (state.pack && state.tab === 'Sponsors / Gmail') renderContent();
-  }).catch(() => { state.configLoaded = true; $('engine-description').textContent = 'WorkBuddy keyless LLM is not activated. This build uses a deterministic specialist runtime with real tool results.'; });
+  }).catch(() => { state.configLoaded = true; $('engine-description').textContent = 'LLM is not configured. This build uses a deterministic specialist runtime with real tool results.'; });
   const saved = location.pathname.match(/^\/run\/([^/]+)\/?$/);
   if (saved) loadRun(decodeURIComponent(saved[1])).catch((error) => { setBusy(false); runStatus('failed'); notice(`Could not load the saved run. ${error.message}`, true); });
 })();

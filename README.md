@@ -123,7 +123,8 @@ All write requests require JSON; cross-origin browser writes are rejected. The d
 | Method | Route | Purpose |
 |---|---|---|
 | GET | `/api/health` | Service/database health and execution disclosure |
-| GET | `/api/config` | Public OAuth identifier, scope and replay availability |
+| GET | `/api/config` | Public OAuth identifier, scope, LLM availability and replay availability |
+| POST | `/api/llm-interpret` | `{ "prompt": "..." }`; LLM-powered structured prompt interpretation (server-side proxy; API key not exposed) |
 | POST | `/api/runs` | `{ "prompt": "...", "overrides": {}, "roster": [] }`; starts a run |
 | POST | `/api/runs` | `{ "mode": "replay" }`; loads labelled actual recording if available |
 | GET | `/api/runs/<id>` | Saved public pack, trace, status and jobs |
@@ -172,7 +173,7 @@ The tool-call counter includes specialist execution/tool events; it is not inter
 - Presentation narration: `submission/demo-script.md`.
 - Ten-page pitch: `outputs/EventPilot-Pitch.pdf`; editable PPTX: `submission/EventPilot-Pitch/EventPilot-Pitch.pptx`. Native PowerPoint PDF export and all-page visual review completed locally.
 - **Public release scope:** publish the existing Python service and perform one health check only, per the user's credit-saving instruction. Source and existing artifacts are packaged on `eventpilot-dormathon`. Earlier local browser/workshop checks passed; they do not establish deployed end-to-end verification. Pitch PDF is already generated.
-- **CONFIGURED:** WorkBuddy keyless LLM activation is wired into the application. The WorkBuddy Cloud SDK (`@tencent-ai/workbuddy-cloud-sdk`) is loaded via CDN in `public/index.html`. The `/api/config` endpoint serves `cloudEndpoint`, `cloudPublishableKey`, and `cloudOauthRelay` from environment variables (`WB_CLOUD_ENDPOINT`, `WB_CLOUD_PUBLISHABLE_KEY`, `WB_CLOUD_OAUTH_RELAY`). The frontend initializes the cloud client and uses `cloud.llm.chat.completions.create()` for AI-powered prompt interpretation, with the deterministic keyword-extraction fallback explicitly preserved for when the LLM is unavailable. The specialist pipeline remains deterministic and tool-driven; the LLM enhances prompt understanding, not execution.
+- **CONFIGURED:** LLM-powered prompt interpretation is wired into the application. A server-side proxy endpoint (`POST /api/llm-interpret`) calls the AI/ML API (OpenAI-compatible) using an API key stored as the `AIML_API_KEY` environment variable. The API key stays server-side and is never exposed to the browser. The LLM interprets the user's free-text brief into structured event parameters (event type, budget, dates, attendance, campus, etc.); the specialist pipeline then executes deterministic tool-driven analysis. The deterministic keyword-extraction fallback is preserved for when the LLM is unavailable.
 - **NOT CONFIGURED / NOT VERIFIED:** visitor browser Google OAuth (Gmail draft creation for visitors). The server-side OAuth code path is complete; it requires a `GOOGLE_CLIENT_ID` environment variable to be set.
 
 Internal feature freeze: **11 October 2026, 08:30 MYT**. Submission target: **09:00 MYT**. No public URL or completion claim should be inserted without actual evidence.

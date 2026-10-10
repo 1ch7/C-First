@@ -151,7 +151,7 @@ def execute_run(run_id, prompt, overrides, roster):
         pack = normalize_public_pack(pack)
         pack["runId"] = run_id
         pack["generatedAt"] = now()
-        pack["engine"] = "Tool-driven specialist agents. LLM-powered prompt interpretation." if os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY") else "Tool-driven specialist agents. LLM unavailable: WorkBuddy keyless activation not completed."
+        pack["engine"] = "Tool-driven specialist agents. LLM-powered prompt interpretation." if (os.environ.get("AIML_API_KEY") or (os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY"))) else "Tool-driven specialist agents. LLM unavailable: WorkBuddy keyless activation not completed."
         pack["mode"] = "live"
         pack["privacy"] = "Anyone with this random share URL can view this pack. Roster names/contact details are redacted; do not enter sensitive information in prompts."
         elapsed = round(time.monotonic() - start, 2)
@@ -439,13 +439,13 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 with db() as c:
                     c.execute("SELECT 1").fetchone()
-                llm_status = "available - WorkBuddy keyless LLM activated" if os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY") else "unavailable - not activated"
+                llm_status = "available - AI/ML API key configured" if os.environ.get("AIML_API_KEY") else ("available - WorkBuddy keyless LLM activated" if os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY") else "unavailable - not activated")
                 return self.response(200, {"status": "ok", "product": "EventPilot", "version": VERSION, "database": "SQLite", "llm": llm_status, "gmail": "drafts only; OAuth optional", "time": now()})
             except Exception:
                 return self.response(503, {"status": "error", "database": "unavailable"})
         if path == "/api/config":
-            llm_engine = "Tool-driven agents; LLM-powered prompt interpretation" if os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY") else "Tool-driven agents; LLM unavailable"
-            return self.response(200, {"googleClientId": os.environ.get("GOOGLE_CLIENT_ID", ""), "gmailScope": "https://www.googleapis.com/auth/gmail.compose", "engine": llm_engine, "replayAvailable": (DATA / "recording.json").exists(), "cloudEndpoint": os.environ.get("WB_CLOUD_ENDPOINT", ""), "cloudPublishableKey": os.environ.get("WB_CLOUD_PUBLISHABLE_KEY", ""), "cloudOauthRelay": os.environ.get("WB_CLOUD_OAUTH_RELAY", "")})
+            llm_engine = "Tool-driven agents; LLM-powered prompt interpretation" if (os.environ.get("AIML_API_KEY") or (os.environ.get("WB_CLOUD_ENDPOINT") and os.environ.get("WB_CLOUD_PUBLISHABLE_KEY"))) else "Tool-driven agents; LLM unavailable"
+            return self.response(200, {"googleClientId": os.environ.get("GOOGLE_CLIENT_ID", ""), "gmailScope": "https://www.googleapis.com/auth/gmail.compose", "engine": llm_engine, "replayAvailable": (DATA / "recording.json").exists(), "llmEnabled": bool(os.environ.get("AIML_API_KEY")), "cloudEndpoint": os.environ.get("WB_CLOUD_ENDPOINT", ""), "cloudPublishableKey": os.environ.get("WB_CLOUD_PUBLISHABLE_KEY", ""), "cloudOauthRelay": os.environ.get("WB_CLOUD_OAUTH_RELAY", "")})
         if path.startswith("/api/runs/"):
             bits = path.strip("/").split("/")
             run = row_run(bits[2])
@@ -530,6 +530,8 @@ class Handler(BaseHTTPRequestHandler):
                     return self.response(503, {"id": run_id, "error": "Execution queue unavailable; no successful run is claimed."})
                 return self.response(202, {"id": run_id, "status": "running"})
             bits = path.strip("/").split("/")
+            if len(bits) == 2 and bits[0] == "api" and bits[1] == "llm-interpret":
+                return self.llm_interpret(value)
             if len(bits) == 4 and bits[:2] == ["api", "runs"] and bits[3] == "gmail-drafts":
                 return self.gmail(bits[2], value)
             return self.response(404, {"error": "Route not found; no email send route exists"})
@@ -553,6 +555,61 @@ class Handler(BaseHTTPRequestHandler):
         with db() as c:
             c.execute("INSERT INTO runs(id,status,prompt,pack,trace,created_at,mode) VALUES (?,?,?,?,?,?,?)", (run_id, "complete", recording["prompt"], json.dumps(pack), json.dumps(replay_trace), now(), "replay"))
         return self.response(200, {"id": run_id, "status": "complete", "mode": "replay"})
+    def llm_interpret(self, value):
+        """Server-side proxy for LLM prompt interpretation using AI/ML API.
+        The API key stays server-side and is never exposed to the browser."""
+        api_key = os.environ.get("AIML_API_KEY")
+        if not api_key:
+            return self.response(409, {"error": "LLM is not configured. Using deterministic interpretation.", "fallback": True})
+        prompt = str(value.get("prompt", "")).strip()
+        if not prompt or len(prompt) > 3000:
+            return self.response(400, {"error": "Provide a prompt up to 3000 characters"})
+        system_prompt = (
+            "You are an event planning assistant. Extract structured event details from the user brief. "
+            "Reply with JSON only, no markdown. Keys: eventType (string), cause (string or empty), "
+            "budgetRM (number or null), attendance (number or null), dateStart (YYYY-MM-DD or empty), "
+            "dateEnd (YYYY-MM-DD or empty), month (1-12 or null), year (number or null), "
+            "campus (string or empty), location (string or empty), eventName (string). "
+            "Use only information explicitly stated in the brief. "
+            "If a field is not mentioned, use null or empty string."
+        )
+        body = json.dumps({
+            "model": "gpt-4o-mini",
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt},
+            ],
+            "response_format": {"type": "json_object"},
+            "max_tokens": 500,
+            "temperature": 0.3,
+        }).encode()
+        try:
+            req = Request(
+                "https://api.aimlapi.com/v1/chat/completions",
+                data=body,
+                headers={
+                    "Authorization": "Bearer " + api_key,
+                    "Content-Type": "application/json",
+                },
+                method="POST",
+            )
+            with urlopen(req, timeout=20) as resp:
+                result = json.load(resp)
+            content = result.get("choices", [{}])[0].get("message", {}).get("content", "")
+            if not content:
+                return self.response(502, {"error": "LLM returned an empty response", "fallback": True})
+            parsed = json.loads(content)
+            # Normalize empty strings to null
+            for key in list(parsed.keys()):
+                if parsed[key] == "" or parsed[key] is None:
+                    parsed[key] = None
+            return self.response(200, {"interpretation": parsed, "model": result.get("model", "gpt-4o-mini")})
+        except HTTPError as exc:
+            print("LLM API HTTP error: " + str(exc.code), flush=True)
+            return self.response(502, {"error": "LLM API request failed. Using deterministic interpretation.", "fallback": True})
+        except Exception as exc:
+            print("LLM interpret failure: " + type(exc).__name__, flush=True)
+            return self.response(502, {"error": "LLM interpretation failed. Using deterministic interpretation.", "fallback": True})
     def gmail(self, run_id, value):
         run = row_run(run_id)
         if not run or not run["pack"]:
